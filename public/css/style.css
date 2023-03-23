@@ -1,0 +1,157 @@
+.style1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-orient: vertical
+}
+@media (min-width: 992px) {
+    .style2 {
+        display: none
+    }
+}
+.title-mobile {
+    line-height: 0.1;
+    font-size: 1rem}
+.style2 {
+    display: none}
+.style4 {
+    margin-top: 1rem;
+    border-width: 1px;
+    border-color: #6c757d
+}
+.style5 {
+    border-width: 1px;
+    border-color: rgba(108, 117, 125, 0.99)
+}
+.style3 {background-image: url("../inertia/src/assets/img/ionicons/train-outline.svg")
+}
+.style6 {
+    /* position: absolute */
+    position: fixed
+}
+.style7 {
+    background-color: #1761fd
+}
+.style8 {
+    overflow: auto
+}
+.style9 {
+    overflow: auto
+}
+.style12 {
+    background-size: cover
+}
+.style10 {
+    background-size: contain
+}
+.style11 {
+    background-size: cover
+}
+.style13 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: start;
+        align-content: flex-start
+}
+
+.style15 {
+    display: inline-block
+}
+.style16 {
+    overflow: hidden
+}
+.style17 {
+    font-size: 88px
+}
+
+.style19 {
+    position: sticky
+}
+
+.style21 {
+    overflow: auto
+}
+
+.style23 {
+    height: 200px;
+    overflow: auto;
+    width: 100vw;
+    display: block
+}
+
+.style14 {
+    max-width: 150px
+}
+
+.style18 {
+    display: block;
+    overflow: auto
+}
+
+.wappler-temp {}
+
+.wappler-temp {}
+
+.wappler-temp {}
+
+.style20 {
+    display: block
+}
+
+.style22 {
+    float: left
+}
+
+.style24 {
+    float: left
+}
+
+.style25 {
+    float: left
+}
+
+.style26 {
+    float: left
+}
+
+.style27 {
+    float: left
+}
+
+.style28 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row
+}
+
+.style29 {
+    max-height: 200px;
+    overflow: scroll;
+    display: block
+}
+
+.style30 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between
+}
+
+.style31 {}
+
+.style32 {
+    float: none
+}

@@ -1,0 +1,52 @@
+<!-- Wappler include head-page="layouts/sign-in-sign-up" fontawesome_4="cdn" is="dmx-app" id="appsigninsignup" appConnect="local" jquery_slim_35="cdn" bootstrap5="cdn" components="{dmxValidator:{},dmxBrowser:{}}" -->
+<meta name="ac:route" content="/log-in">
+<div is="dmx-browser" id="browser2"></div>
+<div is="dmx-browser" id="browser1"></div>
+
+<section class="container">
+    <div class="row g-0 min-vh-100">
+        <div class="col-lg-6 d-flex align-items-center justify-content-center justify-content-lg-start">
+            <div class="py-5">
+                <a href="index.html">
+                    <img src="/img/contucarga-logo.png" style="width: 100px;" alt="">
+                </a>
+                <h4 class="font-weight-normal text-dark mt-5">
+                    Ingrese a su cuenta
+                </h4>
+                <form class="w-300 w-lg-350 mt-4" method="post" is="dmx-serverconnect-form" id="serverconnectform1" action="/api/login" dmx-on:success="run([{run:{action:`serverconnectform1.reset()`}},{run:{action:`browser2.goto(\'/app-cotizaciones\')`}}])">
+                    <div class="mb-3">
+                        <input name="username" placeholder="Correo electrónico" class="form-control bg-pastel-darkblue" required="">
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="password" name="password" placeholder="Password" class="form-control bg-pastel-darkblue" required="">
+                    </div>
+
+                    <div class="mb-3 text-left">
+                        <div class="form-check font-size-sm text-secondary mt-4">
+                            <input type="checkbox" class="form-check-input" id="customCheck1" value="1" name="remember">
+                            <label class="form-check-label" for="customCheck1">
+                                Recordarme
+                            </label>
+                        </div>
+                    </div>
+
+                    <input type="submit" class="btn btn-primary btn-block btn-lg shadow-lg text-uppercase-bold-sm hover-lift mt-4" value="Iniciar Sesión" dmx-on:click="serverconnectform1.submit()">
+
+                    <a href="recover-password.html" class="d-block font-size-sm mt-5">
+                        ¿Olvidó su contraseña?
+                    </a>
+
+                    <div class="text-secondary font-size-sm mt-5">
+                        ¿Aún no tiene una cuenta?
+                        <a href="sign-up.html">Registrarse</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-lg-6 d-none d-lg-block">
+            <div class="bg-cover vw-lg-50 h-lg-100 style186"></div>
+        </div>
+    </div>
+</section>

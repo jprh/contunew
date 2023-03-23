@@ -1,0 +1,861 @@
+<!doctype html>
+<html is="dmx-app" lang="es">
+
+<head>
+  <meta name="ac:route" content="/">
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <script src="dmxAppConnect/dmxAppConnect.js"></script>
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="inertia/dist/assets/vendor/swiper/swiper.css">
+
+  <!-- Uncomment these lines if you prefer vendors broken down -->
+  <!-- <link rel="stylesheet" type="text/css" href="./assets/vendor/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="./assets/vendor/fancybox/jquery.fancybox.css">
+    <link rel="stylesheet" type="text/css" href="./assets/vendor/pikaday/pikaday.css">
+    <link rel="stylesheet" type="text/css" href="./assets/vendor/jarallax/dist/jarallax.css">
+    <link rel="stylesheet" type="text/css" href="./assets/vendor/highlight/styles.css">
+    <link rel="stylesheet" type="text/css" href="./assets/vendor/atvImg/atvImg.css"> -->
+
+  <!-- <link rel="stylesheet" type="text/css" href="/inertia/dist/assets/css/coyote.css"> -->
+
+  <!-- Google Tag Manager -->
+  <script src="js/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js" integrity="sha256-CutOzxCRucUsn6C6TcEYsauvvYilEniTXldPa6/wu0k=" crossorigin="anonymous"></script>
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MHVG24M');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Google tag (gtag.js) -->
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0JTST5BHY"></script>
+  <script>
+    window.data Layer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-M0JTST5BHY');
+  </script>
+
+  <script src="dmxAppConnect/dmxBootstrap4Navigation/dmxBootstrap4Navigation.js" defer=""></script>
+  <link rel="stylesheet" href="fontawesome4/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="bootstrap/4/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.min.css" />
+  <link rel="stylesheet" type="text/css" href="inertia/dist/assets/css/vendor.min.css">
+  <link rel="stylesheet" type="text/css" href="inertia/dist/assets/css/theme.min.css">
+
+  <script src="inertia/dist/assets/vendor/swiper/swiper.min.js" defer=""></script>
+  <script src="dmxAppConnect/dmxSwiper/dmxSwiper.js" defer=""></script>
+  <script src="dmxAppConnect/dmxSwiper/swiper.min.js" defer=""></script>
+  <link rel="stylesheet" href="dmxAppConnect/dmxSwiper/themes/default.css" />
+  <link rel="stylesheet" href="dmxAppConnect/dmxAnimateCSS/animate.min.css" />
+  <script src="dmxAppConnect/dmxAnimateCSS/dmxAnimateCSS.js" defer=""></script>
+
+  <script src="dmxAppConnect/dmxBootstrap4Modal/dmxBootstrap4Modal.js" defer=""></script>
+  <script src="dmxAppConnect/dmxSmoothScroll/dmxSmoothScroll.js" defer=""></script>
+  <script src="dmxAppConnect/dmxFormatter/dmxFormatter.js" defer=""></script>
+  <link rel="stylesheet" href="dmxAppConnect/dmxValidator/dmxValidator.css" />
+  <script src="dmxAppConnect/dmxValidator/dmxValidator.js" defer=""></script>
+  <link rel="stylesheet" href="dmxAppConnect/dmxDatePicker/daterangepicker.min.css" />
+  <script src="dmxAppConnect/dmxDatePicker/daterangepicker.min.js" defer=""></script>
+  <link rel="stylesheet" href="dmxAppConnect/dmxDatePicker/dmxDatePicker.css" />
+  <script src="dmxAppConnect/dmxDatePicker/dmxDatePicker.js" defer=""></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <script src="dmxAppConnect/dmxGooglePlaces/dmxGooglePlaces.js" defer=""></script>
+  <script src="dmxAppConnect/dmxBootstrap4Toasts/dmxBootstrap4Toasts.js" defer=""></script>
+  <script src="dmxAppConnect/dmxBootstrap5Toasts/dmxBootstrap5Toasts.js" defer=""></script>
+  <script src="dmxAppConnect/dmxDataTraversal/dmxDataTraversal.js" defer=""></script>
+  <script src="dmxAppConnect/dmxDatastore/dmxDatastore.js" defer=""></script>
+  <script src="dmxAppConnect/dmxBootstrap4Collapse/dmxBootstrap4Collapse.js" defer=""></script>
+  <script src="dmxAppConnect/dmxStateManagement/dmxStateManagement.js" defer=""></script>
+  <link rel="stylesheet" href="dmxAppConnect/dmxBootstrap4TableGenerator/dmxBootstrap4TableGenerator.css" />
+  <link rel="stylesheet" href="dmxAppConnect/dmxPreloader/dmxPreloader.css" />
+  <script src="dmxAppConnect/dmxPreloader/dmxPreloader.js" defer=""></script>
+  <script src="dmxAppConnect/dmxRouting/dmxRouting.js" defer=""></script>
+  <script src="dmxAppConnect/dmxBootbox/bootbox.all.min.js" defer=""></script>
+  <script src="dmxAppConnect/dmxBootbox/dmxBootbox.js" defer=""></script>
+  <script src="dmxAppConnect/dmxBrowser/dmxBrowser.js" defer=""></script>
+  <script src="dmxAppConnect/dmxGeolocation/dmxGeolocation.js" defer=""></script>
+  <script src="dmxAppConnect/dmxMoment/dmxMoment.js" defer=""></script>
+  <script src="dmxAppConnect/dmxVideo/dmxVideo.js" defer=""></script>
+  <script src="dmxAppConnect/dmxTyped/dmxTyped.js" defer=""></script>
+  <script src="dmxAppConnect/dmxTyped/typed.min.js" defer=""></script>
+  <script src="dmxAppConnect/dmxBootstrap5Navigation/dmxBootstrap5Navigation.js" defer></script>
+  <script src="dmxAppConnect/dmxMasonry/dmxMasonry.js" defer></script>
+  <link rel="stylesheet" href="dmxAppConnect/dmxBootstrap5TableGenerator/dmxBootstrap5TableGenerator.css" />
+  <link rel="stylesheet" href="dmxAppConnect/dmxAutocomplete/dmxAutocomplete.css" />
+  <script src="dmxAppConnect/dmxAutocomplete/dmxAutocomplete.js" defer></script>
+  <script src="dmxAppConnect/dmxBootstrap5Modal/dmxBootstrap5Modal.js" defer></script>
+  <link rel="stylesheet" href="dmxAppConnect/dmxMediumEditor/medium-editor.css" />
+  <script src="dmxAppConnect/dmxMediumEditor/medium-editor.js" defer></script>
+  <link rel="stylesheet" href="dmxAppConnect/dmxMediumEditor/dmxMediumEditor.css" />
+  <script src="dmxAppConnect/dmxMediumEditor/dmxMediumEditor.js" defer></script>
+  <link rel="stylesheet" href="dmxAppConnect/dmxMediumEditor/themes/default.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote/dist/summernote-lite.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/summernote/dist/summernote-lite.min.js" defer></script>
+  <script src="dmxAppConnect/dmxSummernote/dmxSummernote.js" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote/dist/summernote-bs4.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/summernote/dist/summernote-bs4.min.js" defer></script>
+  <script src="dmxAppConnect/dmxBootstrap4Alert/dmxBootstrap4Alert.js" defer></script>
+  <script src="socket.io/socket.io.js" defer></script>
+  <script src="dmxAppConnect/dmxSockets/dmxSockets.js" defer></script>
+  <script src="dmxAppConnect/dmxBootbox5/bootstrap-modbox.min.js" defer></script>
+  <script src="dmxAppConnect/dmxBootbox5/dmxBootbox5.js" defer></script>
+  <script src="dmxAppConnect/dmxBootstrap5Collapse/dmxBootstrap5Collapse.js" defer></script>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <meta property="og:image" content="<%=_('\'www.contucarga.com\'+query[0].image')%>">
+  <meta property="og:title" content="<%=_('query[0].title')%>">
+  <meta name="description" content="<%=_('query[0].description')%>">
+  <meta name="keywords" content="<%=_('query[0].keywords')%>">
+  <meta property="og:url" content="<%=_('\'www.contucarga.com\'+query[0].url')%>">
+  <meta property="og:description" content="<%=_('query[0].description')%>">
+  <title></title>
+  <meta name="twitter:title" content="<%=_('query[0].title')%>">
+  <meta name="twitter:description" content="<%=_('query[0].description')%>">
+  <meta name="twitter:url" content="<%=_('\'www.contucarga.com\'+query[0].url')%>">
+  <meta name="twitter:image" content="<%=_('\'www.contucarga.com\'+query[0].image')%>">
+  <link rel="canonical" href="<%=_('query[0].url')%>">
+</head>
+
+
+<body id="maincontucarga">
+
+  <dmx-datastore id="datastorevehicle"></dmx-datastore>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHVG24M" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <dmx-value id="var1" dmx-bind:value="browser1.location.pathname"></dmx-value>
+
+
+  <dmx-cookie-manager id="cookies1"></dmx-cookie-manager>
+  <dmx-local-manager id="local1"></dmx-local-manager>
+  <dmx-moment id="moment1"></dmx-moment>
+  <dmx-session-manager id="session2"></dmx-session-manager>
+  <div is="dmx-browser" id="browser1"></div>
+  <dmx-session-manager id="session1"></dmx-session-manager>
+  <dmx-value id="varhablarconespecialista" dmx-bind:value="0"></dmx-value>
+  <dmx-value id="vartappane" dmx-bind:value="0"></dmx-value>
+  <dmx-smooth-scroll id="scroll2"></dmx-smooth-scroll>
+  <dmx-smooth-scroll id="scroll1"></dmx-smooth-scroll>
+
+  <dmx-datastore id="datastore1"></dmx-datastore>
+  <dmx-value id="varquotestep" dmx-bind:value="0"></dmx-value>
+  <dmx-array id="arrcantidadvehiculos"></dmx-array>
+  <div class="modal" id="signup" is="dmx-bs4-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Regístrese</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+
+            <form id="signup1" method="post" is="dmx-serverconnect-form" action="/api/login" dmx-on:success="browser1.alert('Se ha registrado exitosamente')" dmx-on:unauthorized="browser1.alert('&quot;Datos de ingreso equivocado&quot;')">
+              <div class="row">
+                <div class="col-12 col-md-12 col-xl-12 text-left col-lg-12">
+
+                  <div class="row">
+                    <div class="col">
+                      <p class="text-h3">Enter your details below.</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="mt-4 col">
+                      <input type="text" id="username" name="username" class="form-control" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="row mt-4 row-cols-12">
+                    <div class="col">
+                      <input type="password" id="inp_password" name="password" class="form-control" placeholder="Password">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                          <input class="custom-control-input" type="checkbox" value="1" id="remember" name="remember">
+                          <label class="custom-control-label" for="remember">Mantenme Conectado</label>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="row mt-4">
+                    <div class="col">
+                      <button id="signup1_submit" class="btn btn-primary" type="button" dmx-on:click="signup1.submit();signup.hide();signup1.reset()">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modal_especialista" is="dmx-bs4-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Hablar con un Especialista</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Por favor indíquenos a continuación la información necesaria para que un especialista le contacte lo antes posible.&nbsp;</p>
+          <form id="formcontactoespcialista" method="post" is="dmx-serverconnect-form" action="/api/email-contacto-especialista" dmx-on:success="run([{run:{action:`modal_especialista.hide()`}},{run:{action:`formcontactoespcialista.reset()`}},{'toast.show':{message:'Pronto un especialista se comunicará con usted',title:'Su mensaje ha sido enviado'}}])">
+
+            <div class="form-row" dmx-show="varhablarconespecialista.value==0">
+              <div class="col">
+
+                <div class="form-group">
+                  <legend class="col-form-label col-12">Me gustaría como Contucarga me puede ayudar con - selecciones la opción que más se ajuste:</legend>
+                  <div class="form-check radio-line-vertical-modal">
+                    <input class="form-check-input" type="radio" value="agenciamiento de aduanas importación" id="input16" name="inputserviciocontacto" data-msg-required="">
+                    <label class="form-check-label" for="input16">Agenciamiento de Aduanas para Importación&nbsp;</label>
+                  </div>
+                  <div class="form-check radio-line-vertical-modal">
+                    <input class="form-check-input" type="radio" value="agenciamiento de aduanas exportación" id="input17" name="inputserviciocontacto">
+                    <label class="form-check-label" for="input17">Agenciamiento de Aduanas para Exportación</label>
+                  </div>
+                  <div class="form-check radio-line-vertical-modal">
+                    <input class="form-check-input" type="radio" value="operación de almacenaje y distribución" id="input18" name="inputserviciocontacto" data-msg-required="">
+                    <label class="form-check-label pt-0 pb-0" for="input18">Me gustaría hablar con un especialista sobre mi operación de almacenaje y distribución</label>
+                  </div>
+                  <div class="form-check radio-line-vertical-modal">
+                    <input class="form-check-input" type="radio" value="flete internacional" id="input19" name="inputserviciocontacto">
+                    <label class="form-check-label" for="input19">Cotización de Flete de Carga Internacional</label>
+                  </div>
+                  <div class="form-check radio-line-vertical-modal">
+                    <input class="form-check-input" type="radio" id="input20" name="inputserviciocontacto" value="seguro de mercancía">
+                    <label class="form-check-label" for="input20">Cotización de Póliza de Seguros para Mercancía</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-row" dmx-show="varhablarconespecialista.value==1">
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="correoelectronico">Correo Electrónico*</label>
+                  <input type="email" class="form-control" id="correoelectronico" name="correo-electronico-contacto" aria-describedby="input21_help" placeholder="nombre@email.com" required="" data-msg-required="Este campo es requerido" data-rule-email="true">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="nombre">Nombre*</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre-contacto" aria-describedby="input21_help" required="" data-msg-required="Este campo es requerido">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="apellido">Apellido*</label>
+                  <input type="text" class="form-control" id="apellido" name="apellido-contacto" aria-describedby="input21_help" required="" data-msg-required="Este campo es requerido">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="compania">Compañía</label>
+                  <input type="text" class="form-control" id="compania" name="compania-contacto" aria-describedby="input21_help">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="telefono">Número Telefónico</label>
+                  <input type="text" class="form-control" id="telefono" name="numero-telefonico-contacto" aria-describedby="input21_help" placeholder="000-000-0000">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="paginawebcontacto">Página Web</label>
+                  <input type="text" class="form-control" id="paginawebcontacto" name="pagina-web-contacto" aria-describedby="input21_help" placeholder="www.contucarga.com">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="input27">Industria</label>
+                  <input type="text" class="form-control" id="input27" name="industria-contacto" aria-describedby="input21_help">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="input28">Ciudad*</label>
+                  <input type="text" class="form-control" id="input28" name="ciudad-contacto" aria-describedby="input21_help" required="" data-msg-required="Este campo es requerido">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="input29">País*</label>
+                  <input type="text" class="form-control" id="input29" name="pais-contacto" aria-describedby="input21_help" required="" data-msg-required="Este campo es requerido">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer" style="">
+          <div class="d-flex w-100 style67 justify-content-end" dmx-class:justify-content-between="varhablarconespecialista.value==1"><button type="button" class="btn btn-secondary style60 mr-0" dmx-show="varhablarconespecialista.value==1" dmx-on:click="varhablarconespecialista.setValue((varhablarconespecialista.value - 1))">Anterior</button><button type="button" class="btn btn-primary style65 align-self-center" dmx-on:click="varhablarconespecialista.setValue((varhablarconespecialista.value + 1))" dmx-show="varhablarconespecialista.value==0">Siguiente</button><button class="btn btn-success" dmx-show="varhablarconespecialista.value==1" dmx-on:click="formcontactoespcialista.submit();varhablarconespecialista.setValue(0)">Enviar</button></div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modal_quote" is="dmx-bs4-modal" tabindex="-1" role="dialog" dmx-on:hide-bs-modal="run([{run:{action:`varquotestep.setValue(0);modal_quote.form1.reset()`}},{run:{action:`arrcantidadvehiculos.empty()`,name:'cleararrayvehicules'}}])" dmx-on:hidden-bs-modal="form1.reset()">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header">
+
+          <h5 class="modal-title">Solucitud de Cotización {{form1.input4_tipo_operacion.value}}&nbsp;</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="post" is="dmx-serverconnect-form" id="form" action="/api/quote-request-insert_and_email" dmx-on:success="run([{run:{action:`modal_quote.form.reset();modal_quote.hide();varquotestep.setValue(0)`,name:'quotemodalclose'}},{'toast.show':{message:'Su solicitud de cotización ha sido enviada exitosamente. Pronto uno de nuestros ejecutivo le contactará. ',delay:10000,title:'Su solicitud ha sido enviada'}},{'bootbox.alert':{message:'Su solicitud de cotización ha sido enviada exitosamente. Pronto uno de nuestros ejecutivo le contactará. ',buttons:{ok:{label:'Cerrar'}},title:'Solicitud de Cotización Exitosa',disabled:true}}])" dmx-on:invalid="run({'toast.show':{message:'Uno de los campos es un valor invalido. Por favor revise los datos introducidos',delay:7500}})">
+            <div class="form-row" dmx-show="(varquotestep.value==0)" id="servicio">
+
+
+              <div class="col">
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">One action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+
+                <h4 class="mb-3">Servicio</h4>
+
+
+                <div class="form-group col-12 pl-0" is="dmx-radio-group">
+
+                  <label class="col-12 mt-0 mb-3 pl-0">Tipo de Servicio</label>
+                  <div class="row">
+                    <div class="col d-flex flex-column flex-md-row align-items-md-center pl-4">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="Asesoria de proyectos" id="input16_4" name="tipo_de_servicio">
+                        <label class="form-check-label" for="input16_4">Asesoría y Proyectos</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="poliza de seguros" id="input16_3" name="tipo_de_servicio">
+                        <label class="form-check-label" for="input16_3">Póliza de Seguros</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="flete de transporte" id="input16_2" name="tipo_de_servicio">
+                        <label class="form-check-label" for="input16_2">Flete de Transporte</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="aduanas" id="input16_1" name="tipo_de_servicio">
+                        <label class="form-check-label" for="input16_1">Aduanas</label>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                </div>
+
+
+
+
+              </div>
+              <div class="col-12 mb-2">
+                <div class="form-group col-11 pl-0" id="input4_tipo_operacion" is="dmx-radio-group"><label class="mb-3">Tipo de Operación</label>
+                  <div class="row">
+                    <div class="col d-flex flex-column flex-md-row pl-4">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="exportacion" id="input4_ext" name="tipo_de_operacion">
+                        <label class="form-check-label" for="input4_ext">Exportación</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="importacion" id="input4_imp" name="tipo_de_operacion">
+                        <label class="form-check-label" for="input4_ext">Importación</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="otro" id="input4_otro" name="tipo_de_operacion">
+                        <label class="form-check-label" for="input4_otro">Otro</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group col-12 pl-0" id="input4_group_detalle_servicio" is="dmx-radio-group">
+
+                  <label class="col-12 mt-0 mb-3 pl-0">Modalidad de Transporte</label>
+
+                  <div class="row">
+                    <div class="col d-flex flex-column flex-md-row pl-4">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="terrestre" id="input4_3_terrestre" name="modalidad_de_transporte">
+                        <label class="form-check-label" for="input4_3_terrestre">Terrestre</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="aereo" id="input4_2_aereo" name="modalidad_de_transporte">
+                        <label class="form-check-label" for="input4_2_aereo">Aereo</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="maritimo" id="input4_1_maritimo" name="modalidad_de_transporte">
+                        <label class="form-check-label" for="input4_1_maritimo">Marítimo</label>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+
+
+
+
+              </div>
+
+
+
+
+              <div class="col-12 style83" dmx-show="!input4_group_detalle_servicio.input4_2_aereo.checked">
+                <div class="form-group col-12 pl-0" id="input4_embarque" is="dmx-radio-group">
+
+                  <label for="tipo_mercancia_producto" class="col-12 mt-0 mb-3 pl-0">Modalidad de Embarque</label>
+                  <div class="row">
+                    <div class="col d-flex flex-column flex-md-row pl-4">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="vehiculo" id="input4_4_vehiculo" name="modalidad_de_embarque" data-msg-required="" dmx-on:click="arrcantidadvehiculos.add(1)">
+                        <label class="form-check-label" for="input4_4_contenedor">Vehículo</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+
+
+                        <input class="form-check-input" type="radio" value="carga suelta" id="input4_6_carga_suelta" name="modalidad_de_embarque">
+                        <label class="form-check-label" for="input4_6_carga_suelta">Carga Suelta</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input style102" type="radio" value="contenedor" id="input4_4_contenedor" name="modalidad_de_embarque" data-msg-required="">
+                        <label class="form-check-label style101" for="input4_4_contenedor">Contenedor&nbsp;</label>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+
+              </div>
+              <div class="style83 col-NaN d-flex col-12 flex-column" dmx-show="(input4_embarque.input4_4_vehiculo.checked &amp;&amp; !input4_group_detalle_servicio.input4_2_aereo.checked)">
+
+                <div class="d-flex">
+                  <h6>Información del vehículo</h6>
+                </div>
+
+
+              </div>
+              <div class="style83 col-NaN d-flex col-12 flex-column" dmx-show="(input4_embarque.input4_4_vehiculo.checked &amp;&amp; !input4_group_detalle_servicio.input4_2_aereo.checked)">
+
+
+                <div class="d-flex align-items-start flex-sm-row align-items-sm-end flex-row justify-content-start " dmx-show="">
+
+                  <div class="form-group mr-2 pl-0 pr-0 col-md-2 col">
+                    <label for="tipo_mercancia_producto" class="mt-0 mb-2 pl-0 col">Tipo de vehículo</label>
+                    <input id="veh_tipo" name="veh_tipo" class="form-control" placeholder="Particular o Comercial" data-rule-number="" data-msg-number="Por favor ingrese un valir válido" data-msg-max="" data-msg-digits="" dmx-bind:value="datastorevehicle.data.values(`tipo_de_vehiculo`)" readonly="true">
+                  </div>
+                  <div class="form-group mr-2 pl-0 pr-0 col-md-2">
+                    <label for="tipo_mercancia_producto" class="col-12 mt-0 mb-2 pl-0">Fabricante</label>
+                    <input id="veh_fab" name="veh_fabricante" class="form-control" placeholder="Ejemplo: Toyota" data-rule-number="" data-msg-number="Por favor ingrese un valir válido" data-msg-max="" data-msg-digits="" dmx-bind:value="datastorevehicle.data.values(`fabricante`)" readonly="true">
+                  </div>
+
+                  <div class="form-group mr-2 pl-0 pr-0 col-lg-2">
+                    <label for="tipo_mercancia_producto" class="col-12 mt-0 mb-2 pl-0">Modelo</label>
+                    <input id="veh_mod" name="veh_modelo" class="form-control" placeholder="Ejemplo: Corolla" data-rule-number="" data-msg-number="Por favor ingrese un valir válido" data-msg-max="" data-msg-digits="" readonly="true" dmx-bind:value="datastorevehicle.data.values(`modelo`)">
+                  </div>
+                  <div class="form-group mr-2 pl-0 pr-0 col-lg-2">
+                    <label for="tipo_mercancia_producto" class="col-12 mt-0 mb-2 pl-0">Año del vehículo</label>
+                    <input id="veh_ano" name="veh_ano" class="form-control" placeholder="Ejemplo: 1900" data-msg-max="" data-msg-digits="" maxlength="4" readonly="true" dmx-bind:value="datastorevehicle.data.values(`ano`)">
+                  </div>
+                  <div class="form-group pl-0 pr-0 col-lg-1">
+                    <label for="tipo_mercancia_producto" class="col-12 mt-0 mb-2 pl-0">Cantidad</label>
+                    <input id="veh_cant" class="form-control" readonly="true" dmx-bind:value="datastorevehicle.data.values(`cantidad`)">
+                  </div>
+                </div>
+
+              </div>
+              <div class="style83 col-NaN d-flex col-12 flex-column" dmx-show="(input4_embarque.input4_4_vehiculo.checked &amp;&amp; !input4_group_detalle_servicio.input4_2_aereo.checked)">
+
+
+                <div class="d-flex flex-column align-items-start flex-sm-row align-items-sm-end">
+
+                  <div class="form-group mr-2 pl-0 pr-0 col-lg-3">
+                    <label for="tipo_mercancia_producto" class="col-12 mt-0 mb-2 pl-0">Tipo de vehículo</label>
+                    <select id="veh_tipo1" class="form-control" name="veh_tipo1">
+                      <option selected="" value="Particular">Particular</option>
+                      <option value="Comercial">Comercial</option>
+                    </select>
+                  </div>
+                  <div class="form-group mr-2 pl-0 pr-0 col-md-2">
+                    <label for="tipo_mercancia_producto" class="col-12 mt-0 mb-2 pl-0">Fabricante</label>
+                    <input id="veh_fab1" name="veh_fabricante1" class="form-control" placeholder="Ejemplo: Toyota" data-rule-number="" data-msg-number="Por favor ingrese un valir válido" data-msg-max="" data-msg-digits="" dmx-bind:value="">
+                  </div>
+                  <div class="form-group mr-2 pl-0 pr-0 col-lg-2">
+                    <label for="tipo_mercancia_producto" class="col-12 mt-0 mb-2 pl-0">Modelo</label>
+                    <input id="veh_mod1" name="veh_modelo1" class="form-control" placeholder="Ejemplo: Corolla" data-rule-number="" data-msg-number="Por favor ingrese un valir válido" data-msg-max="" data-msg-digits="">
+                  </div>
+                  <div class="form-group mr-2 pl-0 pr-0 col-lg-2">
+                    <label for="tipo_mercancia_producto" class="col-12 mt-0 mb-2 pl-0">Año del vehículo</label>
+                    <input id="veh_ano1" name="veh_ano1" type="number" class="form-control" placeholder="Ejemplo: 1900" data-rule-number="" data-msg-number="Por favor ingrese un valir válido" data-msg-max="" data-msg-digits="" maxlength="4" dmx-on:click="">
+                  </div>
+                  <div class="form-group pl-0 pr-0 col-lg-1">
+                    <label for="tipo_mercancia_producto" class="col-12 mt-0 mb-2 pl-0">Cantidad</label>
+                    <select id="veh_cant1" class="form-control">
+                      <option selected="" value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">Más de 5</option>
+                    </select>
+                  </div>
+                  <button id="btn9" class="btn btn-success btn-block style91 mt-lg-0 mb-3 ml-sm-2 h-auto" dmx-on:click="run({run:{action:`datastorevehicle.insert({modelo: veh_mod1.value, ano: veh_ano1.value, fabricante: veh_fab1.value, cantidad: veh_cant1.value, tipo_de_vehiculo: veh_tipo1.value});modal_quote.form.veh_tipo1.setValue();modal_quote.form.veh_fab1.setValue();modal_quote.form.veh_mod1.setValue();modal_quote.form.veh_ano1.setValue();modal_quote.form.veh_cant1.setValue()`}})" style="/* height: calc(1.5em + .75rem + 2px) */">Incluir</button>
+                </div>
+                <table class="table" dmx-show="(datastore1.data.count() > 0)">
+                  <thead>
+                    <tr>
+                      <th>Modelo</th>
+                      <th>Ano</th>
+                      <th>Fabricante</th>
+                      <th>Cantidad</th>
+                      <th>Tipo vehiculo</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody is="dmx-repeat" dmx-generator="bs4table" dmx-bind:repeat="datastorevehicle.data" id="tableRepeat1">
+                    <tr>
+
+                      <td dmx-text="modelo"></td>
+                      <td dmx-text="ano"></td>
+                      <td dmx-text="fabricante"></td>
+                      <td dmx-text="cantidad"></td>
+                      <td dmx-text="datastorevehicle.data[0].tipo_de_vehiculo"></td>
+                      <td class="style90"><button id="btn19" class="btn btn-danger" dmx-on:click="datastorevehicle.delete({$id: $id})" wappler-command="editContent">Eliminar</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+
+              <div class="style78 col-12 d-flex col-lg-6 col-xl-5" dmx-show="(input4_group_detalle_servicio.input4_2_aereo.checked || input4_embarque.input4_6_carga_suelta.checked)">
+
+                <div class="form-group mr-2 pl-0 col">
+                  <label for="select9">Método de Embarque</label>
+
+                  <select id="select9" class="form-control">
+                    <option value="Bolsas">Bolsas</option>
+                    <option value="Barriles">Barriles</option>
+                    <option value="Cajas">Cajas</option>
+                    <option value="Tambores">Tambores</option>
+                    <option value="Paletas">Paletas</option>
+                    <option value="Piezas">Piezas</option>
+                  </select>
+                </div>
+
+              </div>
+              <div class="col-xl-4 col-lg-6" dmx-show="(input4_group_detalle_servicio.input4_2_aereo.checked || input4_embarque.input4_6_carga_suelta.checked)">
+                <div class="form-group pl-0 col">
+
+                  <label for="veh_tipo">Medidas</label>
+                  <div class="row pl-0 pr-0">
+                    <div class="col d-flex"><input id="anchura" name="anchura" type="text" class="form-control massure-input style87 mr-1" placeholder="Ancho" style="/* border-radius: 0rem */"><input id="logitud" name="longitud" type="text" class="form-control massure-input style87 mr-1" placeholder="Largo" style="/* bor:  */">
+                      <input id="logitud1" name="altura" type="text" class="form-control massure-input style87" placeholder="Alto" style="/* bor:  */">
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div class="col-4 col-lg-NaN" dmx-show="input4_embarque.input4_4_contenedor.checked&amp;&amp;!input4_group_detalle_servicio.input4_2_aereo.checked">
+                <div class="form-group">
+                  <label for="tipo_mercancia_producto" class="col-12 mt-2 mb-2 pl-0">Cantidad de Contenedores</label>
+
+                  <select id="select4" class="form-control" name="cantidad_de_contenedores">
+                    <option value="1-5 contenedores">1-5 contenedores</option>
+                    <option value="6-12 contendores">6-12 contendores</option>
+                    <option value="13-24 contenedores">13-24 contenedores</option>
+                    <option value="25-100 contenedores">25-100 contenedores</option>
+                    <option value="Más de 100 contenedores">Más de 100 contenedores</option>
+                  </select>
+                  <small id="bs4-form-group-help1" class="form-text text-muted">Estimación de importación anual</small>
+                </div>
+              </div>
+              <div class="col-lg-NaN col-8" dmx-show="input4_embarque.input4_4_contenedor.checked&amp;&amp;!input4_group_detalle_servicio.input4_2_aereo.checked">
+                <div class="form-group">
+                  <label for="tipo_mercancia_producto" class="col-12 mt-2 mb-2 pl-0">Tipo de Contenedor</label>
+
+                  <select id="select3" class="form-control" name="tipo_de_contenedor">
+                    <option value="Contenedor 20” – Carga Seco">Contenedor 20” – Carga Seco</option>
+                    <option value="Contenedor 20” – Carga Refrigerada">Contenedor 20” – Carga Refrigerada</option>
+                    <option value="Contenedor 20” – Flat Rack">Contenedor 20” – Flat Rack</option>
+                    <option value="Contenedor 20” – Tank Container">Contenedor 20” – Tank Container</option>
+                    <option value="Contenedor 40” – Carga Seca">Contenedor 40” – Carga Seca</option>
+                    <option value="Contenedor 40” – Carga Seca High Cube">Contenedor 40” – Carga Seca High Cube</option>
+                    <option value="Contenedor 40” – Carga Refrigerada">Contenedor 40” – Carga Refrigerada</option>
+                    <option value="Contenedor 40” – Carga Refrigerada High Cube">Contenedor 40” – Carga Refrigerada High Cube</option>
+                    <option value="Contenedor 40” – Flatbed/Batea">Contenedor 40” – Flatbed/Batea</option>
+                    <option value="Contenedor 40” – Flat Rack">Contenedor 40” – Flat Rack</option>
+                    <option value="Contenedor 40” – Tank Container">Contenedor 40” – Tank Container</option>
+                    <option value="Carga Extra-Dimensionada">Carga Extra-Dimensionada</option>
+                  </select>
+                </div>
+              </div>
+              <div class="mt-2 col-12"><button id="btn1" class="btn btn-primary w-100 w-md-25 w-lg-20" dmx-on:click="varquotestep.setValue((varquotestep.value + 1))">Siguiente</button>
+
+              </div>
+            </div>
+
+
+
+            <div class="form-row" id="ruta" dmx-show="(varquotestep.value ==1)">
+              <div class="col-12">
+                <h4 class="mb-3">Ruta</h4>
+              </div>
+              <div class="col-12 col-md-6">
+                <h6>Origen</h6>
+                <div class="form-group">
+                  <label for="input2">País Origen</label>
+                  <input type="text" class="form-control" id="input2" name="pais_origen" aria-describedby="input2_help" placeholder="Ingrese país de origen">
+                </div>
+                <div class="form-group">
+                  <label for="input10">Ciudad de Origen</label>
+                  <input type="text" class="form-control" id="input10" name="ciudad_origen" aria-describedby="input2_help" placeholder="Ingrese la ciudad de origen">
+                </div>
+                <div class="form-group">
+                  <label for="input1">Fecha de Recogida&nbsp;</label>
+                  <input type="date" class="form-control" id="input1" name="fecha_recogida" aria-describedby="input1_help" placeholder="Enter some text">
+                </div>
+                <div class="form-group">
+                  <label for="input3">Zona de Origen</label>
+                  <select id="select7" class="form-control" name="zona_origen">
+                    <option value="Zona Residencial">Zona Residencial</option>
+                    <option value="Zona Comercial">Zona Comercial</option>
+                    <option value="Puerto">Puerto</option>
+                  </select>
+                </div>
+
+              </div>
+              <div class="col-12 col-md-6">
+                <h6>Destino</h6>
+                <div class="form-group">
+                  <label for="input4">País de Destino</label>
+                  <input type="text" class="form-control" id="input4" name="pais_destino" aria-describedby="input2_help" placeholder="Ingrese el país de destino">
+                </div>
+                <div class="form-group">
+                  <label for="input11">Ciudad de Destino</label>
+                  <input type="text" class="form-control" id="input11" name="ciudad_destino" aria-describedby="input2_help" placeholder="Ingrese la ciudad de origen">
+                </div>
+                <div class="form-group">
+                  <label for="input4">Fecha de Entrega</label>
+                  <input type="date" class="form-control" id="input14" name="fecha_entrega" aria-describedby="input1_help" placeholder="Enter some text">
+                </div>
+                <div class="form-group">
+                  <label for="input3">Zona de Origen</label>
+                  <select id="select8" class="form-control" name="zona_destino">
+                    <option value="Zona Residencial">Zona Residencial</option>
+                    <option value="Zona Comercial">Zona Comercial</option>
+                    <option value="Puerto">Puerto</option>
+                  </select>
+                </div>
+              </div>
+
+
+
+              <div class="col mt-2 d-flex justify-content-xl-between justify-content-between"><button id="btn6" class="btn btn-secondary mr-2" dmx-on:click="varquotestep.setValue((varquotestep.value - 1))">Regresar</button><button id="btn2" class="btn btn-primary" dmx-on:click="varquotestep.setValue((varquotestep.value + 1))">Siguiente</button></div>
+
+            </div>
+
+
+            <div class="form-row" id="mercancia" dmx-show="(varquotestep.value==2)">
+              <div class="col-NaN w-100">
+                <h4 class="mb-3">Mercancía</h4>
+              </div>
+              <div class="col-NaN col-12 pl-0 col-lg-4 col-xl-3 d-flex">
+                <div class="form-group pl-0 col">
+                  <label for="input14">Tipo de Mercancía o Producto</label>
+                  <select id="tipo_mercancia_producto" class="form-control" name="tipomercanciaproducto">
+                    <option value="Ropa, suministros médicos">Ropa, suministros médicos</option>
+                    <option value="Ropa, suministros médicos">Materiales de construcción, chatarra, automóvil, piezas, productos químicos, maquinaria</option>
+                    <option value="Productos alimenticios, bebidas">Productos alimenticios, bebidas</option>
+                    <option value="Contenedor vacío">Contenedor vacío</option>
+                    <option value="Carga general">Carga general</option>
+                    <option value="Artículos para el hogar, efectos personales">Artículos para el hogar, efectos personales</option>
+                    <option value="Diplomático-militar">Diplomático-militar</option>
+                    <option value="Vehículos, barcos, breakbulk">Vehículos, barcos, breakbulk</option>
+                    <option value="Papel, yeso, materiales de embalaje">Papel, yeso, materiales de embalaje</option>
+                    <option value="Carga de proyecto, ganado">Carga de proyecto, ganado</option>
+                    <option value="Carga refrigerada, refrigerada o congelada">Carga refrigerada, refrigerada o congelada</option>
+                    <option value="Carga de socorro">Carga de socorro</option>
+                    <option value="Carga de socorro">Otro</option>
+                  </select>
+                </div>
+              </div>
+              <div class="d-flex col-NaN col-12 col-lg-4 align-self-lg-center col-xl-3">
+                <div class="form-group col-8 mr-2 pl-0">
+                  <label for="input15">Peso total</label>
+                  <input type="number" class="form-control" id="input15" name="peso_total" aria-describedby="input14_help" placeholder="Ejemplo: 1000">
+                </div>
+                <div class="form-group">
+
+                  <label for="input12">Kg/Lb</label>
+                  <select id="select1" class="form-control" name="unidad_de_peso">
+                    <option selected="" value="Kg">kg</option>
+                    <option value="Libras">Libras</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4 col-xl-3">
+                <div class="form-group pl-0 col">
+                  <label for="input3">Valor de la Mercancía en US$&nbsp;</label>
+                  <input type="number" class="form-control" id="input3" name="valor_mercancia" aria-describedby="input14_help" placeholder="Valor Estimado: $50.000">
+                </div>
+              </div>
+              <div class="col-NaN col-12 col-xl-3">
+                <div class="form-group col-lg-3 pl-lg-0 col-xl-12 pl-0">
+                  <label for="select2">Equipo Especial</label>
+                  <select id="select2" class="form-control" name="equipo_especial">
+                    <option value="Si">Si</option>
+                    <option selected="" value="No">No</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-group" is="dmx-radio-group">
+                  <label for="select1" class="mb-2">Requerimientos Especiales para su Embarque</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" value="Material quimico" id="input5" name="requerimiento_especial" data-msg-required="">
+                    <label class="form-check-label" for="input5">Material Químico o Peligroso</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" value="inbond" id="input6" name="requerimiento_especial">
+                    <label class="form-check-label" for="input6">Inbond</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" value="Aun no se" id="input7" name="requerimiento_especial">
+                    <label class="form-check-label" for="input7">Aún no lo sé</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col mt-2  d-flex justify-content-between"><button id="btn5" class="btn btn-secondary mr-2" dmx-on:click="varquotestep.setValue((varquotestep.value - 1))">Regresar</button><button id="btn7" class="btn mr-2 btn-primary" dmx-on:click="varquotestep.setValue((varquotestep.value + 1))">Siguiente</button></div>
+
+
+            </div>
+            <div class="form-row" id="informacioncontacto" dmx-show="(varquotestep.value==3)">
+              <div class="col-12">
+                <h4 class="mb-3">Información de Contacto</h4>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="form-group">
+                  <label for="input8">Nombre de la Compañía*</label>
+                  <input type="text" class="form-control" id="input8" name="compania" aria-describedby="input2_help" placeholder="Ingrese el nombre de la Compañía" required="" data-msg-required="Este campo es requerido">
+                </div>
+                <div class="form-group" is="dmx-input-group">
+                  <label for="input8">Correo Electrónico*</label>
+                  <input type="email" class="form-control" id="input48" name="email_contacto" aria-describedby="input1_help" placeholder="nombre@domain.com" data-rule-email="" required="" data-msg-required="Este campo es requerido">
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="form-group">
+                  <label for="input8">Nombre de la Persona Contacto*</label>
+                  <input type="text" class="form-control" id="input38" name="persona_contacto" aria-describedby="input2_help" placeholder="Ingrese su nombre" required="" data-msg-required="Este campo es requerido">
+                </div>
+                <div class="form-group">
+                  <label for="input8">Número Telefónico</label>
+                  <input type="tel" class="form-control" id="input58" name="telefono_contacto" aria-describedby="input1_help" placeholder="0000-000-0000" data-rule-digits="">
+                </div>
+              </div>
+              <div class="col d-flex justify-content-between"><button id="btn3" class="btn btn-secondary mr-2" dmx-on:click="varquotestep.setValue((varquotestep.value - 1))">Regresar</button><button id="btn4" class="btn btn-primary" dmx-on:click="run([{wait:{delay:3000}},{run:{action:`varquotestep.setValue((varquotestep.value + 1))`}}])">Siguiente</button>
+
+              </div>
+
+            </div>
+            <div class="form-row" id="quotemessage" dmx-show="(varquotestep.value==4)">
+              <div class="col">
+                <p>La tarifa para la combinación seleccionada no está inmediatamente disponible. Hemos colectado los detalles de su mercancía e información de contacto y al enviar la solicitud se la haremos llegar a un especialista para que le
+                  contacte con la cotización. Cualquier información adicional que necesite facilitarnos para generar la cotización de su embarque puede ser incluida a continuación antes de enviar su solicitud.&nbsp;</p>
+                <div class="form-group">
+                  <label for="input9">Información Adicional</label>
+                  <textarea id="text1" class="form-control" placeholder="Por favor incluya cualquier información adicional relevante para la generaciónd e su cotización" name="informacion_adicional"></textarea>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer style30" dmx-show="(varquotestep.value==4)">
+          <div class="d-flex"><button class="btn btn-secondary mr-2" dmx-on:click="form.submit()">Regresar</button><button type="button" class="btn btn-danger mr-n5" data-dismiss="modal" dmx-on:click="run([{run:{action:`modal_quote.hide()`}},{run:{action:`modal_quote.form.reset()`}},{run:{action:`varquotestep.setValue(0)`}}])">Cancelar</button></div>
+
+
+          <button class="btn btn-primary" dmx-on:click="form.submit()">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- await include('/partials/nav-bar', Object.assign({}, locals, {bgcolorclass:'blue'})) %>
+
+  <div is="dmx-view" id="content">
+    <%- await include(content, locals); %>
+  </div><%- await include('/partials/footer', Object.assign({}, locals)) %>
+
+
+  <script src="inertia/dist/assets/js/vendor.min.js"></script>
+
+  <!-- Uncomment these lines if you prefer vendors broken down -->
+  <!-- <script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./assets/vendor/fancybox/jquery.fancybox.min.js"></script>
+        <script src="./assets/vendor/pikaday/pikaday.js"></script>
+        <script src="./assets/vendor/jquery.elevateZoom/jquery.elevateZoom.min.js"></script>
+        <script src="./assets/vendor/smooth-scroll/smooth-scroll.min.js"></script>
+        <script src="./assets/vendor/aos/aos.js"></script>
+        <script src="./assets/vendor/jarallax/dist/jarallax.min.js"></script>
+        <script src="./assets/vendor/jarallax/dist/jarallax-video.min.js"></script>
+        <script src="./assets/vendor/jarallax/dist/jarallax-element.min.js"></script>
+        <!-- <script src="./assets/vendor/zoomerang/zoomerang.js"></script> -->
+  <!-- <script src="./assets/vendor/highlight/highlight.min.js"></script>
+  <script src="./assets/vendor/atvImg/atvImg-min.js"></script> -->
+
+
+  <!-- Main Theme file -->
+  <script src="inertia/dist/assets/js/theme.min.js"></script>
+
+  <script src="bootstrap/4/js/bootstrap.min.js"></script>
+  <script src="bootstrap/4/js/popper.min.js"></script>
+
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/20041373.js"></script>
+  <!-- End of HubSpot Embed Code -->
+
+  <script src="https://app.hyperise.io/snippets/r/v2/CyD7fyhpA.js?v=1.0.0"></script>
+  <script>
+    hyperise.init();
+  </script>
+
+  <script src="inertia/dist/analytics.js"></script>
+  <script src="inertia/dist/ip.js"></script>
+</body>
+
+</html>

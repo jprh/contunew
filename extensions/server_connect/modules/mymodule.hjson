@@ -1,0 +1,31 @@
+{
+  type: 'world_hello',
+  module : 'world',
+  action : 'hello',
+  groupTitle : 'My Modules',
+  groupIcon : 'fas fa-lg fa-database comp-data',
+  title : 'Hello World',
+  icon : 'fas fa-lg fa-table comp-data',
+  dataScheme: [
+    {name: 'name', type: 'text'},
+    {name: 'age', type: 'number'}
+  ],
+  dataPickObject: true,
+  globalVars: {
+    '$_GET' : [
+			{name: 'sort', type: 'text'},
+			{name: 'dir', type: 'text'}
+  		   ]
+  },
+  properties : [
+    {
+      group: 'Hello Properties',
+      variables: [
+        { name: 'actionName', optionName: 'name', title: 'Name', 
+          type: 'text', required: true, defaultValue: ''},
+        { name: 'actionData', optionName: 'data', title: 'Data',
+          type: 'text', defaultValue: ''}
+      ]
+    }
+  ]
+}

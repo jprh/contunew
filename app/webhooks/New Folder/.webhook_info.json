@@ -1,0 +1,89 @@
+{
+  "type": {
+    "type": "click",
+    "phase": "after",
+    "target": "folder",
+    "doneHandlers": [],
+    "item": {
+      "type": "button",
+      "id": "folder",
+      "icon": "fal fa-folder",
+      "tooltip": "Create Folder",
+      "disabled": false
+    },
+    "object": {
+      "type": "button",
+      "id": "folder",
+      "icon": "fal fa-folder",
+      "tooltip": "Create Folder",
+      "disabled": false
+    },
+    "originalEvent": {
+      "originalEvent": {
+        "isTrusted": true
+      },
+      "type": "click",
+      "target": {},
+      "currentTarget": {
+        "jQuery3410214995638764613252": {
+          "hoverIntent": {
+            "53": {
+              "id": 53,
+              "event": "mousemove.hoverIntent.hoverIntent53",
+              "isActive": true
+            }
+          },
+          "tooltip": "Create Folder"
+        }
+      },
+      "relatedTarget": null,
+      "timeStamp": 262265.3799999971,
+      "jQuery34108851966016606962": true,
+      "delegateTarget": {
+        "jQuery341088519660166069621": {
+          "events": {
+            "click": [
+              {
+                "type": "click",
+                "origType": "click",
+                "guid": 47,
+                "selector": "button",
+                "needsContext": false,
+                "namespace": ""
+              }
+            ]
+          }
+        },
+        "sizzle1616344293216": {
+          "undefined": {
+            "parentNode": [
+              179915,
+              141,
+              true
+            ]
+          }
+        },
+        "sizzle1616480639832": {
+          "undefined": {
+            "parentNode": [
+              208,
+              29,
+              true
+            ]
+          }
+        }
+      },
+      "handleObj": {
+        "type": "click",
+        "origType": "click",
+        "guid": 47,
+        "selector": "button",
+        "needsContext": false,
+        "namespace": ""
+      }
+    },
+    "isStopped": false,
+    "isCancelled": false,
+    "onComplete": null
+  }
+}

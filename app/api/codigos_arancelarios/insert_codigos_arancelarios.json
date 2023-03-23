@@ -1,0 +1,163 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/views/app-codigos-arancelarios.ejs",
+      "linkedForm": "formcodigosarancelarios"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "codigo_hts",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            },
+            "core:maxlength": {
+              "param": "10",
+              "message": "Por favor ingrese no más de {10} caracteres."
+            },
+            "core:nowhitespace": {
+              "param": "",
+              "message": "Por favor no dejar espacios"
+            },
+            "core:digits": {
+              "param": "",
+              "message": "por favor ingrese solo dígitos."
+            }
+          }
+        },
+        "name": "codigo_hts"
+      },
+      {
+        "type": "text",
+        "fieldName": "descripcion",
+        "name": "descripcion"
+      },
+      {
+        "type": "text",
+        "fieldName": "numero_sku",
+        "name": "numero_sku"
+      },
+      {
+        "type": "number",
+        "fieldName": "compania_id",
+        "ui": {
+          "inputValues": {}
+        },
+        "name": "compania_id"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "validate",
+        "module": "validator",
+        "action": "validate",
+        "options": {
+          "data": [
+            {
+              "name": "validate_1",
+              "value": "{{$_POST.codigo_hts}}",
+              "rules": {
+                "db:notexists": {
+                  "param": {
+                    "connection": "db",
+                    "table": "codigos_arancelarios",
+                    "column": "codigo_hts"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "insert",
+        "module": "dbupdater",
+        "action": "insert",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "insert",
+            "values": [
+              {
+                "table": "codigos_arancelarios",
+                "column": "codigo_hts",
+                "type": "text",
+                "value": "{{$_POST.codigo_hts}}"
+              },
+              {
+                "table": "codigos_arancelarios",
+                "column": "descripcion",
+                "type": "text",
+                "value": "{{$_POST.descripcion}}"
+              },
+              {
+                "table": "codigos_arancelarios",
+                "column": "numero_sku",
+                "type": "text",
+                "value": "{{$_POST.numero_sku}}"
+              },
+              {
+                "table": "codigos_arancelarios",
+                "column": "compania_id",
+                "type": "number",
+                "value": "{{$_POST.compania_id}}"
+              }
+            ],
+            "table": "codigos_arancelarios",
+            "returning": "id",
+            "query": "INSERT INTO codigos_arancelarios\n(codigo_hts, descripcion, numero_sku, compania_id) VALUES (:P1 /* {{$_POST.codigo_hts}} */, :P2 /* {{$_POST.descripcion}} */, :P3 /* {{$_POST.numero_sku}} */, :P4 /* {{$_POST.compania_id}} */)",
+            "params": [
+              {
+                "name": ":P1",
+                "type": "expression",
+                "value": "{{$_POST.codigo_hts}}",
+                "test": ""
+              },
+              {
+                "name": ":P2",
+                "type": "expression",
+                "value": "{{$_POST.descripcion}}",
+                "test": ""
+              },
+              {
+                "name": ":P3",
+                "type": "expression",
+                "value": "{{$_POST.numero_sku}}",
+                "test": ""
+              },
+              {
+                "name": ":P4",
+                "type": "expression",
+                "value": "{{$_POST.compania_id}}",
+                "test": ""
+              }
+            ]
+          }
+        },
+        "meta": [
+          {
+            "name": "identity",
+            "type": "text"
+          },
+          {
+            "name": "affected",
+            "type": "number"
+          }
+        ]
+      },
+      {
+        "name": "refresh",
+        "module": "sockets",
+        "action": "refresh",
+        "options": {
+          "action": "codigos_arancelarios/query_codigos_arancelarios_paged"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query",
+      "module": "dbconnector",
+      "action": "select",
+      "options": {
+        "connection": "db",
+        "sql": {
+          "type": "SELECT",
+          "columns": [
+            {
+              "table": "contact_form",
+              "column": "id"
+            },
+            {
+              "table": "contact_form",
+              "column": "first_name"
+            },
+            {
+              "table": "contact_form",
+              "column": "last_name"
+            },
+            {
+              "table": "contact_form",
+              "column": "compania"
+            },
+            {
+              "table": "contact_form",
+              "column": "email"
+            },
+            {
+              "table": "contact_form",
+              "column": "telefono"
+            },
+            {
+              "table": "contact_form",
+              "column": "industria"
+            },
+            {
+              "table": "contact_form",
+              "column": "pais"
+            },
+            {
+              "table": "contact_form",
+              "column": "ciudad"
+            },
+            {
+              "table": "contact_form",
+              "column": "servicio_de_interes"
+            }
+          ],
+          "table": {
+            "name": "contact_form"
+          },
+          "joins": [],
+          "query": "SELECT id, first_name, last_name, compania, email, telefono, industria, pais, ciudad, servicio_de_interes\nFROM contact_form",
+          "params": []
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "name": "id",
+          "type": "text"
+        },
+        {
+          "name": "first_name",
+          "type": "text"
+        },
+        {
+          "name": "last_name",
+          "type": "text"
+        },
+        {
+          "name": "compania",
+          "type": "text"
+        },
+        {
+          "name": "email",
+          "type": "text"
+        },
+        {
+          "name": "telefono",
+          "type": "text"
+        },
+        {
+          "name": "industria",
+          "type": "text"
+        },
+        {
+          "name": "pais",
+          "type": "text"
+        },
+        {
+          "name": "ciudad",
+          "type": "text"
+        },
+        {
+          "name": "servicio_de_interes",
+          "type": "text"
+        }
+      ],
+      "outputType": "array"
+    }
+  }
+}

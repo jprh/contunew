@@ -1,0 +1,2544 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/public/inertia/dist/contucarga.html",
+      "linkedForm": "form"
+    },
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ],
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "tipo_de_servicio",
+        "name": "tipo_de_servicio"
+      },
+      {
+        "type": "text",
+        "fieldName": "tipo_de_operacion",
+        "name": "tipo_de_operacion"
+      },
+      {
+        "type": "text",
+        "fieldName": "modalidad_de_transporte",
+        "name": "modalidad_de_transporte"
+      },
+      {
+        "type": "text",
+        "fieldName": "modalidad_de_embarque",
+        "name": "modalidad_de_embarque"
+      },
+      {
+        "type": "text",
+        "fieldName": "veh_fabricante",
+        "options": {
+          "rules": {}
+        },
+        "name": "veh_fabricante"
+      },
+      {
+        "type": "text",
+        "fieldName": "veh_modelo",
+        "options": {
+          "rules": {}
+        },
+        "name": "veh_modelo"
+      },
+      {
+        "type": "number",
+        "fieldName": "veh_ano",
+        "options": {
+          "rules": {}
+        },
+        "name": "veh_ano"
+      },
+      {
+        "type": "text",
+        "fieldName": "anchura",
+        "name": "anchura"
+      },
+      {
+        "type": "text",
+        "fieldName": "longitud",
+        "name": "longitud"
+      },
+      {
+        "type": "text",
+        "fieldName": "altura",
+        "name": "altura"
+      },
+      {
+        "type": "text",
+        "fieldName": "pais_origen",
+        "name": "pais_origen"
+      },
+      {
+        "type": "text",
+        "fieldName": "ciudad_origen",
+        "name": "ciudad_origen"
+      },
+      {
+        "type": "date",
+        "fieldName": "fecha_recogida",
+        "options": {
+          "rules": {
+            "core:date": {}
+          }
+        },
+        "name": "fecha_recogida"
+      },
+      {
+        "type": "text",
+        "fieldName": "pais_destino",
+        "name": "pais_destino"
+      },
+      {
+        "type": "text",
+        "fieldName": "ciudad_destino",
+        "name": "ciudad_destino"
+      },
+      {
+        "type": "date",
+        "fieldName": "fecha_entrega",
+        "options": {
+          "rules": {
+            "core:date": {}
+          }
+        },
+        "name": "fecha_entrega"
+      },
+      {
+        "type": "number",
+        "fieldName": "peso_total",
+        "options": {
+          "rules": {
+            "core:number": {}
+          }
+        },
+        "name": "peso_total"
+      },
+      {
+        "type": "number",
+        "fieldName": "valor_mercancia",
+        "options": {
+          "rules": {
+            "core:number": {}
+          }
+        },
+        "name": "valor_mercancia"
+      },
+      {
+        "type": "text",
+        "fieldName": "requerimiento_especial",
+        "name": "requerimiento_especial"
+      },
+      {
+        "type": "text",
+        "fieldName": "compania",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            }
+          }
+        },
+        "name": "compania"
+      },
+      {
+        "type": "text",
+        "fieldName": "email_contacto",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": ""
+            },
+            "core:email": {
+              "param": ""
+            }
+          }
+        },
+        "name": "email_contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "persona_contacto",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            }
+          }
+        },
+        "name": "persona_contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "telefono_contacto",
+        "options": {
+          "rules": {
+            "core:digits": {
+              "param": ""
+            }
+          }
+        },
+        "name": "telefono_contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "veh_tipo",
+        "multiple": true,
+        "name": "veh_tipo"
+      },
+      {
+        "type": "text",
+        "fieldName": "zona_origen",
+        "name": "zona_origen"
+      },
+      {
+        "type": "text",
+        "fieldName": "zona_destino",
+        "name": "zona_destino"
+      },
+      {
+        "type": "text",
+        "fieldName": "tipomercanciaproducto",
+        "name": "tipomercanciaproducto"
+      },
+      {
+        "type": "text",
+        "fieldName": "unidad_de_peso",
+        "name": "unidad_de_peso"
+      },
+      {
+        "type": "text",
+        "fieldName": "equipo_especial",
+        "name": "equipo_especial"
+      },
+      {
+        "type": "text",
+        "fieldName": "informacion_adicional",
+        "name": "informacion_adicional"
+      },
+      {
+        "type": "text",
+        "name": "unidad_peso"
+      },
+      {
+        "type": "text",
+        "name": "reqerimiento_especial"
+      },
+      {
+        "type": "date",
+        "name": "fecha_solicitud"
+      },
+      {
+        "type": "text",
+        "name": "tipo_de_contenedor"
+      },
+      {
+        "type": "text",
+        "name": "cantidad_de_contenedores"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "query_company",
+        "module": "dbconnector",
+        "action": "select",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "SELECT",
+            "columns": [
+              {
+                "table": "companies",
+                "column": "id"
+              }
+            ],
+            "params": [
+              {
+                "operator": "equal",
+                "type": "expression",
+                "name": ":P1",
+                "value": "{{$_POST.compania}}",
+                "test": "acme"
+              }
+            ],
+            "table": {
+              "name": "companies"
+            },
+            "primary": "id",
+            "joins": [],
+            "wheres": {
+              "condition": "AND",
+              "rules": [
+                {
+                  "id": "companies.name",
+                  "field": "companies.name",
+                  "type": "string",
+                  "operator": "equal",
+                  "value": "{{$_POST.compania}}",
+                  "data": {
+                    "table": "companies",
+                    "column": "name",
+                    "type": "text",
+                    "columnObj": {
+                      "type": "text",
+                      "maxLength": 65535,
+                      "primary": false,
+                      "nullable": true,
+                      "name": "name"
+                    }
+                  },
+                  "operation": "="
+                }
+              ],
+              "conditional": null,
+              "valid": true
+            },
+            "query": "SELECT id\nFROM companies\nWHERE name = :P1 /* {{$_POST.compania}} */"
+          }
+        },
+        "meta": [
+          {
+            "type": "number",
+            "name": "id"
+          }
+        ],
+        "type": "dbconnector_select",
+        "outputType": "array",
+        "output": true
+      },
+      {
+        "name": "query_user",
+        "module": "dbconnector",
+        "action": "select",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "SELECT",
+            "columns": [
+              {
+                "table": "users",
+                "column": "id"
+              }
+            ],
+            "params": [
+              {
+                "operator": "equal",
+                "type": "expression",
+                "name": ":P1",
+                "value": "{{$_POST.email_contacto}}",
+                "test": "juanpabloravelo@gmail.com"
+              }
+            ],
+            "table": {
+              "name": "users"
+            },
+            "primary": "id",
+            "joins": [],
+            "wheres": {
+              "condition": "AND",
+              "rules": [
+                {
+                  "id": "users.email",
+                  "field": "users.email",
+                  "type": "string",
+                  "operator": "equal",
+                  "value": "{{$_POST.email_contacto}}",
+                  "data": {
+                    "table": "users",
+                    "column": "email",
+                    "type": "text",
+                    "columnObj": {
+                      "type": "string",
+                      "maxLength": 50,
+                      "primary": false,
+                      "nullable": true,
+                      "name": "email"
+                    }
+                  },
+                  "operation": "=",
+                  "table": "users"
+                }
+              ],
+              "conditional": null,
+              "valid": true
+            },
+            "query": "SELECT id\nFROM users\nWHERE email = :P1 /* {{$_POST.email_contacto}} */"
+          }
+        },
+        "meta": [
+          {
+            "type": "number",
+            "name": "id"
+          }
+        ],
+        "type": "dbconnector_select",
+        "outputType": "array",
+        "output": true
+      },
+      {
+        "name": "",
+        "module": "core",
+        "action": "condition",
+        "options": {
+          "if": "{{query_company.count()==0}}",
+          "then": {
+            "steps": [
+              {
+                "name": "insertcompany",
+                "module": "dbupdater",
+                "action": "insert",
+                "options": {
+                  "connection": "db",
+                  "sql": {
+                    "type": "insert",
+                    "values": [
+                      {
+                        "table": "companies",
+                        "column": "name",
+                        "type": "text",
+                        "value": "{{$_POST.compania}}"
+                      }
+                    ],
+                    "table": "companies",
+                    "returning": "id",
+                    "query": "INSERT INTO companies\n(name) VALUES (:P1 /* {{$_POST.compania}} */)",
+                    "params": [
+                      {
+                        "name": ":P1",
+                        "type": "expression",
+                        "value": "{{$_POST.compania}}",
+                        "test": ""
+                      }
+                    ]
+                  }
+                },
+                "meta": [
+                  {
+                    "name": "identity",
+                    "type": "text"
+                  },
+                  {
+                    "name": "affected",
+                    "type": "number"
+                  }
+                ],
+                "output": false
+              },
+              {
+                "name": "",
+                "module": "core",
+                "action": "condition",
+                "options": {
+                  "if": "{{query_user.count()==0}}",
+                  "then": {
+                    "steps": [
+                      {
+                        "name": "insertuser",
+                        "module": "dbupdater",
+                        "action": "insert",
+                        "options": {
+                          "connection": "db",
+                          "sql": {
+                            "type": "insert",
+                            "values": [
+                              {
+                                "table": "users",
+                                "column": "first_name",
+                                "type": "text",
+                                "value": "{{$_POST.persona_contacto}}"
+                              },
+                              {
+                                "table": "users",
+                                "column": "email",
+                                "type": "text",
+                                "value": "{{$_POST.email_contacto}}"
+                              },
+                              {
+                                "table": "users",
+                                "column": "company_id",
+                                "type": "number",
+                                "value": "{{insertcompany.identity}}"
+                              }
+                            ],
+                            "table": "users",
+                            "returning": "id",
+                            "query": "INSERT INTO users\n(first_name, email, company_id) VALUES (:P1 /* {{$_POST.persona_contacto}} */, :P2 /* {{$_POST.email_contacto}} */, :P3 /* {{insertcompany.identity}} */)",
+                            "params": [
+                              {
+                                "name": ":P1",
+                                "type": "expression",
+                                "value": "{{$_POST.persona_contacto}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P2",
+                                "type": "expression",
+                                "value": "{{$_POST.email_contacto}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P3",
+                                "type": "expression",
+                                "value": "{{insertcompany.identity}}",
+                                "test": ""
+                              }
+                            ]
+                          }
+                        },
+                        "meta": [
+                          {
+                            "name": "identity",
+                            "type": "text"
+                          },
+                          {
+                            "name": "affected",
+                            "type": "number"
+                          }
+                        ],
+                        "output": false
+                      },
+                      {
+                        "name": "insert_cotizacion_newuser_newcomp",
+                        "module": "dbupdater",
+                        "action": "insert",
+                        "options": {
+                          "connection": "db",
+                          "sql": {
+                            "type": "insert",
+                            "values": [
+                              {
+                                "table": "cotizacion",
+                                "column": "tipo_de_servicio",
+                                "type": "text",
+                                "value": "{{$_POST.tipo_de_servicio}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "tipo_de_operacion",
+                                "type": "text",
+                                "value": "{{$_POST.tipo_de_operacion}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "modalidad_de_transporte",
+                                "type": "text",
+                                "value": "{{$_POST.modalidad_de_transporte}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "informacion_adicional",
+                                "type": "text",
+                                "value": "{{$_POST.informacion_adicional}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "equipo_especial",
+                                "type": "text",
+                                "value": "{{$_POST.equipo_especial}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "unidad_peso",
+                                "type": "text",
+                                "value": "{{$_POST.unidad_peso}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "tipomercanciaproducto",
+                                "type": "text",
+                                "value": "{{$_POST.tipomercanciaproducto}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "zona_destino",
+                                "type": "text",
+                                "value": "{{$_POST.zona_destino}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "zona_origen",
+                                "type": "text",
+                                "value": "{{$_POST.zona_origen}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "veh_tipo",
+                                "type": "text",
+                                "value": "{{$_POST.veh_tipo}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "reqerimiento_especial",
+                                "type": "text",
+                                "value": "{{$_POST.requerimiento_especial}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "valor_mercancia",
+                                "type": "text",
+                                "value": "{{$_POST.valor_mercancia}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "peso_total",
+                                "type": "text",
+                                "value": "{{$_POST.peso_total}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "fecha_entrega",
+                                "type": "text",
+                                "value": "{{$_POST.fecha_entrega}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "ciudad_destino",
+                                "type": "text",
+                                "value": "{{$_POST.ciudad_destino}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "pais_destino",
+                                "type": "text",
+                                "value": "{{$_POST.pais_destino}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "fecha_recogida",
+                                "type": "text",
+                                "value": "{{$_POST.fecha_recogida}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "ciudad_origen",
+                                "type": "text",
+                                "value": "{{$_POST.ciudad_origen}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "pais_origen",
+                                "type": "text",
+                                "value": "{{$_POST.pais_origen}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "altura",
+                                "type": "text",
+                                "value": "{{$_POST.altura}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "longitud",
+                                "type": "text",
+                                "value": "{{$_POST.longitud}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "anchura",
+                                "type": "text",
+                                "value": "{{$_POST.anchura}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "veh_ano",
+                                "type": "text",
+                                "value": "{{$_POST.veh_ano}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "veh_modelo",
+                                "type": "text",
+                                "value": "{{$_POST.veh_modelo}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "veh_fabricante",
+                                "type": "text",
+                                "value": "{{$_POST.veh_fabricante}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "modalidad_de_embarque",
+                                "type": "text",
+                                "value": "{{$_POST.modalidad_de_embarque}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "fecha_solicitud",
+                                "type": "datetime",
+                                "value": "{{NOW.toLocalTime()}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "company_id",
+                                "type": "number",
+                                "value": "{{insertcompany.identity}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "user_id",
+                                "type": "number",
+                                "value": "{{insertuser.identity}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "tipo_de_contenedor",
+                                "type": "text",
+                                "value": "{{$_POST.tipo_de_contenedor}}"
+                              },
+                              {
+                                "table": "cotizacion",
+                                "column": "cantidad_de_contenedores",
+                                "type": "text",
+                                "value": "{{$_POST.cantidad_de_contenedores}}"
+                              }
+                            ],
+                            "table": "cotizacion",
+                            "returning": "id",
+                            "query": "INSERT INTO cotizacion\n(tipo_de_servicio, tipo_de_operacion, modalidad_de_transporte, informacion_adicional, equipo_especial, unidad_peso, tipomercanciaproducto, zona_destino, zona_origen, veh_tipo, reqerimiento_especial, valor_mercancia, peso_total, fecha_entrega, ciudad_destino, pais_destino, fecha_recogida, ciudad_origen, pais_origen, altura, longitud, anchura, veh_ano, veh_modelo, veh_fabricante, modalidad_de_embarque, fecha_solicitud, company_id, user_id, tipo_de_contenedor, cantidad_de_contenedores) VALUES (:P1 /* {{$_POST.tipo_de_servicio}} */, :P2 /* {{$_POST.tipo_de_operacion}} */, :P3 /* {{$_POST.modalidad_de_transporte}} */, :P4 /* {{$_POST.informacion_adicional}} */, :P5 /* {{$_POST.equipo_especial}} */, :P6 /* {{$_POST.unidad_peso}} */, :P7 /* {{$_POST.tipomercanciaproducto}} */, :P8 /* {{$_POST.zona_destino}} */, :P9 /* {{$_POST.zona_origen}} */, :P10 /* {{$_POST.veh_tipo}} */, :P11 /* {{$_POST.requerimiento_especial}} */, :P12 /* {{$_POST.valor_mercancia}} */, :P13 /* {{$_POST.peso_total}} */, :P14 /* {{$_POST.fecha_entrega}} */, :P15 /* {{$_POST.ciudad_destino}} */, :P16 /* {{$_POST.pais_destino}} */, :P17 /* {{$_POST.fecha_recogida}} */, :P18 /* {{$_POST.ciudad_origen}} */, :P19 /* {{$_POST.pais_origen}} */, :P20 /* {{$_POST.altura}} */, :P21 /* {{$_POST.longitud}} */, :P22 /* {{$_POST.anchura}} */, :P23 /* {{$_POST.veh_ano}} */, :P24 /* {{$_POST.veh_modelo}} */, :P25 /* {{$_POST.veh_fabricante}} */, :P26 /* {{$_POST.modalidad_de_embarque}} */, :P27 /* {{NOW.toLocalTime()}} */, :P28 /* {{insertcompany.identity}} */, :P29 /* {{insertuser.identity}} */, :P30 /* {{$_POST.tipo_de_contenedor}} */, :P31 /* {{$_POST.cantidad_de_contenedores}} */)",
+                            "params": [
+                              {
+                                "name": ":P1",
+                                "type": "expression",
+                                "value": "{{$_POST.tipo_de_servicio}}"
+                              },
+                              {
+                                "name": ":P2",
+                                "type": "expression",
+                                "value": "{{$_POST.tipo_de_operacion}}"
+                              },
+                              {
+                                "name": ":P3",
+                                "type": "expression",
+                                "value": "{{$_POST.modalidad_de_transporte}}"
+                              },
+                              {
+                                "name": ":P4",
+                                "type": "expression",
+                                "value": "{{$_POST.informacion_adicional}}"
+                              },
+                              {
+                                "name": ":P5",
+                                "type": "expression",
+                                "value": "{{$_POST.equipo_especial}}"
+                              },
+                              {
+                                "name": ":P6",
+                                "type": "expression",
+                                "value": "{{$_POST.unidad_peso}}"
+                              },
+                              {
+                                "name": ":P7",
+                                "type": "expression",
+                                "value": "{{$_POST.tipomercanciaproducto}}"
+                              },
+                              {
+                                "name": ":P8",
+                                "type": "expression",
+                                "value": "{{$_POST.zona_destino}}"
+                              },
+                              {
+                                "name": ":P9",
+                                "type": "expression",
+                                "value": "{{$_POST.zona_origen}}"
+                              },
+                              {
+                                "name": ":P10",
+                                "type": "expression",
+                                "value": "{{$_POST.veh_tipo}}"
+                              },
+                              {
+                                "name": ":P11",
+                                "type": "expression",
+                                "value": "{{$_POST.requerimiento_especial}}"
+                              },
+                              {
+                                "name": ":P12",
+                                "type": "expression",
+                                "value": "{{$_POST.valor_mercancia}}"
+                              },
+                              {
+                                "name": ":P13",
+                                "type": "expression",
+                                "value": "{{$_POST.peso_total}}"
+                              },
+                              {
+                                "name": ":P14",
+                                "type": "expression",
+                                "value": "{{$_POST.fecha_entrega}}"
+                              },
+                              {
+                                "name": ":P15",
+                                "type": "expression",
+                                "value": "{{$_POST.ciudad_destino}}"
+                              },
+                              {
+                                "name": ":P16",
+                                "type": "expression",
+                                "value": "{{$_POST.pais_destino}}"
+                              },
+                              {
+                                "name": ":P17",
+                                "type": "expression",
+                                "value": "{{$_POST.fecha_recogida}}"
+                              },
+                              {
+                                "name": ":P18",
+                                "type": "expression",
+                                "value": "{{$_POST.ciudad_origen}}"
+                              },
+                              {
+                                "name": ":P19",
+                                "type": "expression",
+                                "value": "{{$_POST.pais_origen}}"
+                              },
+                              {
+                                "name": ":P20",
+                                "type": "expression",
+                                "value": "{{$_POST.altura}}"
+                              },
+                              {
+                                "name": ":P21",
+                                "type": "expression",
+                                "value": "{{$_POST.longitud}}"
+                              },
+                              {
+                                "name": ":P22",
+                                "type": "expression",
+                                "value": "{{$_POST.anchura}}"
+                              },
+                              {
+                                "name": ":P23",
+                                "type": "expression",
+                                "value": "{{$_POST.veh_ano}}"
+                              },
+                              {
+                                "name": ":P24",
+                                "type": "expression",
+                                "value": "{{$_POST.veh_modelo}}"
+                              },
+                              {
+                                "name": ":P25",
+                                "type": "expression",
+                                "value": "{{$_POST.veh_fabricante}}"
+                              },
+                              {
+                                "name": ":P26",
+                                "type": "expression",
+                                "value": "{{$_POST.modalidad_de_embarque}}"
+                              },
+                              {
+                                "name": ":P27",
+                                "type": "expression",
+                                "value": "{{NOW.toLocalTime()}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P28",
+                                "type": "expression",
+                                "value": "{{insertcompany.identity}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P29",
+                                "type": "expression",
+                                "value": "{{insertuser.identity}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P30",
+                                "type": "expression",
+                                "value": "{{$_POST.tipo_de_contenedor}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P31",
+                                "type": "expression",
+                                "value": "{{$_POST.cantidad_de_contenedores}}",
+                                "test": ""
+                              }
+                            ]
+                          }
+                        },
+                        "meta": [
+                          {
+                            "name": "identity",
+                            "type": "text"
+                          },
+                          {
+                            "name": "affected",
+                            "type": "number"
+                          }
+                        ],
+                        "output": false
+                      }
+                    ]
+                  },
+                  "else": {
+                    "steps": {
+                      "name": "insert_cotizacion_newcompany_existinguser",
+                      "module": "dbupdater",
+                      "action": "insert",
+                      "options": {
+                        "connection": "db",
+                        "sql": {
+                          "type": "insert",
+                          "values": [
+                            {
+                              "table": "cotizacion",
+                              "column": "tipo_de_servicio",
+                              "type": "text",
+                              "value": "{{$_POST.tipo_de_servicio}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "tipo_de_operacion",
+                              "type": "text",
+                              "value": "{{$_POST.tipo_de_operacion}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "modalidad_de_transporte",
+                              "type": "text",
+                              "value": "{{$_POST.modalidad_de_transporte}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "informacion_adicional",
+                              "type": "text",
+                              "value": "{{$_POST.informacion_adicional}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "equipo_especial",
+                              "type": "text",
+                              "value": "{{$_POST.equipo_especial}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "unidad_peso",
+                              "type": "text",
+                              "value": "{{$_POST.unidad_de_peso}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "tipomercanciaproducto",
+                              "type": "text",
+                              "value": "{{$_POST.tipomercanciaproducto}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "zona_destino",
+                              "type": "text",
+                              "value": "{{$_POST.zona_destino}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "zona_origen",
+                              "type": "text",
+                              "value": "{{$_POST.zona_origen}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "veh_tipo",
+                              "type": "text",
+                              "value": "{{$_POST.veh_tipo}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "reqerimiento_especial",
+                              "type": "text",
+                              "value": "{{$_POST.requerimiento_especial}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "valor_mercancia",
+                              "type": "text",
+                              "value": "{{$_POST.valor_mercancia}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "peso_total",
+                              "type": "text",
+                              "value": "{{$_POST.peso_total}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "fecha_entrega",
+                              "type": "text",
+                              "value": "{{$_POST.fecha_entrega}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "ciudad_destino",
+                              "type": "text",
+                              "value": "{{$_POST.ciudad_destino}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "pais_destino",
+                              "type": "text",
+                              "value": "{{$_POST.pais_destino}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "fecha_recogida",
+                              "type": "text",
+                              "value": "{{$_POST.fecha_recogida}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "ciudad_origen",
+                              "type": "text",
+                              "value": "{{$_POST.ciudad_origen}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "pais_origen",
+                              "type": "text",
+                              "value": "{{$_POST.pais_origen}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "altura",
+                              "type": "text",
+                              "value": "{{$_POST.altura}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "longitud",
+                              "type": "text",
+                              "value": "{{$_POST.longitud}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "anchura",
+                              "type": "text",
+                              "value": "{{$_POST.anchura}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "veh_ano",
+                              "type": "text",
+                              "value": "{{$_POST.veh_ano}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "veh_modelo",
+                              "type": "text",
+                              "value": "{{$_POST.veh_modelo}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "veh_fabricante",
+                              "type": "text",
+                              "value": "{{$_POST.veh_fabricante}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "modalidad_de_embarque",
+                              "type": "text",
+                              "value": "{{$_POST.modalidad_de_embarque}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "fecha_solicitud",
+                              "type": "datetime",
+                              "value": "{{NOW.toLocalTime()}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "company_id",
+                              "type": "number",
+                              "value": "{{insertcompany.identity}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "user_id",
+                              "type": "number",
+                              "value": "{{query_user[0].id}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "tipo_de_contenedor",
+                              "type": "text",
+                              "value": "{{$_POST.tipo_de_contenedor}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "cantidad_de_contenedores",
+                              "type": "text",
+                              "value": "{{$_POST.cantidad_de_contenedores}}"
+                            }
+                          ],
+                          "table": "cotizacion",
+                          "returning": "id",
+                          "query": "INSERT INTO cotizacion\n(tipo_de_servicio, tipo_de_operacion, modalidad_de_transporte, informacion_adicional, equipo_especial, unidad_peso, tipomercanciaproducto, zona_destino, zona_origen, veh_tipo, reqerimiento_especial, valor_mercancia, peso_total, fecha_entrega, ciudad_destino, pais_destino, fecha_recogida, ciudad_origen, pais_origen, altura, longitud, anchura, veh_ano, veh_modelo, veh_fabricante, modalidad_de_embarque, fecha_solicitud, company_id, user_id, tipo_de_contenedor, cantidad_de_contenedores) VALUES (:P1 /* {{$_POST.tipo_de_servicio}} */, :P2 /* {{$_POST.tipo_de_operacion}} */, :P3 /* {{$_POST.modalidad_de_transporte}} */, :P4 /* {{$_POST.informacion_adicional}} */, :P5 /* {{$_POST.equipo_especial}} */, :P6 /* {{$_POST.unidad_de_peso}} */, :P7 /* {{$_POST.tipomercanciaproducto}} */, :P8 /* {{$_POST.zona_destino}} */, :P9 /* {{$_POST.zona_origen}} */, :P10 /* {{$_POST.veh_tipo}} */, :P11 /* {{$_POST.requerimiento_especial}} */, :P12 /* {{$_POST.valor_mercancia}} */, :P13 /* {{$_POST.peso_total}} */, :P14 /* {{$_POST.fecha_entrega}} */, :P15 /* {{$_POST.ciudad_destino}} */, :P16 /* {{$_POST.pais_destino}} */, :P17 /* {{$_POST.fecha_recogida}} */, :P18 /* {{$_POST.ciudad_origen}} */, :P19 /* {{$_POST.pais_origen}} */, :P20 /* {{$_POST.altura}} */, :P21 /* {{$_POST.longitud}} */, :P22 /* {{$_POST.anchura}} */, :P23 /* {{$_POST.veh_ano}} */, :P24 /* {{$_POST.veh_modelo}} */, :P25 /* {{$_POST.veh_fabricante}} */, :P26 /* {{$_POST.modalidad_de_embarque}} */, :P27 /* {{NOW.toLocalTime()}} */, :P28 /* {{insertcompany.identity}} */, :P29 /* {{query_user[0].id}} */, :P30 /* {{$_POST.tipo_de_contenedor}} */, :P31 /* {{$_POST.cantidad_de_contenedores}} */)",
+                          "params": [
+                            {
+                              "name": ":P1",
+                              "type": "expression",
+                              "value": "{{$_POST.tipo_de_servicio}}"
+                            },
+                            {
+                              "name": ":P2",
+                              "type": "expression",
+                              "value": "{{$_POST.tipo_de_operacion}}"
+                            },
+                            {
+                              "name": ":P3",
+                              "type": "expression",
+                              "value": "{{$_POST.modalidad_de_transporte}}"
+                            },
+                            {
+                              "name": ":P4",
+                              "type": "expression",
+                              "value": "{{$_POST.informacion_adicional}}"
+                            },
+                            {
+                              "name": ":P5",
+                              "type": "expression",
+                              "value": "{{$_POST.equipo_especial}}"
+                            },
+                            {
+                              "name": ":P6",
+                              "type": "expression",
+                              "value": "{{$_POST.unidad_de_peso}}"
+                            },
+                            {
+                              "name": ":P7",
+                              "type": "expression",
+                              "value": "{{$_POST.tipomercanciaproducto}}"
+                            },
+                            {
+                              "name": ":P8",
+                              "type": "expression",
+                              "value": "{{$_POST.zona_destino}}"
+                            },
+                            {
+                              "name": ":P9",
+                              "type": "expression",
+                              "value": "{{$_POST.zona_origen}}"
+                            },
+                            {
+                              "name": ":P10",
+                              "type": "expression",
+                              "value": "{{$_POST.veh_tipo}}"
+                            },
+                            {
+                              "name": ":P11",
+                              "type": "expression",
+                              "value": "{{$_POST.requerimiento_especial}}"
+                            },
+                            {
+                              "name": ":P12",
+                              "type": "expression",
+                              "value": "{{$_POST.valor_mercancia}}"
+                            },
+                            {
+                              "name": ":P13",
+                              "type": "expression",
+                              "value": "{{$_POST.peso_total}}"
+                            },
+                            {
+                              "name": ":P14",
+                              "type": "expression",
+                              "value": "{{$_POST.fecha_entrega}}"
+                            },
+                            {
+                              "name": ":P15",
+                              "type": "expression",
+                              "value": "{{$_POST.ciudad_destino}}"
+                            },
+                            {
+                              "name": ":P16",
+                              "type": "expression",
+                              "value": "{{$_POST.pais_destino}}"
+                            },
+                            {
+                              "name": ":P17",
+                              "type": "expression",
+                              "value": "{{$_POST.fecha_recogida}}"
+                            },
+                            {
+                              "name": ":P18",
+                              "type": "expression",
+                              "value": "{{$_POST.ciudad_origen}}"
+                            },
+                            {
+                              "name": ":P19",
+                              "type": "expression",
+                              "value": "{{$_POST.pais_origen}}"
+                            },
+                            {
+                              "name": ":P20",
+                              "type": "expression",
+                              "value": "{{$_POST.altura}}"
+                            },
+                            {
+                              "name": ":P21",
+                              "type": "expression",
+                              "value": "{{$_POST.longitud}}"
+                            },
+                            {
+                              "name": ":P22",
+                              "type": "expression",
+                              "value": "{{$_POST.anchura}}"
+                            },
+                            {
+                              "name": ":P23",
+                              "type": "expression",
+                              "value": "{{$_POST.veh_ano}}"
+                            },
+                            {
+                              "name": ":P24",
+                              "type": "expression",
+                              "value": "{{$_POST.veh_modelo}}"
+                            },
+                            {
+                              "name": ":P25",
+                              "type": "expression",
+                              "value": "{{$_POST.veh_fabricante}}"
+                            },
+                            {
+                              "name": ":P26",
+                              "type": "expression",
+                              "value": "{{$_POST.modalidad_de_embarque}}"
+                            },
+                            {
+                              "name": ":P27",
+                              "type": "expression",
+                              "value": "{{NOW.toLocalTime()}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P28",
+                              "type": "expression",
+                              "value": "{{insertcompany.identity}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P29",
+                              "type": "expression",
+                              "value": "{{query_user[0].id}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P30",
+                              "type": "expression",
+                              "value": "{{$_POST.tipo_de_contenedor}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P31",
+                              "type": "expression",
+                              "value": "{{$_POST.cantidad_de_contenedores}}",
+                              "test": ""
+                            }
+                          ]
+                        }
+                      },
+                      "meta": [
+                        {
+                          "name": "identity",
+                          "type": "text"
+                        },
+                        {
+                          "name": "affected",
+                          "type": "number"
+                        }
+                      ],
+                      "output": false
+                    }
+                  }
+                },
+                "outputType": "boolean"
+              }
+            ]
+          },
+          "else": {
+            "steps": {
+              "name": "",
+              "module": "core",
+              "action": "condition",
+              "options": {
+                "if": "{{query_user.count()==0}}",
+                "then": {
+                  "steps": [
+                    {
+                      "name": "insertuser_existingcomp",
+                      "module": "dbupdater",
+                      "action": "insert",
+                      "options": {
+                        "connection": "db",
+                        "sql": {
+                          "type": "insert",
+                          "values": [
+                            {
+                              "table": "users",
+                              "column": "first_name",
+                              "type": "text",
+                              "value": "{{$_POST.persona_contacto.last(1)}}"
+                            },
+                            {
+                              "table": "users",
+                              "column": "last_name",
+                              "type": "text",
+                              "value": "{{$_POST.persona_contacto.top(1)}}"
+                            },
+                            {
+                              "table": "users",
+                              "column": "email",
+                              "type": "text",
+                              "value": "{{$_POST.email_contacto}}"
+                            },
+                            {
+                              "table": "users",
+                              "column": "company_id",
+                              "type": "number",
+                              "value": "{{query_company.id}}"
+                            }
+                          ],
+                          "table": "users",
+                          "returning": "id",
+                          "query": "INSERT INTO users\n(first_name, last_name, email, company_id) VALUES (:P1 /* {{$_POST.persona_contacto.last(1)}} */, :P2 /* {{$_POST.persona_contacto.top(1)}} */, :P3 /* {{$_POST.email_contacto}} */, :P4 /* {{query_company.id}} */)",
+                          "params": [
+                            {
+                              "name": ":P1",
+                              "type": "expression",
+                              "value": "{{$_POST.persona_contacto.last(1)}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P2",
+                              "type": "expression",
+                              "value": "{{$_POST.persona_contacto.top(1)}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P3",
+                              "type": "expression",
+                              "value": "{{$_POST.email_contacto}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P4",
+                              "type": "expression",
+                              "value": "{{query_company.id}}",
+                              "test": ""
+                            }
+                          ]
+                        }
+                      },
+                      "meta": [
+                        {
+                          "name": "identity",
+                          "type": "text"
+                        },
+                        {
+                          "name": "affected",
+                          "type": "number"
+                        }
+                      ],
+                      "output": false
+                    },
+                    {
+                      "name": "insert_cotizacion_newuser_existingcomp",
+                      "module": "dbupdater",
+                      "action": "insert",
+                      "options": {
+                        "connection": "db",
+                        "sql": {
+                          "type": "insert",
+                          "values": [
+                            {
+                              "table": "cotizacion",
+                              "column": "tipo_de_servicio",
+                              "type": "text",
+                              "value": "{{$_POST.tipo_de_servicio}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "tipo_de_operacion",
+                              "type": "text",
+                              "value": "{{$_POST.tipo_de_operacion}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "modalidad_de_transporte",
+                              "type": "text",
+                              "value": "{{$_POST.modalidad_de_transporte}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "informacion_adicional",
+                              "type": "text",
+                              "value": "{{$_POST.informacion_adicional}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "equipo_especial",
+                              "type": "text",
+                              "value": "{{$_POST.equipo_especial}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "unidad_peso",
+                              "type": "text",
+                              "value": "{{$_POST.unidad_de_peso}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "tipomercanciaproducto",
+                              "type": "text",
+                              "value": "{{$_POST.tipomercanciaproducto}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "zona_destino",
+                              "type": "text",
+                              "value": "{{$_POST.zona_destino}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "zona_origen",
+                              "type": "text",
+                              "value": "{{$_POST.zona_origen}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "veh_tipo",
+                              "type": "text",
+                              "value": "{{$_POST.veh_tipo}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "reqerimiento_especial",
+                              "type": "text",
+                              "value": "{{$_POST.requerimiento_especial}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "valor_mercancia",
+                              "type": "text",
+                              "value": "{{$_POST.valor_mercancia}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "peso_total",
+                              "type": "text",
+                              "value": "{{$_POST.peso_total}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "fecha_entrega",
+                              "type": "text",
+                              "value": "{{$_POST.fecha_entrega}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "ciudad_destino",
+                              "type": "text",
+                              "value": "{{$_POST.ciudad_destino}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "pais_destino",
+                              "type": "text",
+                              "value": "{{$_POST.pais_destino}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "fecha_recogida",
+                              "type": "text",
+                              "value": "{{$_POST.fecha_recogida}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "ciudad_origen",
+                              "type": "text",
+                              "value": "{{$_POST.ciudad_origen}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "pais_origen",
+                              "type": "text",
+                              "value": "{{$_POST.pais_origen}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "altura",
+                              "type": "text",
+                              "value": "{{$_POST.altura}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "longitud",
+                              "type": "text",
+                              "value": "{{$_POST.longitud}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "anchura",
+                              "type": "text",
+                              "value": "{{$_POST.anchura}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "veh_ano",
+                              "type": "text",
+                              "value": "{{$_POST.veh_ano}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "veh_modelo",
+                              "type": "text",
+                              "value": "{{$_POST.veh_modelo}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "veh_fabricante",
+                              "type": "text",
+                              "value": "{{$_POST.veh_fabricante}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "modalidad_de_embarque",
+                              "type": "text",
+                              "value": "{{$_POST.modalidad_de_embarque}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "fecha_solicitud",
+                              "type": "datetime",
+                              "value": "{{NOW.toLocalTime()}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "company_id",
+                              "type": "number",
+                              "value": "{{insertuser_existingcomp.identity}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "user_id",
+                              "type": "number",
+                              "value": "{{query_company.id}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "tipo_de_contenedor",
+                              "type": "text",
+                              "value": "{{$_POST.tipo_de_contenedor}}"
+                            },
+                            {
+                              "table": "cotizacion",
+                              "column": "cantidad_de_contenedores",
+                              "type": "text",
+                              "value": "{{$_POST.cantidad_de_contenedores}}"
+                            }
+                          ],
+                          "table": "cotizacion",
+                          "returning": "id",
+                          "query": "INSERT INTO cotizacion\n(tipo_de_servicio, tipo_de_operacion, modalidad_de_transporte, informacion_adicional, equipo_especial, unidad_peso, tipomercanciaproducto, zona_destino, zona_origen, veh_tipo, reqerimiento_especial, valor_mercancia, peso_total, fecha_entrega, ciudad_destino, pais_destino, fecha_recogida, ciudad_origen, pais_origen, altura, longitud, anchura, veh_ano, veh_modelo, veh_fabricante, modalidad_de_embarque, fecha_solicitud, company_id, user_id, tipo_de_contenedor, cantidad_de_contenedores) VALUES (:P1 /* {{$_POST.tipo_de_servicio}} */, :P2 /* {{$_POST.tipo_de_operacion}} */, :P3 /* {{$_POST.modalidad_de_transporte}} */, :P4 /* {{$_POST.informacion_adicional}} */, :P5 /* {{$_POST.equipo_especial}} */, :P6 /* {{$_POST.unidad_de_peso}} */, :P7 /* {{$_POST.tipomercanciaproducto}} */, :P8 /* {{$_POST.zona_destino}} */, :P9 /* {{$_POST.zona_origen}} */, :P10 /* {{$_POST.veh_tipo}} */, :P11 /* {{$_POST.requerimiento_especial}} */, :P12 /* {{$_POST.valor_mercancia}} */, :P13 /* {{$_POST.peso_total}} */, :P14 /* {{$_POST.fecha_entrega}} */, :P15 /* {{$_POST.ciudad_destino}} */, :P16 /* {{$_POST.pais_destino}} */, :P17 /* {{$_POST.fecha_recogida}} */, :P18 /* {{$_POST.ciudad_origen}} */, :P19 /* {{$_POST.pais_origen}} */, :P20 /* {{$_POST.altura}} */, :P21 /* {{$_POST.longitud}} */, :P22 /* {{$_POST.anchura}} */, :P23 /* {{$_POST.veh_ano}} */, :P24 /* {{$_POST.veh_modelo}} */, :P25 /* {{$_POST.veh_fabricante}} */, :P26 /* {{$_POST.modalidad_de_embarque}} */, :P27 /* {{NOW.toLocalTime()}} */, :P28 /* {{insertuser_existingcomp.identity}} */, :P29 /* {{query_company.id}} */, :P30 /* {{$_POST.tipo_de_contenedor}} */, :P31 /* {{$_POST.cantidad_de_contenedores}} */)",
+                          "params": [
+                            {
+                              "name": ":P1",
+                              "type": "expression",
+                              "value": "{{$_POST.tipo_de_servicio}}"
+                            },
+                            {
+                              "name": ":P2",
+                              "type": "expression",
+                              "value": "{{$_POST.tipo_de_operacion}}"
+                            },
+                            {
+                              "name": ":P3",
+                              "type": "expression",
+                              "value": "{{$_POST.modalidad_de_transporte}}"
+                            },
+                            {
+                              "name": ":P4",
+                              "type": "expression",
+                              "value": "{{$_POST.informacion_adicional}}"
+                            },
+                            {
+                              "name": ":P5",
+                              "type": "expression",
+                              "value": "{{$_POST.equipo_especial}}"
+                            },
+                            {
+                              "name": ":P6",
+                              "type": "expression",
+                              "value": "{{$_POST.unidad_de_peso}}"
+                            },
+                            {
+                              "name": ":P7",
+                              "type": "expression",
+                              "value": "{{$_POST.tipomercanciaproducto}}"
+                            },
+                            {
+                              "name": ":P8",
+                              "type": "expression",
+                              "value": "{{$_POST.zona_destino}}"
+                            },
+                            {
+                              "name": ":P9",
+                              "type": "expression",
+                              "value": "{{$_POST.zona_origen}}"
+                            },
+                            {
+                              "name": ":P10",
+                              "type": "expression",
+                              "value": "{{$_POST.veh_tipo}}"
+                            },
+                            {
+                              "name": ":P11",
+                              "type": "expression",
+                              "value": "{{$_POST.requerimiento_especial}}"
+                            },
+                            {
+                              "name": ":P12",
+                              "type": "expression",
+                              "value": "{{$_POST.valor_mercancia}}"
+                            },
+                            {
+                              "name": ":P13",
+                              "type": "expression",
+                              "value": "{{$_POST.peso_total}}"
+                            },
+                            {
+                              "name": ":P14",
+                              "type": "expression",
+                              "value": "{{$_POST.fecha_entrega}}"
+                            },
+                            {
+                              "name": ":P15",
+                              "type": "expression",
+                              "value": "{{$_POST.ciudad_destino}}"
+                            },
+                            {
+                              "name": ":P16",
+                              "type": "expression",
+                              "value": "{{$_POST.pais_destino}}"
+                            },
+                            {
+                              "name": ":P17",
+                              "type": "expression",
+                              "value": "{{$_POST.fecha_recogida}}"
+                            },
+                            {
+                              "name": ":P18",
+                              "type": "expression",
+                              "value": "{{$_POST.ciudad_origen}}"
+                            },
+                            {
+                              "name": ":P19",
+                              "type": "expression",
+                              "value": "{{$_POST.pais_origen}}"
+                            },
+                            {
+                              "name": ":P20",
+                              "type": "expression",
+                              "value": "{{$_POST.altura}}"
+                            },
+                            {
+                              "name": ":P21",
+                              "type": "expression",
+                              "value": "{{$_POST.longitud}}"
+                            },
+                            {
+                              "name": ":P22",
+                              "type": "expression",
+                              "value": "{{$_POST.anchura}}"
+                            },
+                            {
+                              "name": ":P23",
+                              "type": "expression",
+                              "value": "{{$_POST.veh_ano}}"
+                            },
+                            {
+                              "name": ":P24",
+                              "type": "expression",
+                              "value": "{{$_POST.veh_modelo}}"
+                            },
+                            {
+                              "name": ":P25",
+                              "type": "expression",
+                              "value": "{{$_POST.veh_fabricante}}"
+                            },
+                            {
+                              "name": ":P26",
+                              "type": "expression",
+                              "value": "{{$_POST.modalidad_de_embarque}}"
+                            },
+                            {
+                              "name": ":P27",
+                              "type": "expression",
+                              "value": "{{NOW.toLocalTime()}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P28",
+                              "type": "expression",
+                              "value": "{{insertuser_existingcomp.identity}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P29",
+                              "type": "expression",
+                              "value": "{{query_company.id}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P30",
+                              "type": "expression",
+                              "value": "{{$_POST.tipo_de_contenedor}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P31",
+                              "type": "expression",
+                              "value": "{{$_POST.cantidad_de_contenedores}}",
+                              "test": ""
+                            }
+                          ]
+                        }
+                      },
+                      "meta": [
+                        {
+                          "name": "identity",
+                          "type": "text"
+                        },
+                        {
+                          "name": "affected",
+                          "type": "number"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "else": {
+                  "steps": {
+                    "name": "insert_cotizacion_existing_existinguser",
+                    "module": "dbupdater",
+                    "action": "insert",
+                    "options": {
+                      "connection": "db",
+                      "sql": {
+                        "type": "insert",
+                        "values": [
+                          {
+                            "table": "cotizacion",
+                            "column": "tipo_de_servicio",
+                            "type": "text",
+                            "value": "{{$_POST.tipo_de_servicio}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "tipo_de_operacion",
+                            "type": "text",
+                            "value": "{{$_POST.tipo_de_operacion}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "modalidad_de_transporte",
+                            "type": "text",
+                            "value": "{{$_POST.modalidad_de_transporte}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "informacion_adicional",
+                            "type": "text",
+                            "value": "{{$_POST.informacion_adicional}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "equipo_especial",
+                            "type": "text",
+                            "value": "{{$_POST.equipo_especial}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "unidad_peso",
+                            "type": "text",
+                            "value": "{{$_POST.unidad_de_peso}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "tipomercanciaproducto",
+                            "type": "text",
+                            "value": "{{$_POST.tipomercanciaproducto}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "zona_destino",
+                            "type": "text",
+                            "value": "{{$_POST.zona_destino}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "zona_origen",
+                            "type": "text",
+                            "value": "{{$_POST.zona_origen}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "veh_tipo",
+                            "type": "text",
+                            "value": "{{$_POST.veh_tipo}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "reqerimiento_especial",
+                            "type": "text",
+                            "value": "{{$_POST.requerimiento_especial}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "valor_mercancia",
+                            "type": "text",
+                            "value": "{{$_POST.valor_mercancia}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "peso_total",
+                            "type": "text",
+                            "value": "{{$_POST.peso_total}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "fecha_entrega",
+                            "type": "text",
+                            "value": "{{$_POST.fecha_entrega}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "ciudad_destino",
+                            "type": "text",
+                            "value": "{{$_POST.ciudad_destino}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "pais_destino",
+                            "type": "text",
+                            "value": "{{$_POST.pais_destino}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "fecha_recogida",
+                            "type": "text",
+                            "value": "{{$_POST.fecha_recogida}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "ciudad_origen",
+                            "type": "text",
+                            "value": "{{$_POST.ciudad_origen}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "pais_origen",
+                            "type": "text",
+                            "value": "{{$_POST.pais_origen}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "altura",
+                            "type": "text",
+                            "value": "{{$_POST.altura}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "longitud",
+                            "type": "text",
+                            "value": "{{$_POST.longitud}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "anchura",
+                            "type": "text",
+                            "value": "{{$_POST.anchura}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "veh_ano",
+                            "type": "text",
+                            "value": "{{$_POST.veh_ano}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "veh_modelo",
+                            "type": "text",
+                            "value": "{{$_POST.veh_modelo}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "veh_fabricante",
+                            "type": "text",
+                            "value": "{{$_POST.veh_fabricante}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "modalidad_de_embarque",
+                            "type": "text",
+                            "value": "{{$_POST.modalidad_de_embarque}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "fecha_solicitud",
+                            "type": "datetime",
+                            "value": "{{NOW.toLocalTime()}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "company_id",
+                            "type": "number",
+                            "value": "{{query_company[0].id}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "user_id",
+                            "type": "number",
+                            "value": "{{query_user[0].id}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "tipo_de_contenedor",
+                            "type": "text",
+                            "value": "{{$_POST.tipo_de_contenedor}}"
+                          },
+                          {
+                            "table": "cotizacion",
+                            "column": "cantidad_de_contenedores",
+                            "type": "text",
+                            "value": "{{$_POST.cantidad_de_contenedores}}"
+                          }
+                        ],
+                        "table": "cotizacion",
+                        "returning": "id",
+                        "query": "INSERT INTO cotizacion\n(tipo_de_servicio, tipo_de_operacion, modalidad_de_transporte, informacion_adicional, equipo_especial, unidad_peso, tipomercanciaproducto, zona_destino, zona_origen, veh_tipo, reqerimiento_especial, valor_mercancia, peso_total, fecha_entrega, ciudad_destino, pais_destino, fecha_recogida, ciudad_origen, pais_origen, altura, longitud, anchura, veh_ano, veh_modelo, veh_fabricante, modalidad_de_embarque, fecha_solicitud, company_id, user_id, tipo_de_contenedor, cantidad_de_contenedores) VALUES (:P1 /* {{$_POST.tipo_de_servicio}} */, :P2 /* {{$_POST.tipo_de_operacion}} */, :P3 /* {{$_POST.modalidad_de_transporte}} */, :P4 /* {{$_POST.informacion_adicional}} */, :P5 /* {{$_POST.equipo_especial}} */, :P6 /* {{$_POST.unidad_de_peso}} */, :P7 /* {{$_POST.tipomercanciaproducto}} */, :P8 /* {{$_POST.zona_destino}} */, :P9 /* {{$_POST.zona_origen}} */, :P10 /* {{$_POST.veh_tipo}} */, :P11 /* {{$_POST.requerimiento_especial}} */, :P12 /* {{$_POST.valor_mercancia}} */, :P13 /* {{$_POST.peso_total}} */, :P14 /* {{$_POST.fecha_entrega}} */, :P15 /* {{$_POST.ciudad_destino}} */, :P16 /* {{$_POST.pais_destino}} */, :P17 /* {{$_POST.fecha_recogida}} */, :P18 /* {{$_POST.ciudad_origen}} */, :P19 /* {{$_POST.pais_origen}} */, :P20 /* {{$_POST.altura}} */, :P21 /* {{$_POST.longitud}} */, :P22 /* {{$_POST.anchura}} */, :P23 /* {{$_POST.veh_ano}} */, :P24 /* {{$_POST.veh_modelo}} */, :P25 /* {{$_POST.veh_fabricante}} */, :P26 /* {{$_POST.modalidad_de_embarque}} */, :P27 /* {{NOW.toLocalTime()}} */, :P28 /* {{query_company[0].id}} */, :P29 /* {{query_user[0].id}} */, :P30 /* {{$_POST.tipo_de_contenedor}} */, :P31 /* {{$_POST.cantidad_de_contenedores}} */)",
+                        "params": [
+                          {
+                            "name": ":P1",
+                            "type": "expression",
+                            "value": "{{$_POST.tipo_de_servicio}}"
+                          },
+                          {
+                            "name": ":P2",
+                            "type": "expression",
+                            "value": "{{$_POST.tipo_de_operacion}}"
+                          },
+                          {
+                            "name": ":P3",
+                            "type": "expression",
+                            "value": "{{$_POST.modalidad_de_transporte}}"
+                          },
+                          {
+                            "name": ":P4",
+                            "type": "expression",
+                            "value": "{{$_POST.informacion_adicional}}"
+                          },
+                          {
+                            "name": ":P5",
+                            "type": "expression",
+                            "value": "{{$_POST.equipo_especial}}"
+                          },
+                          {
+                            "name": ":P6",
+                            "type": "expression",
+                            "value": "{{$_POST.unidad_de_peso}}"
+                          },
+                          {
+                            "name": ":P7",
+                            "type": "expression",
+                            "value": "{{$_POST.tipomercanciaproducto}}"
+                          },
+                          {
+                            "name": ":P8",
+                            "type": "expression",
+                            "value": "{{$_POST.zona_destino}}"
+                          },
+                          {
+                            "name": ":P9",
+                            "type": "expression",
+                            "value": "{{$_POST.zona_origen}}"
+                          },
+                          {
+                            "name": ":P10",
+                            "type": "expression",
+                            "value": "{{$_POST.veh_tipo}}"
+                          },
+                          {
+                            "name": ":P11",
+                            "type": "expression",
+                            "value": "{{$_POST.requerimiento_especial}}"
+                          },
+                          {
+                            "name": ":P12",
+                            "type": "expression",
+                            "value": "{{$_POST.valor_mercancia}}"
+                          },
+                          {
+                            "name": ":P13",
+                            "type": "expression",
+                            "value": "{{$_POST.peso_total}}"
+                          },
+                          {
+                            "name": ":P14",
+                            "type": "expression",
+                            "value": "{{$_POST.fecha_entrega}}"
+                          },
+                          {
+                            "name": ":P15",
+                            "type": "expression",
+                            "value": "{{$_POST.ciudad_destino}}"
+                          },
+                          {
+                            "name": ":P16",
+                            "type": "expression",
+                            "value": "{{$_POST.pais_destino}}"
+                          },
+                          {
+                            "name": ":P17",
+                            "type": "expression",
+                            "value": "{{$_POST.fecha_recogida}}"
+                          },
+                          {
+                            "name": ":P18",
+                            "type": "expression",
+                            "value": "{{$_POST.ciudad_origen}}"
+                          },
+                          {
+                            "name": ":P19",
+                            "type": "expression",
+                            "value": "{{$_POST.pais_origen}}"
+                          },
+                          {
+                            "name": ":P20",
+                            "type": "expression",
+                            "value": "{{$_POST.altura}}"
+                          },
+                          {
+                            "name": ":P21",
+                            "type": "expression",
+                            "value": "{{$_POST.longitud}}"
+                          },
+                          {
+                            "name": ":P22",
+                            "type": "expression",
+                            "value": "{{$_POST.anchura}}"
+                          },
+                          {
+                            "name": ":P23",
+                            "type": "expression",
+                            "value": "{{$_POST.veh_ano}}"
+                          },
+                          {
+                            "name": ":P24",
+                            "type": "expression",
+                            "value": "{{$_POST.veh_modelo}}"
+                          },
+                          {
+                            "name": ":P25",
+                            "type": "expression",
+                            "value": "{{$_POST.veh_fabricante}}"
+                          },
+                          {
+                            "name": ":P26",
+                            "type": "expression",
+                            "value": "{{$_POST.modalidad_de_embarque}}"
+                          },
+                          {
+                            "name": ":P27",
+                            "type": "expression",
+                            "value": "{{NOW.toLocalTime()}}",
+                            "test": ""
+                          },
+                          {
+                            "name": ":P28",
+                            "type": "expression",
+                            "value": "{{query_company[0].id}}",
+                            "test": ""
+                          },
+                          {
+                            "name": ":P29",
+                            "type": "expression",
+                            "value": "{{query_user[0].id}}",
+                            "test": ""
+                          },
+                          {
+                            "name": ":P30",
+                            "type": "expression",
+                            "value": "{{$_POST.tipo_de_contenedor}}",
+                            "test": ""
+                          },
+                          {
+                            "name": ":P31",
+                            "type": "expression",
+                            "value": "{{$_POST.cantidad_de_contenedores}}",
+                            "test": ""
+                          }
+                        ]
+                      }
+                    },
+                    "meta": [
+                      {
+                        "name": "identity",
+                        "type": "text"
+                      },
+                      {
+                        "name": "affected",
+                        "type": "number"
+                      }
+                    ]
+                  }
+                }
+              },
+              "outputType": "boolean"
+            }
+          }
+        },
+        "outputType": "boolean"
+      },
+      {
+        "name": "insert",
+        "module": "dbupdater",
+        "action": "insert",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "insert",
+            "values": [
+              {
+                "table": "cotizacion",
+                "column": "tipo_de_servicio",
+                "type": "text",
+                "value": "{{$_POST.tipo_de_servicio}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "tipo_de_operacion",
+                "type": "text",
+                "value": "{{$_POST.tipo_de_operacion}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "modalidad_de_transporte",
+                "type": "text",
+                "value": "{{$_POST.modalidad_de_transporte}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "informacion_adicional",
+                "type": "text",
+                "value": "{{$_POST.informacion_adicional}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "equipo_especial",
+                "type": "text",
+                "value": "{{$_POST.equipo_especial}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "unidad_peso",
+                "type": "text",
+                "value": "{{$_POST.unidad_peso}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "tipomercanciaproducto",
+                "type": "text",
+                "value": "{{$_POST.tipomercanciaproducto}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "zona_destino",
+                "type": "text",
+                "value": "{{$_POST.zona_destino}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "zona_origen",
+                "type": "text",
+                "value": "{{$_POST.zona_origen}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "veh_tipo",
+                "type": "text",
+                "value": "{{$_POST.veh_tipo}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "telefono_contacto",
+                "type": "text",
+                "value": "{{$_POST.telefono_contacto}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "persona_contacto",
+                "type": "text",
+                "value": "{{$_POST.persona_contacto}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "email_contacto",
+                "type": "text",
+                "value": "{{$_POST.email_contacto}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "compania",
+                "type": "text",
+                "value": "{{$_POST.compania}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "reqerimiento_especial",
+                "type": "text",
+                "value": "{{$_POST.reqerimiento_especial}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "valor_mercancia",
+                "type": "text",
+                "value": "{{$_POST.valor_mercancia}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "peso_total",
+                "type": "text",
+                "value": "{{$_POST.peso_total}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "fecha_entrega",
+                "type": "text",
+                "value": "{{$_POST.fecha_entrega}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "ciudad_destino",
+                "type": "text",
+                "value": "{{$_POST.ciudad_destino}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "pais_destino",
+                "type": "text",
+                "value": "{{$_POST.pais_destino}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "fecha_recogida",
+                "type": "text",
+                "value": "{{$_POST.fecha_recogida}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "ciudad_origen",
+                "type": "text",
+                "value": "{{$_POST.ciudad_origen}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "pais_origen",
+                "type": "text",
+                "value": "{{$_POST.pais_origen}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "altura",
+                "type": "text",
+                "value": "{{$_POST.altura}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "longitud",
+                "type": "text",
+                "value": "{{$_POST.longitud}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "anchura",
+                "type": "text",
+                "value": "{{$_POST.anchura}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "veh_ano",
+                "type": "text",
+                "value": "{{$_POST.veh_ano}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "veh_modelo",
+                "type": "text",
+                "value": "{{$_POST.veh_modelo}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "veh_fabricante",
+                "type": "text",
+                "value": "{{$_POST.veh_fabricante}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "modalidad_de_embarque",
+                "type": "text",
+                "value": "{{$_POST.modalidad_de_embarque}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "cantidad_de_contenedores",
+                "type": "text",
+                "value": "{{$_POST.cantidad_de_contenedores}}"
+              },
+              {
+                "table": "cotizacion",
+                "column": "tipo_de_contenedor",
+                "type": "text",
+                "value": "{{$_POST.tipo_de_contenedor}}"
+              }
+            ],
+            "table": "cotizacion",
+            "returning": "id",
+            "query": "INSERT INTO cotizacion\n(tipo_de_servicio, tipo_de_operacion, modalidad_de_transporte, informacion_adicional, equipo_especial, unidad_peso, tipomercanciaproducto, zona_destino, zona_origen, veh_tipo, telefono_contacto, persona_contacto, email_contacto, compania, reqerimiento_especial, valor_mercancia, peso_total, fecha_entrega, ciudad_destino, pais_destino, fecha_recogida, ciudad_origen, pais_origen, altura, longitud, anchura, veh_ano, veh_modelo, veh_fabricante, modalidad_de_embarque, cantidad_de_contenedores, tipo_de_contenedor) VALUES (:P1 /* {{$_POST.tipo_de_servicio}} */, :P2 /* {{$_POST.tipo_de_operacion}} */, :P3 /* {{$_POST.modalidad_de_transporte}} */, :P4 /* {{$_POST.informacion_adicional}} */, :P5 /* {{$_POST.equipo_especial}} */, :P6 /* {{$_POST.unidad_peso}} */, :P7 /* {{$_POST.tipomercanciaproducto}} */, :P8 /* {{$_POST.zona_destino}} */, :P9 /* {{$_POST.zona_origen}} */, :P10 /* {{$_POST.veh_tipo}} */, :P11 /* {{$_POST.telefono_contacto}} */, :P12 /* {{$_POST.persona_contacto}} */, :P13 /* {{$_POST.email_contacto}} */, :P14 /* {{$_POST.compania}} */, :P15 /* {{$_POST.reqerimiento_especial}} */, :P16 /* {{$_POST.valor_mercancia}} */, :P17 /* {{$_POST.peso_total}} */, :P18 /* {{$_POST.fecha_entrega}} */, :P19 /* {{$_POST.ciudad_destino}} */, :P20 /* {{$_POST.pais_destino}} */, :P21 /* {{$_POST.fecha_recogida}} */, :P22 /* {{$_POST.ciudad_origen}} */, :P23 /* {{$_POST.pais_origen}} */, :P24 /* {{$_POST.altura}} */, :P25 /* {{$_POST.longitud}} */, :P26 /* {{$_POST.anchura}} */, :P27 /* {{$_POST.veh_ano}} */, :P28 /* {{$_POST.veh_modelo}} */, :P29 /* {{$_POST.veh_fabricante}} */, :P30 /* {{$_POST.modalidad_de_embarque}} */, :P31 /* {{$_POST.cantidad_de_contenedores}} */, :P32 /* {{$_POST.tipo_de_contenedor}} */)",
+            "params": [
+              {
+                "name": ":P1",
+                "type": "expression",
+                "value": "{{$_POST.tipo_de_servicio}}"
+              },
+              {
+                "name": ":P2",
+                "type": "expression",
+                "value": "{{$_POST.tipo_de_operacion}}"
+              },
+              {
+                "name": ":P3",
+                "type": "expression",
+                "value": "{{$_POST.modalidad_de_transporte}}"
+              },
+              {
+                "name": ":P4",
+                "type": "expression",
+                "value": "{{$_POST.informacion_adicional}}"
+              },
+              {
+                "name": ":P5",
+                "type": "expression",
+                "value": "{{$_POST.equipo_especial}}"
+              },
+              {
+                "name": ":P6",
+                "type": "expression",
+                "value": "{{$_POST.unidad_peso}}"
+              },
+              {
+                "name": ":P7",
+                "type": "expression",
+                "value": "{{$_POST.tipomercanciaproducto}}"
+              },
+              {
+                "name": ":P8",
+                "type": "expression",
+                "value": "{{$_POST.zona_destino}}"
+              },
+              {
+                "name": ":P9",
+                "type": "expression",
+                "value": "{{$_POST.zona_origen}}"
+              },
+              {
+                "name": ":P10",
+                "type": "expression",
+                "value": "{{$_POST.veh_tipo}}"
+              },
+              {
+                "name": ":P11",
+                "type": "expression",
+                "value": "{{$_POST.telefono_contacto}}"
+              },
+              {
+                "name": ":P12",
+                "type": "expression",
+                "value": "{{$_POST.persona_contacto}}"
+              },
+              {
+                "name": ":P13",
+                "type": "expression",
+                "value": "{{$_POST.email_contacto}}"
+              },
+              {
+                "name": ":P14",
+                "type": "expression",
+                "value": "{{$_POST.compania}}"
+              },
+              {
+                "name": ":P15",
+                "type": "expression",
+                "value": "{{$_POST.reqerimiento_especial}}"
+              },
+              {
+                "name": ":P16",
+                "type": "expression",
+                "value": "{{$_POST.valor_mercancia}}"
+              },
+              {
+                "name": ":P17",
+                "type": "expression",
+                "value": "{{$_POST.peso_total}}"
+              },
+              {
+                "name": ":P18",
+                "type": "expression",
+                "value": "{{$_POST.fecha_entrega}}"
+              },
+              {
+                "name": ":P19",
+                "type": "expression",
+                "value": "{{$_POST.ciudad_destino}}"
+              },
+              {
+                "name": ":P20",
+                "type": "expression",
+                "value": "{{$_POST.pais_destino}}"
+              },
+              {
+                "name": ":P21",
+                "type": "expression",
+                "value": "{{$_POST.fecha_recogida}}"
+              },
+              {
+                "name": ":P22",
+                "type": "expression",
+                "value": "{{$_POST.ciudad_origen}}"
+              },
+              {
+                "name": ":P23",
+                "type": "expression",
+                "value": "{{$_POST.pais_origen}}"
+              },
+              {
+                "name": ":P24",
+                "type": "expression",
+                "value": "{{$_POST.altura}}"
+              },
+              {
+                "name": ":P25",
+                "type": "expression",
+                "value": "{{$_POST.longitud}}"
+              },
+              {
+                "name": ":P26",
+                "type": "expression",
+                "value": "{{$_POST.anchura}}"
+              },
+              {
+                "name": ":P27",
+                "type": "expression",
+                "value": "{{$_POST.veh_ano}}"
+              },
+              {
+                "name": ":P28",
+                "type": "expression",
+                "value": "{{$_POST.veh_modelo}}"
+              },
+              {
+                "name": ":P29",
+                "type": "expression",
+                "value": "{{$_POST.veh_fabricante}}"
+              },
+              {
+                "name": ":P30",
+                "type": "expression",
+                "value": "{{$_POST.modalidad_de_embarque}}"
+              },
+              {
+                "name": ":P31",
+                "type": "expression",
+                "value": "{{$_POST.cantidad_de_contenedores}}",
+                "test": ""
+              },
+              {
+                "name": ":P32",
+                "type": "expression",
+                "value": "{{$_POST.tipo_de_contenedor}}",
+                "test": ""
+              }
+            ]
+          }
+        },
+        "meta": [
+          {
+            "name": "identity",
+            "type": "text"
+          },
+          {
+            "name": "affected",
+            "type": "number"
+          }
+        ],
+        "disabled": true
+      },
+      {
+        "name": "refresh",
+        "module": "sockets",
+        "action": "refresh",
+        "options": {
+          "action": "querytablecotizacion"
+        },
+        "disabled": true
+      },
+      {
+        "name": "",
+        "module": "mail",
+        "action": "send",
+        "options": {
+          "instance": "gmail",
+          "subject": "Cotización Contucarga",
+          "body": "Hola {{$_POST.persona_contacto}}\n\nGracias por su interés en Contucarga. \n\nHemos recibido su solicitud de información para el servicio de {{$_POST['tipo-de-servicio']+' - '+$_POST['tipo-de-operacion']+', vía '+$_POST.modalidad_de_transporte}}\n\nPronto un expecialista le contactara para avanzar con su necesidad de cotización. \n\nPara cualquier pregunta o comentario, no dude en contactarnos a través de +58-414-3396026.\n\nEquipo de Desarrollo de Negocios \nContucarga",
+          "fromName": "Contucarga",
+          "fromEmail": "juanpabloravelo@gmail.com",
+          "toName": "{{$_POST.persona_contacto}}",
+          "toEmail": "{{$_POST.email_contacto}}",
+          "replyTo": "info@contucarga.com"
+        },
+        "disabled": true
+      },
+      {
+        "name": "",
+        "module": "mail",
+        "action": "send",
+        "options": {
+          "instance": "gmail",
+          "subject": "Solicitud de Cotización Contucarga - Página Web",
+          "body": "Hola Equipo \nUn visitante de la página web ha realizado una solicitud de cotización a través del formulario en línea. \nA continuación la información para dar respuesta a la solicitud: \n\nContacto: {{$_POST.persona_contacto}}\nTeléfono: {{$_POST.telefono_contacto}}\nCorreo:{{$_POST.email_contacto}}\nCompañía: {{$_POST.compania}}\n\nTipo de Servicio: {{$_POST.tipo_de_servicio}}\nTipo de Operración: {{$_POST.tipo_de_operacion}}\nModalidad de Embarque: {{$_POST.modalidad_de_embarque}}\nModalidad de Transporte: {{$_POST.modalidad_de_transporte}}\nInformación Adicional: {{$_POST.informacion_adicional}}\nRequerimiento Especial: {{$_POST.reqerimiento_especial}}\nValor de la mercancía: {{$_POST.valor_mercancia}} \nPeso Total: \nDimensiones: {{'Ancho: '+$_POST.anchura+' - largo:'+$_POST.longitud+' - alto:'+$_POST.altura}}\n\nFecha de Recogida: {{$_POST.fecha_recogida}}\nOrigen: {{$_POST.ciudad_origen+' , '+$_POST.pais_origen+' - zona '+$_POST.zona_origen}}\n\nFecha Entrega: {{$_POST.fecha_entrega}}\nDestino: {{$_POST.ciudad_destino+', '+$_POST.pais_destino+' - zona: '+$_POST.zona_destino}}\n \nDemosle respuesta a la solicitud antes de las 48 horas para incrementar la oportunidad de ganar un nuevo negocio!\n\nEquipo de Automatización \nContucarga",
+          "fromName": "Contucarga",
+          "fromEmail": "juanpabloravelo@gmail.com",
+          "toEmail": "juanpabloravelo@gmail.com",
+          "replyTo": "info@contucarga.com",
+          "toName": "Dirección Contucarga "
+        },
+        "disabled": true
+      }
+    ]
+  }
+}

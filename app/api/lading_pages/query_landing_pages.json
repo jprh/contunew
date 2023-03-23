@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      },
+      {
+        "type": "text",
+        "name": "path"
+      }
+    ],
+    "$_PARAM": [
+      {
+        "type": "text",
+        "name": "path"
+      }
+    ],
+    "$_SERVER": [
+      {
+        "type": "text",
+        "name": "URL"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query",
+      "module": "dbconnector",
+      "action": "select",
+      "options": {
+        "connection": "db",
+        "sql": {
+          "type": "SELECT",
+          "columns": [
+            {
+              "table": "landing_pages",
+              "column": "name"
+            },
+            {
+              "table": "landing_pages",
+              "column": "favicon"
+            },
+            {
+              "table": "meta_tags",
+              "column": "title"
+            },
+            {
+              "table": "meta_tags",
+              "column": "url"
+            },
+            {
+              "table": "meta_tags",
+              "column": "description"
+            },
+            {
+              "table": "meta_tags",
+              "column": "keywords"
+            },
+            {
+              "table": "meta_tags",
+              "column": "image"
+            },
+            {
+              "table": "meta_tags",
+              "column": "icon"
+            },
+            {
+              "table": "meta_tags",
+              "column": "twitter_card"
+            },
+            {
+              "table": "landing_pages",
+              "column": "path"
+            }
+          ],
+          "params": [],
+          "table": {
+            "name": "landing_pages"
+          },
+          "primary": "id",
+          "joins": [
+            {
+              "table": "meta_tags",
+              "column": "*",
+              "type": "INNER",
+              "clauses": {
+                "condition": "AND",
+                "rules": [
+                  {
+                    "table": "meta_tags",
+                    "column": "id",
+                    "operator": "equal",
+                    "value": {
+                      "table": "landing_pages",
+                      "column": "meta_tags",
+                      "type": "number"
+                    },
+                    "operation": "="
+                  }
+                ]
+              },
+              "primary": "id"
+            }
+          ],
+          "query": "SELECT landing_pages.name, landing_pages.favicon, meta_tags.title, meta_tags.url, meta_tags.description, meta_tags.keywords, meta_tags.image, meta_tags.icon, meta_tags.twitter_card, landing_pages.path\nFROM landing_pages\nINNER JOIN meta_tags ON meta_tags.id = landing_pages.meta_tags",
+          "orders": []
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "text",
+          "name": "name"
+        },
+        {
+          "type": "text",
+          "name": "favicon"
+        },
+        {
+          "type": "text",
+          "name": "title"
+        },
+        {
+          "type": "text",
+          "name": "url"
+        },
+        {
+          "type": "text",
+          "name": "description"
+        },
+        {
+          "type": "text",
+          "name": "keywords"
+        },
+        {
+          "type": "text",
+          "name": "image"
+        },
+        {
+          "type": "text",
+          "name": "icon"
+        },
+        {
+          "type": "text",
+          "name": "twitter_card"
+        },
+        {
+          "type": "text",
+          "name": "path"
+        }
+      ],
+      "outputType": "array"
+    }
+  }
+}

@@ -1,0 +1,178 @@
+<!-- Wappler include head-page="layouts/app" fontawesome_4="cdn" is="dmx-app" id="appprojects" appConnect="local" jquery_slim_35="cdn" bootstrap5="cdn" components="{dmxBootstrap5Navigation:{},dmxSockets:{},dmxFormatter:{},dmxDatePicker:{},dmxBootstrap5Offcanvas:{},dmxDataTraversal:{}}" moment_2="local with locales" -->
+
+<div class="offcanvas offcanvas-end" id="offcanvas1" is="dmx-bs5-offcanvas" tabindex="-1" nobackdrop="true">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Detalle de Consulta</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="container" is="dmx-data-detail" id="data_detail1" dmx-bind:data="serverconnectconsulta.data.query" key="id">
+            <h5>Sobre la Consulta</h5>
+            <p dmx-html="'Fecha de la solicitud: '+data_detail1.data.fecha_solicitud.formatDate('dd/MM/yyyy')"></p>
+            <p dmx-html="'Tipo de Producto: '+data_detail1.data.tipo_de_producto"></p>
+            <p dmx-html="'Valor del Producto: '+data_detail1.data.valor_de_producto"></p>
+            <p dmx-html="'Llegada de la mercancía: '+data_detail1.data.llegada_de_mercancia"></p>
+            <p dmx-html="'Tipo de entidad: '+data_detail1.data.tipo_de_entidad"></p>
+            <p dmx-html="'Información adicional: '+data_detail1.data.info_adicional"></p>
+            <hr class="solid" style="color: #303e67;">
+
+            <h5 class="mt-4">Sobre el Contacto</h5>
+            <p dmx-html="'Nombre: '+data_detail1.data.first_name.capitalize()+' '+data_detail1.data.last_name. capitalize()"></p>
+            <p dmx-html="'Email: '+data_detail1.data.email"></p>
+            <p dmx-html="'Teléfono:  '+data_detail1.data.phone"></p>
+            <hr class="solid" style="color: #303e67;">
+
+            <h5 class="mt-4">Sobre la Compañía</h5>
+            <p dmx-html="'Compañía: '+data_detail1.data.name.capitalize()"></p>
+            <p dmx-html="'Industria: '+data_detail1.data.industry"></p>
+            <p dmx-html="'Website: '+data_detail1.data.website"></p>
+            <p dmx-html="'País: '+data_detail1.data.country"></p>
+
+        </div>
+    </div>
+</div>
+<dmx-serverconnect id="serverconnectconsulta" url="/api/querytableconsulta" sockets="true"></dmx-serverconnect>
+<meta name="ac:route" content="/app-consultas">
+
+<!-- Page Content-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="page-title">Consultas</h4>
+                            <ol class="breadcrumb visually-hidden">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Dastone</a></li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Projects</a></li>
+                                <li class="breadcrumb-item active">Projects</li>
+                            </ol>
+                        </div>
+                        <!--end col-->
+                        <div class="col-auto align-self-center">
+                            <a href="#" class="btn btn-sm btn-outline-primary" id="Dash_Date">
+                                <span class="day-name" id="Day_Name">Hoy:</span>&nbsp;
+                                <span class="" id="Select_date">Jan 11</span>
+                                <i data-feather="calendar" class="align-self-center icon-xs ms-1"></i>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-primary">
+                                <i data-feather="download" class="align-self-center icon-xs"></i>
+                            </a>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-lg-6">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <h5 class="mt-0">Lista de consultas recibidas</h5>
+                    </li>
+                </ul>
+            </div>
+            <!--end col-->
+
+            <div class="col-lg-6 text-end">
+                <div class="text-end">
+                    <ul class="list-inline ul-flex">
+                        <li class="list-inline-item">
+                            <div class="input-group">
+                                <input type="text" id="example-input1-group2" name="example-input1-group2" class="form-control form-control-sm" placeholder="Buscar">
+                                <button type="button" class="btn btn-soft-primary btn-sm"><i class="fas fa-search"></i></button>
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <button type="button" class="btn btn-soft-primary btn-sm"><i class="fas fa-filter"></i></button>
+                        </li>
+                        <li class="list-inline-item">
+                            <button type="button" class="btn btn-soft-primary btn-sm text-nowrap">Nueva Consulta</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h4 class="card-title">Todos las Consultas</h4>
+                            </div>
+                            <!--end col-->
+                            <div class="col-auto">
+                                <a href="#" class="text-primary">Ver todos</a>
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <!--end card-header-->
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Email</th>
+                                        <th>Teléfono</th>
+                                        <th>Compañía</th>
+                                        <th class="style194">Website</th>
+                                        <th>País</th>
+                                        <th>Fecha de solicitud</th>
+                                        <th>Detalle</th>
+                                    </tr>
+                                </thead>
+                                <tbody is="dmx-repeat" id="repeat1" dmx-bind:repeat="serverconnectconsulta.data.query">
+                                    <tr>
+                                        <td dmx-html="first_name.capitalize()+' '+last_name.capitalize()"></td>
+                                        <td dmx-html="email">{{email}}</td>
+                                        <td dmx-html="phone">{{name}}</td>
+                                        <td dmx-html="company_name"></td>
+                                        <td dmx-html="company_website">{{tipo_de_producto}}</td>
+                                        <td dmx-html="country">{{valor_de_producto}}
+                                        </td>
+                                        <td dmx-html="fecha_solicitud.formatDate('dd/MM/yyyy')">{{fecha_solicitud}}</td>
+                                        <td><button id="btn1" class="btn btn-sm btn-soft-primary flex-grow-1 text-nowrap" data-bs-toggle="offcanvas" data-bs-target="#offcanvas1" dmx-on:click="offcanvas1.data_detail1.select(id)">Ver más</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <!--end table-responsive-->
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <!--end row-->
+
+        <!--end row-->
+
+    </div><!-- container -->
+
+    <footer class="footer text-center text-sm-start">
+        &copy;
+
+        <script>
+            document.write(new Date().getFullYear())
+        </script> Dastone <span class="text-muted d-none d-sm-inline-block float-end">Crafted with <i class="mdi mdi-heart text-danger"></i> by Creativehub</span>
+    </footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->

@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      },
+      {
+        "type": "text",
+        "fieldName": "path",
+        "name": "path"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query",
+      "module": "dbconnector",
+      "action": "select",
+      "options": {
+        "connection": "db",
+        "sql": {
+          "type": "SELECT",
+          "columns": [],
+          "table": {
+            "name": "blog_posts"
+          },
+          "primary": "id",
+          "joins": [],
+          "query": "SELECT *\nFROM blog_posts\nWHERE path <> :P1 /* {{$_GET.path}} */",
+          "params": [
+            {
+              "operator": "not_equal",
+              "type": "expression",
+              "name": ":P1",
+              "value": "{{$_GET.path}}"
+            }
+          ],
+          "wheres": {
+            "condition": "AND",
+            "rules": [
+              {
+                "id": "blog_posts.path",
+                "field": "blog_posts.path",
+                "type": "string",
+                "operator": "not_equal",
+                "value": "{{$_GET.path}}",
+                "data": {
+                  "table": "blog_posts",
+                  "column": "path",
+                  "type": "text",
+                  "columnObj": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "primary": false,
+                    "nullable": true,
+                    "name": "path"
+                  }
+                },
+                "operation": "<>"
+              }
+            ],
+            "conditional": null,
+            "valid": true
+          }
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "number",
+          "name": "id"
+        },
+        {
+          "type": "text",
+          "name": "img"
+        },
+        {
+          "type": "text",
+          "name": "title"
+        },
+        {
+          "type": "text",
+          "name": "path"
+        },
+        {
+          "type": "text",
+          "name": "meta"
+        },
+        {
+          "type": "text",
+          "name": "body"
+        },
+        {
+          "type": "text",
+          "name": "author"
+        },
+        {
+          "type": "date",
+          "name": "date"
+        }
+      ],
+      "outputType": "array"
+    }
+  }
+}

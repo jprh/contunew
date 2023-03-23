@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "path"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "fileDownload",
+      "module": "fs",
+      "action": "download",
+      "options": {
+        "path": "{{$_GET.path}}",
+        "filename": "download"
+      },
+      "outputType": "boolean",
+      "output": false
+    }
+  }
+}

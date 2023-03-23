@@ -1,0 +1,198 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      },
+      {
+        "type": "text",
+        "multiple": true,
+        "name": "filter"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query",
+      "module": "dbconnector",
+      "action": "select",
+      "options": {
+        "connection": "db",
+        "sql": {
+          "type": "SELECT",
+          "columns": [
+            {
+              "table": "codigos_arancelarios",
+              "column": "id"
+            },
+            {
+              "table": "codigos_arancelarios",
+              "column": "codigo_hts"
+            },
+            {
+              "table": "codigos_arancelarios",
+              "column": "descripcion"
+            },
+            {
+              "table": "codigos_arancelarios",
+              "column": "numero_sku"
+            },
+            {
+              "table": "companies",
+              "column": "name"
+            }
+          ],
+          "params": [
+            {
+              "operator": "contains",
+              "type": "expression",
+              "name": ":P1",
+              "value": "{{$_GET.filter}}",
+              "test": ""
+            },
+            {
+              "operator": "contains",
+              "type": "expression",
+              "name": ":P2",
+              "value": "{{$_GET.filter}}",
+              "test": ""
+            },
+            {
+              "operator": "contains",
+              "type": "expression",
+              "name": ":P3",
+              "value": "{{$_GET.filter}}",
+              "test": ""
+            }
+          ],
+          "table": {
+            "name": "codigos_arancelarios"
+          },
+          "primary": "id",
+          "joins": [
+            {
+              "table": "companies",
+              "column": "*",
+              "type": "INNER",
+              "clauses": {
+                "condition": "AND",
+                "rules": [
+                  {
+                    "table": "companies",
+                    "column": "id",
+                    "operator": "equal",
+                    "value": {
+                      "table": "codigos_arancelarios",
+                      "column": "compania_id",
+                      "type": "number"
+                    },
+                    "operation": "="
+                  }
+                ]
+              },
+              "primary": "id"
+            }
+          ],
+          "query": "SELECT codigos_arancelarios.id, codigos_arancelarios.codigo_hts, codigos_arancelarios.descripcion, codigos_arancelarios.numero_sku, companies.name\nFROM codigos_arancelarios\nINNER JOIN companies ON companies.id = codigos_arancelarios.compania_id\nWHERE codigos_arancelarios.codigo_hts LIKE :P1 /* {{$_GET.filter}} */ OR codigos_arancelarios.descripcion LIKE :P2 /* {{$_GET.filter}} */ OR companies.name LIKE :P3 /* {{$_GET.filter}} */",
+          "orders": [],
+          "wheres": {
+            "condition": "OR",
+            "rules": [
+              {
+                "id": "codigos_arancelarios.codigo_hts",
+                "field": "codigos_arancelarios.codigo_hts",
+                "type": "string",
+                "operator": "contains",
+                "value": "{{$_GET.filter}}",
+                "data": {
+                  "table": "codigos_arancelarios",
+                  "column": "codigo_hts",
+                  "type": "text",
+                  "columnObj": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "primary": false,
+                    "nullable": true,
+                    "name": "codigo_hts"
+                  }
+                },
+                "operation": "LIKE"
+              },
+              {
+                "id": "codigos_arancelarios.descripcion",
+                "field": "codigos_arancelarios.descripcion",
+                "type": "string",
+                "operator": "contains",
+                "value": "{{$_GET.filter}}",
+                "data": {
+                  "table": "codigos_arancelarios",
+                  "column": "descripcion",
+                  "type": "text",
+                  "columnObj": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "primary": false,
+                    "nullable": true,
+                    "name": "descripcion"
+                  }
+                },
+                "operation": "LIKE"
+              },
+              {
+                "id": "companies.name",
+                "field": "companies.name",
+                "type": "string",
+                "operator": "contains",
+                "value": "{{$_GET.filter}}",
+                "data": {
+                  "table": "companies",
+                  "column": "name",
+                  "type": "text",
+                  "columnObj": {
+                    "type": "text",
+                    "maxLength": 65535,
+                    "primary": false,
+                    "nullable": true,
+                    "name": "name"
+                  }
+                },
+                "operation": "LIKE"
+              }
+            ],
+            "conditional": "{{$_GET.filter}}",
+            "valid": true
+          }
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "number",
+          "name": "id"
+        },
+        {
+          "type": "text",
+          "name": "codigo_hts"
+        },
+        {
+          "type": "text",
+          "name": "descripcion"
+        },
+        {
+          "type": "text",
+          "name": "numero_sku"
+        },
+        {
+          "type": "text",
+          "name": "name"
+        }
+      ],
+      "outputType": "array"
+    }
+  }
+}

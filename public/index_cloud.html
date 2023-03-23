@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="dmxAppConnect/dmxAppConnect.js"></script>
+  <meta name="ac:route" content="/home">
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- google font: you can change here -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,800" rel="stylesheet">
+  <!-- main stylesheet-->
+  <link href="css/base.css" rel="stylesheet" type="text/css">
+  <link href="css/style.min.css" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
+  <script src="js/modernizr.js"></script> <!-- Modernizr -->
+  <!-- favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png?v=2">
+
+  <!-- SEO tags edit here-->
+  <title>Contucarga</title>
+  <meta name="description" content="Contucarga Agente de Carga Internacional">
+  <meta name="keywords" content="Contucarga, Agente de Aduana, Agente de Carga">
+  <meta name="author" content="Control y Manejo Contucarga">
+  <!-- add more tags like facebook pixel, google tag, tracking code and more -->
+
+  <link rel="stylesheet" href="fontawesome4/csss/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="bootstrap/4/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="dmxAppConnect/dmxValidator/dmxValidator.css" />
+  <script src="dmxAppConnect/dmxValidator/dmxValidator.js" defer=""></script>
+  <script src="dmxAppConnect/dmxBootbox/bootbox.all.min.js" defer=""></script>
+  <script src="dmxAppConnect/dmxBootbox/dmxBootbox.js" defer=""></script>
+</head>
+
+<body is="dmx-app" id="index_cloud">
+
+  <!-- page preloader initial -->
+  <div id="loader-page">
+    <span id="preloader"><span class="loader-fill"></span></span>
+  </div><!-- end preloader -->
+
+  <header class="cd-auto-hide-header style1">
+    <div class="logo animate">
+      <a href="#" target="_blank"><img src="img/contucarga-logo.png" alt="Logo" class="w-25 h-25"></a>
+    </div>
+  </header> <!-- .cd-auto-hide-header -->
+
+  <!-- ######## Main content ######## -->
+  <div class="main-wrapper content-center-align heightfull" dmx-hide="">
+    <!-- content wrapper -->
+    <div class="content-wrapper text-center">
+
+      <!-- title-wrapper -->
+      <div class="title-wrapper">
+        <!-- coming soon text change here -->
+        <p class="label-text animate w-auto style3">Una nueva experiencia web está</p>
+        <h1 class="big-title bold-text animate">En Contrucción</h1>
+        <h3 class=>Contucarga</h3>
+      </div><!-- end title-wrapper -->
+
+      <!-- socialmedia change here
+        many more icon you can use: https://ionicons.com/ -->
+      <div class="socialmedia animate">
+        <a href="#" dmx-hide="" class="hidden style2">
+          <ion-icon name="logo-instagram" dmx-hide=""></ion-icon>
+        </a>
+        <a href="https://www.facebook.com/contucarga/">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <a href="https://twitter.com/contucarga?lang=es">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+      </div>
+
+    </div><!-- end content-wrapper -->
+
+    <!-- change background just replacing name "background.jpg" or replace image in img folder with same name -->
+    <div class="background-image-holder bg-animated" style="background: url(img/container.jpg)"></div>
+
+
+    <!-- clouds -->
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud2"></div>
+
+  </div><!-- end main-wrapper -->
+
+  <!-- ######## Menu content ######## -->
+  <div class="primary-nav">
+    <div class="menu-content">
+
+      <!-- avatar -->
+      <div class="avatar">
+        <!-- <div class="avatar-pic"><img class="radius-circle shadow-light" src="" alt=""></div> -->
+        <div class="avatar-profile">
+          <!-- you can change names or deleted by simply removing whole tag
+            example delete: <h3 class="slideup">Faizur Rehman</h3> -->
+          <h3 class="slideup">Contucarga</h3>
+          <p class="text-uppercase">Agencia Internacional de Carga</p>
+        </div>
+      </div><!-- end avatar -->
+
+      <!-- body text -->
+      <div class="body-content text-center">
+        <!-- you can change your content here and
+          also you can add new paragraph by adding <p></p> -->
+        <p>Control y Manejo Contucarga fue fundada en 1989 como una empresa orientada a la prestación de servicios que cubren todos los campos del Comercio Internacional.
+
+          Conocimiento y Experiencia garantizan un servicio de alta calidad y la satisfacción de los clientes.
+        </p>
+      </div><!-- end body text -->
+
+      <!-- divider -->
+      <div class="divider"></div>
+
+      <!-- newsletter -->
+      <div class="newsletter text-center">
+        <h6>Para más información, suscríbase!</h6>
+        <form class="form" action="api/insert" is="dmx-serverconnect-form" id="serverconnectform1"
+          dmx-on:success="run([{'bootbox.alert':{title:'Forma enviada',message:'Gracias por su interés en Contucarga'}},{run:{action:`serverconnectform1.reset()`,name:'rest_form'}}])" method="post">
+          <input type="email" class="form__input" placeholder="Ingrese su correo electrónico" style="" data-msg-required="" data-msg-email="" name="email" id="email_input" data-rule-email="">
+          <input type="submit" class="submit-btn" value="suscríbase" data-msg-required="">
+
+        </form><!-- end form -->
+      </div><!-- end newsletter -->
+
+    </div><!-- end menu-content -->
+  </div><!-- end menu-wrapper -->
+
+  <!-- menu icon on top -->
+  <div class="nav-overlap"><span></span></div>
+  <div class="content-overlap"><span></span></div>
+  <a href="#" class="hamburger-menu animate-small">Menu<span class="menu-icon"></span></a>
+
+  <!-- Optional JavaScript-->
+  <script src="js/packege.min.js"></script>
+  <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
+  <script src="bootstrap/4/js/bootstrap.min.js"></script>
+</body>
+
+</html>

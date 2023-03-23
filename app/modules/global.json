@@ -1,0 +1,259 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ],
+    "$_SERVER": [
+      {
+        "type": "text",
+        "name": "URL"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "identity",
+        "module": "auth",
+        "action": "identify",
+        "options": {
+          "provider": "security"
+        },
+        "output": true,
+        "meta": []
+      },
+      {
+        "name": "url",
+        "module": "core",
+        "action": "setvalue",
+        "options": {
+          "value": "{{$_SERVER.URL}}"
+        },
+        "meta": [],
+        "outputType": "text",
+        "output": true
+      },
+      {
+        "name": "query",
+        "module": "dbconnector",
+        "action": "select",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "SELECT",
+            "columns": [
+              {
+                "table": "meta_tags",
+                "column": "*"
+              }
+            ],
+            "params": [
+              {
+                "operator": "equal",
+                "type": "expression",
+                "name": ":P1",
+                "value": "{{url}}",
+                "test": ""
+              }
+            ],
+            "table": {
+              "name": "meta_tags"
+            },
+            "primary": "id",
+            "joins": [],
+            "query": "SELECT *\nFROM meta_tags\nWHERE url = :P1 /* {{url}} */",
+            "wheres": {
+              "condition": "AND",
+              "rules": [
+                {
+                  "id": "meta_tags.url",
+                  "field": "meta_tags.url",
+                  "type": "string",
+                  "operator": "equal",
+                  "value": "{{url}}",
+                  "data": {
+                    "table": "meta_tags",
+                    "column": "url",
+                    "type": "text",
+                    "columnObj": {
+                      "type": "string",
+                      "maxLength": 255,
+                      "primary": false,
+                      "nullable": true,
+                      "name": "url"
+                    }
+                  },
+                  "operation": "="
+                }
+              ],
+              "conditional": null,
+              "valid": true
+            }
+          }
+        },
+        "output": true,
+        "meta": [
+          {
+            "type": "number",
+            "name": "id"
+          },
+          {
+            "type": "text",
+            "name": "title"
+          },
+          {
+            "type": "text",
+            "name": "url"
+          },
+          {
+            "type": "text",
+            "name": "description"
+          },
+          {
+            "type": "text",
+            "name": "keywords"
+          },
+          {
+            "type": "text",
+            "name": "image"
+          },
+          {
+            "type": "text",
+            "name": "icon"
+          },
+          {
+            "type": "text",
+            "name": "twitter_card"
+          }
+        ],
+        "outputType": "array"
+      },
+      {
+        "name": "urlsplit",
+        "module": "core",
+        "action": "setvalue",
+        "options": {
+          "value": "{{$_SERVER.URL.split('/')}}"
+        },
+        "meta": [],
+        "outputType": "text",
+        "disabled": true
+      },
+      {
+        "name": "",
+        "module": "core",
+        "action": "condition",
+        "options": {
+          "if": "{{urlsplit[1]=='blog'&&urlsplit[2].length()>1}}",
+          "then": {
+            "steps": {
+              "name": "query_blog_posts",
+              "module": "dbconnector",
+              "action": "select",
+              "options": {
+                "connection": "db",
+                "sql": {
+                  "type": "SELECT",
+                  "columns": [
+                    {
+                      "table": "meta_tags",
+                      "column": "*"
+                    }
+                  ],
+                  "params": [
+                    {
+                      "operator": "equal",
+                      "type": "expression",
+                      "name": ":P1",
+                      "value": "{{url}}",
+                      "test": ""
+                    }
+                  ],
+                  "table": {
+                    "name": "meta_tags"
+                  },
+                  "primary": "id",
+                  "joins": [],
+                  "query": "SELECT *\nFROM meta_tags\nWHERE url = :P1 /* {{url}} */",
+                  "wheres": {
+                    "condition": "AND",
+                    "rules": [
+                      {
+                        "id": "meta_tags.url",
+                        "field": "meta_tags.url",
+                        "type": "string",
+                        "operator": "equal",
+                        "value": "{{url}}",
+                        "data": {
+                          "table": "meta_tags",
+                          "column": "url",
+                          "type": "text",
+                          "columnObj": {
+                            "type": "string",
+                            "maxLength": 255,
+                            "primary": false,
+                            "nullable": true,
+                            "name": "url"
+                          }
+                        },
+                        "operation": "="
+                      }
+                    ],
+                    "conditional": null,
+                    "valid": true
+                  }
+                }
+              },
+              "output": false,
+              "meta": [
+                {
+                  "type": "number",
+                  "name": "id"
+                },
+                {
+                  "type": "text",
+                  "name": "title"
+                },
+                {
+                  "type": "text",
+                  "name": "url"
+                },
+                {
+                  "type": "text",
+                  "name": "description"
+                },
+                {
+                  "type": "text",
+                  "name": "keywords"
+                },
+                {
+                  "type": "text",
+                  "name": "image"
+                },
+                {
+                  "type": "text",
+                  "name": "icon"
+                },
+                {
+                  "type": "text",
+                  "name": "twitter_card"
+                }
+              ],
+              "outputType": "array",
+              "disabled": true
+            }
+          }
+        },
+        "outputType": "boolean",
+        "disabled": true
+      }
+    ]
+  }
+}

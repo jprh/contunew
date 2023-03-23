@@ -1,0 +1,83 @@
+<!doctype html>
+<html is="dmx-app">
+
+<head>
+    <script src="dmxAppConnect/dmxAppConnect.js"></script>
+    <meta name="ac:route" content="/test">
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>test</title>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="dmxAppConnect/dmxFormatter/dmxFormatter.js" defer></script>
+    <script src="dmxAppConnect/dmxBootstrap4Toasts/dmxBootstrap4Toasts.js" defer></script>
+
+    <meta http-equiv="X-Content-Security-Policy" Access-Control-Allow-Origin:* Origin:>
+
+</head>
+
+<body id="test_try">
+    <dmx-api-datasource id="api1" is="dmx-fetch" url="http://161.35.121.27/api/api_test"></dmx-api-datasource>
+    <script is="dmx-flow" id="flow1" type="text/dmx-flow" autorun>{
+  run: {action: "{{arr1.add(1)}}"}
+}</script>
+    <dmx-array id="arr1" dmx-on:updated="run({'toast.show':{message:'New Field Added'}})"></dmx-array>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form id="form1" dmx-repeat:repeat1="arr1.items.default(2)">
+
+                    <div class="form-group mb-3 row">
+                        <label for="input1" class="col-sm-2 col-form-label">Some text</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input1" name="input1" aria-describedby="input1_help" placeholder="Enter some text">
+                            <small id="input1_help" class="form-text text-muted">Your input is very valuable.</small>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container wappler-block pt-5 pb-5">
+        <div class="row">
+            <div class="text-center col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+                <h4>Fancy display heading {{arr1.items+arr1.count}} {{arr1.items.hasItems()}}<br><small class="text-muted">With faded secondary text</small></h4>
+                <p>A nice paragraph</p>
+                <button class="btn btn-primary" dmx-on:click="arr1.add(1)">Create a field</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 dmx-html="api1.data.api.data.public_link">https://juanpabloravelo.ziflow.io/proof/3tv8prbnfk9mq6tvpv3rsnffcc</h2>
+                <h2 dmx-html="api1.data.api_reviewersURL.headers.vary+api1.data.api_reviewersURL.headers.server+api1.data.api_reviewersURL.headers.connection+api1.data.api_reviewersURL.headers['content-length']+api1.data.api_reviewersURL.headers['content-type']+' ac '+api1.headers['access-control-allow-origin']+' '+api1.headers['access-control-allow-credentials']"></h2>
+            </div>
+            <div class="col">
+                <embed width="1080" height="760" frameborder="0" allowfullscreen dmx-bind:src="api1.data.api_reviewersURL.data.proof_url">
+            </div>
+
+        </div>
+    </div>
+    <div class="container wappler-block pt-5 pb-5">
+        <div class="row">
+            <div class="text-center col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+                <h4>Fancy display heading<br><small class="text-muted">With faded secondary text</small></h4>
+                <p>A nice paragraph</p>
+                <button class="btn btn-primary mb-3">Button</button>
+                <img class="wappler-type-picture w-100" height="150" src="assets/img/avatar-16.jpg">
+            </div>
+        </div>
+    </div>
+    <%- await include('/partials/container-center', Object.assign({}, locals, {title:'JP',parragraph:'Ravelo'})) %>
+    <%- await include('/partials/partialtest', Object.assign({}, locals)) %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

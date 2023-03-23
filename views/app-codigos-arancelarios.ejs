@@ -1,0 +1,178 @@
+<!-- Wappler include head-page="layouts/app" fontawesome_4="cdn" is="dmx-app" id="appprojects" appConnect="local" jquery_slim_35="cdn" bootstrap5="cdn" components="{dmxBootstrap5Navigation:{},dmxSockets:{},dmxFormatter:{},dmxDatePicker:{},dmxValidator:{},dmxBootbox:{},dmxBootstrap5TableGenerator:{},dmxBootbox5:{},dmxStateManagement:{},dmxBootstrap5PagingGenerator:{}}" moment_2="local with locales" -->
+<dmx-query-manager id="query1"></dmx-query-manager>
+<dmx-serverconnect id="serverconnectcompanies" url="api/compania/company_query"></dmx-serverconnect>
+<dmx-serverconnect id="serverconnectdeletecodigo" url="api/codigos_arancelarios/delete_codigos_arancelarios" sockets="true"></dmx-serverconnect>
+<dmx-serverconnect id="serverconnectquerycodigos" url="api/codigos_arancelarios/query_codigos_arancelarios" sockets="true" dmx-param:filter="formbusqueda.inputbusqueda.value"></dmx-serverconnect>
+<dmx-serverconnect id="serverconnectQueryCodigosPages" url="api/codigos_arancelarios/query_codigos_arancelarios_paged" dmx-param:offset="query1.data.offset" sockets="true" dmx-param:limit="5" dmx-param:filter="formbusqueda.inputbusqueda.value"></dmx-serverconnect>
+<meta name="ac:route" content="/app-codigos-arancelarios">
+
+<!-- Page Content-->
+<!-- Page Content-->
+<div class="page-content" style="/* padding-bottom: 4rem */">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="page-title">Códigos Arancelarios</h4>
+                            <ol class="breadcrumb visually-hidden">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Dastone</a></li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Projects</a></li>
+                                <li class="breadcrumb-item active">Create</li>
+                            </ol>
+                        </div>
+                        <!--end col-->
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card" style="/* margin-bottom: 0px */">
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h4 class="card-title">Mis códigos arancelarios</h4>
+                                <p class="text-muted mb-0">Se utiliza un código arancelario para clasificar y definir los bienes objeto de comercio internacional. Para importar/exportar un producto hacia/desde Venezuela, se debe asignar un código arancelario. Los códigos arancelario son importantes ya que determinan la tasa de impuestos y exoneraciones aplicadas a un producto.<br><br>A continuación, puede encontrar una lista de sus códigos arancelarios utilizados anteriormente, así como agregar otros nuevos para próximos envíos.<br><br>También se pueden agregar nuevos códigos arancelarios sobre la marcha al enviar un formulario de autorización.
+                                    Para una búsqueda de código arancelarios de autoservicio, haga <u>clic aquí</u>
+                                    Para que un especialista certificado en aduanas coloque un código arancelario por usted, haga <u>click aquí</u><br></p>
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <!--end card-header-->
+                    <div class="card-body">
+                        <div class="d-flex flex-column flex-lg-row" style="display: -webkit-box;">
+
+                            <div class="col-12 col-lg-12">
+                                <form id="formcodigosarancelarios" is="dmx-serverconnect-form" method="post" action="api/codigos_arancelarios/insert_codigos_arancelarios" dmx-on:success="run([{'bootbox.alert':{message:'Un nuevo código arancelario ha sido incluido',title:'Nuevo Código'}},{run:{action:`formcodigosarancelarios.reset()`}}])">
+                                    <!--end form-group-->
+                                    <div class="row mb-3">
+                                        <div class="mb-2 mb-lg-0 col-12 col-md-2">
+                                            <label class="form-label" for="codigosArancelarios">Código Arancelario</label>
+                                            <input type="text" class="form-control" id="codigosArancelarios" placeholder="000.000.0000" name="codigo_hts" data-rule-digits="" data-msg-digits="por favor ingrese solo dígitos." required="" data-msg-required="Este campo es requerido" data-rule-nowhitespace="" data-msg-nowhitespace="Por favor no dejar espacios" maxlength="10" data-msg-maxlength="Por favor ingrese no más de {10} caracteres.">
+                                        </div>
+                                        <!--end col-->
+                                        <div class="mb-2 mb-lg-0 align-self-end col-12 col-md-5">
+                                            <label class="form-label" for="descripcionCodigo">Descripción</label>
+                                            <input type="text" class="form-control" id="descripcionCodigo" name="descripcion">
+                                        </div>
+                                        <div class="mb-2 mb-lg-0 col-12 col-md-2">
+                                            <label class="form-label" for="numeroSku">Número SKU</label>
+                                            <input type="text" class="form-control" id="numeroSku" name="numero_sku">
+                                        </div>
+                                        <div class="mb-2 mb-lg-0 col-12 col-md-2">
+                                            <label class="form-label" for="company">Company {{compania_id.value+' '+compania_id.selectedValue+'  '+compania_id.selectedText}}</label>
+                                            <select id="companiaId" class="form-select" dmx-bind:options="serverconnectcompanies.data.query" optiontext="name.capitalize()" optionvalue="id" name="compania_id">
+                                            </select>
+                                        </div><button class="btn btn-primary btn-sm mt-4 w-auto rounded" dmx-on:click="formcodigosarancelarios.submit()">Incluir Código</button>
+                                        <!--end col-->
+
+                                        <!--end col-->
+
+
+
+
+
+                                        <!--end col-->
+                                    </div>
+                                    <!--end form-group-->
+                                    <!--end form-group-->
+                                    <!--end form-group-->
+
+
+                                </form>
+                                <!--end form-->
+                            </div>
+                            <!--end col-->
+                            <!--end col-->
+                        </div>
+                        <div class="d-flex mt-4">
+                            <div class="row w-50">
+                                <div class="col">
+                                    <form id="formbusqueda">
+                                        <div class="form-group md-3"> <label for="inputbusqueda" class="form-label">Búsqueda de Código</label>
+                                            <input type="text" class="form-control" id="inputbusqueda" name="busqueda" aria-describedby="input1_help" placeholder="Ingrese cualquier parámetro de búsqueda">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="d-flex flex-column mt-2" style="display: -webkit-box;">
+
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Codigo</th>
+                                            <th>Descripcion</th>
+                                            <th>Numero sku</th>
+                                            <th>Compañía</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="serverconnectQueryCodigosPages.data.query.data" id="tableRepeat2">
+                                        <tr>
+                                            <td dmx-text="codigo_hts.substr(0, 3)+'.'+codigo_hts.substr(4, 3)+'.'+codigo_hts.substr(7, 4)"></td>
+                                            <td dmx-text="descripcion.capitalize()"></td>
+                                            <td dmx-text="numero_sku"></td>
+                                            <td dmx-text="name.capitalize()"></td>
+                                            <td class="fw-bolder text-end">
+                                                <button id="btn1" class="btn btn-danger" dmx-on:click="run({'bootbox.confirm':{message:'Esta seguro que desea eliminar el código?',title:'El código será eliminado permanentemente',buttons:{confirm:{label:'Confirmar',className:'btn-danger'},cancel:{label:'Cancelar',className:'btn-primary'}},then:{steps:{run:{action:`serverconnectdeletecodigo.load({id: id})`}}}}})">Eliminar</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <ul class="pagination justify-content-end" dmx-populate="serverconnectQueryCodigosPages.data.query" dmx-state="query1" dmx-offset="offset" dmx-generator="bs5paging">
+                                <li class="page-item" dmx-class:disabled="serverconnectQueryCodigosPages.data.query.page.current == 1" aria-label="First">
+                                    <a href="javascript:void(0)" class="page-link" dmx-on:click="query1.set('offset',serverconnectQueryCodigosPages.data.query.page.offset.first)"><span aria-hidden="true">&lsaquo;&lsaquo;</span></a>
+                                </li>
+                                <li class="page-item" dmx-class:disabled="serverconnectQueryCodigosPages.data.query.page.current == 1" aria-label="Previous">
+                                    <a href="javascript:void(0)" class="page-link" dmx-on:click="query1.set('offset',serverconnectQueryCodigosPages.data.query.page.offset.prev)"><span aria-hidden="true">&lsaquo;</span></a>
+                                </li>
+                                <li class="page-item" dmx-class:active="title == serverconnectQueryCodigosPages.data.query.page.current" dmx-class:disabled="!active" dmx-repeat="serverconnectQueryCodigosPages.data.query.getServerConnectPagination(2,1,'...')">
+                                    <a href="javascript:void(0)" class="page-link" dmx-on:click="query1.set('offset',(page-1)*serverconnectQueryCodigosPages.data.query.limit)">{{title}}</a>
+                                </li>
+                                <li class="page-item" dmx-class:disabled="serverconnectQueryCodigosPages.data.query.page.current ==  serverconnectQueryCodigosPages.data.query.page.total" aria-label="Next">
+                                    <a href="javascript:void(0)" class="page-link" dmx-on:click="query1.set('offset',serverconnectQueryCodigosPages.data.query.page.offset.next)"><span aria-hidden="true">&rsaquo;</span></a>
+                                </li>
+                                <li class="page-item" dmx-class:disabled="serverconnectQueryCodigosPages.data.query.page.current ==  serverconnectQueryCodigosPages.data.query.page.total" aria-label="Last">
+                                    <a href="javascript:void(0)" class="page-link" dmx-on:click="query1.set('offset',serverconnectQueryCodigosPages.data.query.page.offset.last)"><span aria-hidden="true">&rsaquo;&rsaquo;</span></a>
+                                </li>
+                            </ul>
+                            <!--end col-->
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+
+    </div><!-- container -->
+
+    <footer class="footer text-center text-sm-start style6">
+        &copy; <script src="/dastone/default/assets/js/jquery.min.js"></script>
+        <script src="/dastone/default/assets/js/moment.js"></script>
+        <script>
+            document.write(new Date().getFullYear())
+        </script> Dastone <span class="text-muted d-none d-sm-inline-block float-end">Crafted with <i class="mdi mdi-heart text-danger"></i> by JPR</span>
+    </footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->

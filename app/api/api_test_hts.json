@@ -1,0 +1,227 @@
+{
+  "meta": {
+    "options": {
+      "linkedForm": "formHts",
+      "linkedFile": "/views/Table.ejs"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "htsCode",
+        "name": "htsCode"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "parametro",
+        "module": "core",
+        "action": "setvalue",
+        "options": {
+          "value": "{{$_POST.htsCode}}"
+        },
+        "meta": [],
+        "outputType": "text",
+        "output": true
+      },
+      {
+        "name": "api",
+        "module": "api",
+        "action": "send",
+        "options": {
+          "url": "https://hts.usitc.gov/api/search",
+          "schema": [
+            {
+              "type": "object",
+              "name": "data",
+              "sub": [
+                {
+                  "type": "array",
+                  "name": "results",
+                  "sub": [
+                    {
+                      "type": "text",
+                      "name": "other"
+                    },
+                    {
+                      "type": "text",
+                      "name": "superior"
+                    },
+                    {
+                      "type": "text",
+                      "name": "indent"
+                    },
+                    {
+                      "type": "text",
+                      "name": "description"
+                    },
+                    {
+                      "type": "text",
+                      "name": "statisticalSuffix"
+                    },
+                    {
+                      "type": "text",
+                      "name": "score"
+                    },
+                    {
+                      "type": "text",
+                      "name": "special"
+                    },
+                    {
+                      "type": "text",
+                      "name": "htsno"
+                    },
+                    {
+                      "type": "text",
+                      "name": "footnotes"
+                    },
+                    {
+                      "type": "text",
+                      "name": "general"
+                    },
+                    {
+                      "type": "text",
+                      "name": "units"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "object",
+              "name": "headers",
+              "sub": [
+                {
+                  "type": "text",
+                  "name": "connection"
+                },
+                {
+                  "type": "text",
+                  "name": "content-type"
+                },
+                {
+                  "type": "text",
+                  "name": "date"
+                },
+                {
+                  "type": "text",
+                  "name": "keep-alive"
+                },
+                {
+                  "type": "text",
+                  "name": "server"
+                },
+                {
+                  "type": "text",
+                  "name": "strict-transport-security"
+                },
+                {
+                  "type": "text",
+                  "name": "transfer-encoding"
+                }
+              ]
+            }
+          ],
+          "params": {
+            "query": "{{$_POST.htsCode}}"
+          }
+        },
+        "output": true,
+        "meta": [
+          {
+            "type": "object",
+            "name": "data",
+            "sub": [
+              {
+                "type": "array",
+                "name": "results",
+                "sub": [
+                  {
+                    "type": "text",
+                    "name": "other"
+                  },
+                  {
+                    "type": "text",
+                    "name": "superior"
+                  },
+                  {
+                    "type": "text",
+                    "name": "indent"
+                  },
+                  {
+                    "type": "text",
+                    "name": "description"
+                  },
+                  {
+                    "type": "text",
+                    "name": "statisticalSuffix"
+                  },
+                  {
+                    "type": "text",
+                    "name": "score"
+                  },
+                  {
+                    "type": "text",
+                    "name": "special"
+                  },
+                  {
+                    "type": "text",
+                    "name": "htsno"
+                  },
+                  {
+                    "type": "text",
+                    "name": "footnotes"
+                  },
+                  {
+                    "type": "text",
+                    "name": "general"
+                  },
+                  {
+                    "type": "text",
+                    "name": "units"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "object",
+            "name": "headers",
+            "sub": [
+              {
+                "type": "text",
+                "name": "connection"
+              },
+              {
+                "type": "text",
+                "name": "content-type"
+              },
+              {
+                "type": "text",
+                "name": "date"
+              },
+              {
+                "type": "text",
+                "name": "keep-alive"
+              },
+              {
+                "type": "text",
+                "name": "server"
+              },
+              {
+                "type": "text",
+                "name": "strict-transport-security"
+              },
+              {
+                "type": "text",
+                "name": "transfer-encoding"
+              }
+            ]
+          }
+        ],
+        "outputType": "object"
+      }
+    ]
+  }
+}

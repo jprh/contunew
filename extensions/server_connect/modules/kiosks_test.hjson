@@ -1,0 +1,24 @@
+[
+  {
+    type: 'KIOSK tools',
+    module: 'kiosk_ping',
+    action: 'ping_kiosks',
+    groupTitle: 'My Modules',
+    groupIcon: 'fas fa-lg fa-file comp-files',
+    title : 'Ping KIOSKS @@var(name)@@',
+    icon : 'fad fa-lg fa-network-wired comp-files',
+    dataScheme: [
+        {name: 'test', type: 'text'}
+    ],
+    dataPickObject: true,
+    properties : [
+        {
+        group: 'KIOSK Data',
+        variables: [
+            { name: 'name', optionName: 'name', title: 'Name', type: 'text', required: true, defaultValue: ''},
+            { name: 'actionData', optionName: 'data', title: 'Data', type: 'text', defaultValue: ''}
+            ]
+            }
+        ]   
+  }
+]

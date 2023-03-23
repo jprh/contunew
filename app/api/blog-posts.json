@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      },
+      {
+        "type": "text",
+        "fieldName": "path",
+        "name": "path"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query",
+      "module": "dbconnector",
+      "action": "select",
+      "options": {
+        "connection": "db",
+        "sql": {
+          "type": "SELECT",
+          "columns": [],
+          "table": {
+            "name": "blog_posts"
+          },
+          "primary": "id",
+          "joins": [],
+          "query": "SELECT *\nFROM blog_posts",
+          "params": []
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "number",
+          "name": "id"
+        },
+        {
+          "type": "text",
+          "name": "img"
+        },
+        {
+          "type": "text",
+          "name": "title"
+        },
+        {
+          "type": "text",
+          "name": "path"
+        },
+        {
+          "type": "text",
+          "name": "meta"
+        },
+        {
+          "type": "text",
+          "name": "body"
+        },
+        {
+          "type": "text",
+          "name": "author"
+        },
+        {
+          "type": "date",
+          "name": "date"
+        },
+        {
+          "type": "text",
+          "name": "keywords"
+        }
+      ],
+      "outputType": "array"
+    }
+  }
+}

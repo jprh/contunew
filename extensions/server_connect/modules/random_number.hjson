@@ -1,0 +1,41 @@
+  {
+    type: 'custom',
+    module : 'custom',
+    action : 'numbergenerator',
+    groupTitle : 'My Modules',
+    groupIcon : 'fas fa-lg fa-database comp-data',
+    title : 'Number Generator',
+    icon : 'fas fa-lg fa-table comp-data',
+    dataScheme: [
+      {name: 'RandomNumber', type: 'number'}
+    ],
+    dataPickObject: true,
+    globalVars: {
+      '$_GET' : ['RandomNumber']
+    },
+    properties : [
+      {
+        group: 'Properties',
+        variables: [
+          { 
+              name: 'start', 
+              optionName: 'start', 
+              title: 'Start', 
+              type: 'text', 
+              required: true, 
+              serverDataBindings: true,
+              defaultValue: ''
+          },
+          { 
+              name: 'end', 
+              optionName: 'end', 
+              title: 'End', 
+              type: 'text', 
+              required: true,
+              serverDataBindings: true, 
+              defaultValue: ''
+          }
+        ]
+      }
+    ]
+  }

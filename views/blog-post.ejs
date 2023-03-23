@@ -1,0 +1,176 @@
+<!-- Wappler include head-page="layouts/main-contucarga" fontawesome_4="cdn" is="dmx-app" id="home" appConnect="local" jquery_slim_35="cdn" bootstrap5="cdn" components="{dmxSwiper:{},dmxBootstrap5Navigation:{},dmxBrowser:{},dmxDatastore:{},dmxSmoothScroll:{},dmxStateManagement:{},dmxVideo:{},dmxRouting:{},dmxMasonry:{},dmxDataTraversal:{},dmxFormatter:{},dmxBootstrap5Modal:{}}" -->
+
+<dmx-serverconnect id="serverconnect1" url="/api/blog-posts_flitered" dmx-param:path="browser1.location.pathparts.last(1)"></dmx-serverconnect>
+<dmx-serverconnect id="serverconnect2" url="/api/blog-posts_flitered_recommendation" dmx-param:path="browser1.location.pathparts.last(1)"></dmx-serverconnect>
+<dmx-query-manager id="querypathblog"></dmx-query-manager>
+
+
+<!-- Hero -->
+<section class="bg-cover position-relative h-550 pt-11 jarallax style163 top-padding-hero overlay overlay-darkblue overlay-40" data-jarallax data-speed="0.8" dmx-style:background-image="'url('+serverconnect1.data.query[0].img+')'" style="/* filter: blur (200px) */">
+    <div class="container-fluid blog-hero-container">
+        <!-- Post title -->
+        <h1 class="display-4 text-white text-center fx-fade-up" dmx-html="serverconnect1.data.query[0].title"></h1>
+    </div>
+
+    <!-- Author & social -->
+    <div class="position-absolute bottom-0 w-100 mb-4">
+        <div class="d-flex flex-sm-row blog-hero-container flex-row align-items-center justify-content-around">
+            <div class="d-flex">
+                <div class="avatar mr-4">
+                    <img src="inertia/dist/assets/img/uifaces/1%202.jpg" class="avatar-image rounded-circle" alt="">
+                </div>
+                <div class="flex-1">
+                    <span class="text-white text-uppercase-bold-sm" dmx-html="serverconnect1.data.query[0].author">
+                    </span>
+                    <span class="text-light opacity-90 font-size-sm d-block">
+                        Posted on {{serverconnect1.data.query[0].date.formatDate('dd/MM/yyyy')}}
+                    </span>
+                </div>
+            </div>
+
+            <!-- Social links -->
+            <div>
+                <a class="icon-circle icon-circle-sm bg-white text-dark hover-lift-light mr-2" href="https://www.linkedin.com/company/contucarga/">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="icon-circle icon-circle-sm bg-white text-dark hover-lift-light mr-2 visually-hidden">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="icon-circle icon-circle-sm bg-white text-dark hover-lift-light visually-hidden">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Article -->
+<section class="mt-6">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8" dmx-html="{{serverconnect1.data.query[0].body}}">
+                <!-- Intro phrase -->
+                {{serverconnect1.data.query[0].body}}
+                <!-- Author & social -->
+                <div class="d-flex flex-column flex-sm-row align-items-center mt-6">
+                    <div class="d-flex">
+                        <div class="avatar mr-4">
+                            <img src="inertia/dist/assets/img/uifaces/1.jpg" class="avatar-image rounded-circle" alt="">
+                        </div>
+                        <div class="flex-1">
+                            <span class="text-dark text-uppercase-bold-sm">
+                                John Harrison
+                            </span>
+                            <span class="text-muted opacity-90 font-size-sm d-block">
+                                Posted on April 14, 2020
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Social links -->
+                    <div class="mt-4 mt-sm-0 ml-sm-auto">
+                        <a href="#" class="text-decoration-none text-muted mr-3">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-decoration-none text-muted mr-3">
+                            <i class="fab fa-facebook fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-decoration-none text-muted">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Subscribe -->
+
+<!-- Related posts -->
+<%- await include('/partials/banner-subscribe', Object.assign({}, locals)) %><section class="bg-light " style="margin-top: 6rem;">
+    <div class="container border-top border-bottom border-gray-200 pt-6 pb-7">
+        <h4 class="font-weight-normal">Artículos Relacionados</h4>
+
+        <div class="d-flex flex-wrap mt-4">
+            <!-- Post -->
+            <div class="p-1 w-100 w-md-50">
+                <div class="hover-mask h-250 h-md-300 rounded-lg">
+                    <!-- Featured image -->
+                    <div class="hover-mask-image" loading="lazy" dmx-style:background-image="'url('+serverconnect2.data.query[0].img+')'">
+                    </div>
+
+                    <a href="" class="hover-mask-content d-flex flex-column opacity-100 text-decoration-none p-4" dmx-bind:href="'blog/'+serverconnect2.data.query[0].path">
+                        <h3 class="text-white font-weight-normal mb-auto" dmx-html="serverconnect2.data.query[0].title">
+                        </h3>
+
+                        <span class="d-flex text-white text-uppercase-xs font-weight-bold">
+                            <span>{{serverconnect2.data.query[0].author}}</span>
+                            <span class="ml-auto">{{serverconnect2.data.query[0].date.formatDate('dd/MM/yyyy')}}
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Post -->
+            <div class="p-1 w-100 w-md-50">
+                <div class="hover-mask h-250 h-md-300 rounded-lg">
+                    <!-- Featured image -->
+                    <div class="hover-mask-image" loading="lazy" dmx-style:background-image="'url('+serverconnect2.data.query[1].img+')'">
+                    </div>
+
+                    <a href="" class="hover-mask-content d-flex flex-column opacity-100 text-decoration-none p-4" dmx-bind:href="'blog/'+serverconnect2.data.query[1].path">
+                        <h3 class="text-white font-weight-normal text-right mb-auto" dmx-html="serverconnect2.data.query[1].title">
+
+                        </h3>
+
+                        <span class="d-flex text-white text-uppercase-xs font-weight-bold">
+                            <span>{{serverconnect2.data.query[1].author}}</span>
+                            <span class="ml-auto">{{serverconnect2.data.query[1].date.formatDate('dd/MM/yyyy')}}</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Post -->
+            <div class="p-1 w-100 w-md-60">
+                <div class="hover-mask h-250 h-md-300 rounded-lg">
+                    <!-- Featured image -->
+                    <div class="hover-mask-image" loading="lazy" dmx-style:background-image="'url('+serverconnect2.data.query[2].img+')'">
+                    </div>
+
+                    <a href="" class="hover-mask-content d-flex flex-column opacity-100 text-decoration-none p-4" dmx-bind:href="'blog/'+serverconnect2.data.query[2].path">
+                        <h3 class="text-white font-weight-normal mb-auto" dmx-html="serverconnect2.data.query[2].title">
+                        </h3>
+
+                        <span class="d-flex text-white text-uppercase-xs font-weight-bold">
+                            <span>{{serverconnect2.data.query[2].author}}</span>
+                            <span class="ml-auto">{{serverconnect2.data.query[2].date.formatDate('dd/MM/yyyy')}}</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Post -->
+            <div class="p-1 w-100 w-md-40">
+                <div class="hover-mask h-250 h-md-300 rounded-lg">
+                    <!-- Featured image -->
+                    <div class="hover-mask-image" loading="lazy" dmx-style:background-image="'url('+serverconnect2.data.query[3].img+')'">
+                    </div>
+
+                    <a href="#!" class="hover-mask-content d-flex flex-column opacity-100 text-decoration-none p-4" dmx-bind:href="'blog/'+serverconnect2.data.query[3].path">
+                        <h3 class="text-white font-weight-normal text-right mb-auto" dmx-html="serverconnect2.data.query[3].title">
+                        </h3>
+
+                        <span class="d-flex text-white text-uppercase-xs font-weight-bold">
+                            <span>{{serverconnect2.data.query[3].author}}</span>
+                            <span class="ml-auto">{{serverconnect2.data.query[3].date.formatDate('dd/MM/yyyy')}}</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/public/dastone/default/apps-contact-list.html",
+      "linkedForm": "formiddelete"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "recordid",
+        "name": "recordid"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "delete",
+      "module": "dbupdater",
+      "action": "delete",
+      "options": {
+        "connection": "db",
+        "sql": {
+          "type": "delete",
+          "table": "contact_form",
+          "wheres": {
+            "condition": "AND",
+            "rules": [
+              {
+                "id": "id",
+                "field": "id",
+                "type": "double",
+                "operator": "equal",
+                "value": "{{$_POST.recordid}}",
+                "data": {
+                  "column": "id"
+                },
+                "operation": "="
+              }
+            ],
+            "conditional": null,
+            "valid": true
+          },
+          "query": "DELETE\nFROM contact_form\nWHERE id = :P1 /* {{$_POST.recordid}} */",
+          "params": [
+            {
+              "operator": "equal",
+              "type": "expression",
+              "name": ":P1",
+              "value": "{{$_POST.recordid}}"
+            }
+          ]
+        }
+      },
+      "meta": [
+        {
+          "name": "affected",
+          "type": "number"
+        }
+      ]
+    }
+  }
+}

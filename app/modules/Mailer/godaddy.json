@@ -1,0 +1,11 @@
+{
+  "name": "godaddy",
+  "module": "mail",
+  "action": "setup",
+  "options": {
+    "host": "smtpout.secureserver.net",
+    "port": 465,
+    "username": "",
+    "password": ""
+  }
+}

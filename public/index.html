@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/">
+    <script src="/dmxAppConnect/dmxAppConnect.js"></script>
+    <title>Pitch | Collaborative presentation software for modern teams</title>
+    <meta content="text/html;charset=UTF-8" http-equiv="content-type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="@pitch" name="twitter:site">
+    <meta content="Collaborative presentation software for modern teams" property="og:title">
+    <meta content="Collaborative presentation software for modern teams" name="twitter:title">
+    <meta content="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1620032406/website-assets/seo-images/Social_share_-_Generic.jpg" property="og:image">
+    <meta content="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1620032406/website-assets/seo-images/Social_share_-_Generic.jpg" name="twitter:image">
+    <meta content="Pitch is uncompromisingly good presentation software, enabling modern teams to craft and distribute beautiful presentations more effectively. Sign up for free." name="description">
+    <meta content="Pitch is uncompromisingly good presentation software, enabling modern teams to craft and distribute beautiful presentations more effectively. Sign up for free." property="og:description">
+    <meta content="Pitch is uncompromisingly good presentation software, enabling modern teams to craft and distribute beautiful presentations more effectively. Sign up for free." name="twitter:description">
+    <meta content="https://www.google-analytics.com" rel="dns-prefetch">
+    <meta content="https://www.googletagmanager.com" rel="dns-prefetch">
+    <meta content="website" property="og:type">
+    <link as="font" crossorigin="" href="/f97fc317-3fe8-4b45-83d5-8fef112023ad/fonts/Eina01-Bold.woff2" rel="preload">
+    <link as="font" crossorigin="" href="/f97fc317-3fe8-4b45-83d5-8fef112023ad/fonts/Eina01-Regular.woff2" rel="preload">
+    <link as="font" crossorigin="" href="/f97fc317-3fe8-4b45-83d5-8fef112023ad/fonts/MarkPro-Heavy.woff2" rel="preload">
+    <link as="font" crossorigin="" href="/f97fc317-3fe8-4b45-83d5-8fef112023ad/fonts/MarkPro-Bold.woff2" rel="preload">
+    <meta content="c9p5qnjn7atndkb7ko7ufblcfvgbt7" name="facebook-domain-verification">
+
+    <link href="/f97fc317-3fe8-4b45-83d5-8fef112023ad/styles/style.css" rel="stylesheet">
+    <link href="images/favicon.ico" rel="shortcut icon">
+    <link href="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1600165469/website-images/images/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+    <script defer="" src="/f97fc317-3fe8-4b45-83d5-8fef112023ad/scripts/bundle.js"></script>
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5QXGGVG');
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+</head>
+
+<body is="dmx-app" id="index">
+    <div class="cookies-wrapper" id="cookie-banner">
+        <div class="cookies">
+            <div class="cookies-message">
+                <p>We use cookies to analyze site performance and deliver personalized content. By clicking “Agree” you consent to the storing of cookies. You can revoke your consent at any time. Learn more about this in our <a href="privacy-policy.html">privacy policy</a>.</p>
+            </div>
+            <div class="cookie-actions"><button class="text-button cookies-options" data-show="cookie-options">More options</button><button class="button gradient-blue" data-accept-cookies="all"><span class="background"></span><span class="body">Agree</span></button></div>
+        </div>
+    </div>
+    <div class="header-scroll-trigger"></div>
+    <div class="header-container ">
+        <nav class="header"><a aria-label="Pitch" class="logo" href="/index.html"><svg fill="none" height="23" width="66">
+                    <path d="M44.87 17.272a4.318 4.318 0 11.04-4.877l3.191-1.884a8.019 8.019 0 10-.017 8.613l-3.213-1.852zM53.662 0H49.96v22.206h3.7v-7.402a4.318 4.318 0 118.636 0v7.402h3.701v-8.122a7.3 7.3 0 00-12.336-5.282V0zM27.756 0h-3.701v17.271a5.551 5.551 0 009.201 4.183l-1.788-3.034a1.847 1.847 0 01-1.45.701h-.412a1.851 1.851 0 01-1.85-1.85v-6.168h3.7V7.402h-3.7V0zM19.74 0a2.056 2.056 0 100 4.112 2.056 2.056 0 000-4.112zM21.59 22.206V7.402h-3.7v14.804h3.7z" fill="currentColor"></path>
+                    <path clip-rule="evenodd" d="M0 22.206h3.7v-4.318h3.393A8.944 8.944 0 107.093 0H0v22.206zM3.7 3.7h3.393a5.243 5.243 0 010 10.486H3.701V3.7z" fill-rule="evenodd" fill="currentColor"></path>
+                </svg></a>
+            <div class="header-buttons"><a class="button outline header-login" dmx-on:click="run({runJS:{function:'callpersonname'}})"><span class="background"></span><span class="body">Sign in</span></a><a class="button gradient-blue header-signup" dmx-on:click="run({runJS:{function:'pup'}})"><span class="background"></span><span class="body">Try for free</span></a><button class="hamburger" data-toggle-nav=".header"><span class="hamburger-inner"></span><span class="visually-hidden">Toggle menu</span></button></div>
+            <div class="menu-blockout"></div>
+            <div class="menu">
+                <div class="menu-inner">
+                    <div class="menu-item" data-submenu="" tabindex="0">
+                        <div class="menu-item__inner"><a class="submenu-parent" href="product-tour.html"><img alt="" class="icon" height="24" src="https://res.cloudinary.com/pitch-software/image/upload/v1604066359/website-images/images/icons/icon-product_i1hd4a.svg" width="24"><span>Product</span><span class="submenu-arrow"></span></a>
+                            <div class="submenu">
+                                <div class="submenu-inner">
+                                    <div class="menu-item__wrap"><a class="menu-item product-tour" href="product-tour.html" tabindex="0"><img alt="" class="icon" height="24" src="https://res.cloudinary.com/pitch-software/image/upload/v1604066359/website-images/images/icons/icon-product_i1hd4a.svg" width="24"><span>Product Tour</span></a></div>
+                                    <div class="menu-item__wrap"><a class="menu-item pitch-decks" href="use-cases/pitch-decks.html" tabindex="0"><img alt="" class="icon" height="24" src="https://res.cloudinary.com/pitch-software/image/upload/v1620227500/website-images/images/icons/icon-pitch-decks_mi3et1.svg" width="24"><span>Pitch Decks</span></a></div>
+                                    <div class="menu-item__wrap"><a class="menu-item sales-decks" href="use-cases/sales-decks.html" tabindex="0"><img alt="" class="icon" height="24" src="https://res.cloudinary.com/pitch-software/image/upload/v1620227500/website-images/images/icons/icon-sales-decks_kxyolc.svg" width="24"><span>Sales Decks</span></a></div>
+                                    <div class="menu-item__wrap"><a class="menu-item team-meetings" href="use-cases/team-meetings.html" tabindex="0"><img alt="" class="icon" height="24" src="https://res.cloudinary.com/pitch-software/image/upload/v1620227500/website-images/images/icons/icon-team-meetings_lnwgg3.svg" width="24"><span>Team Meetings</span></a></div>
+                                    <div class="menu-item__wrap"><a class="menu-item whats-new" href="whats-new.html" tabindex="0"><img alt="" class="icon" height="24" src="https://res.cloudinary.com/pitch-software/image/upload/v1604066359/website-images/images/icons/icon-whatsnew_ebk0g1.svg" width="24"><span>What’s New</span></a></div>
+                                    <div class="menu-item__wrap"><a class="menu-item download" href="download.html" tabindex="0"><img alt="" class="icon" height="24" src="https://res.cloudinary.com/pitch-software/image/upload/v1604066357/website-images/images/icons/icon-download_u9w1ts.svg" width="24"><span>Download</span></a></div>
+                                    <div class="menu-item__wrap"><a class="menu-item help-center" href="https://help.pitch.com/en/" rel="noopener" tabindex="0" target="_blank"><img alt="" class="icon" height="24" src="https://res.cloudinary.com/pitch-software/image/upload/v1604066357/website-images/images/icons/icon-help_psbv9c.svg" width="24"><span>Help Center</span><img alt="External link" class="external" src="https://res.cloudinary.com/pitch-software/image/upload/v1602518515/website-images/images/icon-external_uhawxb.svg"></a></div>
+                                    <div class="menu-item__wrap"><a class="menu-item status" href="https://status.pitch.com/" rel="noopener" tabindex="0" target="_blank"><img alt="" class="icon" height="24" src="https://res.cloudinary.com/pitch-software/image/upload/v1604066360/website-images/images/icons/icon-status_kmnuyp.svg" width="24"><span>Status</span><img alt="External link" class="external" src="https://res.cloudinary.com/pitch-software/image/upload/v1602518515/website-images/images/icon-external_uhawxb.svg"></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><a class="menu-item parent templates" data-toggle-nav=".header" href="templates.html"><img alt="" class="icon" height="24" src="https://res.cloudinary.com/pitch-software/image/upload/v1614264383/website-images/images/icons/icon-templates_qyms3s.svg" width="24">Templates</a><a class="menu-item parent pricing" data-toggle-nav=".header" href="pricing/usd.html"><img alt="" class="icon" height="24" src="https://res.cloudinary.com/pitch-software/image/upload/v1604066359/website-images/images/icons/icon-pricing_p80xi9.svg" width="24">Pricing</a>
+                    <div class="menu-item" data-submenu="" tabindex="0">
+                        <div class="menu-item__inner"><a class="submenu-parent" href="about.html"><img alt="" class="icon" height="24" src="https://res.cloudinary.com/pitch-software/image/upload/v1604066357/website-images/images/icons/icon-about_srgych.svg" width="24"><span>Company</span><span class="submenu-arrow"></span></a>
+                            <div class="submenu">
+                                <div class="submenu-inner">
+                                    <div class="menu-item__wrap"><a class="menu-item about" href="about.html" tabindex="0"><img alt="" class="icon" height="24" src="https://res.cloudinary.com/pitch-software/image/upload/v1604066357/website-images/images/icons/icon-about_srgych.svg" width="24"><span>About</span></a></div>
+                                    <div class="menu-item__wrap"><a class="menu-item press" href="press.html" tabindex="0"><img alt="" class="icon" height="24" src="https://res.cloudinary.com/pitch-software/image/upload/v1604066359/website-images/images/icons/icon-press_q73d8i.svg" width="24"><span>Press</span></a></div>
+                                    <div class="menu-item__wrap"><a class="menu-item blog" href="blog.html" tabindex="0"><img alt="" class="icon" height="24" src="https://res.cloudinary.com/pitch-software/image/upload/v1604066357/website-images/images/icons/icon-blog_tirzow.svg" width="24"><span>Blog</span></a></div>
+                                    <div class="menu-item__wrap"><a class="menu-item constant-change" href="constant-change.html" tabindex="0"><img alt="" class="icon" height="24" src="https://res.cloudinary.com/pitch-software/image/upload/v1604066359/website-images/images/icons/icon-newsletter_cfrnmz.svg" width="24"><span>Newsletter</span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><a class="menu-item parent jobs" data-toggle-nav=".header" href="about.html#hiring"><img alt="" class="icon" height="24" src="https://res.cloudinary.com/pitch-software/image/upload/v1604066357/website-images/images/icons/icon-jobs_ypfpem.svg" width="24">Jobs<span class="jobs-count"></span></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="home-hero">
+        <div class="svg-filter"><svg xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter color-interpolation-filters="sRGB" filterunits="userSpaceOnUse" id="cursor-shadow">
+                        <feflood flood-opacity="0" result="BackgroundImageFix"></feflood>
+                        <fecolormatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></fecolormatrix>
+                        <feoffset dy="1"></feoffset>
+                        <fegaussianblur stddeviation="1"></fegaussianblur>
+                        <fecolormatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></fecolormatrix>
+                        <feblend in2="BackgroundImageFix" mode="normal" result="effect1_dropShadow"></feblend>
+                        <feblend in2="effect1_dropShadow" in="SourceGraphic" mode="normal" result="shape"></feblend>
+                    </filter>
+                </defs>
+            </svg></div>
+        <div class="home-hero__subtext">
+            <h1>Pitch combines the best parts of productivity, design, and presentation software to help fast-moving teams create beautifully designed decks in minutes.</h1>
+        </div>
+        <div class="home-hero__interaction">
+            <div class="home-hero__headline page-heading"><span class="home-hero__headline-line home-hero__editor-1" data-editor="Cici Frasier">Stunning presentations.</span><span class="home-hero__headline-line home-hero__editor-2" data-editor="Larry Weber">Made together.</span>
+                <div aria-role="presentation" class="live-cursor home-hero__editor-1 video speaking"><svg class="live-cursor__pointer" fill="none" height="21" viewbox="0 0 19 21" width="19" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#cursor-shadow)">
+                            <path d="M14.6483 10.3184C14.9501 10.1014 14.9179 9.64266 14.5888 9.46986L4.31192 4.07377C3.94713 3.88223 3.52022 4.18936 3.58586 4.59612L5.4351 16.0553C5.49432 16.4222 5.91899 16.5985 6.22072 16.3815L14.6483 10.3184Z" fill="currentColor" stroke-width="1" stroke="white"></path>
+                        </g>
+                    </svg>
+                    <div class="live-cursor__video-wrapper"><img alt="Person talking in Pitch" src="https://res.cloudinary.com/pitch-software/image/upload/website-assets/home/HeaderCursor_left.jpg"><video class="live-cursor__video" loop="loop" muted="true" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/website-assets/home/HeaderCursor_left.jpg" preload="metadata">
+                            <source src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/hero/HeaderCursor_left.webm" type="video/webm">
+                            <source src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/hero/HeaderCursor_left.mp4" type="video/mp4">
+                        </video></div>
+                </div>
+                <div aria-role="presentation" class="live-cursor home-hero__editor-2 video speaking"><svg class="live-cursor__pointer" fill="none" height="21" viewbox="0 0 19 21" width="19" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#cursor-shadow)">
+                            <path d="M14.6483 10.3184C14.9501 10.1014 14.9179 9.64266 14.5888 9.46986L4.31192 4.07377C3.94713 3.88223 3.52022 4.18936 3.58586 4.59612L5.4351 16.0553C5.49432 16.4222 5.91899 16.5985 6.22072 16.3815L14.6483 10.3184Z" fill="currentColor" stroke-width="1" stroke="white"></path>
+                        </g>
+                    </svg>
+                    <div class="live-cursor__video-wrapper"><img alt="Person talking in Pitch" src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/HeaderCursor_right.jpg"><video class="live-cursor__video" loop="loop" muted="true" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/HeaderCursor_right.jpg" preload="metadata">
+                            <source src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/hero/HeaderCursor_right.webm" type="video/webm">
+                            <source src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/hero/HeaderCursor_right.mp4" type="video/mp4">
+                        </video></div>
+                </div>
+            </div><img alt="" class="home-hero__ui" height="736" onload="this.classList.add(&apos;loaded&apos;)" sizes="96vw, (min-width: 960px) calc(75vw + 15rem), (min-width: 1800px) 1500px" src="https://res.cloudinary.com/pitch-software/image/upload/f_auto,c_scale,w_1200/v1620219112/website-assets/home/home-hero-ui.png" srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto,c_scale,w_600/v1620219112/website-assets/home/home-hero-ui.png 600w,
+                                  https://res.cloudinary.com/pitch-software/image/upload/f_auto,c_scale,w_800/v1620219112/website-assets/home/home-hero-ui.png 800w,
+                                  https://res.cloudinary.com/pitch-software/image/upload/f_auto,c_scale,w_1200/v1620219112/website-assets/home/home-hero-ui.png 1200w,
+                                  https://res.cloudinary.com/pitch-software/image/upload/f_auto,c_scale,w_1600/v1620219112/website-assets/home/home-hero-ui.png 1600w,
+                                  https://res.cloudinary.com/pitch-software/image/upload/f_auto,c_scale,w_2000/v1620219112/website-assets/home/home-hero-ui.png 2000w,
+                                  https://res.cloudinary.com/pitch-software/image/upload/f_auto,c_scale,w_2400/v1620219112/website-assets/home/home-hero-ui.png 2400w,
+                                  https://res.cloudinary.com/pitch-software/image/upload/f_auto,c_scale,w_3200/v1620219112/website-assets/home/home-hero-ui.png 3200w,
+                                  https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1620219112/website-assets/home/home-hero-ui.png 3600w" width="960">
+        </div><span class="home-hero__duration"></span>
+    </div>
+    <div class="page-home">
+        <div class="container page-home__teams">
+            <div class="container-inner">
+                <div class="spacing">
+                    <h3>Loved by teams around the world</h3>
+                    <ul class="team-logos">
+                        <li class="team-logos__logo"><span class="unsplash"><img alt="Unsplash logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/v1603191028/website-images/partners/unsplash_wotp32.svg"></span></li>
+                        <li class="team-logos__logo"><span class="superhuman"><img alt="Superhuman logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/v1603191028/website-images/partners/superhuman_isiyzy.svg"></span></li>
+                        <li class="team-logos__logo"><span class="grammarly"><img alt="Grammarly logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/v1620711736/website-assets/team-logos/grammarly_kdqk4p.svg"></span></li>
+                        <li class="team-logos__logo"><span class="notion"><img alt="Notion logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/v1603293600/website-images/partners/notion-wordmark_ofv6ws.svg"></span></li>
+                        <li class="team-logos__logo"><span class="italic"><img alt="Italic logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/v1603191028/website-images/partners/italic_yqmmzg.svg"></span></li>
+                        <li class="team-logos__logo"><span class="intercom"><img alt="Intercom logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/v1603191025/website-images/partners/intercom_nmqamd.svg"></span></li>
+                        <li class="team-logos__logo"><span class="frontify"><img alt="Frontify logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/v1620384937/website-assets/team-logos/frontify_vr3xme.svg"></span></li>
+                        <li class="team-logos__logo"><span class="parsely"><img alt="Parsely logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/v1620711736/website-assets/team-logos/parsely_bztaeo.svg"></span></li>
+                        <li class="team-logos__logo"><span class="descript"><img alt="Descript logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/v1620711736/website-assets/team-logos/descript_jidfav.svg"></span></li>
+                        <li class="team-logos__logo"><span class="eqt"><img alt="EQT logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/v1620384937/website-assets/team-logos/eqt_zzpm4z.svg"></span></li>
+                        <li class="team-logos__logo"><span class="loom"><img alt="Loom logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/v1620384937/website-assets/team-logos/loom_aetyp2.svg"></span></li>
+                        <li class="team-logos__logo"><span class="bridge"><img alt="Bridge logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/v1603191026/website-images/partners/bridge_bmeqwo.svg"></span></li>
+                    </ul><button class="sandwich-video-cta" data-show="sandwich-video-modal"><span class="sandwich-video-cta__wrapper"><span class="sandwich-video-cta__icon"><svg fill="none" viewbox="0 0 25 25">
+                                    <defs></defs>
+                                    <circle cx="12.5" cy="12.5" r="12" stroke="url(#paint0_linear)"></circle>
+                                    <path d="M17.957 11.533l.27-.42-.27.42c.724.464.724 1.47 0 1.934 0 0 0 0 0 0l-7.522 4.828c-.853.548-1.935-.064-1.935-.967V7.672c0-.903 1.082-1.515 1.935-.967l.268-.417-.268.417 7.522 4.828z" stroke="url(#paint1_linear)"></path>
+                                    <defs>
+                                        <linearGradient gradientunits="userSpaceOnUse" id="paint0_linear" x1="4.5" x2="20.5" y1="2.5" y2="22">
+                                            <stop stop-color="#504AFF"></stop>
+                                            <stop offset="1" stop-color="#A538FF"></stop>
+                                        </linearGradient>
+                                        <linearGradient gradientunits="userSpaceOnUse" id="paint1_linear" x1="9.98" x2="18.459" y1="7.3" y2="16.044">
+                                            <stop stop-color="#504AFF"></stop>
+                                            <stop offset="1" stop-color="#A538FF"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                </svg></span>See Pitch in action</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="container page-home__use-cases">
+            <div class="container-inner">
+                <div class="spacing">
+                    <div class="home-heading" data-fade-in="">
+                        <h2 class="home-heading__title">One workspace. Boundless possibilities.</h2>
+                        <p class="home-heading__paragraph">From pitch decks to project plans, conference keynotes to all-hands meetings, our presentation software gives teams space to share all the work that matters.</p>
+                    </div>
+                    <div class="video-tabs">
+                        <div class="home-tabs__breakout">
+                            <div class="home-tabs" role="tablist"><button aria-controls="pitch-decks-tab" aria-selected="true" class="home-tabs__tab" data-active="true" id="pitch-decks" role="tab"><span class="home-tabs__tab-content" data-gradient-content="Pitch decks">Pitch decks</span></button><button aria-controls="team-meetings-tab" aria-selected="false" class="home-tabs__tab" data-active="false" id="team-meetings" role="tab"><span class="home-tabs__tab-content" data-gradient-content="Team meetings">Team meetings</span></button><button aria-controls="sales-decks-tab" aria-selected="false" class="home-tabs__tab" data-active="false" id="sales-decks" role="tab"><span class="home-tabs__tab-content" data-gradient-content="Sales decks">Sales decks</span></button>
+                                <div class="home-tabs__indicator"></div>
+                            </div>
+                        </div>
+                        <div class="video-tabs__content"><button aria-label="Prev" class="slider-arrow-button slider-arrow-button--big slider-arrow-button--prev" data-button="prev"></button>
+                            <ul class="video-tabs__media-container">
+                                <li aria-labelledby="pitch-decks" class="video-tabs__chapter" data-active="true" id="pitch-decks-tab" role="tabpanel" tabindex="0"><video aria-label="Channel your big idea into a professional-level pitch deck that’s designed to convince." class="video-tabs__media" data-lazy-video="" data-type="video" muted="true" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/use-cases-tabs/Editor_-_PitchDeck_1.jpg">
+                                        <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/use-cases/Editor+-+PitchDeck_1.webm" type="video/webm">
+                                        <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/use-cases/Editor+-+PitchDeck_1.mp4" type="video/mp4">
+                                    </video></li>
+                                <li aria-labelledby="team-meetings" class="video-tabs__chapter" data-active="false" id="team-meetings-tab" role="tabpanel" tabindex="0"><video aria-label="Hold engaging meetings where everyone has a chance to be heard." class="video-tabs__media" data-lazy-video="" data-type="video" muted="true" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/use-cases-tabs/Editor_-_TeamMeeting_2.jpg">
+                                        <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/use-cases/Editor+-+TeamMeeting_2.webm" type="video/webm">
+                                        <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/use-cases/Editor+-+TeamMeeting_2.mp4" type="video/mp4">
+                                    </video></li>
+                                <li aria-labelledby="sales-decks" class="video-tabs__chapter" data-active="false" id="sales-decks-tab" role="tabpanel" tabindex="0"><video aria-label="Deliver on-brand, on-message sales decks that keep sales, marketing, and design happy." class="video-tabs__media" data-lazy-video="" data-type="video" muted="true" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/use-cases-tabs/Editor_-_SalesDeck_3.jpg">
+                                        <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/use-cases/Editor+-+SalesDeck_3.webm" type="video/webm">
+                                        <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/use-cases/Editor+-+SalesDeck_3.mp4" type="video/mp4">
+                                    </video></li>
+                            </ul><button aria-label="Next" class="slider-arrow-button slider-arrow-button--big slider-arrow-button--next" data-button="next"></button>
+                        </div>
+                        <div class="video-tabs__descriptions">
+                            <div class="video-tabs__description" data-active="true">Channel your big idea into a professional-level pitch deck that’s designed to convince. <a class="read-more-link" href="use-cases/pitch-decks.html">Learn more<svg height="8" viewbox="0 0 27 8" width="27" xmlns="http://www.w3.org/2000/svg">
+                                        <path clip-rule="evenodd" d="M23.172.464l3.182 3.182a.5.5 0 010 .708l-3.182 3.182a.5.5 0 11-.707-.708L24.793 4.5H0v-1h24.793l-2.328-2.328a.5.5 0 11.707-.708z"></path>
+                                    </svg></a></div>
+                            <div class="video-tabs__description" data-active="false">Hold engaging meetings where everyone has a chance to be heard. <a class="read-more-link" href="use-cases/team-meetings.html">Learn more<svg height="8" viewbox="0 0 27 8" width="27" xmlns="http://www.w3.org/2000/svg">
+                                        <path clip-rule="evenodd" d="M23.172.464l3.182 3.182a.5.5 0 010 .708l-3.182 3.182a.5.5 0 11-.707-.708L24.793 4.5H0v-1h24.793l-2.328-2.328a.5.5 0 11.707-.708z"></path>
+                                    </svg></a></div>
+                            <div class="video-tabs__description" data-active="false">Deliver on-brand, on-message sales decks that keep sales, marketing, and design happy. <a class="read-more-link" href="use-cases/sales-decks.html">Learn more<svg height="8" viewbox="0 0 27 8" width="27" xmlns="http://www.w3.org/2000/svg">
+                                        <path clip-rule="evenodd" d="M23.172.464l3.182 3.182a.5.5 0 010 .708l-3.182 3.182a.5.5 0 11-.707-.708L24.793 4.5H0v-1h24.793l-2.328-2.328a.5.5 0 11.707-.708z"></path>
+                                    </svg></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container ">
+            <div class="container-inner">
+                <div class="spacing" data-fade-in="">
+                    <div class="testimonial-quote" data-testimonial-quote="true">
+                        <div class="testimonial-quote__body">
+                            <div class="testimonial-quote__subject">
+                                <div class="testimonial-quote__cursor"><svg class="live-cursor__pointer" fill="none" height="21" viewbox="0 0 19 21" width="19" xmlns="http://www.w3.org/2000/svg">
+                                        <g filter="url(#cursor-shadow)">
+                                            <path d="M14.6483 10.3184C14.9501 10.1014 14.9179 9.64266 14.5888 9.46986L4.31192 4.07377C3.94713 3.88223 3.52022 4.18936 3.58586 4.59612L5.4351 16.0553C5.49432 16.4222 5.91899 16.5985 6.22072 16.3815L14.6483 10.3184Z" fill="currentColor" stroke-width="1" stroke="white"></path>
+                                        </g>
+                                    </svg>
+                                    <div class="testimonial-quote__photo"><img alt="Nick Ionita" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-images/customer%20quotes/nick-ionita.jpg"></div>
+                                </div>
+                                <div class="testimonial-quote__headline">
+                                    <div><span class="testimonial-quote__name">Nick Ionita, </span><span class="testimonial-quote__role">CEO and Co-Founder</span></div>
+                                </div><img alt="Nick Ionita" class="testimonial-quote__logo" src="https://res.cloudinary.com/pitch-software/image/upload/v1620911541/website-images/customer%20quotes/flux-vector_xvrezb.svg">
+                            </div>
+                            <div class="testimonial-quote__content">
+                                <div class="testimonial-quote__text">“Pitch strikes the perfect balance between design guardrails and flexibility. They’ve brought everything I expect in a modern collaboration tool to presentations and it’s awesome!”</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container page-home__video-story">
+            <div class="container-inner">
+                <div class="spacing">
+                    <div class="home-heading" data-fade-in="">
+                        <h2 class="home-heading__title">Build stunning decks in record time</h2>
+                        <p class="home-heading__paragraph">Pitch puts everything you need to make a great deck — from advanced design options to data integrations — right at your fingertips. It’s never been easier to create work you’re proud of.</p>
+                    </div>
+                    <div class="video-story">
+                        <div class="video-story__content">
+                            <div class="video-story__media-container">
+                                <div class="video-story__decorations"><img alt="Decoration for: Make edits fast" class="video-story__decoration" data-index="0" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/make_edit.png" data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/make_edit.png 220w, https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/make_edit.png 440w" sizes="25vw"><img alt="Decoration for: Browse millions of images" class="video-story__decoration" data-index="1" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/browse_image.png" data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/browse_image.png 220w, https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/browse_image.png 440w" sizes="25vw"><img alt="Decoration for: Add rich media" class="video-story__decoration" data-index="2" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/rich_media.png" data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/rich_media.png 220w, https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/rich_media.png 440w" sizes="25vw"><img alt="Decoration for: Integrate data" class="video-story__decoration" data-index="3" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/data_integration.png" data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/data_integration.png 220w, https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/data_integration.png 440w" sizes="25vw"></div><video class="video-story__media" data-editor="true" data-lazy-video="" muted="true" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/video-story-1/1_makeeditsfast.jpg">
+                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/video-story-1/1_makeeditsfast.webm" type="video/webm">
+                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/video-story-1/1_makeeditsfast.mp4" type="video/mp4">
+                                </video><video class="video-story__media" data-editor="true" data-lazy-video="" muted="true" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/video-story-1/2_Browsemillions.jpg">
+                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/video-story-1/2_Browsemillions.webm" type="video/webm">
+                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/video-story-1/2_Browsemillions.mp4" type="video/mp4">
+                                </video><video class="video-story__media" data-editor="true" data-lazy-video="" muted="true" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/video-story-1/3_Youtubeembad.jpg">
+                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/video-story-1/3_Youtubeembad.webm" type="video/webm">
+                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/video-story-1/3_Youtubeembad.mp4" type="video/mp4">
+                                </video><video class="video-story__media" data-editor="true" data-lazy-video="" muted="true" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/video-story-1/4_IntegratedData.jpg">
+                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/video-story-1/4_IntegratedData.webm" type="video/webm">
+                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/video-story-1/4_IntegratedData.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="video-story__chapters-wrapper">
+                                <div class="container ">
+                                    <div class="container-inner">
+                                        <ul class="video-story__chapters">
+                                            <li class="video-story__chapter" data-type="video"><span class="video-story__progress"><span class="video-story__progress-track"></span><span class="video-story__progress-bar"></span><span class="video-story__progress-bullet"></span></span>
+                                                <h3><button class="video-story__trigger"><span class="video-story__label">Make edits fast</span></button></h3>
+                                                <p>Unleash your inner designer. Intuitive editing options and smart formatting help anyone feel like a power user.</p>
+                                            </li>
+                                            <li class="video-story__chapter" data-type="video"><span class="video-story__progress"><span class="video-story__progress-track"></span><span class="video-story__progress-bar"></span><span class="video-story__progress-bullet"></span></span>
+                                                <h3><button class="video-story__trigger"><span class="video-story__label">Browse millions of images</span></button></h3>
+                                                <p>Find the perfect image for every slide. We integrate with Unsplash, Giphy, Icons8, and Brandfetch</p>
+                                            </li>
+                                            <li class="video-story__chapter" data-type="video"><span class="video-story__progress"><span class="video-story__progress-track"></span><span class="video-story__progress-bar"></span><span class="video-story__progress-bullet"></span></span>
+                                                <h3><button class="video-story__trigger"><span class="video-story__label">Add rich media</span></button></h3>
+                                                <p>Bring stories to life with embedded video from YouTube, Vimeo, and Loom, or upload your own.</p>
+                                            </li>
+                                            <li class="video-story__chapter" data-type="video"><span class="video-story__progress"><span class="video-story__progress-track"></span><span class="video-story__progress-bar"></span><span class="video-story__progress-bullet"></span></span>
+                                                <h3><button class="video-story__trigger"><span class="video-story__label">Integrate data</span></button></h3>
+                                                <p>Make presentations pop with the latest data from Google Analytics, Google Sheets, and more.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container ">
+            <div class="container-inner">
+                <div class="spacing" data-fade-in="">
+                    <div class="testimonial-quote" data-testimonial-quote="true">
+                        <div class="testimonial-quote__body">
+                            <div class="testimonial-quote__subject">
+                                <div class="testimonial-quote__cursor"><svg class="live-cursor__pointer" fill="none" height="21" viewbox="0 0 19 21" width="19" xmlns="http://www.w3.org/2000/svg">
+                                        <g filter="url(#cursor-shadow)">
+                                            <path d="M14.6483 10.3184C14.9501 10.1014 14.9179 9.64266 14.5888 9.46986L4.31192 4.07377C3.94713 3.88223 3.52022 4.18936 3.58586 4.59612L5.4351 16.0553C5.49432 16.4222 5.91899 16.5985 6.22072 16.3815L14.6483 10.3184Z" fill="currentColor" stroke-width="1" stroke="white"></path>
+                                        </g>
+                                    </svg>
+                                    <div class="testimonial-quote__photo"><img alt="Christian Eggert" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-images/customer%20quotes/christian_eggert.jpg"></div>
+                                </div>
+                                <div class="testimonial-quote__headline">
+                                    <div><span class="testimonial-quote__name">Christian Eggert, </span><span class="testimonial-quote__role">CEO</span></div>
+                                </div><img alt="Christian Eggert" class="testimonial-quote__logo" src="https://res.cloudinary.com/pitch-software/image/upload/v1620911541/website-images/customer%20quotes/back-vector_yebwef.svg">
+                            </div>
+                            <div class="testimonial-quote__content">
+                                <div class="testimonial-quote__text">“Our presentations have to live up to our high standards for product design. Pitch allows us to create internal and external assets that look amazing, without spending hours on it.”</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container page-home__brand-styles">
+            <div class="container-inner">
+                <div class="spacing">
+                    <div class="home-heading" data-fade-in="">
+                        <h2 class="home-heading__title">Make staying on-brand a breeze</h2>
+                        <p class="home-heading__paragraph">When you’re moving fast, it’s easy for decks to drift from the approved brand style. Pitch puts the most up-to-date fonts, colors, and templates front and center, helping anyone create consistently beautiful presentations.</p>
+                    </div>
+                    <div class="page-home__brand-styles-wrapper">
+                        <div class="brand-styles" data-current-style="colorful">
+                            <div class="home-tabs__breakout">
+                                <div class="home-tabs" role="tablist"><button aria-controls="brand-styles-colorful-tab" aria-selected="true" class="home-tabs__tab" data-active="true" id="brand-styles-colorful" role="tab"><span class="home-tabs__tab-content"><img alt="Brand style - Colorful" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619444494/website-assets/home/brand-styles/brand-icon-black.png" data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619444494/website-assets/home/brand-styles/brand-icon-colorful.png, https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619444494/website-assets/home/brand-styles/brand-icon-colorful_2x.png 2x"><span class="brand-styles__mobile" data-gradient-content="Colorful Style">Colorful Style</span><span class="brand-styles__desktop" data-gradient-content="Brand style - Colorful">Brand style - Colorful</span></span></button><button aria-controls="brand-styles-black-tab" aria-selected="false" class="home-tabs__tab" data-active="false" id="brand-styles-black" role="tab"><span class="home-tabs__tab-content"><img alt="Brand style - Black" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619444494/website-assets/home/brand-styles/brand-icon-black.png" data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619444494/website-assets/home/brand-styles/brand-icon-black.png, https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619444494/website-assets/home/brand-styles/brand-icon-black_2x.png 2x"><span class="brand-styles__mobile" data-gradient-content="Black Style">Black Style</span><span class="brand-styles__desktop" data-gradient-content="Brand style - Black">Brand style - Black</span></span></button>
+                                    <div class="home-tabs__indicator"></div>
+                                </div>
+                            </div>
+                            <div class="brand-styles__content">
+                                <div class="brand-styles__background">
+                                    <div class="brand-styles__background-copy" data-parallax-fact="1">
+                                        <picture class="brand-styles__heading">
+                                            <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618569085/website-assets/home/brand-styles/desktop/brand-styles__heading.png 991w,
+                 https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618569085/website-assets/home/brand-styles/desktop/brand-styles__heading_2x.png 1981w" media="(min-width: 45em)" sizes="(min-width: 80em) 99rem, 80vw">
+                                            <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/v1618930682/website-assets/home/brand-styles/mobile/brand-styles__heading.png 313w,
+                 https://res.cloudinary.com/pitch-software/image/upload/v1618930682/website-assets/home/brand-styles/mobile/brand-styles__heading_2x.png 626w" sizes="90vw"><img alt="Brand styles slide heading" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618569085/website-assets/home/brand-styles/desktop/brand-styles__heading.png">
+                                        </picture>
+                                        <picture class="brand-styles__copy" data-style="colorful">
+                                            <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618569085/website-assets/home/brand-styles/desktop/colorful/brand-styles__copy.png 597w,
+                 https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618569085/website-assets/home/brand-styles/desktop/colorful/brand-styles__copy_2x.png 1194w" media="(min-width: 45em)" sizes="(min-width: 80em) 59.7rem, 60vw">
+                                            <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/v1618930683/website-assets/home/brand-styles/mobile/colorful/brand-styles__copy.png 316w,
+                 https://res.cloudinary.com/pitch-software/image/upload/v1618930683/website-assets/home/brand-styles/mobile/colorful/brand-styles__copy_2x.png 631w" sizes="80vw"><img alt="Brand styles slide copy — Colorful" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618569085/website-assets/home/brand-styles/desktop/colorful/brand-styles__copy.png">
+                                        </picture>
+                                        <picture class="brand-styles__copy" data-style="black">
+                                            <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618569085/website-assets/home/brand-styles/desktop/black/brand-styles__copy.png 597w,
+                 https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618569085/website-assets/home/brand-styles/desktop/black/brand-styles__copy_2x.png 1194w" media="(min-width: 45em)" sizes="(min-width: 80em) 59.7rem, 60vw">
+                                            <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/v1618930683/website-assets/home/brand-styles/mobile/black/brand-styles__copy.png 316w,
+                 https://res.cloudinary.com/pitch-software/image/upload/v1618930683/website-assets/home/brand-styles/mobile/black/brand-styles__copy_2x.png 631w" sizes="80vw"><img alt="Brand styles slide copy — Black" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618569085/website-assets/home/brand-styles/desktop/black/brand-styles__copy.png">
+                                        </picture>
+                                    </div>
+                                    <picture class="brand-styles__floating-items" data-parallax-fact="3" data-style="colorful">
+                                        <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618569090/website-assets/home/brand-styles/desktop/colorful/brand-styles__floating-items.png 1150w,
+                 https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618569090/website-assets/home/brand-styles/desktop/colorful/brand-styles__floating-items_2x.png 2300w" media="(min-width: 45em)" sizes="(min-width: 80em) 115rem, 90vw">
+                                        <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618930683/website-assets/home/brand-styles/mobile/colorful/brand-styles__floating-items.png 293w,
+                 https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618930683/website-assets/home/brand-styles/mobile/colorful/brand-styles__floating-items_2x.png 585w" sizes="80vw"><img alt="Brand styles floating items — Colorful" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618569090/website-assets/home/brand-styles/desktop/colorful/brand-styles__floating-items.png" data-styles-bump="">
+                                    </picture>
+                                    <picture class="brand-styles__floating-items" data-parallax-fact="3" data-style="black">
+                                        <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618569085/website-assets/home/brand-styles/desktop/black/brand-styles__floating-items.png 1150w,
+                 https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618569085/website-assets/home/brand-styles/desktop/black/brand-styles__floating-items_2x.png 2300w" media="(min-width: 45em)" sizes="(min-width: 80em) 115rem, 90vw">
+                                        <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618930683/website-assets/home/brand-styles/mobile/black/brand-styles__floating-items.png 293w,
+                 https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618930683/website-assets/home/brand-styles/mobile/black/brand-styles__floating-items_2x.png 585w" sizes="80vw"><img alt="Brand styles floating items — Black" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618569085/website-assets/home/brand-styles/desktop/black/brand-styles__floating-items.png" data-styles-bump="">
+                                    </picture>
+                                </div>
+                                <div class="brand-styles__foreground" data-parallax-fact="8">
+                                    <picture class="brand-styles__typo-right" data-style="colorful">
+                                        <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619007117/website-assets/home/brand-styles/desktop/colorful/brand-styles__typo-right.png 378w,
+                 https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619007117/website-assets/home/brand-styles/desktop/colorful/brand-styles__typo-right_2x.png 756w" media="(min-width: 45em)" sizes="(min-width: 80em) 37.8rem, 13vw">
+                                        <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619007267/website-assets/home/brand-styles/mobile/colorful/brand-styles__typo-right.png 163w,
+                 https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619007267/website-assets/home/brand-styles/mobile/colorful/brand-styles__typo-right_2x.png 326w" sizes="43vw"><img alt="Brand styles typography options — Colorful" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618927889/website-assets/home/brand-styles/desktop/colorful/brand-styles__typo-right.png" data-styles-bump="">
+                                    </picture>
+                                    <picture class="brand-styles__typo-right" data-style="black">
+                                        <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618927702/website-assets/home/brand-styles/desktop/black/brand-styles__typo-right.png 387w,
+                 https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618927702/website-assets/home/brand-styles/desktop/black/brand-styles__typo-right_2x.png 774w" media="(min-width: 45em)" sizes="(min-width: 80em) 37.8rem, 13vw">
+                                        <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618930683/website-assets/home/brand-styles/mobile/black/brand-styles__typo-right.png 163w,
+                 https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618930683/website-assets/home/brand-styles/mobile/black/brand-styles__typo-right_2x.png 326w" sizes="43vw"><img alt="Brand styles typography options — Black" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618927702/website-assets/home/brand-styles/desktop/black/brand-styles__typo-right.png" data-styles-bump="">
+                                    </picture>
+                                    <picture class="brand-styles__typo-left" data-style="colorful">
+                                        <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618927889/website-assets/home/brand-styles/desktop/colorful/brand-styles__typo-left.png 310w,
+                 https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618927889/website-assets/home/brand-styles/desktop/colorful/brand-styles__typo-left_2x.png 620w" media="(min-width: 45em)" sizes="(min-width: 80em) 31rem, 13vw">
+                                        <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618930683/website-assets/home/brand-styles/mobile/colorful/brand-styles__typo-left.png 163w,
+                 https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618930683/website-assets/home/brand-styles/mobile/colorful/brand-styles__typo-left_2x.png 326w" sizes="31vw"><img alt="Brand styles typography options — Colorful" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618927889/website-assets/home/brand-styles/desktop/colorful/brand-styles__typo-left.png" data-styles-bump="">
+                                    </picture>
+                                    <picture class="brand-styles__typo-left" data-style="black">
+                                        <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618927702/website-assets/home/brand-styles/desktop/black/brand-styles__typo-left.png 310w,
+                 https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618927702/website-assets/home/brand-styles/desktop/black/brand-styles__typo-left_2x.png 620w" media="(min-width: 45em)" sizes="(min-width: 80em) 31rem, 13vw">
+                                        <source data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618930683/website-assets/home/brand-styles/mobile/black/brand-styles__typo-left.png 119w,
+                 https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618930683/website-assets/home/brand-styles/mobile/black/brand-styles__typo-left_2x.png 163w" sizes="31vw"><img alt="Brand styles typography options — Black" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1618927702/website-assets/home/brand-styles/desktop/black/brand-styles__typo-left.png" data-styles-bump="">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container page-home__video-story page-home__video-story--2">
+            <div class="container-inner">
+                <div class="spacing--bottom">
+                    <div class="home-heading" data-fade-in="">
+                        <h2 class="home-heading__title">Get all hands on deck</h2>
+                        <p class="home-heading__paragraph">The way we work has changed, but presentation software hasn’t. Until now. Pitch gives your team a central place to discuss ideas, make decisions, and share feedback.</p>
+                    </div>
+                    <div class="video-story">
+                        <div class="video-story__content">
+                            <div class="video-story__media-container">
+                                <div class="video-story__decorations"><img alt="Decoration for: Work face-to-face from anywhere" class="video-story__decoration" data-index="0" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/video_call_2x.png" data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/video_call_2x.png 220w, https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/video_call_2x.png 440w" sizes="25vw"><img alt="Decoration for: Manage presentations like projects" class="video-story__decoration" data-index="1" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/status_2x.png" data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/status_2x.png 220w, https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/status_2x.png 440w" sizes="25vw"><img alt="Decoration for: Add reactions and comments" class="video-story__decoration" data-index="2" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/reaction.png" data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/reaction.png 220w, https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/reaction.png 440w" sizes="25vw"><img alt="Decoration for: Manage version history" class="video-story__decoration" data-index="3" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/version_history_2x.png" data-srcset="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/version_history_2x.png 220w, https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/version_history_2x.png 440w" sizes="25vw"></div><video class="video-story__media" data-editor="true" data-lazy-video="" muted="true" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/video-story-2/1_CreativeProposal_Editor.jpg">
+                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/video-story-2/1_CreativeProposal_Editor.webm" type="video/webm">
+                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/video-story-2/1_CreativeProposal_Editor.mp4" type="video/mp4">
+                                </video><video class="video-story__media" data-editor="true" data-lazy-video="" muted="true" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/video-story-2/2_ManageProjects_Editor_zoom.jpg">
+                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/video-story-2/2_ManageProjects_Editor_zoom.webm" type="video/webm">
+                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/video-story-2/2_ManageProjects_Editor_zoom.mp4" type="video/mp4">
+                                </video><video class="video-story__media" data-editor="true" data-lazy-video="" muted="true" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/video-story-2/3_ReactingComment_Editor_2.jpg">
+                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/video-story-2/3_ReactingComment_Editor+2.webm" type="video/webm">
+                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/video-story-2/3_ReactingComment_Editor+2.mp4" type="video/mp4">
+                                </video><video class="video-story__media" data-editor="true" data-lazy-video="" muted="true" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-assets/home/video-story-2/4_SeeHistory_Editor.jpg">
+                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/video-story-2/4_SeeHistory_Editor.webm" type="video/webm">
+                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/home/video-story-2/4_SeeHistory_Editor.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="video-story__chapters-wrapper">
+                                <div class="container ">
+                                    <div class="container-inner">
+                                        <ul class="video-story__chapters">
+                                            <li class="video-story__chapter" data-type="video"><span class="video-story__progress"><span class="video-story__progress-track"></span><span class="video-story__progress-bar"></span><span class="video-story__progress-bullet"></span></span>
+                                                <h3><button class="video-story__trigger"><span class="video-story__label">Work face-to-face from anywhere</span></button></h3>
+                                                <p>Host live meetings and edit together in real time.</p>
+                                            </li>
+                                            <li class="video-story__chapter" data-type="video"><span class="video-story__progress"><span class="video-story__progress-track"></span><span class="video-story__progress-bar"></span><span class="video-story__progress-bullet"></span></span>
+                                                <h3><button class="video-story__trigger"><span class="video-story__label">Manage presentations like projects</span></button></h3>
+                                                <p>Assign slides and set status updates to keep work moving.</p>
+                                            </li>
+                                            <li class="video-story__chapter" data-type="video"><span class="video-story__progress"><span class="video-story__progress-track"></span><span class="video-story__progress-bar"></span><span class="video-story__progress-bullet"></span></span>
+                                                <h3><button class="video-story__trigger"><span class="video-story__label">Add reactions and comments</span></button></h3>
+                                                <p>Give a quick thumbs up or share a thoughtful note.</p>
+                                            </li>
+                                            <li class="video-story__chapter" data-type="video"><span class="video-story__progress"><span class="video-story__progress-track"></span><span class="video-story__progress-bar"></span><span class="video-story__progress-bullet"></span></span>
+                                                <h3><button class="video-story__trigger"><span class="video-story__label">Manage version history<span class="pitch-pro-label">Pro</span></span></button></h3>
+                                                <p>Go back in time to see progress or recover previous versions.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container ">
+            <div class="container-inner">
+                <div class="spacing" data-fade-in="">
+                    <div class="testimonial-quote" data-testimonial-quote="true">
+                        <div class="testimonial-quote__body">
+                            <div class="testimonial-quote__subject">
+                                <div class="testimonial-quote__cursor"><svg class="live-cursor__pointer" fill="none" height="21" viewbox="0 0 19 21" width="19" xmlns="http://www.w3.org/2000/svg">
+                                        <g filter="url(#cursor-shadow)">
+                                            <path d="M14.6483 10.3184C14.9501 10.1014 14.9179 9.64266 14.5888 9.46986L4.31192 4.07377C3.94713 3.88223 3.52022 4.18936 3.58586 4.59612L5.4351 16.0553C5.49432 16.4222 5.91899 16.5985 6.22072 16.3815L14.6483 10.3184Z" fill="currentColor" stroke-width="1" stroke="white"></path>
+                                        </g>
+                                    </svg>
+                                    <div class="testimonial-quote__photo"><img alt="Robert Glaser" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-images/customer%20quotes/robert-glaser.jpg"></div>
+                                </div>
+                                <div class="testimonial-quote__headline">
+                                    <div><span class="testimonial-quote__name">Robert Glaser, </span><span class="testimonial-quote__role">CMO</span></div>
+                                </div><img alt="Robert Glaser" class="testimonial-quote__logo" src="https://res.cloudinary.com/pitch-software/image/upload/v1620911541/website-images/customer%20quotes/innoq-vector_nsaw4e.svg">
+                            </div>
+                            <div class="testimonial-quote__content">
+                                <div class="testimonial-quote__text">“With Pitch, we can finally collaborate on presentations without all the hassle — like different operating systems, missing fonts and out-of-date templates.”</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container ">
+            <div class="container-inner">
+                <div class="spacing">
+                    <div class="home-heading" data-fade-in="">
+                        <h2 class="home-heading__title">Find the perfect template</h2>
+                        <p class="home-heading__paragraph">Browse dozens of free, professionally designed templates and kickstart your next presentation.</p><a class="read-more-link" href="templates.html">Explore the template gallery<svg height="8" viewbox="0 0 27 8" width="27" xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd" d="M23.172.464l3.182 3.182a.5.5 0 010 .708l-3.182 3.182a.5.5 0 11-.707-.708L24.793 4.5H0v-1h24.793l-2.328-2.328a.5.5 0 11.707-.708z"></path>
+                            </svg></a>
+                    </div>
+                    <div class="templates-grid">
+                        <section class="templates-grid__category" data-fade-in="">
+                            <h5 class="templates-grid__title">Startups</h5>
+                            <div class="container templates-grid__slider">
+                                <div class="container-inner">
+                                    <ul class="templates-grid__items">
+                                        <li class="templates-grid__item" data-templates-grid-item="true"><a class="templates-grid__visual" href="templates/Release-Notes-76oEoM6zmEjo5Uakdc7FVwnT.html" target="_blank"><img alt="Release Notes" class="templates-grid__image" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/release-notes.png"><video class="templates-grid__video" data-lazy-video="" loop muted="muted" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/release-notes.png">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/release-notes.webm#t=1.0" type="video/webm">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/release-notes.mp4#t=1.0" type="video/mp4">
+                                                </video></a><a class="templates-grid__caption" href="templates/Release-Notes-76oEoM6zmEjo5Uakdc7FVwnT.html" target="_blank">Release Notes</a></li>
+                                        <li class="templates-grid__item" data-templates-grid-item="true"><a class="templates-grid__visual" href="templates/Startup-Pitch-Deck-4gHom74N2VxS4oekfg3YUsVd.html" target="_blank"><img alt="Pitch Deck" class="templates-grid__image" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/startup-pitch-deck.png"><video class="templates-grid__video" data-lazy-video="" loop muted="muted" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/startup-pitch-deck.png">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/startup-pitch-deck.webm#t=1.0" type="video/webm">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/startup-pitch-deck.mp4#t=1.0" type="video/mp4">
+                                                </video></a><a class="templates-grid__caption" href="templates/Startup-Pitch-Deck-4gHom74N2VxS4oekfg3YUsVd.html" target="_blank">Pitch Deck</a></li>
+                                        <li class="templates-grid__item" data-templates-grid-item="true"><a class="templates-grid__visual" href="templates/Investor-Update-04uoMy3AWpkE4n1KQJ02J1df.html" target="_blank"><img alt="Investor Update" class="templates-grid__image" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/investor-update.png"><video class="templates-grid__video" data-lazy-video="" loop muted="muted" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/investor-update.png">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/investor-update.webm#t=1.0" type="video/webm">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/investor-update.mp4#t=1.0" type="video/mp4">
+                                                </video></a><a class="templates-grid__caption" href="templates/Investor-Update-04uoMy3AWpkE4n1KQJ02J1df.html" target="_blank">Investor Update</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="templates-grid__category" data-fade-in="">
+                            <h5 class="templates-grid__title">Design</h5>
+                            <div class="container templates-grid__slider">
+                                <div class="container-inner">
+                                    <ul class="templates-grid__items">
+                                        <li class="templates-grid__item" data-templates-grid-item="true"><a class="templates-grid__visual" href="templates/Creative-Brief-2XfBGV5aAT9Y5acd4e4K7QTp.html" target="_blank"><img alt="Creative Brief" class="templates-grid__image" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/creative-brief.png"><video class="templates-grid__video" data-lazy-video="" loop muted="muted" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/creative-brief.png">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/creative-brief.webm#t=1.0" type="video/webm">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/creative-brief.mp4#t=1.0" type="video/mp4">
+                                                </video></a><a class="templates-grid__caption" href="templates/Creative-Brief-2XfBGV5aAT9Y5acd4e4K7QTp.html" target="_blank">Creative Brief</a></li>
+                                        <li class="templates-grid__item" data-templates-grid-item="true"><a class="templates-grid__visual" href="templates/Brand-Guidelines-7TsUZF24p3Lp54xk454zZ5Ve.html" target="_blank"><img alt="Brand Guidelines" class="templates-grid__image" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/brand-guidelines.png"><video class="templates-grid__video" data-lazy-video="" loop muted="muted" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/brand-guidelines.png">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/brand-guidelines.webm#t=1.0" type="video/webm">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/brand-guidelines.mp4#t=1.0" type="video/mp4">
+                                                </video></a><a class="templates-grid__caption" href="templates/Brand-Guidelines-7TsUZF24p3Lp54xk454zZ5Ve.html" target="_blank">Brand Guidelines</a></li>
+                                        <li class="templates-grid__item" data-templates-grid-item="true"><a class="templates-grid__visual" href="templates/Moodboard-5DY6Ys7Cuw8u5nydUH6946Nn.html" target="_blank"><img alt="Moodboard" class="templates-grid__image" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/moodboard.png"><video class="templates-grid__video" data-lazy-video="" loop muted="muted" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/moodboard.png">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/moodboard.webm#t=1.0" type="video/webm">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/moodboard.mp4#t=1.0" type="video/mp4">
+                                                </video></a><a class="templates-grid__caption" href="templates/Moodboard-5DY6Ys7Cuw8u5nydUH6946Nn.html" target="_blank">Moodboard</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="templates-grid__category" data-fade-in="">
+                            <h5 class="templates-grid__title">Marketing</h5>
+                            <div class="container templates-grid__slider">
+                                <div class="container-inner">
+                                    <ul class="templates-grid__items">
+                                        <li class="templates-grid__item" data-templates-grid-item="true"><a class="templates-grid__visual" href="templates/Competitor-Analysis-4H5ivW2bTtox5YaKGx5Uf3Fc.html" target="_blank"><img alt="Competitor Analysis" class="templates-grid__image" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/competitor-analysis.png"><video class="templates-grid__video" data-lazy-video="" loop muted="muted" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/competitor-analysis.png">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/competitor-analysis.webm#t=1.0" type="video/webm">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/competitor-analysis.mp4#t=1.0" type="video/mp4">
+                                                </video></a><a class="templates-grid__caption" href="templates/Competitor-Analysis-4H5ivW2bTtox5YaKGx5Uf3Fc.html" target="_blank">Competitor Analysis</a></li>
+                                        <li class="templates-grid__item" data-templates-grid-item="true"><a class="templates-grid__visual" href="templates/Tone-of-Voice-Guidelines-5Un4Q33qSKnK4oG6pX0KwzY4.html" target="_blank"><img alt="Tone of Voice" class="templates-grid__image" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/tone-of-voice-guidelines.png"><video class="templates-grid__video" data-lazy-video="" loop muted="muted" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/tone-of-voice-guidelines.png">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/tone-of-voice-guidelines.webm#t=1.0" type="video/webm">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/tone-of-voice-guidelines.mp4#t=1.0" type="video/mp4">
+                                                </video></a><a class="templates-grid__caption" href="templates/Tone-of-Voice-Guidelines-5Un4Q33qSKnK4oG6pX0KwzY4.html" target="_blank">Tone of Voice</a></li>
+                                        <li class="templates-grid__item" data-templates-grid-item="true"><a class="templates-grid__visual" href="templates/Partnership-Proposal-6wL7ba0x13Uo5THCdy5ukn5x.html" target="_blank"><img alt="Partnership Proposal" class="templates-grid__image" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/partnership-proposal.png"><video class="templates-grid__video" data-lazy-video="" loop muted="muted" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/partnership-proposal.png">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/partnership-proposal.webm#t=1.0" type="video/webm">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/partnership-proposal.mp4#t=1.0" type="video/mp4">
+                                                </video></a><a class="templates-grid__caption" href="templates/Partnership-Proposal-6wL7ba0x13Uo5THCdy5ukn5x.html" target="_blank">Partnership Proposal</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="templates-grid__category" data-fade-in="">
+                            <h5 class="templates-grid__title">Teams</h5>
+                            <div class="container templates-grid__slider">
+                                <div class="container-inner">
+                                    <ul class="templates-grid__items">
+                                        <li class="templates-grid__item" data-templates-grid-item="true"><a class="templates-grid__visual" href="templates/Workshop-4RZSj72xM7JY4iYJmw2VJ1XB.html" target="_blank"><img alt="Workshop" class="templates-grid__image" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/lvc-workshop.png"><video class="templates-grid__video" data-lazy-video="" loop muted="muted" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/lvc-workshop.png">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/lvc-workshop.webm#t=1.0" type="video/webm">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/lvc-workshop.mp4#t=1.0" type="video/mp4">
+                                                </video></a><a class="templates-grid__caption" href="templates/Workshop-4RZSj72xM7JY4iYJmw2VJ1XB.html" target="_blank">Workshop</a></li>
+                                        <li class="templates-grid__item" data-templates-grid-item="true"><a class="templates-grid__visual" href="templates/Team-Bulletin-4LHZR30w7ycz4dfQZK0cJtae.html" target="_blank"><img alt="Team Bulletin" class="templates-grid__image" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/team-bulletin.png"><video class="templates-grid__video" data-lazy-video="" loop muted="muted" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/team-bulletin.png">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/team-bulletin.webm#t=1.0" type="video/webm">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/team-bulletin.mp4#t=1.0" type="video/mp4">
+                                                </video></a><a class="templates-grid__caption" href="templates/Team-Bulletin-4LHZR30w7ycz4dfQZK0cJtae.html" target="_blank">Team Bulletin</a></li>
+                                        <li class="templates-grid__item" data-templates-grid-item="true"><a class="templates-grid__visual" href="templates/Team-Meeting-45H2Kk3yQrjX4R4aie6gxWZ2.html" target="_blank"><img alt="Team Meeting" class="templates-grid__image" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/team-meeting.png"><video class="templates-grid__video" data-lazy-video="" loop muted="muted" playsinline="playsinline" poster="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1619690342/templates-grid/team-meeting.png">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/team-meeting.webm#t=1.0" type="video/webm">
+                                                    <source data-src="https://d3x4b1wy4qlu9.cloudfront.net/media/templates-grid/team-meeting.mp4#t=1.0" type="video/mp4">
+                                                </video></a><a class="templates-grid__caption" href="templates/Team-Meeting-45H2Kk3yQrjX4R4aie6gxWZ2.html" target="_blank">Team Meeting</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container ">
+            <div class="container-inner">
+                <div class="spacing" data-fade-in="">
+                    <div class="testimonial-quote" data-testimonial-quote="true">
+                        <div class="testimonial-quote__body">
+                            <div class="testimonial-quote__subject">
+                                <div class="testimonial-quote__cursor"><svg class="live-cursor__pointer" fill="none" height="21" viewbox="0 0 19 21" width="19" xmlns="http://www.w3.org/2000/svg">
+                                        <g filter="url(#cursor-shadow)">
+                                            <path d="M14.6483 10.3184C14.9501 10.1014 14.9179 9.64266 14.5888 9.46986L4.31192 4.07377C3.94713 3.88223 3.52022 4.18936 3.58586 4.59612L5.4351 16.0553C5.49432 16.4222 5.91899 16.5985 6.22072 16.3815L14.6483 10.3184Z" fill="currentColor" stroke-width="1" stroke="white"></path>
+                                        </g>
+                                    </svg>
+                                    <div class="testimonial-quote__photo"><img alt="Jeremy Cai" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/website-images/customer%20quotes/jeremy_cai.jpg"></div>
+                                </div>
+                                <div class="testimonial-quote__headline">
+                                    <div><span class="testimonial-quote__name">Jeremy Cai, </span><span class="testimonial-quote__role">CEO</span></div>
+                                </div><img alt="Jeremy Cai" class="testimonial-quote__logo" src="https://res.cloudinary.com/pitch-software/image/upload/v1620911541/website-images/customer%20quotes/italic-vector_fqwyxw.svg">
+                            </div>
+                            <div class="testimonial-quote__content">
+                                <div class="testimonial-quote__text">“Pitch empowers our entire company to create stunning presentations in a more efficient and collaborative way than anything we’ve tried before.”</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container ">
+            <div class="container-inner">
+                <div class="spacing--bottom">
+                    <div class="updates-slideshow" data-updates-slideshow="true">
+                        <div class="updates-slideshow__content">
+                            <div class="custom-label">New in Pitch</div>
+                            <div class="updates-slideshow__infos" style="width:400%">
+                                <div class="updates-slideshow__info" data-position="0" data-slide="info">
+                                    <h3>Version history</h3>
+                                    <p>Never lose a great idea. Now, Pro members can view the history of a slide and restore previous versions. Accidentally deleted slides can also be viewed and recovered.</p>
+                                    <div class="updates-slideshow__cta"><a class="read-more-link" href="whats-new/version-history-and-deleted-slide-recovery.html">View the latest updates<svg height="8" viewbox="0 0 27 8" width="27" xmlns="http://www.w3.org/2000/svg">
+                                                <path clip-rule="evenodd" d="M23.172.464l3.182 3.182a.5.5 0 010 .708l-3.182 3.182a.5.5 0 11-.707-.708L24.793 4.5H0v-1h24.793l-2.328-2.328a.5.5 0 11.707-.708z"></path>
+                                            </svg></a></div>
+                                </div>
+                                <div class="updates-slideshow__info" data-position="1" data-slide="info">
+                                    <h3>Presentation views</h3>
+                                    <p>Our first step toward presentation analytics is here. Now, Pro members can see when members and guests have viewed their decks. With views, you’ll always know who’s checked out recent updates.</p>
+                                    <div class="updates-slideshow__cta"><a class="read-more-link" href="whats-new/presentation-views-offline-mode-for-ios.html">View the latest updates<svg height="8" viewbox="0 0 27 8" width="27" xmlns="http://www.w3.org/2000/svg">
+                                                <path clip-rule="evenodd" d="M23.172.464l3.182 3.182a.5.5 0 010 .708l-3.182 3.182a.5.5 0 11-.707-.708L24.793 4.5H0v-1h24.793l-2.328-2.328a.5.5 0 11.707-.708z"></path>
+                                            </svg></a></div>
+                                </div>
+                                <div class="updates-slideshow__info" data-position="2" data-slide="info">
+                                    <h3>Notification center</h3>
+                                    <p>Stay on top of what's happening across your workspaces — right from Pitch. Whenever there's a comment or slide assignment involving you, you'll see a helpful in-app notification.</p>
+                                    <div class="updates-slideshow__cta"><a class="read-more-link" href="whats-new/notification-center.html">View the latest updates<svg height="8" viewbox="0 0 27 8" width="27" xmlns="http://www.w3.org/2000/svg">
+                                                <path clip-rule="evenodd" d="M23.172.464l3.182 3.182a.5.5 0 010 .708l-3.182 3.182a.5.5 0 11-.707-.708L24.793 4.5H0v-1h24.793l-2.328-2.328a.5.5 0 11.707-.708z"></path>
+                                            </svg></a></div>
+                                </div>
+                                <div class="updates-slideshow__info" data-position="3" data-slide="info">
+                                    <h3>60+ updates in Q1</h3>
+                                    <p>In the first three months of 2021, we shipped 13 new features and 55 improvements to make creation and collaboration easier than ever. Check out this blog post to get a roundup of the highlights.</p>
+                                    <div class="updates-slideshow__cta"><a class="read-more-link" href="blog/60-product-updates-q1-in-review.html">View the latest updates<svg height="8" viewbox="0 0 27 8" width="27" xmlns="http://www.w3.org/2000/svg">
+                                                <path clip-rule="evenodd" d="M23.172.464l3.182 3.182a.5.5 0 010 .708l-3.182 3.182a.5.5 0 11-.707-.708L24.793 4.5H0v-1h24.793l-2.328-2.328a.5.5 0 11.707-.708z"></path>
+                                            </svg></a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="updates-slideshow__visual">
+                            <div class="container ">
+                                <div class="container-inner">
+                                    <div class="updates-slideshow__images">
+                                        <div class="updates-slideshow__image" data-position="0" data-slide="image"><img alt="Version history" src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1620050497/updates-slideshow/version-history.jpg"></div>
+                                        <div class="updates-slideshow__image" data-position="1" data-slide="image"><img alt="Presentation views" src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1620050497/updates-slideshow/view.jpg"></div>
+                                        <div class="updates-slideshow__image" data-position="2" data-slide="image"><img alt="Notification center" src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1620050497/updates-slideshow/notification.jpg"></div>
+                                        <div class="updates-slideshow__image" data-position="3" data-slide="image"><img alt="60+ updates in Q1" src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1620050497/updates-slideshow/60-feature.jpg"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="updates-slideshow__controls"><button aria-label="Prev" class="updates-slideshow__button slider-arrow-button slider-arrow-button--prev" data-button="prev"></button><button aria-label="Next" class="updates-slideshow__button slider-arrow-button slider-arrow-button--next" data-button="next"></button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="signup-banner">
+            <div class="container ">
+                <div class="container-inner">
+                    <h3 class="signup-banner__title">Get started with Pitch</h3>
+                    <div><a class="button gradient-orange big" href="https://app.pitch.com"><span class="background"></span><span class="body">Try Pitch for free</span></a></div>
+                    <ul class="signup-banner__bulleted-list">
+                        <li class="signup-banner__bulleted-item"><span class="custom-bulleted-item white">Unlimited members & guests</span></li>
+                        <li class="signup-banner__bulleted-item"><span class="custom-bulleted-item white">Unlimited presentations</span></li>
+                        <li class="signup-banner__bulleted-item"><span class="custom-bulleted-item white">Custom templates & fonts</span></li>
+                    </ul>
+                    <div class="signup-banner__image"><img alt="Pitch on any device" data-src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1620228110/signup-banner/application.png"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container ">
+        <div class="container-inner">
+            <footer class="footer">
+                <div class="footer-left">
+                    <h2 class="footer__header"><span class="visually-hidden">Footer</span><a aria-label="Pitch" class="logo" href="/index.html"><svg fill="none" height="23" width="66">
+                                <path d="M44.87 17.272a4.318 4.318 0 11.04-4.877l3.191-1.884a8.019 8.019 0 10-.017 8.613l-3.213-1.852zM53.662 0H49.96v22.206h3.7v-7.402a4.318 4.318 0 118.636 0v7.402h3.701v-8.122a7.3 7.3 0 00-12.336-5.282V0zM27.756 0h-3.701v17.271a5.551 5.551 0 009.201 4.183l-1.788-3.034a1.847 1.847 0 01-1.45.701h-.412a1.851 1.851 0 01-1.85-1.85v-6.168h3.7V7.402h-3.7V0zM19.74 0a2.056 2.056 0 100 4.112 2.056 2.056 0 000-4.112zM21.59 22.206V7.402h-3.7v14.804h3.7z" fill="currentColor"></path>
+                                <path clip-rule="evenodd" d="M0 22.206h3.7v-4.318h3.393A8.944 8.944 0 107.093 0H0v22.206zM3.7 3.7h3.393a5.243 5.243 0 010 10.486H3.701V3.7z" fill-rule="evenodd" fill="currentColor"></path>
+                            </svg></a></h2>
+                    <p>© Copyright 2021 Pitch Software GmbH.<br> All rights reserved.</p>
+                </div>
+                <nav class="footer-right">
+                    <div class="links product"><a href="product-tour.html">
+                            <h3 class="footer__header">Product</h3>
+                        </a><a href="product-tour.html"><span>Product Tour</span></a><a href="templates.html" rel="noopener" target="_blank"><span>Templates</span><img alt="" class="external" src="https://res.cloudinary.com/pitch-software/image/upload/v1602518515/website-images/images/icon-external_uhawxb.svg"></a><a href="pricing/usd.html"><span>Pricing</span></a><a href="use-cases/pitch-decks.html"><span>Pitch Decks</span></a><a href="use-cases/sales-decks.html"><span>Sales Decks</span></a><a href="use-cases/team-meetings.html"><span>Team Meetings</span></a><a href="whats-new.html"><span>What’s New</span></a><a href="download.html"><span>Download</span></a><a href="https://help.pitch.com/en/" rel="noopener" target="_blank"><span>Help Center</span><img alt="" class="external" src="https://res.cloudinary.com/pitch-software/image/upload/v1602518515/website-images/images/icon-external_uhawxb.svg"></a><a href="https://status.pitch.com/" rel="noopener" target="_blank"><span>Status</span><img alt="" class="external" src="https://res.cloudinary.com/pitch-software/image/upload/v1602518515/website-images/images/icon-external_uhawxb.svg"></a></div>
+                    <div class="links legal"><a href="legal.html">
+                            <h3 class="footer__header">Legal</h3>
+                        </a><a href="terms-of-use.html"><span>Terms of Use</span></a><a href="privacy-policy.html"><span>Privacy Policy</span></a><a href="legal-notice.html"><span>Legal Notice</span></a><a href="dpa.html"><span>DPA</span></a><a href="dmca-policy.html"><span>DMCA Policy</span></a><a href="erdf.html"><span>ERDF Support</span></a><a href="gdpr.html"><span>GDPR</span></a><a href="security-policy.html"><span>Security Policy</span></a></div>
+                    <div class="links company"><a href="about.html">
+                            <h3 class="footer__header">Company</h3>
+                        </a><a href="about.html"><span>About</span></a><a href="about.html#hiring"><span>Jobs</span></a><a href="press.html"><span>Press Room</span></a><a href="blog.html"><span>Blog</span></a><a href="constant-change.html"><span>Newsletter</span></a></div>
+                    <div class="links social-links">
+                        <h3 class="footer__header">Follow us</h3>
+                        <div class="buttons-social"><a class="button-social twitter" aria-label="Pitch on Twitter" href="https://www.twitter.com/pitch" target="_blank" rel="noopener"></a> <a class="button-social facebook" aria-label="Pitch on Facebook" href="https://www.facebook.com/pitchhq" target="_blank" rel="noopener"></a> <a class="button-social linkedIn" aria-label="Pitch on LinkedIn" href="https://www.linkedin.com/company/pitchhq/" target="_blank" rel="noopener"></a> <a class="button-social instagram" aria-label="Pitch on Instagram" href="https://www.instagram.com/PitchHQ/" target="_blank" rel="noopener"></a></div>
+                    </div>
+                </nav>
+            </footer>
+        </div>
+    </div>
+    <div class="modal-wrapper">
+        <div aria-modal="true" class="modal signup" role="dialog" tabindex="-1"><button class="modal-close" data-hide title="Close Modal"></button>
+            <div class="modal-inner">
+                <div class="modal-logo"><svg fill="none" height="23" width="66">
+                        <path d="M44.87 17.272a4.318 4.318 0 11.04-4.877l3.191-1.884a8.019 8.019 0 10-.017 8.613l-3.213-1.852zM53.662 0H49.96v22.206h3.7v-7.402a4.318 4.318 0 118.636 0v7.402h3.701v-8.122a7.3 7.3 0 00-12.336-5.282V0zM27.756 0h-3.701v17.271a5.551 5.551 0 009.201 4.183l-1.788-3.034a1.847 1.847 0 01-1.45.701h-.412a1.851 1.851 0 01-1.85-1.85v-6.168h3.7V7.402h-3.7V0zM19.74 0a2.056 2.056 0 100 4.112 2.056 2.056 0 000-4.112zM21.59 22.206V7.402h-3.7v14.804h3.7z" fill="currentColor"></path>
+                        <path clip-rule="evenodd" d="M0 22.206h3.7v-4.318h3.393A8.944 8.944 0 107.093 0H0v22.206zM3.7 3.7h3.393a5.243 5.243 0 010 10.486H3.701V3.7z" fill-rule="evenodd" fill="currentColor"></path>
+                    </svg></div>
+                <h4 class="center">Want to get early access and product updates?</h4>
+                <form class="newsletter newsletter-website connected" id="signup-form-modal">
+                    <div class="newsletter-fields"><label class="input-label"><input class="email" placeholder="Your email" required type="email" value=""><span class="input-label__label">Your email</span></label><button class="button gradient-blue"><span class="background"></span><span class="body">Sign up</span></button></div>
+                    <p class="legal-note"><span>We care about protecting your data. Here’s our </span><a href="privacy-policy.html">Privacy Policy.</a></p>
+                    <p class="newsletter-response negative" data-error-cc="Looks like you&apos;re already on the list! The first issue of Constant Change should be coming your way shortly." data-error="Looks like you&apos;re already on the list! &lt;br&gt;&lt;button class=&quot;text-button&quot; data-show=&quot;survey&quot;&gt;Take this brief survey&lt;/button&gt; for priority access to Pitch." data-success="Almost finished... Please confirm your email address to complete the subscription process."></p>
+                </form>
+            </div>
+        </div>
+        <div aria-modal="true" class="modal confirmation-survey-link" role="dialog" tabindex="-1"><button class="modal-close" data-hide title="Close Modal"></button>
+            <div class="modal-inner"><img alt="Fist bump!" src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1600178422/website-images/images/bump_s0x8kz.jpg">
+                <h4>You're on the list! Want priority access?</h4>
+                <p class="center">We're looking for early adopters like you to give us feedback.</p><a class="button" href="https://pitchapp.typeform.com/to/imhxXG?utm_medium=web&amp;utm_source=website&amp;utm_campaign=lpr_comms" id="typeform-link" rel="noopener" target="_blank">Start survey</a>
+            </div>
+        </div>
+        <div aria-modal="true" class="modal confirmation-survey-inline" role="dialog" tabindex="-1"><button class="modal-close" data-hide title="Close Modal"></button>
+            <div class="modal-inner"><img alt="Fist bump!" src="https://res.cloudinary.com/pitch-software/image/upload/f_auto/v1600178422/website-images/images/bump_s0x8kz.jpg">
+                <h4>You're on the list! Want priority access?</h4>
+                <p class="center">We're looking for early adopters like you to give us feedback.</p><a class="button" data-show="survey">Start survey</a>
+            </div>
+        </div>
+        <div aria-modal="true" class="modal sandwich-video-modal modal--transparent" role="dialog" tabindex="-1"><button class="modal-close" data-hide title="Close Modal"></button>
+            <div class="modal-inner">
+                <div class="wistia-container"><iframe allowfullscreen="" allowtransparency="true" class="wistia-iframe wistia_embed" data-wistia-src="https://fast.wistia.net/embed/iframe/2r2gvq9shb" frameborder="0" height="720" mozallowfullscreen="" msallowfullscreen="" name="wistia_embed" oallowfullscreen="" scrolling="no" webkitallowfullscreen="" width="1240"></iframe></div>
+            </div>
+        </div>
+        <div aria-modal="true" class="modal cookie-options" role="dialog" tabindex="-1"><button class="modal-close" data-hide title="Close Modal"></button>
+            <div class="modal-inner">
+                <h2 class="cookie-modal__heading">Manage cookies</h2>
+                <p>We use cookies to remember your login details, provide a secure log-in experience, collect statistics to optimize site functionality and deliver content and advertising tailored to your interests. You can view detailed descriptions of the types of cookies we use in our <a href="privacy-policy.html">privacy policy</a>.</p>
+                <form action="" data-categories="performance,marketing" data-mandatory="essential" id="cookie-settings-form" method="post">
+                    <div class="cookie-category"><input checked="checked" class="cookie-category__check" disabled="disabled" id="essential" name="essential" type="checkbox"><label class="cookie-category__label" for="essential">Essential cookies</label>
+                        <p>Cookies that are essential for <a href="/index.html">pitch.com</a> to function.</p>
+                    </div>
+                    <div class="cookie-category"><input class="cookie-category__check" id="performance" name="performance" type="checkbox"><label class="cookie-category__label" for="performance">Performance cookies</label>
+                        <p>These include cookies that help monitor site performance, collect usage statistics, and provide enhanced site functionality and personalization.</p>
+                    </div>
+                    <div class="cookie-category"><input class="cookie-category__check" id="marketing" name="marketing" type="checkbox"><label class="cookie-category__label" for="marketing">Marketing cookies</label>
+                        <p>These cookies allow us measure the effectiveness of our advertising and tailor our ads to your interests.</p>
+                    </div>
+                </form>
+                <div class="cookie-modal__actions cookie-actions"><button class="text-button" data-accept-cookies="all" data-hide="">Accept all</button><button class="button gradient-blue" data-accept-cookies="" data-hide="" id="save-custom-settings" type="submit"><span class="background"></span><span class="body">Save settings</span></button></div>
+            </div>
+        </div>
+        <div aria-modal="true" class="modal survey" role="dialog" tabindex="-1"><button class="modal-close" data-hide title="Close Modal"></button>
+            <div class="modal-inner" id="modal_insert_typeform"></div>
+        </div>
+    </div>
+    <script src="/f97fc317-3fe8-4b45-83d5-8fef112023ad/scripts/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="/testjs.js"></script>
+    <script src="/pupeteer_example.js" type="text/javascript"></script>
+
+    <script>
+        function myFunction() {
+        var myVar = 'abc';
+        console.log(myVar);
+    }
+    </script>
+
+</body>
+
+</html>

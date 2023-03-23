@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="/dmxAppConnect/dmxAppConnect.js"></script>
+  <base href="/ui8-solo-saas.herokuapp.com/">
+  <meta charset="utf-8">
+  <title>About us</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#fff">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="apple-touch-icon" sizes="180x180" href="/ui8-solo-saas.herokuapp.com/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/ui8-solo-saas.herokuapp.com/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/ui8-solo-saas.herokuapp.com/img/favicon-16x16.png">
+  <link rel="manifest" href="https://ui8-solo-saas.herokuapp.com/img/site.webmanifest">
+  <link rel="mask-icon" href="/ui8-solo-saas.herokuapp.com/img/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="A Premium SaaS Landing Page Kit">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@ui8">
+  <meta name="twitter:title" content="Solo">
+  <meta name="twitter:description" content="A Premium SaaS Landing Page Kit">
+  <meta name="twitter:creator" content="@ui8">
+  <meta name="twitter:image" content="https://ui8-solo-saas.herokuapp.com/img/twitter-card.png">
+  <meta property="og:title" content="Solo">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://ui8.net/ui8/products/solo-saas-landing-page-kit">
+  <meta property="og:image" content="https://ui8-solo-saas.herokuapp.com/img/fb-og-image.png">
+  <meta property="og:description" content="A Premium SaaS Landing Page Kit">
+  <meta property="og:site_name" content="Solo">
+  <meta property="fb:admins" content="132951670226590">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Poppins:wght@600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" media="all" href="/ui8-solo-saas.herokuapp.com/css/app.css">
+  <script src="/ui8-solo-saas.herokuapp.com/js/lib/jquery.min.js"></script>
+  <script>
+    var viewportmeta = document.querySelector('meta[name="viewport"]');
+if (viewportmeta) {
+  if (screen.width < 375) {
+    var newScale = screen.width / 375;
+    viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+  } else {
+    viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+  }
+}
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/style.min.css" />
+  <script src="/dmxAppConnect/dmxTyped/dmxTyped.js" defer=""></script>
+  <script src="/dmxAppConnect/dmxTyped/typed.min.js" defer=""></script>
+  <link rel="stylesheet" href="/dmxAppConnect/dmxAnimateCSS/animate.min.css" />
+  <script src="/dmxAppConnect/dmxAnimateCSS/dmxAnimateCSS.js" defer=""></script>
+</head>
+
+<body is="dmx-app" id="aboutus">
+  <script>
+    console.log(localStorage.getItem('darkMode'));
+if (localStorage.getItem('darkMode') === "on") {
+		document.body.classList.add("dark");
+		document.addEventListener("DOMContentLoaded", function() {
+		  document.querySelector('.js-switch-theme input').checked = true;
+		});
+}
+  </script>
+  <div class="page">
+    <header class="header">
+      <div class="header__center center"><a class="header__logo" href="/ui8-solo-saas.herokuapp.com/index.html"><img class="header__pic header__pic_dark" src="/ui8-solo-saas.herokuapp.com/img/logo-dark.png" alt="" /><img class="header__pic header__pic_light" src="/ui8-solo-saas.herokuapp.com/img/logo-light.png" alt="" /></a>
+        <div class="header__wrapper">
+          <nav class="header__nav"><a class="header__link" href="/ui8-solo-saas.herokuapp.com/downloads.html">Downloads</a><a class="header__link" href="/ui8-solo-saas.herokuapp.com/pricing.html">Pricing</a><a class="header__link" href="/ui8-solo-saas.herokuapp.com/features.html">Features</a><a class="header__link active" href="/ui8-solo-saas.herokuapp.com/about-us.html">About Us</a><a class="header__link" href="/ui8-solo-saas.herokuapp.com/contact.html">Contact</a></nav>
+          <div class="header__btns"><a class="header__btn btn btn_transparent js-popup-open" href="#popup-sign-in" data-effect="mfp-zoom-in">Login</a><a class="header__btn btn btn_orange js-popup-open" href="#popup-sign-up" data-effect="mfp-zoom-in">Sign up</a></div>
+          <picture class="header__preview">
+            <source media="(max-width: 767px)" srcset="img/header-pic-mobile@2x.png, img/header-pic-mobile@2x.png 2x" /><img srcset="img/header-pic@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/header-pic.png" alt="" />
+          </picture>
+        </div><button class="header__burger"></button>
+      </div>
+    </header>
+    <div class="about">
+      <div class="about__center center">
+        <h1 class="about__title d1" data-aos="animation-scale-top" data-aos-duration="600">Organize your work in seconds</h1>
+        <div class="about__preview"><img srcset="img/figures-8@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures-8.png" alt=""></div>
+      </div>
+    </div>
+    <section class="mt-n5 mb-auto">
+      <div class="container pb-5">
+        <div class="row mb-5">
+          <div class="col-5 offset-xxl-1 col-xxl-4">
+            <p class="review__text style145" dmx-animate-inview:90.duration:600.delay:400="fadeIn">Creemos que iniciar y administrar su negocio debe ser tres cosas: simple, sencillo y asequible.
+            </p>
+          </div>
+          <div class="col-xxl-5 col-7">
+            <p class="main_text" style="font-size:18px">Al ayudar a las empresas a formar sus entidades correctamente y gestionar su cumplimiento continuo, esperamos devolverles a los fundadores su tiempo para que puedan centrarse en crear productos y servicios importantes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="options">
+      <div class="options__center center d-flex">
+        <div class="options__wrap">
+          <div class="advantages__head container-fluid mb-3">
+            <div class="advantages__photo"></div>
+            <p class="stage">De idea a ejecución</p>
+            <h2 class="advantages__title h2" data-aos="animation-scale-top" data-aos-duration="600">Forme parte del mercado Estadounidense</h2>
+          </div>
+          <div class="options__list row">
+            <div class="options__item five__columns" style="/* width: 200px */">
+              <div class="options__icon"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="48" viewBox="0 0 46 48">
+                  <path fill="#272e35" d="M7 34.5a6.5 6.5 0 1 1 0 13 6.5 6.5 0 1 1 0-13zm0-34A6.5 6.5 0 0 1 13.5 7c0 3.073-2.133 5.648-4.999 6.326v4.348a6.51 6.51 0 0 1 4.825 4.826h3.348c.677-2.867 3.252-5 6.326-5a6.5 6.5 0 0 1 6.5 6.5 6.47 6.47 0 0 1-1.073 3.579l7.329 7.787A6.47 6.47 0 0 1 39 34.5a6.5 6.5 0 1 1 0 13c-3.073 0-5.648-2.133-6.326-4.999h-3.348C28.648 45.367 26.073 47.5 23 47.5a6.5 6.5 0 1 1 0-13c3.074 0 5.649 2.133 6.326 5h3.348c.178-.752.485-1.453.899-2.078l-7.33-7.787A6.47 6.47 0 0 1 23 30.5c-3.073 0-5.648-2.133-6.326-4.999h-3.348C12.648 28.367 10.073 30.5 7 30.5A6.5 6.5 0 0 1 .5 24c0-3.074 2.133-5.649 5-6.326v-4.348C2.633 12.649.5 10.074.5 7A6.5 6.5 0 0 1 7 .5zm0 37a3.5 3.5 0 1 0 0 7 3.5 3.5 0 1 0 0-7zm16 0a3.5 3.5 0 1 0 0 7 3.5 3.5 0 1 0 0-7zm16 0a3.5 3.5 0 1 0 0 7 3.5 3.5 0 1 0 0-7zm0-20a6.5 6.5 0 1 1 0 13 6.5 6.5 0 1 1 0-13zm-32 3a3.5 3.5 0 1 0 0 7 3.5 3.5 0 1 0 0-7zm16 0a3.5 3.5 0 1 0 0 7 3.5 3.5 0 1 0 0-7zm16 0a3.5 3.5 0 1 0 0 7 3.5 3.5 0 1 0 0-7zM23 .5a6.5 6.5 0 1 1 0 13 6.5 6.5 0 1 1 0-13zm16 0a6.5 6.5 0 1 1 0 13 6.5 6.5 0 1 1 0-13zm-32 3a3.5 3.5 0 1 0 0 7 3.5 3.5 0 1 0 0-7zm16 0a3.5 3.5 0 1 0 0 7 3.5 3.5 0 1 0 0-7zm16 0a3.5 3.5 0 1 0 0 7 3.5 3.5 0 1 0 0-7z"></path>
+                </svg></div>
+              <p class="options__text">Completamente en línea.&nbsp;<span style="color: var(--body-text); font-family: var(--body-font); font-size: var(--text-body);">Sin necesidad de viajar a Estados Unidos</span></p>
+            </div>
+            <div class="options__item five__columns">
+              <div class="options__icon"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+                  <path fill="#272e35" d="M18 .5C27.665.5 35.5 8.335 35.5 18a17.42 17.42 0 0 1-2.448 8.932L43.06 36.939a1.5 1.5 0 0 1 .103 2.007l-.103.114-4 4a1.5 1.5 0 0 1-2.007.103l-.114-.103-10.007-10.008A17.42 17.42 0 0 1 18 35.5C8.335 35.5.5 27.665.5 18S8.335.5 18 .5zm13.278 28.9a17.61 17.61 0 0 1-1.879 1.879l8.6 8.601L39.879 38zM18 3.5C9.992 3.5 3.5 9.992 3.5 18S9.992 32.5 18 32.5c3.078 0 5.931-.959 8.279-2.594.012-.012.026-.021.039-.029C30.057 27.255 32.5 22.913 32.5 18c0-8.008-6.492-14.5-14.5-14.5z"></path>
+                </svg></div>
+              <p class="options__text">Sin necesidad de número de seguro social (SSN)</p>
+            </div>
+            <div class="options__item five__columns">
+              <div class="options__icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                  <path fill="#272e35" d="M24 .5C11.021.5.5 11.021.5 24S11.021 47.5 24 47.5 47.5 36.979 47.5 24 36.979.5 24 .5zm0 3c11.322 0 20.5 9.178 20.5 20.5S35.322 44.5 24 44.5 3.5 35.322 3.5 24 12.678 3.5 24 3.5z"></path>
+                </svg></div>
+              <p class="options__text">Sin la necesidad de aportes de capital anicial</p>
+            </div>
+            <div class="options__item five__columns">
+              <div class="options__icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                  <path fill="#272e35" d="M7.671 7.099c9.198-8.892 23.863-8.798 32.945.284 9.177 9.177 9.177 24.056 0 33.234s-24.056 9.177-33.234 0-9.177-24.056 0-33.234h0zm13.074 27.933l-6.825 6.825a20.54 20.54 0 0 0 20.156 0l-6.824-6.825c-2.121.623-4.386.623-6.507 0zm-6.453-4.861l-6.45 6.45c.509.65 1.063 1.276 1.661 1.874s1.225 1.152 1.875 1.661l6.45-6.45a11.54 11.54 0 0 1-3.536-3.536zm19.413.001a11.54 11.54 0 0 1-3.536 3.536l6.45 6.45c.65-.509 1.277-1.063 1.875-1.662s1.152-1.225 1.661-1.874zm8.151-16.249l-6.825 6.824c.623 2.121.623 4.387-.001 6.508l6.825 6.824a20.54 20.54 0 0 0 .001-20.156zm-35.715-.001a20.54 20.54 0 0 0 0 20.156l6.825-6.825c-.623-2.121-.623-4.386 0-6.506zm20.804 2.104c-1.901-.701-4.002-.7-5.902.003-.095.05-.194.089-.296.116-1.003.414-1.944 1.03-2.759 1.845s-1.434 1.76-1.849 2.766c-.026.099-.064.196-.112.289-.707 1.907-.705 4.017.003 5.923.046.086.081.176.107.269.413 1.009 1.031 1.954 1.85 2.774s1.756 1.431 2.759 1.846c.104.027.207.067.304.118a8.53 8.53 0 0 0 5.902-.002c.093-.049.19-.087.289-.115 1.006-.413 1.949-1.03 2.766-1.847s1.431-1.756 1.846-2.759a1.38 1.38 0 0 1 .117-.303l.07-.192c.633-1.85.609-3.875-.071-5.712-.047-.09-.084-.184-.112-.281-.413-1.009-1.03-1.954-1.85-2.773-.814-.814-1.752-1.428-2.753-1.843a1.45 1.45 0 0 1-.31-.12zM11.379 7.842c-.65.509-1.277 1.063-1.876 1.662s-1.152 1.225-1.661 1.875l6.45 6.45a11.54 11.54 0 0 1 3.537-3.537zm25.24 0l-6.449 6.45a11.54 11.54 0 0 1 3.536 3.536l6.45-6.45c-.509-.65-1.063-1.276-1.661-1.875s-1.225-1.153-1.875-1.662zm-2.542-1.7a20.54 20.54 0 0 0-20.155 0l6.825 6.825c2.121-.623 4.386-.623 6.506 0z"></path>
+                </svg></div>
+              <p class="options__text">A partir de un solo miembro para el registro de la empresa&nbsp;</p>
+            </div>
+            <div class="options__item five__columns">
+              <div class="options__icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                  <path fill="#272e35" d="M7.671 7.099c9.198-8.892 23.863-8.798 32.945.284 9.177 9.177 9.177 24.056 0 33.234s-24.056 9.177-33.234 0-9.177-24.056 0-33.234h0zm13.074 27.933l-6.825 6.825a20.54 20.54 0 0 0 20.156 0l-6.824-6.825c-2.121.623-4.386.623-6.507 0zm-6.453-4.861l-6.45 6.45c.509.65 1.063 1.276 1.661 1.874s1.225 1.152 1.875 1.661l6.45-6.45a11.54 11.54 0 0 1-3.536-3.536zm19.413.001a11.54 11.54 0 0 1-3.536 3.536l6.45 6.45c.65-.509 1.277-1.063 1.875-1.662s1.152-1.225 1.661-1.874zm8.151-16.249l-6.825 6.824c.623 2.121.623 4.387-.001 6.508l6.825 6.824a20.54 20.54 0 0 0 .001-20.156zm-35.715-.001a20.54 20.54 0 0 0 0 20.156l6.825-6.825c-.623-2.121-.623-4.386 0-6.506zm20.804 2.104c-1.901-.701-4.002-.7-5.902.003-.095.05-.194.089-.296.116-1.003.414-1.944 1.03-2.759 1.845s-1.434 1.76-1.849 2.766c-.026.099-.064.196-.112.289-.707 1.907-.705 4.017.003 5.923.046.086.081.176.107.269.413 1.009 1.031 1.954 1.85 2.774s1.756 1.431 2.759 1.846c.104.027.207.067.304.118a8.53 8.53 0 0 0 5.902-.002c.093-.049.19-.087.289-.115 1.006-.413 1.949-1.03 2.766-1.847s1.431-1.756 1.846-2.759a1.38 1.38 0 0 1 .117-.303l.07-.192c.633-1.85.609-3.875-.071-5.712-.047-.09-.084-.184-.112-.281-.413-1.009-1.03-1.954-1.85-2.773-.814-.814-1.752-1.428-2.753-1.843a1.45 1.45 0 0 1-.31-.12zM11.379 7.842c-.65.509-1.277 1.063-1.876 1.662s-1.152 1.225-1.661 1.875l6.45 6.45a11.54 11.54 0 0 1 3.537-3.537zm25.24 0l-6.449 6.45a11.54 11.54 0 0 1 3.536 3.536l6.45-6.45c-.509-.65-1.063-1.276-1.661-1.875s-1.225-1.153-1.875-1.662zm-2.542-1.7a20.54 20.54 0 0 0-20.155 0l6.825 6.825c2.121-.623 4.386-.623 6.506 0z"></path>
+                </svg></div>
+              <p class="options__text">A partir de un solo miembro para el registro de la empresa&nbsp;</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="advantages">
+      <div class="advantages__center center">
+        <div class="advantages__list">
+          <div class="advantages__item ">
+            <div class="advantages__bg">
+              <div class="advantages__preview"><img srcset="img/advantages-pic-1@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/advantages-pic-1.png" alt=""></div>
+              <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cube.png" alt=""></div>
+              <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/ball.png" alt=""></div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="advantages__wrap d-flex flex-column align-items-start">
+                <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cursor.png" alt=""></div>
+                <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Registro en empresa en los Estados Unidos</h2>
+                <p class="advantages__text">Presentamos todos los formularios, pagamos las tasas, conseguimos un agente registrado y nos ocupamos de todos los trámites.</p><button class="advantages__btn btn btn_border">Registre su Empresa</button>
+              </div>
+            </div>
+
+          </div>
+          <div class="advantages__item flex-row-reverse">
+            <div class="advantages__bg container-fluid">
+              <div class="advantages__preview"><img srcset="img/advantages-pic-2@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/advantages-pic-2.png" alt=""></div>
+              <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/triangle@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/triangle.png" alt=""></div>
+              <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/cube@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cube.png" alt=""></div>
+            </div>
+            <div class="advantages__wrap">
+              <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/chat@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/chat.png" alt=""></div>
+              <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Solicitud del EIN o ITIN</h2>
+              <p class="advantages__text">Obtenga una identificación fiscal única (número de identificación del empleador) del IRS que puede usar con Shopify, Google Ads, Stripe.</p><button class="advantages__btn btn btn_border">Solicite su EIN o ITIN</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="invite">
+      <div class="invite__center center">
+        <div class="invite__container d-flex">
+          <div class="invite__bg"></div>
+          <div class="invite__wrap">
+            <h2 class="invite__title d1" data-aos="animation-scale-top" data-aos-duration="600">Comience su Empresa Hoy</h2>
+            <p class="invite__text">No espere más por el negocio de sus sueños. Comience su procese en línea o contáctenos para comenzar su empresa.&nbsp;</p><button class="invite__btn btn btn_orange">Comience Ahora</button>
+          </div>
+          <div class="invite__gallery">
+            <div class="invite__preview"><img srcset="img/figures-7.1@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures-7.1.png" alt=""></div>
+            <div class="invite__preview" data-aos="animation-translate-down" data-aos-duration="1000"><img srcset="img/figures-7.2@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures-7.2.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer__center center">
+        <div class="footer__body">
+          <div class="footer__wrap"><a class="footer__logo" href="/ui8-solo-saas.herokuapp.com/index.html"><img class="footer__pic footer__pic_dark" src="/ui8-solo-saas.herokuapp.com/img/logo-dark.png" alt="" /><img class="footer__pic footer__pic_light" src="/ui8-solo-saas.herokuapp.com/img/logo-light.png" alt="" /></a>
+            <div class="footer__text">Join millions of people who organize work and life with Solo App.</div>
+          </div>
+          <div class="footer__line">
+            <div class="footer__downloads"><a class="footer__download" href="#"><img src="/ui8-solo-saas.herokuapp.com/img/google-play.svg" alt="" /></a><a class="footer__download" href="#"><img src="/ui8-solo-saas.herokuapp.com/img/app-store.svg" alt="" /></a></div>
+            <div class="footer__nav"><a class="footer__link" href="/ui8-solo-saas.herokuapp.com/downloads.html">Downloads</a><a class="footer__link" href="/ui8-solo-saas.herokuapp.com/pricing.html">Pricing</a><a class="footer__link" href="/ui8-solo-saas.herokuapp.com/features.html">Features</a><a class="footer__link active" href="/ui8-solo-saas.herokuapp.com/about-us.html">About Us</a><a class="footer__link" href="/ui8-solo-saas.herokuapp.com/contact.html">Contact</a></div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__copyright">© Solo Inc. Designed by UI8 Team</div>
+          <div class="footer__social"><a class="footer__link" href="#"><svg class="icon icon-facebook">
+                <use xlink:href="img/sprite.svg#icon-facebook"></use>
+              </svg></a><a class="footer__link" href="#"><svg class="icon icon-twitter">
+                <use xlink:href="img/sprite.svg#icon-twitter"></use>
+              </svg></a><a class="footer__link" href="#"><svg class="icon icon-instagram">
+                <use xlink:href="img/sprite.svg#icon-instagram"></use>
+              </svg></a></div>
+        </div>
+      </div><label class="switch js-switch-theme"><input class="switch__input" type="checkbox" /><span class="switch__in"><span class="switch__box"></span><span class="switch__icon switch__icon_dark"><svg class="icon icon-dark">
+              <use xlink:href="img/sprite.svg#icon-dark"></use>
+            </svg></span><span class="switch__icon switch__icon_light"><svg class="icon icon-light">
+              <use xlink:href="img/sprite.svg#icon-light"></use>
+            </svg></span></span></label>
+    </div>
+    <div class="popup mfp-hide" id="popup-sign-up">
+      <div class="popup__title h2">Sign up</div>
+      <div class="popup__variants"><a class="popup__variant" href="#"><img src="/ui8-solo-saas.herokuapp.com/img/google.svg" alt="">Sign up via Google</a><a class="popup__variant" href="#"><img src="/ui8-solo-saas.herokuapp.com/img/apple.svg" alt="">Sign up via Apple</a></div>
+      <div class="popup__details">Or continue with email</div>
+      <div class="popup__btns"><a class="popup__btn btn btn_dark js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Enter your email</a><a class="popup__btn btn btn_orange js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Continue</a></div>
+      <div class="popup__note">By clicking the Continue button, you agree to the terms of service and privacy policy.</div>
+    </div>
+    <div class="popup mfp-hide" id="popup-code">
+      <div class="popup__title h2">Check your <br>inbox</div>
+      <div class="popup__info">Solo just sent you a 6-Digit Code to <a href="mailto:tam@ui8.net">tam@ui8.net</a> please check your inbox and enter the code below.</div>
+      <div class="popup__code">
+        <div class="popup__number"><input type="tel"></div>
+        <div class="popup__number"><input type="tel"></div>
+        <div class="popup__number"><input type="tel"></div>
+        <div class="popup__number"><input type="tel"></div>
+        <div class="popup__number"><input type="tel"></div>
+        <div class="popup__number"><input type="tel"></div>
+      </div>
+      <div class="popup__btns"><button class="popup__btn btn btn_orange">Enter</button><a class="popup__link" href="#">Resend digit code</a></div>
+    </div>
+    <div class="popup mfp-hide" id="popup-sign-in">
+      <div class="popup__title h2">Sign in</div>
+      <div class="popup__variants"><a class="popup__variant" href="#"><img src="/ui8-solo-saas.herokuapp.com/img/google.svg" alt="">Sign up via Google</a><a class="popup__variant" href="#"><img src="/ui8-solo-saas.herokuapp.com/img/apple.svg" alt="">Sign up via Apple</a></div>
+      <div class="popup__details">Or continue with email & password</div>
+      <div class="popup__btns"><a class="popup__btn btn btn_dark js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Enter your email</a><a class="popup__btn btn btn_dark js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Password</a><a class="popup__btn btn btn_orange js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Sign In</a></div>
+      <div class="popup__note"> </div>
+    </div>
+  </div><!-- scripts-->
+
+  <script src="/ui8-solo-saas.herokuapp.com/js/lib/svg4everybody.min.js"></script>
+  <script src="/ui8-solo-saas.herokuapp.com/js/lib/owl.carousel.min.js"></script>
+  <script src="/ui8-solo-saas.herokuapp.com/js/lib/jquery.magnific-popup.min.js"></script>
+  <script src="/ui8-solo-saas.herokuapp.com/js/lib/aos.js"></script>
+  <script src="/ui8-solo-saas.herokuapp.com/js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

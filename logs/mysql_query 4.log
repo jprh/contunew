@@ -1,0 +1,559 @@
+/usr/sbin/mysqld, Version: 8.0.28 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2022-10-06T07:07:25.391544Z	    8 Connect	root@172.28.0.1 on contucarga using TCP/IP
+2022-10-06T07:07:25.400348Z	    8 Query	select `id`, `img`, `title`, `path`, `meta`, `body`, `author`, `date` from `contucarga`.`blog_posts` limit 100
+2022-10-06T07:07:25.653823Z	    8 Quit	
+2022-10-06T07:09:19.012533Z	    9 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T07:09:19.036902Z	    9 Query	select * from `blog_posts`
+2022-10-06T07:09:26.972396Z	    9 Query	select * from `blog_posts`
+2022-10-06T07:11:24.949091Z	   10 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T07:11:24.972469Z	   10 Query	select * from `blog_posts`
+2022-10-06T07:13:05.273083Z	   10 Query	select * from `blog_posts`
+2022-10-06T07:13:20.791978Z	   10 Query	select * from `blog_posts`
+2022-10-06T07:13:29.680389Z	   10 Query	select * from `blog_posts`
+2022-10-06T07:13:40.427318Z	   11 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T07:13:40.449542Z	   11 Query	select * from `blog_posts`
+2022-10-06T07:13:51.335125Z	   11 Query	select * from `blog_posts`
+2022-10-06T07:16:15.943363Z	   12 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T07:16:15.974393Z	   12 Query	select * from `blog_posts`
+2022-10-06T07:16:17.287962Z	   12 Query	select * from `blog_posts`
+2022-10-06T07:17:15.627435Z	   12 Query	select * from `blog_posts`
+2022-10-06T07:17:57.386486Z	   13 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T07:17:57.421856Z	   13 Query	select * from `blog_posts`
+2022-10-06T07:19:14.025347Z	   14 Connect	root@172.28.0.1 on contucarga using TCP/IP
+2022-10-06T07:19:14.035814Z	   14 Query	update `contucarga`.`blog_posts` set `img` = '/img/port-unloading' where `id` = 1
+2022-10-06T07:19:14.218380Z	   14 Quit	
+2022-10-06T07:19:22.232974Z	   15 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T07:19:22.257852Z	   15 Query	select * from `blog_posts`
+2022-10-06T07:20:14.240494Z	   16 Connect	root@172.28.0.1 on contucarga using TCP/IP
+2022-10-06T07:20:14.246539Z	   16 Query	update `contucarga`.`blog_posts` set `img` = '/img/vessel-aereal' where `id` = 1
+2022-10-06T07:20:14.419960Z	   16 Quit	
+2022-10-06T07:20:18.284510Z	   15 Query	select * from `blog_posts`
+2022-10-06T07:20:55.952533Z	   17 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T07:20:55.984893Z	   17 Query	select * from `blog_posts`
+2022-10-06T07:25:16.332165Z	   18 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T07:25:16.353570Z	   18 Query	select * from `blog_posts`
+2022-10-06T07:26:37.849466Z	   19 Connect	root@172.28.0.1 on contucarga using TCP/IP
+2022-10-06T07:26:37.856321Z	   19 Query	update `contucarga`.`blog_posts` set `img` = '/img/container' where `id` = 1
+2022-10-06T07:26:38.025146Z	   19 Quit	
+2022-10-06T07:26:42.862628Z	   20 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T07:26:42.905069Z	   20 Query	select * from `blog_posts`
+2022-10-06T07:26:48.134205Z	   20 Query	select * from `blog_posts`
+2022-10-06T07:27:08.459748Z	   21 Connect	root@172.28.0.1 on contucarga using TCP/IP
+2022-10-06T07:27:08.466547Z	   21 Query	update `contucarga`.`blog_posts` set `img` = '/img/container.jpg' where `id` = 1
+2022-10-06T07:27:08.640431Z	   21 Quit	
+2022-10-06T07:27:10.742682Z	   20 Query	select * from `blog_posts`
+2022-10-06T07:27:39.669176Z	   22 Connect	db_user@172.28.0.1 on contucarga using SSL/TLS
+2022-10-06T07:27:39.676124Z	   22 Query	SELECT version()
+2022-10-06T07:27:39.681747Z	   22 Query	show session status like 'ssl_version'
+2022-10-06T07:27:39.690661Z	   22 Query	SET NAMES utf8mb4
+2022-10-06T07:27:39.694100Z	   22 Query	SHOW VARIABLES
+2022-10-06T07:27:39.724381Z	   22 Query	SELECT ROUTINE_SCHEMA as function_schema,ROUTINE_NAME as function_name,ROUTINE_DEFINITION as create_statement,ROUTINE_TYPE as function_type FROM information_schema.routines where ROUTINE_SCHEMA='contucarga'
+2022-10-06T07:27:39.735872Z	   22 Query	show full tables from `contucarga`
+2022-10-06T07:27:39.752241Z	   22 Query	SELECT column_name as column_name FROM information_schema.statistics WHERE table_schema = 'contucarga' AND table_name = 'blog_posts' AND index_name = 'PRIMARY' ORDER BY seq_in_index ASC
+2022-10-06T07:27:39.761208Z	   22 Query	SHOW CREATE TABLE `contucarga`.`blog_posts`
+2022-10-06T07:27:39.766396Z	   22 Query	SELECT table_name as table_name,column_name as column_name,column_type as column_type FROM information_schema.columns WHERE table_schema='contucarga' AND table_name='blog_posts' AND data_type='enum'
+2022-10-06T07:27:39.775675Z	   22 Query	SELECT ordinal_position as ordinal_position,column_name as column_name,column_type AS data_type,character_set_name as character_set,collation_name as collation,is_nullable as is_nullable,column_default as column_default,extra as extra,column_name AS foreign_key,column_comment AS comment FROM information_schema.columns WHERE table_schema='contucarga'AND table_name='blog_posts'
+2022-10-06T07:27:39.783290Z	   22 Query	SELECT * FROM `contucarga`.`blog_posts` ORDER BY `id` LIMIT 300 OFFSET 0
+2022-10-06T07:27:39.792136Z	   22 Query	SELECT table_rows as count FROM information_schema.TABLES WHERE TABLE_SCHEMA='contucarga'AND TABLE_NAME='blog_posts'
+2022-10-06T07:28:03.462877Z	   22 Query	SELECT 1
+2022-10-06T07:28:33.464620Z	   22 Query	SELECT 1
+2022-10-06T07:29:03.464090Z	   22 Query	SELECT 1
+2022-10-06T07:29:33.464204Z	   22 Query	SELECT 1
+2022-10-06T07:30:03.464080Z	   22 Query	SELECT 1
+2022-10-06T07:30:34.561442Z	   22 Query	SELECT 1
+2022-10-06T07:31:03.466063Z	   22 Query	SELECT 1
+2022-10-06T07:31:33.463691Z	   22 Query	SELECT 1
+2022-10-06T07:32:03.568715Z	   22 Query	SELECT 1
+2022-10-06T07:32:33.514653Z	   22 Query	SELECT 1
+2022-10-06T07:33:03.464244Z	   22 Query	SELECT 1
+2022-10-06T07:33:33.760202Z	   22 Query	SELECT 1
+2022-10-06T07:34:03.465131Z	   22 Query	SELECT 1
+2022-10-06T07:34:33.464600Z	   22 Query	SELECT 1
+2022-10-06T07:35:03.465092Z	   22 Query	SELECT 1
+2022-10-06T07:35:33.464630Z	   22 Query	SELECT 1
+2022-10-06T07:36:03.464500Z	   22 Query	SELECT 1
+2022-10-06T07:36:33.465169Z	   22 Query	SELECT 1
+2022-10-06T07:37:03.464652Z	   22 Query	SELECT 1
+2022-10-06T07:37:33.466532Z	   22 Query	SELECT 1
+2022-10-06T07:38:03.466413Z	   22 Query	SELECT 1
+2022-10-06T07:38:33.465495Z	   22 Query	SELECT 1
+2022-10-06T07:39:07.486612Z	   22 Query	SELECT 1
+2022-10-06T07:39:33.470496Z	   22 Query	SELECT 1
+2022-10-06T07:40:03.465546Z	   22 Query	SELECT 1
+2022-10-06T07:40:33.467146Z	   22 Query	SELECT 1
+2022-10-06T08:11:02.762225Z	   22 Query	SELECT 1
+2022-10-06T08:11:26.387118Z	   22 Query	SELECT 1
+2022-10-06T08:11:57.337648Z	   22 Query	SELECT 1
+2022-10-06T08:12:27.684605Z	   22 Query	SELECT 1
+2022-10-06T08:13:16.322023Z	   22 Query	SELECT 1
+2022-10-06T08:13:37.214229Z	   22 Query	SELECT 1
+2022-10-06T08:14:18.072061Z	   22 Query	SELECT 1
+2022-10-06T08:14:46.277914Z	   22 Query	SELECT 1
+2022-10-06T08:14:56.994070Z	   22 Query	SELECT 1
+2022-10-06T08:15:46.275036Z	   22 Query	SELECT 1
+2022-10-06T08:16:16.278705Z	   22 Query	SELECT 1
+2022-10-06T08:16:26.287657Z	   22 Query	SELECT 1
+2022-10-06T08:16:56.287067Z	   22 Query	SELECT 1
+2022-10-06T08:47:18.656014Z	   22 Query	SELECT 1
+2022-10-06T08:47:48.654839Z	   22 Query	SELECT 1
+2022-10-06T08:48:18.654876Z	   22 Query	SELECT 1
+2022-10-06T08:48:48.654601Z	   22 Query	SELECT 1
+2022-10-06T08:49:18.654511Z	   22 Query	SELECT 1
+2022-10-06T08:49:48.658171Z	   22 Query	SELECT 1
+2022-10-06T08:50:18.654260Z	   22 Query	SELECT 1
+2022-10-06T08:50:48.654987Z	   22 Query	SELECT 1
+2022-10-06T08:51:18.655338Z	   22 Query	SELECT 1
+2022-10-06T09:07:53.709517Z	   22 Query	SELECT 1
+2022-10-06T09:08:23.714059Z	   22 Query	SELECT 1
+2022-10-06T09:08:53.709235Z	   22 Query	SELECT 1
+2022-10-06T09:09:23.709011Z	   22 Query	SELECT 1
+2022-10-06T09:09:53.708615Z	   22 Query	SELECT 1
+2022-10-06T09:10:23.709488Z	   22 Query	SELECT 1
+2022-10-06T09:10:53.708606Z	   22 Query	SELECT 1
+2022-10-06T09:11:23.710993Z	   22 Query	SELECT 1
+2022-10-06T09:11:53.710240Z	   22 Query	SELECT 1
+2022-10-06T09:12:23.709755Z	   22 Query	SELECT 1
+2022-10-06T09:12:53.709585Z	   22 Query	SELECT 1
+2022-10-06T09:13:23.710618Z	   22 Query	SELECT 1
+2022-10-06T09:13:53.708666Z	   22 Query	SELECT 1
+2022-10-06T09:14:23.711261Z	   22 Query	SELECT 1
+2022-10-06T09:14:53.709189Z	   22 Query	SELECT 1
+2022-10-06T09:15:23.713017Z	   22 Query	SELECT 1
+2022-10-06T09:45:47.943207Z	   22 Query	SELECT 1
+2022-10-06T09:46:17.940793Z	   22 Query	SELECT 1
+2022-10-06T09:46:47.941446Z	   22 Query	SELECT 1
+2022-10-06T09:47:17.942183Z	   22 Query	SELECT 1
+2022-10-06T09:47:47.941554Z	   22 Query	SELECT 1
+2022-10-06T09:48:17.942875Z	   22 Query	SELECT 1
+2022-10-06T09:48:47.941938Z	   22 Query	SELECT 1
+2022-10-06T09:49:17.943632Z	   22 Query	SELECT 1
+2022-10-06T09:49:47.941630Z	   22 Query	SELECT 1
+2022-10-06T09:50:17.941388Z	   22 Query	SELECT 1
+2022-10-06T09:50:47.943785Z	   22 Query	SELECT 1
+2022-10-06T09:51:17.942063Z	   22 Query	SELECT 1
+2022-10-06T09:51:47.945948Z	   22 Query	SELECT 1
+2022-10-06T09:52:17.943012Z	   22 Query	SELECT 1
+2022-10-06T09:52:47.943329Z	   22 Query	SELECT 1
+2022-10-06T09:53:17.929549Z	   22 Query	SELECT 1
+2022-10-06T10:23:42.119777Z	   22 Query	SELECT 1
+2022-10-06T10:24:12.117892Z	   22 Query	SELECT 1
+2022-10-06T10:24:42.120546Z	   22 Query	SELECT 1
+2022-10-06T10:25:12.118033Z	   22 Query	SELECT 1
+2022-10-06T10:25:42.118186Z	   22 Query	SELECT 1
+2022-10-06T10:26:12.257311Z	   22 Query	SELECT 1
+2022-10-06T10:26:42.118362Z	   22 Query	SELECT 1
+2022-10-06T10:27:12.121096Z	   22 Query	SELECT 1
+2022-10-06T10:27:42.119974Z	   22 Query	SELECT 1
+2022-10-06T10:28:12.120403Z	   22 Query	SELECT 1
+2022-10-06T10:28:42.120242Z	   22 Query	SELECT 1
+2022-10-06T10:29:12.120407Z	   22 Query	SELECT 1
+2022-10-06T10:29:42.119227Z	   22 Query	SELECT 1
+2022-10-06T10:30:12.119530Z	   22 Query	SELECT 1
+2022-10-06T10:30:42.119694Z	   22 Query	SELECT 1
+2022-10-06T10:31:12.119697Z	   22 Query	SELECT 1
+2022-10-06T10:31:42.120935Z	   22 Query	SELECT 1
+2022-10-06T10:32:12.121413Z	   22 Query	SELECT 1
+2022-10-06T10:32:42.119730Z	   22 Query	SELECT 1
+2022-10-06T10:33:12.120512Z	   22 Query	SELECT 1
+2022-10-06T10:33:42.121531Z	   22 Query	SELECT 1
+2022-10-06T10:34:12.121399Z	   22 Query	SELECT 1
+2022-10-06T10:34:42.123788Z	   22 Query	SELECT 1
+2022-10-06T10:35:12.118321Z	   22 Query	SELECT 1
+2022-10-06T12:29:05.089010Z	   22 Query	SELECT 1
+2022-10-06T12:29:35.086008Z	   22 Query	SELECT 1
+2022-10-06T12:30:05.257410Z	   22 Query	SELECT 1
+2022-10-06T12:30:35.172401Z	   22 Query	SELECT 1
+2022-10-06T12:31:05.088202Z	   22 Query	SELECT 1
+2022-10-06T12:31:35.085672Z	   22 Query	SELECT 1
+2022-10-06T12:32:05.085624Z	   22 Query	SELECT 1
+2022-10-06T12:32:35.086005Z	   22 Query	SELECT 1
+2022-10-06T12:33:25.075217Z	   22 Query	SELECT 1
+2022-10-06T12:33:35.086802Z	   22 Query	SELECT 1
+2022-10-06T12:34:05.087148Z	   22 Query	SELECT 1
+2022-10-06T12:34:36.020804Z	   22 Query	SELECT 1
+2022-10-06T12:55:54.534829Z	   22 Query	SELECT 1
+2022-10-06T12:56:24.536907Z	   22 Query	SELECT 1
+2022-10-06T12:56:54.536816Z	   22 Query	SELECT 1
+2022-10-06T12:57:24.536949Z	   22 Query	SELECT 1
+2022-10-06T12:57:54.536299Z	   22 Query	SELECT 1
+2022-10-06T12:58:24.536684Z	   22 Query	SELECT 1
+2022-10-06T12:58:54.537361Z	   22 Query	SELECT 1
+2022-10-06T12:59:24.536619Z	   22 Query	SELECT 1
+2022-10-06T12:59:54.542131Z	   22 Query	SELECT 1
+2022-10-06T13:00:26.213132Z	   22 Query	SELECT 1
+2022-10-06T13:00:54.536312Z	   22 Query	SELECT 1
+2022-10-06T13:01:24.537110Z	   22 Query	SELECT 1
+2022-10-06T13:01:54.544408Z	   22 Query	SELECT 1
+2022-10-06T13:02:24.529285Z	   22 Query	SELECT 1
+2022-10-06T13:02:48.410753Z	   20 Query	select * from `blog_posts`
+2022-10-06T13:02:54.932675Z	   22 Query	SELECT 1
+2022-10-06T13:03:24.529544Z	   22 Query	SELECT 1
+2022-10-06T13:04:04.541409Z	   22 Query	SELECT 1
+2022-10-06T13:04:24.530427Z	   22 Query	SELECT 1
+2022-10-06T13:04:54.532013Z	   22 Query	SELECT 1
+2022-10-06T13:05:24.535776Z	   22 Query	SELECT 1
+2022-10-06T13:05:54.531110Z	   22 Query	SELECT 1
+2022-10-06T13:06:24.529633Z	   22 Query	SELECT 1
+2022-10-06T13:06:54.530221Z	   22 Query	SELECT 1
+2022-10-06T13:07:24.544056Z	   22 Query	SELECT 1
+2022-10-06T13:07:54.530941Z	   22 Query	SELECT 1
+2022-10-06T13:08:24.532161Z	   22 Query	SELECT 1
+2022-10-06T13:08:54.531132Z	   22 Query	SELECT 1
+2022-10-06T13:09:24.530795Z	   22 Query	SELECT 1
+2022-10-06T13:09:54.735224Z	   22 Query	SELECT 1
+2022-10-06T13:10:24.536651Z	   22 Query	SELECT 1
+2022-10-06T13:10:54.531213Z	   22 Query	SELECT 1
+2022-10-06T13:11:24.530777Z	   22 Query	SELECT 1
+2022-10-06T13:11:54.531857Z	   22 Query	SELECT 1
+2022-10-06T13:12:34.542667Z	   22 Query	SELECT 1
+2022-10-06T13:12:56.546456Z	   22 Query	SELECT 1
+2022-10-06T13:13:24.531218Z	   22 Query	SELECT 1
+2022-10-06T13:14:04.543364Z	   22 Query	SELECT 1
+2022-10-06T13:14:34.543323Z	   22 Query	SELECT 1
+2022-10-06T13:15:04.544315Z	   22 Query	SELECT 1
+2022-10-06T13:15:24.536773Z	   22 Query	SELECT 1
+2022-10-06T13:15:54.532450Z	   22 Query	SELECT 1
+2022-10-06T13:16:24.533463Z	   22 Query	SELECT 1
+2022-10-06T13:17:04.544313Z	   22 Query	SELECT 1
+2022-10-06T13:17:34.544447Z	   22 Query	SELECT 1
+2022-10-06T13:17:54.533327Z	   22 Query	SELECT 1
+2022-10-06T13:18:24.533235Z	   22 Query	SELECT 1
+2022-10-06T13:19:04.545103Z	   22 Query	SELECT 1
+2022-10-06T13:19:24.683199Z	   22 Query	SELECT 1
+2022-10-06T13:19:54.533270Z	   22 Query	SELECT 1
+2022-10-06T13:20:24.533304Z	   22 Query	SELECT 1
+2022-10-06T13:20:54.533355Z	   22 Query	SELECT 1
+2022-10-06T13:21:34.544967Z	   22 Query	SELECT 1
+2022-10-06T13:22:04.544788Z	   22 Query	SELECT 1
+2022-10-06T13:22:34.645676Z	   22 Query	SELECT 1
+2022-10-06T13:22:59.040676Z	   22 Query	SELECT 1
+2022-10-06T13:23:24.533787Z	   22 Query	SELECT 1
+2022-10-06T13:24:04.546671Z	   22 Query	SELECT 1
+2022-10-06T13:24:34.545705Z	   22 Query	SELECT 1
+2022-10-06T13:25:14.557538Z	   22 Query	SELECT 1
+2022-10-06T13:25:44.557354Z	   22 Query	SELECT 1
+2022-10-06T13:25:54.534601Z	   22 Query	SELECT 1
+2022-10-06T13:26:25.087072Z	   22 Query	SELECT 1
+2022-10-06T13:26:54.534211Z	   22 Query	SELECT 1
+2022-10-06T13:27:34.547191Z	   22 Query	SELECT 1
+2022-10-06T13:27:54.534778Z	   22 Query	SELECT 1
+2022-10-06T13:28:24.535878Z	   22 Query	SELECT 1
+2022-10-06T13:28:54.535891Z	   22 Query	SELECT 1
+2022-10-06T13:29:24.535211Z	   22 Query	SELECT 1
+2022-10-06T13:29:54.535224Z	   22 Query	SELECT 1
+2022-10-06T13:30:28.039585Z	   22 Query	SELECT 1
+2022-10-06T13:30:54.536017Z	   22 Query	SELECT 1
+2022-10-06T13:31:24.542156Z	   22 Query	SELECT 1
+2022-10-06T13:32:04.547547Z	   22 Query	SELECT 1
+2022-10-06T13:32:24.535558Z	   22 Query	SELECT 1
+2022-10-06T13:33:04.547049Z	   22 Query	SELECT 1
+2022-10-06T13:33:24.536402Z	   22 Query	SELECT 1
+2022-10-06T13:33:54.543514Z	   22 Query	SELECT 1
+2022-10-06T13:34:24.537468Z	   22 Query	SELECT 1
+2022-10-06T13:34:54.536663Z	   22 Query	SELECT 1
+2022-10-06T13:35:24.537162Z	   22 Query	SELECT 1
+2022-10-06T13:35:54.537332Z	   22 Query	SELECT 1
+2022-10-06T13:36:34.527850Z	   22 Query	SELECT 1
+2022-10-06T13:37:01.065321Z	   22 Query	SELECT 1
+2022-10-06T13:37:25.522803Z	   22 Query	SELECT 1
+2022-10-06T13:37:54.520742Z	   22 Query	SELECT 1
+2022-10-06T13:38:24.529624Z	   22 Query	SELECT 1
+2022-10-06T13:38:54.530548Z	   22 Query	SELECT 1
+2022-10-06T13:39:24.534980Z	   22 Query	SELECT 1
+2022-10-06T13:39:54.537897Z	   22 Query	SELECT 1
+2022-10-06T13:40:24.538166Z	   22 Query	SELECT 1
+2022-10-06T13:40:54.537661Z	   22 Query	SELECT 1
+2022-10-06T13:41:24.537946Z	   22 Query	SELECT 1
+2022-10-06T13:42:00.106918Z	   22 Query	SELECT 1
+2022-10-06T13:42:24.699188Z	   22 Query	SELECT 1
+2022-10-06T13:42:54.537510Z	   22 Query	SELECT 1
+2022-10-06T13:43:24.538367Z	   22 Query	SELECT 1
+2022-10-06T13:43:54.538812Z	   22 Query	SELECT 1
+2022-10-06T13:44:24.538628Z	   22 Query	SELECT 1
+2022-10-06T13:44:54.539423Z	   22 Query	SELECT 1
+2022-10-06T13:45:24.539380Z	   22 Query	SELECT 1
+2022-10-06T13:45:54.514972Z	   22 Query	SELECT 1
+2022-10-06T13:46:24.514702Z	   22 Query	SELECT 1
+2022-10-06T13:46:54.513570Z	   22 Query	SELECT 1
+2022-10-06T13:47:24.513113Z	   22 Query	SELECT 1
+2022-10-06T13:47:26.786353Z	   22 Query	SELECT ordinal_position as ordinal_position,column_name as column_name,column_type AS data_type,character_set_name as character_set,collation_name as collation,is_nullable as is_nullable,column_default as column_default,extra as extra,column_name AS foreign_key,column_comment AS comment FROM information_schema.columns WHERE table_schema='contucarga'AND table_name='blog_posts'
+2022-10-06T13:47:26.874053Z	   22 Query	SELECT sub_part as index_length,index_name as index_name,index_type AS index_algorithm,CASE non_unique WHEN 0 THEN'TRUE'ELSE'FALSE'END AS is_unique,column_name as column_name FROM information_schema.statistics WHERE table_schema='contucarga'AND table_name='blog_posts'ORDER BY seq_in_index ASC
+2022-10-06T13:47:55.885432Z	   22 Query	SELECT 1
+2022-10-06T13:48:24.472890Z	   22 Query	START TRANSACTION
+2022-10-06T13:48:24.481303Z	   22 Query	INSERT INTO `contucarga`.`blog_posts` (`title`, `path`, `meta`, `body`, `author`, `date`) VALUES ('¿Qué es un agente de aduanas y cómo puede ayudarme? ', 'que-es-un-agente-de-aduanas-y-como-puede-ayudarme', 'Un agente de aduanas es un profesional que puede ayudarle a cumplir con la normativa de comercio internacional. Conozca más sobre lo que hacen y cómo pueden ayudar a su negocio a crecer.', '<h1>&iquest;Qu&eacute; es un agente de aduanas y c&oacute;mo puede ayudarme?</h1>\n<p>Un agente de aduanas es un profesional autorizado por el gobierno para ayudar a los importadores y exportadores a cumplir con las regulaciones del comercio internacional. Los agentes de aduanas desempe&ntilde;an un papel vital en el comercio mundial al garantizar que los env&iacute;os est&eacute;n debidamente documentados y clasificados, y que se paguen todos los derechos e impuestos aplicables. Adem&aacute;s de su conocimiento de la normativa comercial internacional, los agentes de aduanas tambi&eacute;n tienen acceso a una red de contactos en el sector que pueden ayudar a facilitar el movimiento de mercanc&iacute;as a trav&eacute;s de las fronteras.</p>\n<p>Si se dedica al comercio internacional o est&aacute; pensando en ampliar su negocio a los mercados extranjeros, trabajar con un agente de aduanas es una decisi&oacute;n inteligente. Un buen agente de aduanas le ahorrar&aacute; tiempo y dinero al encargarse del papeleo y la log&iacute;stica asociados a la importaci&oacute;n y exportaci&oacute;n de mercanc&iacute;as. Tambi&eacute;n puede proporcionarle una valiosa informaci&oacute;n sobre los mercados extranjeros y ofrecerle orientaci&oacute;n sobre c&oacute;mo navegar por el a menudo complejo mundo del comercio internacional</p>\n<h2>&iquest;Qu&eacute; hace un agente de aduanas?</h2>\n<p>Los agentes de aduanas suelen prestar los siguientes servicios a sus clientes</p>\n<ol>\n<li>Realizaci&oacute;n de revisiones de conformidad de las exportaciones para garantizar que los env&iacute;os est&eacute;n correctamente documentados y clasificados</li>\n<li>Presentaci&oacute;n de declaraciones de importaci&oacute;n/exportaci&oacute;n ante los organismos gubernamentales</li>\n<li>Tramitar los pagos de derechos, impuestos y otras tasas</li>\n<li>Organizar el transporte de las mercanc&iacute;as importadas desde el puerto de entrada hasta el almac&eacute;n del consignatario</li>\n<li>Proporcionar orientaci&oacute;n sobre la clasificaci&oacute;n arancelaria, la determinaci&oacute;n del pa&iacute;s de origen y diversos requisitos de permisos</li>\n<li>Seguimiento de los env&iacute;os a trav&eacute;s del proceso de importaci&oacute;n/exportaci&oacute;n para garantizar la entrega a tiempo</li>\n<li>Abogar en nombre de los clientes ante los organismos gubernamentales</li>\n</ol>\n<p>Los agentes de aduanas tambi&eacute;n mantienen relaciones con transitarios, transportistas y otros proveedores de servicios para facilitar el movimiento de mercanc&iacute;as a trav&eacute;s de las fronteras. Adem&aacute;s, a menudo ofrecen servicios de valor a&ntilde;adido, como la b&uacute;squeda de productos, el estudio de mercado y el almacenamiento/distribuci&oacute;n</p>\n<h2>&iquest;C&oacute;mo elegir un agente de aduanas?</h2>\n<p>A la hora de seleccionar un agente de aduanas, es importante elegir a alguien que tenga experiencia en la gesti&oacute;n de env&iacute;os similares a los suyos en cuanto a tipo de producto, valor, pa&iacute;s de destino, etc. Tambi&eacute;n debe tener en cuenta factores como su reputaci&oacute;n en el sector, su historial de servicio al cliente y su capacidad para cumplir los plazos. Una vez que haya reducido sus opciones, aseg&uacute;rese de obtener presupuestos de varios agentes para poder comparar los precios y los servicios ofrecidos. A la hora de elegir un agente de aduanas, lo m&aacute;s barato no siempre es lo mejor; es importante tener en cuenta la calidad del servicio al tomar la decisi&oacute;n</p>\n<p>Un agente de aduanas puede ahorrarle tiempo y dinero al encargarse del papeleo y la log&iacute;stica asociados a la importaci&oacute;n y exportaci&oacute;n de mercanc&iacute;as. Tambi&eacute;n puede proporcionarle una valiosa informaci&oacute;n sobre los mercados extranjeros y ofrecerle orientaci&oacute;n sobre c&oacute;mo navegar por el a menudo complejo mundo del comercio internacional. Si se dedica al comercio internacional o est&aacute; pensando en ampliar su negocio a los mercados extranjeros, trabajar con un agente de aduanas es una decisi&oacute;n inteligente.</p>\n<p>Si est&aacute; buscando un servicio profesional de agenciamiento aduanal, no dude en contactar con nosotros. Nuestros agentes est&aacute;n altamente cualificados y cuentan con una gran experiencia en el sector. No importa si sus env&iacute;os son grandes o peque&ntilde;os, locales o internacionales, podemos ayudarle a gestionarlos de forma eficiente y segura. P&oacute;ngase en contacto con nosotros para obtener m&aacute;s informaci&oacute;n sobre nuestros servicios y un presupuesto personalizado.</p>\n<p>&nbsp;</p>', 'Juan P. Ravelo', '2022-09-28')
+2022-10-06T13:48:24.523281Z	   22 Query	ALTER TABLE `contucarga`.`blog_posts`
+ADD COLUMN `keywords` varchar(255) NULL
+2022-10-06T13:48:24.650312Z	   22 Query	COMMIT
+2022-10-06T13:48:24.660236Z	   22 Query	SELECT ROUTINE_SCHEMA as function_schema,ROUTINE_NAME as function_name,ROUTINE_DEFINITION as create_statement,ROUTINE_TYPE as function_type FROM information_schema.routines where ROUTINE_SCHEMA='contucarga'
+2022-10-06T13:48:24.667035Z	   22 Query	show full tables from `contucarga`
+2022-10-06T13:48:24.677101Z	   22 Query	SELECT column_name as column_name FROM information_schema.statistics WHERE table_schema = 'contucarga' AND table_name = 'blog_posts' AND index_name = 'PRIMARY' ORDER BY seq_in_index ASC
+2022-10-06T13:48:24.698369Z	   22 Query	SHOW CREATE TABLE `contucarga`.`blog_posts`
+2022-10-06T13:48:24.707602Z	   22 Query	SELECT table_name as table_name,column_name as column_name,column_type as column_type FROM information_schema.columns WHERE table_schema='contucarga' AND table_name='blog_posts' AND data_type='enum'
+2022-10-06T13:48:24.717593Z	   22 Query	SELECT ordinal_position as ordinal_position,column_name as column_name,column_type AS data_type,character_set_name as character_set,collation_name as collation,is_nullable as is_nullable,column_default as column_default,extra as extra,column_name AS foreign_key,column_comment AS comment FROM information_schema.columns WHERE table_schema='contucarga'AND table_name='blog_posts'
+2022-10-06T13:48:24.724073Z	   22 Query	SELECT * FROM `contucarga`.`blog_posts` ORDER BY `id` LIMIT 300 OFFSET 0
+2022-10-06T13:48:24.732805Z	   22 Query	SELECT table_rows as count FROM information_schema.TABLES WHERE TABLE_SCHEMA='contucarga'AND TABLE_NAME='blog_posts'
+2022-10-06T13:48:24.741688Z	   22 Query	SELECT ordinal_position as ordinal_position,column_name as column_name,column_type AS data_type,character_set_name as character_set,collation_name as collation,is_nullable as is_nullable,column_default as column_default,extra as extra,column_name AS foreign_key,column_comment AS comment FROM information_schema.columns WHERE table_schema='contucarga'AND table_name='blog_posts'
+2022-10-06T13:48:24.751564Z	   22 Query	SELECT sub_part as index_length,index_name as index_name,index_type AS index_algorithm,CASE non_unique WHEN 0 THEN'TRUE'ELSE'FALSE'END AS is_unique,column_name as column_name FROM information_schema.statistics WHERE table_schema='contucarga'AND table_name='blog_posts'ORDER BY seq_in_index ASC
+2022-10-06T13:48:54.517867Z	   22 Query	SELECT 1
+2022-10-06T13:49:24.513506Z	   22 Query	SELECT 1
+2022-10-06T13:49:54.514395Z	   22 Query	SELECT 1
+2022-10-06T13:50:24.514262Z	   22 Query	SELECT 1
+2022-10-06T13:50:54.514409Z	   22 Query	SELECT 1
+2022-10-06T13:51:24.513561Z	   22 Query	SELECT 1
+2022-10-06T13:51:54.515506Z	   22 Query	SELECT 1
+2022-10-06T13:52:24.541362Z	   22 Query	SELECT 1
+2022-10-06T13:52:54.541876Z	   22 Query	SELECT 1
+2022-10-06T13:53:24.541865Z	   22 Query	SELECT 1
+2022-10-06T13:53:54.540458Z	   22 Query	SELECT 1
+2022-10-06T13:54:24.698798Z	   22 Query	SELECT 1
+2022-10-06T13:54:54.515624Z	   22 Query	SELECT 1
+2022-10-06T13:55:24.516211Z	   22 Query	SELECT 1
+2022-10-06T13:55:54.514813Z	   22 Query	SELECT 1
+2022-10-06T13:56:24.516964Z	   22 Query	SELECT 1
+2022-10-06T13:56:54.516882Z	   22 Query	SELECT 1
+2022-10-06T13:57:06.987678Z	   22 Query	START TRANSACTION
+2022-10-06T13:57:06.992706Z	   22 Query	UPDATE `contucarga`.`blog_posts` SET `keywords` = 'comercio internacional, logística, importación, exportación, almacenamiento' WHERE `id` = 2
+2022-10-06T13:57:06.997756Z	   22 Query	UPDATE `contucarga`.`blog_posts` SET `keywords` = 'comercio internacional, logística, importación, exportación, almacenamiento' WHERE `id` = 1
+2022-10-06T13:57:07.004131Z	   22 Query	INSERT INTO `contucarga`.`blog_posts` (`id`, `title`, `path`, `meta`, `body`, `author`, `date`, `keywords`) VALUES (3, 'Cómo la logística puede hacer o deshacer el comercio internacional', 'como-la-logistica-puede-hacer-o-deshacer-el-comercio-internacional', 'Si usted está en el negocio de la importación o exportación de mercancías, entonces usted sabe que la logística puede hacer o romper su operación. Una estrategia logística eficiente y eficaz es esencial para que las mercancías lleguen al mercado a tiempo y dentro del presupuesto. En esta entrada del blog, examinaremos el papel de las aduanas en la logística de importación y exportación, así como los factores clave a tener en cuenta al planificar sus estrategias de logística.', '<h1>C&oacute;mo la log&iacute;stica puede hacer o deshacer el comercio internacional</h1>\n<p>Si usted est&aacute; en el negocio de la importaci&oacute;n o exportaci&oacute;n de mercanc&iacute;as, entonces usted sabe que la log&iacute;stica puede hacer o romper su operaci&oacute;n. Una estrategia log&iacute;stica eficiente y eficaz es esencial para llevar las mercanc&iacute;as al mercado a tiempo y dentro del presupuesto. En esta entrada del blog, examinaremos el papel de la log&iacute;stica en el comercio internacional y algunas de las formas en que puede optimizar su propia estrategia log&iacute;stica.</p>\n<p>En el contexto del comercio internacional la log&iacute;stica se ocupa de todos los pasos necesarios para transportar mercanc&iacute;as desde su origen hasta su destino final. Esto incluye el embalaje, el almacenamiento, el transporte, la manipulaci&oacute;n de carga, la documentaci&oacute;n y mucho m&aacute;s. Una estrategia log&iacute;stica eficiente es esencial para el &eacute;xito del comercio internacional.</p>\n<p>Existen muchos desaf&iacute;os a los que se enfrenta un operador de comercio internacional al tratar de coordinar una estrategia log&iacute;stica eficaz. Estos desaf&iacute;os pueden incluir:</p>\n<h2>La necesidad de transportar mercanc&iacute;as a trav&eacute;s de fronteras nacionales, lo que significa que se deben cumplir con los requisitos aduaneros y de exportaci&oacute;n / importaci&oacute;n de cada pa&iacute;s.</h2>\n<p>La econom&iacute;a global ha creado la necesidad de transportar mercanc&iacute;as a trav&eacute;s de las fronteras nacionales. Para facilitar este comercio, es esencial que se cumplan los requisitos aduaneros y de exportaci&oacute;n/importaci&oacute;n de cada pa&iacute;s. La normativa aduanera var&iacute;a de un pa&iacute;s a otro, y es importante conocer los requisitos del pa&iacute;s de destino antes de enviar las mercanc&iacute;as. Adem&aacute;s, todos los env&iacute;os deben estar debidamente etiquetados y se debe presentar la documentaci&oacute;n para poder pasar la aduana. El incumplimiento de estos requisitos puede acarrear retrasos, multas e incluso la incautaci&oacute;n de las mercanc&iacute;as. La necesidad de transportar mercanc&iacute;as a trav&eacute;s de las fronteras nacionales es una realidad de la econom&iacute;a global, y es esencial asegurarse de que todos los env&iacute;os cumplen con la normativa aduanera.</p>\n<h2>La necesidad de coordinar los horarios de transporte con los horarios de producci&oacute;n y venta, lo que puede ser un desaf&iacute;o cuando se trata de mercanc&iacute;as perecederos o con fecha de caducidad.</h2>\n<p>Cuando las empresas transportan productos perecederos o sensibles al tiempo, es necesario coordinar los horarios de transporte con los de producci&oacute;n y venta. Esto puede suponer un reto, ya que el calendario de transporte debe coincidir con el momento en que se necesitan las mercanc&iacute;as. Si el programa de transporte no se coordina correctamente, es posible que la mercanc&iacute;a no se entregue a tiempo o que llegue estropeada. Hay algunas formas de superar este reto. En primer lugar, las empresas pueden trabajar con proveedores de transporte que tengan experiencia en el transporte de productos perecederos. En segundo lugar, las empresas pueden introducir flexibilidad en sus programas de producci&oacute;n y venta. Y en tercer lugar, las empresas pueden utilizar la tecnolog&iacute;a para rastrear el paradero de sus mercanc&iacute;as y controlar las condiciones durante el transporte. Con estas medidas, las empresas pueden garantizar que sus productos perecederos lleguen frescos y a tiempo.</p>\n<h2>La necesidad de mantener el seguimiento de las mercanc&iacute;as a medida que avanzan a trav&eacute;s de la cadena de suministro, lo que puede ser un reto cuando se trata con proveedores y transportistas internacionales.</h2>\n<p>Las cadenas de suministro internacionales pueden ser complejas y dif&iacute;ciles de gestionar. A menudo intervienen muchos proveedores y transportistas diferentes, y cada etapa del proceso puede tener lugar en un pa&iacute;s distinto. Esto puede dificultar el seguimiento de las mercanc&iacute;as a lo largo de la cadena de suministro. Sin embargo, hay algunas medidas que las empresas pueden tomar para simplificar el proceso y reducir el riesgo de p&eacute;rdida o da&ntilde;o de las mercanc&iacute;as. En primer lugar, deben definir claramente las funciones y responsabilidades de cada proveedor y transportista. En segundo lugar, deben crear itinerarios detallados que incluyan informaci&oacute;n sobre las horas de llegada y salida previstas, as&iacute; como la informaci&oacute;n de contacto de cada parte implicada. Por &uacute;ltimo, deben hacer un seguimiento de las mercanc&iacute;as mediante soluciones digitales de rastreo que les permitan ver d&oacute;nde se encuentran las mercanc&iacute;as en todo momento. Con estas medidas, las empresas pueden aumentar la visibilidad de sus cadenas de suministro y garantizar que las mercanc&iacute;as se entregan de forma segura y puntual.</p>\n<h2>La necesidad de coordinar el almacenamiento y manipulaci&oacute;n de carga en diferentes ubicaciones geogr&aacute;ficas.</h2>\n<p>El almacenamiento y la manipulaci&oacute;n de la carga desempe&ntilde;an un papel importante en la cadena de suministro de cualquier organizaci&oacute;n. Para optimizar las operaciones, es esencial coordinar estas actividades en diferentes ubicaciones geogr&aacute;ficas. Esto puede ser un reto debido a las diferentes zonas horarias, las condiciones clim&aacute;ticas y la infraestructura de cada lugar. Sin embargo, hay algunos consejos que pueden ayudar a que el proceso se desarrolle sin problemas. En primer lugar, es importante comunicar claramente las expectativas y los plazos de cada equipo. A continuaci&oacute;n, es &uacute;til establecer pr&aacute;cticas comunes de etiquetado y seguimiento de los env&iacute;os. Por &uacute;ltimo, es crucial disponer de un sistema s&oacute;lido para supervisar e informar de los progresos. Siguiendo estos pasos, las organizaciones pueden asegurarse de que sus operaciones de almacenamiento y manipulaci&oacute;n de la carga est&aacute;n coordinadas y son eficientes.</p>\n<h2>La necesidad de minimizar los costos log&iacute;sticos sin sacrificar la calidad del servicio.</h2>\n<p>En el mundo empresarial, el tiempo es oro. Por eso, una log&iacute;stica eficaz es esencial para mantener los costes bajos y garantizar que los productos y servicios se entreguen a tiempo y en buenas condiciones. Al mismo tiempo, las empresas deben tener cuidado de no sacrificar la calidad en su b&uacute;squeda de la eficiencia. Para lograr el equilibrio adecuado, las empresas deben considerar cuidadosamente sus necesidades log&iacute;sticas y hacer uso de las &uacute;ltimas tecnolog&iacute;as y las mejores pr&aacute;cticas. Al adoptar un enfoque proactivo de la log&iacute;stica, las empresas pueden minimizar los costes sin sacrificar la calidad del servicio. Como resultado, podr&aacute;n competir mejor en el mercado y mejorar sus resultados.</p>\n<h2>El costo del transporte internacional, que puede ser muy alto si no se planifica cuidadosamente.</h2>\n<p>Planificar cuidadosamente su transporte internacional puede ayudarle a evitar costosos errores. Una forma de no salirse del presupuesto es recurrir a un transitario. Un transitario es una empresa especializada en el transporte internacional de mercanc&iacute;as. Pueden ayudarle a elegir el m&eacute;todo de env&iacute;o y la ruta m&aacute;s rentables, y tambi&eacute;n se encargar&aacute;n del papeleo necesario para el despacho de aduanas. Adem&aacute;s, es importante tener en cuenta el tipo de contenedor que necesitar&aacute;. Dependiendo del tama&ntilde;o y el peso de su env&iacute;o, puede ahorrar dinero utilizando una opci&oacute;n menos costosa, como el servicio LCL (carga inferior a un contenedor). Por &uacute;ltimo, aseg&uacute;rese de obtener varios presupuestos de diferentes proveedores de transporte antes de tomar su decisi&oacute;n final. Si se toma el tiempo necesario para comparar los costes, podr&aacute; asegurarse de obtener el mejor precio posible para su env&iacute;o internacional.</p>\n<p>Hay muchas formas en que puede optimizar su estrategia log&iacute;stica para minimizar los costos y maximizar la eficiencia. Algunas de estas formas son:</p>\n<h2>Identificar y seleccionar los modos de transporte m&aacute;s adecuados para sus mercanc&iacute;as.</h2>\n<ol>\n<li>Encontrar y utilizar las rutas de transporte m&aacute;s econ&oacute;micas y eficientes.</li>\n<li>Coordinar el transporte con otros proveedores de servicios, como agentes aduaneros o compa&ntilde;&iacute;as de seguros, para minimizar los costos y la complejidad.</li>\n<li>Invertir en tecnolog&iacute;a log&iacute;stica, como sistemas de seguimiento y gesti&oacute;n de inventario, para mejorar la eficiencia y el control.</li>\n</ol>\n<p>La log&iacute;stica es una parte importante y complicada del comercio internacional, pero con la planificaci&oacute;n adecuada y la inversi&oacute;n en las herramientas necesarias, puede asegurarse de que su estrategia log&iacute;stica sea eficiente y eficaz.</p>\n<p>Para tener &eacute;xito en el comercio internacional, es esencial que se cuente con una estrategia log&iacute;stica eficiente y eficaz. En <a href=\"http://www.contucarga.com/\">Contucarga</a>, nos dedicamos a proporcionar a nuestros clientes una asesor&iacute;a log&iacute;stica integral para ayudarlos a optimizar sus operaciones y alcanzar sus objetivos comerciales. Si desea obtener m&aacute;s informaci&oacute;n sobre nuestros servicios, no dude en ponerse en contacto con nosotros hoy mismo. &iexcl;Estaremos encantados de responder a todas sus preguntas!</p>', 'Antonio Ravelo', '2022-09-21', 'comercio internacional, logística, importación, exportación, almacenamiento')
+2022-10-06T13:57:07.012597Z	   22 Query	ROLLBACK
+2022-10-06T13:57:21.746703Z	   22 Query	START TRANSACTION
+2022-10-06T13:57:21.751487Z	   22 Query	UPDATE `contucarga`.`blog_posts` SET `keywords` = 'comercio internacional, logística, importación, exportación, almacenamiento' WHERE `id` = 2
+2022-10-06T13:57:21.758079Z	   22 Query	UPDATE `contucarga`.`blog_posts` SET `keywords` = 'comercio internacional, logística, importación, exportación, almacenamiento' WHERE `id` = 1
+2022-10-06T13:57:21.763923Z	   22 Query	INSERT INTO `contucarga`.`blog_posts` (`id`, `title`, `path`, `meta`, `body`, `author`, `date`, `keywords`) VALUES (3, 'Cómo la logística puede hacer o deshacer el comercio internacional', 'como-la-logistica-puede-hacer-o-deshacer-el-comercio-internacional', 'Si usted está en el negocio de la importación o exportación de mercancías, entonces usted sabe que la logística puede hacer o romper su operación. Una estrategia logística eficiente y eficaz es esencial para que las mercancías lleguen al mercado a tiempo y dentro del presupuesto. En esta entrada del blog, examinaremos el papel de las aduanas en la logística de importación y exportación, así como los factores clave a tener en cuenta al planificar sus estrategias de logística.', '<h1>C&oacute;mo la log&iacute;stica puede hacer o deshacer el comercio internacional</h1>\n<p>Si usted est&aacute; en el negocio de la importaci&oacute;n o exportaci&oacute;n de mercanc&iacute;as, entonces usted sabe que la log&iacute;stica puede hacer o romper su operaci&oacute;n. Una estrategia log&iacute;stica eficiente y eficaz es esencial para llevar las mercanc&iacute;as al mercado a tiempo y dentro del presupuesto. En esta entrada del blog, examinaremos el papel de la log&iacute;stica en el comercio internacional y algunas de las formas en que puede optimizar su propia estrategia log&iacute;stica.</p>\n<p>En el contexto del comercio internacional la log&iacute;stica se ocupa de todos los pasos necesarios para transportar mercanc&iacute;as desde su origen hasta su destino final. Esto incluye el embalaje, el almacenamiento, el transporte, la manipulaci&oacute;n de carga, la documentaci&oacute;n y mucho m&aacute;s. Una estrategia log&iacute;stica eficiente es esencial para el &eacute;xito del comercio internacional.</p>\n<p>Existen muchos desaf&iacute;os a los que se enfrenta un operador de comercio internacional al tratar de coordinar una estrategia log&iacute;stica eficaz. Estos desaf&iacute;os pueden incluir:</p>\n<h2>La necesidad de transportar mercanc&iacute;as a trav&eacute;s de fronteras nacionales, lo que significa que se deben cumplir con los requisitos aduaneros y de exportaci&oacute;n / importaci&oacute;n de cada pa&iacute;s.</h2>\n<p>La econom&iacute;a global ha creado la necesidad de transportar mercanc&iacute;as a trav&eacute;s de las fronteras nacionales. Para facilitar este comercio, es esencial que se cumplan los requisitos aduaneros y de exportaci&oacute;n/importaci&oacute;n de cada pa&iacute;s. La normativa aduanera var&iacute;a de un pa&iacute;s a otro, y es importante conocer los requisitos del pa&iacute;s de destino antes de enviar las mercanc&iacute;as. Adem&aacute;s, todos los env&iacute;os deben estar debidamente etiquetados y se debe presentar la documentaci&oacute;n para poder pasar la aduana. El incumplimiento de estos requisitos puede acarrear retrasos, multas e incluso la incautaci&oacute;n de las mercanc&iacute;as. La necesidad de transportar mercanc&iacute;as a trav&eacute;s de las fronteras nacionales es una realidad de la econom&iacute;a global, y es esencial asegurarse de que todos los env&iacute;os cumplen con la normativa aduanera.</p>\n<h2>La necesidad de coordinar los horarios de transporte con los horarios de producci&oacute;n y venta, lo que puede ser un desaf&iacute;o cuando se trata de mercanc&iacute;as perecederos o con fecha de caducidad.</h2>\n<p>Cuando las empresas transportan productos perecederos o sensibles al tiempo, es necesario coordinar los horarios de transporte con los de producci&oacute;n y venta. Esto puede suponer un reto, ya que el calendario de transporte debe coincidir con el momento en que se necesitan las mercanc&iacute;as. Si el programa de transporte no se coordina correctamente, es posible que la mercanc&iacute;a no se entregue a tiempo o que llegue estropeada. Hay algunas formas de superar este reto. En primer lugar, las empresas pueden trabajar con proveedores de transporte que tengan experiencia en el transporte de productos perecederos. En segundo lugar, las empresas pueden introducir flexibilidad en sus programas de producci&oacute;n y venta. Y en tercer lugar, las empresas pueden utilizar la tecnolog&iacute;a para rastrear el paradero de sus mercanc&iacute;as y controlar las condiciones durante el transporte. Con estas medidas, las empresas pueden garantizar que sus productos perecederos lleguen frescos y a tiempo.</p>\n<h2>La necesidad de mantener el seguimiento de las mercanc&iacute;as a medida que avanzan a trav&eacute;s de la cadena de suministro, lo que puede ser un reto cuando se trata con proveedores y transportistas internacionales.</h2>\n<p>Las cadenas de suministro internacionales pueden ser complejas y dif&iacute;ciles de gestionar. A menudo intervienen muchos proveedores y transportistas diferentes, y cada etapa del proceso puede tener lugar en un pa&iacute;s distinto. Esto puede dificultar el seguimiento de las mercanc&iacute;as a lo largo de la cadena de suministro. Sin embargo, hay algunas medidas que las empresas pueden tomar para simplificar el proceso y reducir el riesgo de p&eacute;rdida o da&ntilde;o de las mercanc&iacute;as. En primer lugar, deben definir claramente las funciones y responsabilidades de cada proveedor y transportista. En segundo lugar, deben crear itinerarios detallados que incluyan informaci&oacute;n sobre las horas de llegada y salida previstas, as&iacute; como la informaci&oacute;n de contacto de cada parte implicada. Por &uacute;ltimo, deben hacer un seguimiento de las mercanc&iacute;as mediante soluciones digitales de rastreo que les permitan ver d&oacute;nde se encuentran las mercanc&iacute;as en todo momento. Con estas medidas, las empresas pueden aumentar la visibilidad de sus cadenas de suministro y garantizar que las mercanc&iacute;as se entregan de forma segura y puntual.</p>\n<h2>La necesidad de coordinar el almacenamiento y manipulaci&oacute;n de carga en diferentes ubicaciones geogr&aacute;ficas.</h2>\n<p>El almacenamiento y la manipulaci&oacute;n de la carga desempe&ntilde;an un papel importante en la cadena de suministro de cualquier organizaci&oacute;n. Para optimizar las operaciones, es esencial coordinar estas actividades en diferentes ubicaciones geogr&aacute;ficas. Esto puede ser un reto debido a las diferentes zonas horarias, las condiciones clim&aacute;ticas y la infraestructura de cada lugar. Sin embargo, hay algunos consejos que pueden ayudar a que el proceso se desarrolle sin problemas. En primer lugar, es importante comunicar claramente las expectativas y los plazos de cada equipo. A continuaci&oacute;n, es &uacute;til establecer pr&aacute;cticas comunes de etiquetado y seguimiento de los env&iacute;os. Por &uacute;ltimo, es crucial disponer de un sistema s&oacute;lido para supervisar e informar de los progresos. Siguiendo estos pasos, las organizaciones pueden asegurarse de que sus operaciones de almacenamiento y manipulaci&oacute;n de la carga est&aacute;n coordinadas y son eficientes.</p>\n<h2>La necesidad de minimizar los costos log&iacute;sticos sin sacrificar la calidad del servicio.</h2>\n<p>En el mundo empresarial, el tiempo es oro. Por eso, una log&iacute;stica eficaz es esencial para mantener los costes bajos y garantizar que los productos y servicios se entreguen a tiempo y en buenas condiciones. Al mismo tiempo, las empresas deben tener cuidado de no sacrificar la calidad en su b&uacute;squeda de la eficiencia. Para lograr el equilibrio adecuado, las empresas deben considerar cuidadosamente sus necesidades log&iacute;sticas y hacer uso de las &uacute;ltimas tecnolog&iacute;as y las mejores pr&aacute;cticas. Al adoptar un enfoque proactivo de la log&iacute;stica, las empresas pueden minimizar los costes sin sacrificar la calidad del servicio. Como resultado, podr&aacute;n competir mejor en el mercado y mejorar sus resultados.</p>\n<h2>El costo del transporte internacional, que puede ser muy alto si no se planifica cuidadosamente.</h2>\n<p>Planificar cuidadosamente su transporte internacional puede ayudarle a evitar costosos errores. Una forma de no salirse del presupuesto es recurrir a un transitario. Un transitario es una empresa especializada en el transporte internacional de mercanc&iacute;as. Pueden ayudarle a elegir el m&eacute;todo de env&iacute;o y la ruta m&aacute;s rentables, y tambi&eacute;n se encargar&aacute;n del papeleo necesario para el despacho de aduanas. Adem&aacute;s, es importante tener en cuenta el tipo de contenedor que necesitar&aacute;. Dependiendo del tama&ntilde;o y el peso de su env&iacute;o, puede ahorrar dinero utilizando una opci&oacute;n menos costosa, como el servicio LCL (carga inferior a un contenedor). Por &uacute;ltimo, aseg&uacute;rese de obtener varios presupuestos de diferentes proveedores de transporte antes de tomar su decisi&oacute;n final. Si se toma el tiempo necesario para comparar los costes, podr&aacute; asegurarse de obtener el mejor precio posible para su env&iacute;o internacional.</p>\n<p>Hay muchas formas en que puede optimizar su estrategia log&iacute;stica para minimizar los costos y maximizar la eficiencia. Algunas de estas formas son:</p>\n<h2>Identificar y seleccionar los modos de transporte m&aacute;s adecuados para sus mercanc&iacute;as.</h2>\n<ol>\n<li>Encontrar y utilizar las rutas de transporte m&aacute;s econ&oacute;micas y eficientes.</li>\n<li>Coordinar el transporte con otros proveedores de servicios, como agentes aduaneros o compa&ntilde;&iacute;as de seguros, para minimizar los costos y la complejidad.</li>\n<li>Invertir en tecnolog&iacute;a log&iacute;stica, como sistemas de seguimiento y gesti&oacute;n de inventario, para mejorar la eficiencia y el control.</li>\n</ol>\n<p>La log&iacute;stica es una parte importante y complicada del comercio internacional, pero con la planificaci&oacute;n adecuada y la inversi&oacute;n en las herramientas necesarias, puede asegurarse de que su estrategia log&iacute;stica sea eficiente y eficaz.</p>\n<p>Para tener &eacute;xito en el comercio internacional, es esencial que se cuente con una estrategia log&iacute;stica eficiente y eficaz. En <a href=\"http://www.contucarga.com/\">Contucarga</a>, nos dedicamos a proporcionar a nuestros clientes una asesor&iacute;a log&iacute;stica integral para ayudarlos a optimizar sus operaciones y alcanzar sus objetivos comerciales. Si desea obtener m&aacute;s informaci&oacute;n sobre nuestros servicios, no dude en ponerse en contacto con nosotros hoy mismo. &iexcl;Estaremos encantados de responder a todas sus preguntas!</p>', 'Antonio Ravelo', '2022-09-21', 'comercio internacional, logística, importación, exportación, almacenamiento')
+2022-10-06T13:57:21.773517Z	   22 Query	ROLLBACK
+2022-10-06T13:57:24.516913Z	   22 Query	SELECT 1
+2022-10-06T13:58:03.111056Z	   22 Query	SELECT 1
+2022-10-06T13:58:06.258143Z	   22 Query	START TRANSACTION
+2022-10-06T13:58:06.263057Z	   22 Query	UPDATE `contucarga`.`blog_posts` SET `keywords` = 'comercio internacional, logística, importación, exportación, almacenamiento' WHERE `id` = 2
+2022-10-06T13:58:06.268128Z	   22 Query	UPDATE `contucarga`.`blog_posts` SET `keywords` = 'comercio internacional, logística, importación, exportación, almacenamiento' WHERE `id` = 1
+2022-10-06T13:58:06.275497Z	   22 Query	INSERT INTO `contucarga`.`blog_posts` (`id`, `title`, `path`, `meta`, `body`, `author`, `date`, `keywords`) VALUES (3, 'Cómo la logística puede hacer o deshacer el comercio internacional', 'como-la-logistica-puede-hacer-o-deshacer-el-comercio-internacional', 'Si usted está en el negocio de la importación o exportación de mercancías, entonces usted sabe que la logística puede hacer o romper su operación. Una estrategia logística eficiente y eficaz es esencial para que las mercancías lleguen al mercado a tiempo y dentro del presupuesto. En esta entrada del blog, examinaremos el papel de las aduanas en la logística de importación y exportación, así como los factores clave a tener en cuenta al planificar sus estrategias de logística.', '<h1>C&oacute;mo la log&iacute;stica puede hacer o deshacer el comercio internacional</h1>\n<p>Si usted est&aacute; en el negocio de la importaci&oacute;n o exportaci&oacute;n de mercanc&iacute;as, entonces usted sabe que la log&iacute;stica puede hacer o romper su operaci&oacute;n. Una estrategia log&iacute;stica eficiente y eficaz es esencial para llevar las mercanc&iacute;as al mercado a tiempo y dentro del presupuesto. En esta entrada del blog, examinaremos el papel de la log&iacute;stica en el comercio internacional y algunas de las formas en que puede optimizar su propia estrategia log&iacute;stica.</p>\n<p>En el contexto del comercio internacional la log&iacute;stica se ocupa de todos los pasos necesarios para transportar mercanc&iacute;as desde su origen hasta su destino final. Esto incluye el embalaje, el almacenamiento, el transporte, la manipulaci&oacute;n de carga, la documentaci&oacute;n y mucho m&aacute;s. Una estrategia log&iacute;stica eficiente es esencial para el &eacute;xito del comercio internacional.</p>\n<p>Existen muchos desaf&iacute;os a los que se enfrenta un operador de comercio internacional al tratar de coordinar una estrategia log&iacute;stica eficaz. Estos desaf&iacute;os pueden incluir:</p>\n<h2>La necesidad de transportar mercanc&iacute;as a trav&eacute;s de fronteras nacionales, lo que significa que se deben cumplir con los requisitos aduaneros y de exportaci&oacute;n / importaci&oacute;n de cada pa&iacute;s.</h2>\n<p>La econom&iacute;a global ha creado la necesidad de transportar mercanc&iacute;as a trav&eacute;s de las fronteras nacionales. Para facilitar este comercio, es esencial que se cumplan los requisitos aduaneros y de exportaci&oacute;n/importaci&oacute;n de cada pa&iacute;s. La normativa aduanera var&iacute;a de un pa&iacute;s a otro, y es importante conocer los requisitos del pa&iacute;s de destino antes de enviar las mercanc&iacute;as. Adem&aacute;s, todos los env&iacute;os deben estar debidamente etiquetados y se debe presentar la documentaci&oacute;n para poder pasar la aduana. El incumplimiento de estos requisitos puede acarrear retrasos, multas e incluso la incautaci&oacute;n de las mercanc&iacute;as. La necesidad de transportar mercanc&iacute;as a trav&eacute;s de las fronteras nacionales es una realidad de la econom&iacute;a global, y es esencial asegurarse de que todos los env&iacute;os cumplen con la normativa aduanera.</p>\n<h2>La necesidad de coordinar los horarios de transporte con los horarios de producci&oacute;n y venta, lo que puede ser un desaf&iacute;o cuando se trata de mercanc&iacute;as perecederos o con fecha de caducidad.</h2>\n<p>Cuando las empresas transportan productos perecederos o sensibles al tiempo, es necesario coordinar los horarios de transporte con los de producci&oacute;n y venta. Esto puede suponer un reto, ya que el calendario de transporte debe coincidir con el momento en que se necesitan las mercanc&iacute;as. Si el programa de transporte no se coordina correctamente, es posible que la mercanc&iacute;a no se entregue a tiempo o que llegue estropeada. Hay algunas formas de superar este reto. En primer lugar, las empresas pueden trabajar con proveedores de transporte que tengan experiencia en el transporte de productos perecederos. En segundo lugar, las empresas pueden introducir flexibilidad en sus programas de producci&oacute;n y venta. Y en tercer lugar, las empresas pueden utilizar la tecnolog&iacute;a para rastrear el paradero de sus mercanc&iacute;as y controlar las condiciones durante el transporte. Con estas medidas, las empresas pueden garantizar que sus productos perecederos lleguen frescos y a tiempo.</p>\n<h2>La necesidad de mantener el seguimiento de las mercanc&iacute;as a medida que avanzan a trav&eacute;s de la cadena de suministro, lo que puede ser un reto cuando se trata con proveedores y transportistas internacionales.</h2>\n<p>Las cadenas de suministro internacionales pueden ser complejas y dif&iacute;ciles de gestionar. A menudo intervienen muchos proveedores y transportistas diferentes, y cada etapa del proceso puede tener lugar en un pa&iacute;s distinto. Esto puede dificultar el seguimiento de las mercanc&iacute;as a lo largo de la cadena de suministro. Sin embargo, hay algunas medidas que las empresas pueden tomar para simplificar el proceso y reducir el riesgo de p&eacute;rdida o da&ntilde;o de las mercanc&iacute;as. En primer lugar, deben definir claramente las funciones y responsabilidades de cada proveedor y transportista. En segundo lugar, deben crear itinerarios detallados que incluyan informaci&oacute;n sobre las horas de llegada y salida previstas, as&iacute; como la informaci&oacute;n de contacto de cada parte implicada. Por &uacute;ltimo, deben hacer un seguimiento de las mercanc&iacute;as mediante soluciones digitales de rastreo que les permitan ver d&oacute;nde se encuentran las mercanc&iacute;as en todo momento. Con estas medidas, las empresas pueden aumentar la visibilidad de sus cadenas de suministro y garantizar que las mercanc&iacute;as se entregan de forma segura y puntual.</p>\n<h2>La necesidad de coordinar el almacenamiento y manipulaci&oacute;n de carga en diferentes ubicaciones geogr&aacute;ficas.</h2>\n<p>El almacenamiento y la manipulaci&oacute;n de la carga desempe&ntilde;an un papel importante en la cadena de suministro de cualquier organizaci&oacute;n. Para optimizar las operaciones, es esencial coordinar estas actividades en diferentes ubicaciones geogr&aacute;ficas. Esto puede ser un reto debido a las diferentes zonas horarias, las condiciones clim&aacute;ticas y la infraestructura de cada lugar. Sin embargo, hay algunos consejos que pueden ayudar a que el proceso se desarrolle sin problemas. En primer lugar, es importante comunicar claramente las expectativas y los plazos de cada equipo. A continuaci&oacute;n, es &uacute;til establecer pr&aacute;cticas comunes de etiquetado y seguimiento de los env&iacute;os. Por &uacute;ltimo, es crucial disponer de un sistema s&oacute;lido para supervisar e informar de los progresos. Siguiendo estos pasos, las organizaciones pueden asegurarse de que sus operaciones de almacenamiento y manipulaci&oacute;n de la carga est&aacute;n coordinadas y son eficientes.</p>\n<h2>La necesidad de minimizar los costos log&iacute;sticos sin sacrificar la calidad del servicio.</h2>\n<p>En el mundo empresarial, el tiempo es oro. Por eso, una log&iacute;stica eficaz es esencial para mantener los costes bajos y garantizar que los productos y servicios se entreguen a tiempo y en buenas condiciones. Al mismo tiempo, las empresas deben tener cuidado de no sacrificar la calidad en su b&uacute;squeda de la eficiencia. Para lograr el equilibrio adecuado, las empresas deben considerar cuidadosamente sus necesidades log&iacute;sticas y hacer uso de las &uacute;ltimas tecnolog&iacute;as y las mejores pr&aacute;cticas. Al adoptar un enfoque proactivo de la log&iacute;stica, las empresas pueden minimizar los costes sin sacrificar la calidad del servicio. Como resultado, podr&aacute;n competir mejor en el mercado y mejorar sus resultados.</p>\n<h2>El costo del transporte internacional, que puede ser muy alto si no se planifica cuidadosamente.</h2>\n<p>Planificar cuidadosamente su transporte internacional puede ayudarle a evitar costosos errores. Una forma de no salirse del presupuesto es recurrir a un transitario. Un transitario es una empresa especializada en el transporte internacional de mercanc&iacute;as. Pueden ayudarle a elegir el m&eacute;todo de env&iacute;o y la ruta m&aacute;s rentables, y tambi&eacute;n se encargar&aacute;n del papeleo necesario para el despacho de aduanas. Adem&aacute;s, es importante tener en cuenta el tipo de contenedor que necesitar&aacute;. Dependiendo del tama&ntilde;o y el peso de su env&iacute;o, puede ahorrar dinero utilizando una opci&oacute;n menos costosa, como el servicio LCL (carga inferior a un contenedor). Por &uacute;ltimo, aseg&uacute;rese de obtener varios presupuestos de diferentes proveedores de transporte antes de tomar su decisi&oacute;n final. Si se toma el tiempo necesario para comparar los costes, podr&aacute; asegurarse de obtener el mejor precio posible para su env&iacute;o internacional.</p>\n<p>Hay muchas formas en que puede optimizar su estrategia log&iacute;stica para minimizar los costos y maximizar la eficiencia. Algunas de estas formas son:</p>\n<h2>Identificar y seleccionar los modos de transporte m&aacute;s adecuados para sus mercanc&iacute;as.</h2>\n<ol>\n<li>Encontrar y utilizar las rutas de transporte m&aacute;s econ&oacute;micas y eficientes.</li>\n<li>Coordinar el transporte con otros proveedores de servicios, como agentes aduaneros o compa&ntilde;&iacute;as de seguros, para minimizar los costos y la complejidad.</li>\n<li>Invertir en tecnolog&iacute;a log&iacute;stica, como sistemas de seguimiento y gesti&oacute;n de inventario, para mejorar la eficiencia y el control.</li>\n</ol>\n<p>La log&iacute;stica es una parte importante y complicada del comercio internacional, pero con la planificaci&oacute;n adecuada y la inversi&oacute;n en las herramientas necesarias, puede asegurarse de que su estrategia log&iacute;stica sea eficiente y eficaz.</p>\n<p>Para tener &eacute;xito en el comercio internacional, es esencial que se cuente con una estrategia log&iacute;stica eficiente y eficaz. En <a href=\"http://www.contucarga.com/\">Contucarga</a>, nos dedicamos a proporcionar a nuestros clientes una asesor&iacute;a log&iacute;stica integral para ayudarlos a optimizar sus operaciones y alcanzar sus objetivos comerciales. Si desea obtener m&aacute;s informaci&oacute;n sobre nuestros servicios, no dude en ponerse en contacto con nosotros hoy mismo. &iexcl;Estaremos encantados de responder a todas sus preguntas!</p>', 'Antonio Ravelo', '2022-09-21', 'comercio internacional, logística, importación, exportación, almacenamiento')
+2022-10-06T13:58:06.286261Z	   22 Query	ROLLBACK
+2022-10-06T13:58:20.852157Z	   22 Query	START TRANSACTION
+2022-10-06T13:58:20.856779Z	   22 Query	UPDATE `contucarga`.`blog_posts` SET `keywords` = 'comercio internacional, logística, importación, exportación, almacenamiento' WHERE `id` = 1
+2022-10-06T13:58:20.863880Z	   22 Query	UPDATE `contucarga`.`blog_posts` SET `keywords` = 'comercio internacional, logística, importación, exportación, almacenamiento' WHERE `id` = 2
+2022-10-06T13:58:20.870872Z	   22 Query	INSERT INTO `contucarga`.`blog_posts` (`id`, `title`, `path`, `meta`, `body`, `author`, `date`, `keywords`) VALUES (3, 'Cómo la logística puede hacer o deshacer el comercio internacional', 'como-la-logistica-puede-hacer-o-deshacer-el-comercio-internacional', '', '<h1>C&oacute;mo la log&iacute;stica puede hacer o deshacer el comercio internacional</h1>\n<p>Si usted est&aacute; en el negocio de la importaci&oacute;n o exportaci&oacute;n de mercanc&iacute;as, entonces usted sabe que la log&iacute;stica puede hacer o romper su operaci&oacute;n. Una estrategia log&iacute;stica eficiente y eficaz es esencial para llevar las mercanc&iacute;as al mercado a tiempo y dentro del presupuesto. En esta entrada del blog, examinaremos el papel de la log&iacute;stica en el comercio internacional y algunas de las formas en que puede optimizar su propia estrategia log&iacute;stica.</p>\n<p>En el contexto del comercio internacional la log&iacute;stica se ocupa de todos los pasos necesarios para transportar mercanc&iacute;as desde su origen hasta su destino final. Esto incluye el embalaje, el almacenamiento, el transporte, la manipulaci&oacute;n de carga, la documentaci&oacute;n y mucho m&aacute;s. Una estrategia log&iacute;stica eficiente es esencial para el &eacute;xito del comercio internacional.</p>\n<p>Existen muchos desaf&iacute;os a los que se enfrenta un operador de comercio internacional al tratar de coordinar una estrategia log&iacute;stica eficaz. Estos desaf&iacute;os pueden incluir:</p>\n<h2>La necesidad de transportar mercanc&iacute;as a trav&eacute;s de fronteras nacionales, lo que significa que se deben cumplir con los requisitos aduaneros y de exportaci&oacute;n / importaci&oacute;n de cada pa&iacute;s.</h2>\n<p>La econom&iacute;a global ha creado la necesidad de transportar mercanc&iacute;as a trav&eacute;s de las fronteras nacionales. Para facilitar este comercio, es esencial que se cumplan los requisitos aduaneros y de exportaci&oacute;n/importaci&oacute;n de cada pa&iacute;s. La normativa aduanera var&iacute;a de un pa&iacute;s a otro, y es importante conocer los requisitos del pa&iacute;s de destino antes de enviar las mercanc&iacute;as. Adem&aacute;s, todos los env&iacute;os deben estar debidamente etiquetados y se debe presentar la documentaci&oacute;n para poder pasar la aduana. El incumplimiento de estos requisitos puede acarrear retrasos, multas e incluso la incautaci&oacute;n de las mercanc&iacute;as. La necesidad de transportar mercanc&iacute;as a trav&eacute;s de las fronteras nacionales es una realidad de la econom&iacute;a global, y es esencial asegurarse de que todos los env&iacute;os cumplen con la normativa aduanera.</p>\n<h2>La necesidad de coordinar los horarios de transporte con los horarios de producci&oacute;n y venta, lo que puede ser un desaf&iacute;o cuando se trata de mercanc&iacute;as perecederos o con fecha de caducidad.</h2>\n<p>Cuando las empresas transportan productos perecederos o sensibles al tiempo, es necesario coordinar los horarios de transporte con los de producci&oacute;n y venta. Esto puede suponer un reto, ya que el calendario de transporte debe coincidir con el momento en que se necesitan las mercanc&iacute;as. Si el programa de transporte no se coordina correctamente, es posible que la mercanc&iacute;a no se entregue a tiempo o que llegue estropeada. Hay algunas formas de superar este reto. En primer lugar, las empresas pueden trabajar con proveedores de transporte que tengan experiencia en el transporte de productos perecederos. En segundo lugar, las empresas pueden introducir flexibilidad en sus programas de producci&oacute;n y venta. Y en tercer lugar, las empresas pueden utilizar la tecnolog&iacute;a para rastrear el paradero de sus mercanc&iacute;as y controlar las condiciones durante el transporte. Con estas medidas, las empresas pueden garantizar que sus productos perecederos lleguen frescos y a tiempo.</p>\n<h2>La necesidad de mantener el seguimiento de las mercanc&iacute;as a medida que avanzan a trav&eacute;s de la cadena de suministro, lo que puede ser un reto cuando se trata con proveedores y transportistas internacionales.</h2>\n<p>Las cadenas de suministro internacionales pueden ser complejas y dif&iacute;ciles de gestionar. A menudo intervienen muchos proveedores y transportistas diferentes, y cada etapa del proceso puede tener lugar en un pa&iacute;s distinto. Esto puede dificultar el seguimiento de las mercanc&iacute;as a lo largo de la cadena de suministro. Sin embargo, hay algunas medidas que las empresas pueden tomar para simplificar el proceso y reducir el riesgo de p&eacute;rdida o da&ntilde;o de las mercanc&iacute;as. En primer lugar, deben definir claramente las funciones y responsabilidades de cada proveedor y transportista. En segundo lugar, deben crear itinerarios detallados que incluyan informaci&oacute;n sobre las horas de llegada y salida previstas, as&iacute; como la informaci&oacute;n de contacto de cada parte implicada. Por &uacute;ltimo, deben hacer un seguimiento de las mercanc&iacute;as mediante soluciones digitales de rastreo que les permitan ver d&oacute;nde se encuentran las mercanc&iacute;as en todo momento. Con estas medidas, las empresas pueden aumentar la visibilidad de sus cadenas de suministro y garantizar que las mercanc&iacute;as se entregan de forma segura y puntual.</p>\n<h2>La necesidad de coordinar el almacenamiento y manipulaci&oacute;n de carga en diferentes ubicaciones geogr&aacute;ficas.</h2>\n<p>El almacenamiento y la manipulaci&oacute;n de la carga desempe&ntilde;an un papel importante en la cadena de suministro de cualquier organizaci&oacute;n. Para optimizar las operaciones, es esencial coordinar estas actividades en diferentes ubicaciones geogr&aacute;ficas. Esto puede ser un reto debido a las diferentes zonas horarias, las condiciones clim&aacute;ticas y la infraestructura de cada lugar. Sin embargo, hay algunos consejos que pueden ayudar a que el proceso se desarrolle sin problemas. En primer lugar, es importante comunicar claramente las expectativas y los plazos de cada equipo. A continuaci&oacute;n, es &uacute;til establecer pr&aacute;cticas comunes de etiquetado y seguimiento de los env&iacute;os. Por &uacute;ltimo, es crucial disponer de un sistema s&oacute;lido para supervisar e informar de los progresos. Siguiendo estos pasos, las organizaciones pueden asegurarse de que sus operaciones de almacenamiento y manipulaci&oacute;n de la carga est&aacute;n coordinadas y son eficientes.</p>\n<h2>La necesidad de minimizar los costos log&iacute;sticos sin sacrificar la calidad del servicio.</h2>\n<p>En el mundo empresarial, el tiempo es oro. Por eso, una log&iacute;stica eficaz es esencial para mantener los costes bajos y garantizar que los productos y servicios se entreguen a tiempo y en buenas condiciones. Al mismo tiempo, las empresas deben tener cuidado de no sacrificar la calidad en su b&uacute;squeda de la eficiencia. Para lograr el equilibrio adecuado, las empresas deben considerar cuidadosamente sus necesidades log&iacute;sticas y hacer uso de las &uacute;ltimas tecnolog&iacute;as y las mejores pr&aacute;cticas. Al adoptar un enfoque proactivo de la log&iacute;stica, las empresas pueden minimizar los costes sin sacrificar la calidad del servicio. Como resultado, podr&aacute;n competir mejor en el mercado y mejorar sus resultados.</p>\n<h2>El costo del transporte internacional, que puede ser muy alto si no se planifica cuidadosamente.</h2>\n<p>Planificar cuidadosamente su transporte internacional puede ayudarle a evitar costosos errores. Una forma de no salirse del presupuesto es recurrir a un transitario. Un transitario es una empresa especializada en el transporte internacional de mercanc&iacute;as. Pueden ayudarle a elegir el m&eacute;todo de env&iacute;o y la ruta m&aacute;s rentables, y tambi&eacute;n se encargar&aacute;n del papeleo necesario para el despacho de aduanas. Adem&aacute;s, es importante tener en cuenta el tipo de contenedor que necesitar&aacute;. Dependiendo del tama&ntilde;o y el peso de su env&iacute;o, puede ahorrar dinero utilizando una opci&oacute;n menos costosa, como el servicio LCL (carga inferior a un contenedor). Por &uacute;ltimo, aseg&uacute;rese de obtener varios presupuestos de diferentes proveedores de transporte antes de tomar su decisi&oacute;n final. Si se toma el tiempo necesario para comparar los costes, podr&aacute; asegurarse de obtener el mejor precio posible para su env&iacute;o internacional.</p>\n<p>Hay muchas formas en que puede optimizar su estrategia log&iacute;stica para minimizar los costos y maximizar la eficiencia. Algunas de estas formas son:</p>\n<h2>Identificar y seleccionar los modos de transporte m&aacute;s adecuados para sus mercanc&iacute;as.</h2>\n<ol>\n<li>Encontrar y utilizar las rutas de transporte m&aacute;s econ&oacute;micas y eficientes.</li>\n<li>Coordinar el transporte con otros proveedores de servicios, como agentes aduaneros o compa&ntilde;&iacute;as de seguros, para minimizar los costos y la complejidad.</li>\n<li>Invertir en tecnolog&iacute;a log&iacute;stica, como sistemas de seguimiento y gesti&oacute;n de inventario, para mejorar la eficiencia y el control.</li>\n</ol>\n<p>La log&iacute;stica es una parte importante y complicada del comercio internacional, pero con la planificaci&oacute;n adecuada y la inversi&oacute;n en las herramientas necesarias, puede asegurarse de que su estrategia log&iacute;stica sea eficiente y eficaz.</p>\n<p>Para tener &eacute;xito en el comercio internacional, es esencial que se cuente con una estrategia log&iacute;stica eficiente y eficaz. En <a href=\"http://www.contucarga.com/\">Contucarga</a>, nos dedicamos a proporcionar a nuestros clientes una asesor&iacute;a log&iacute;stica integral para ayudarlos a optimizar sus operaciones y alcanzar sus objetivos comerciales. Si desea obtener m&aacute;s informaci&oacute;n sobre nuestros servicios, no dude en ponerse en contacto con nosotros hoy mismo. &iexcl;Estaremos encantados de responder a todas sus preguntas!</p>', 'Antonio Ravelo', '2022-09-21', 'comercio internacional, logística, importación, exportación, almacenamiento')
+2022-10-06T13:58:20.888785Z	   22 Query	INSERT INTO `contucarga`.`blog_posts` (`id`, `title`, `path`, `meta`, `body`, `author`, `date`) VALUES (4, 'Servicios aduaneros y logísticos: Una alianza estratégica cargada de múltiples beneficios ', 'servicios-aduaneros-y-logisticos-una-alianza-estrategica-cargada-de-multiples-beneficios', 'Si es usted importador o exportador, los agentes de aduanas pueden desempeñar un papel fundamental para que su negocio sea más eficaz. He aquí cuatro de las muchas maneras en que lo hacen.', '<h1>Servicios aduaneros y log&iacute;sticos: una alianza estrat&eacute;gica cargada de m&uacute;ltiples beneficios</h1>\n<p>Los empresarios que desean importar o exportar sus productos tienen mucho que considerar. Hay cuotas, aranceles, derechos y el cumplimiento de la normativa, por no hablar de la propia log&iacute;stica de llevar el producto de un lugar a otro. Puede ser una tarea desalentadora, pero por suerte hay servicios de aduanas y log&iacute;stica que pueden ayudar. De hecho, los servicios aduaneros y log&iacute;sticos suelen aprovecharse mejor cuando trabajan juntos en una alianza estrat&eacute;gica. He aqu&iacute; algunas de las muchas ventajas que puede aportar una alianza de este tipo.</p>\n<h2>Mejora de la gesti&oacute;n del tiempo</h2>\n<p>Una de las mayores ventajas de utilizar tanto los servicios aduaneros como los log&iacute;sticos es la mejora de la gesti&oacute;n del tiempo. Cuando los expertos se encargan del papeleo y del proceso de env&iacute;o en s&iacute;, usted puede liberar su propio tiempo para centrarse en otros aspectos de su negocio. Esto es especialmente beneficioso para los empresarios que acaban de empezar y llevan muchos sombreros. Una mejor gesti&oacute;n del tiempo puede conducir a una mayor eficiencia y productividad en otras &aacute;reas de su negocio</p>\n<h2>Mayor precisi&oacute;n operativa</h2>\n<p>Otro beneficio importante es el aumento de la precisi&oacute;n. Cuando trabaja con servicios de aduanas y log&iacute;stica, puede estar seguro de que todo el papeleo se completar&aacute; correctamente y a tiempo. Esto es crucial porque incluso un error en los documentos de importaci&oacute;n/exportaci&oacute;n puede dar lugar a retrasos o sanciones. Los profesionales que trabajan en los servicios de aduanas y log&iacute;stica tienen la experiencia y los conocimientos necesarios para garantizar que todo se haga correctamente a la primera</p>\n<h2>Ahorro de costos log&iacute;sticos</h2>\n<p>Trabajar con servicios aduaneros y log&iacute;sticos tambi&eacute;n puede suponer un ahorro de costes. Estos servicios suelen tener relaciones establecidas con aerol&iacute;neas, transportistas, empresas de transporte por carretera, etc., lo que significa que normalmente pueden obtener mejores tarifas que los particulares que no trabajan con ellos. Adem&aacute;s, los servicios de aduanas y log&iacute;stica pueden ayudarle a aprovechar las bonificaciones o programas especiales que puedan estar disponibles (por ejemplo, la clasificaci&oacute;n arancelaria)</p>\n<h2>Reducci&oacute;n de riesgos operativos y financieros</h2>\n<p>Al trabajar con profesionales de servicios aduaneros y log&iacute;stica, tambi&eacute;n puede beneficiarse de una mayor protecci&oacute;n contra los riesgos. Esto se debe a que est&aacute;n familiarizados con el proceso y saben c&oacute;mo minimizar o evitar los problemas. En general, tienen acceso a una red de contactos mucho m&aacute;s amplia que la suya propia, lo que significa que pueden obtener la informaci&oacute;n y el asesoramiento necesarios para garantizar el &eacute;xito del env&iacute;o.</p>\n<h2>Tranquilidad</h2>\n<p>Por &uacute;ltimo, pero no por ello menos importante, es la tranquilidad que ofrecen los servicios de aduanas y log&iacute;stica. Como ya se ha mencionado, el env&iacute;o de productos a otro pa&iacute;s puede ser un proceso estresante y abrumador. Sin embargo, si conf&iacute;a en profesionales para manejar el proceso en su nombre, podr&aacute; disfrutar de un mayor nivel de tranquilidad. Esto le permite centrarse en lo que realmente importa: hacer crecer su negocio.</p>\n<p>Utilizar los servicios aduaneros y log&iacute;sticos para importar o exportar productos tiene muchas ventajas. Estos servicios pueden ahorrarle tiempo, dinero y dolores de cabeza al encargarse de todo el papeleo y los detalles relacionados con el env&iacute;o de sus mercanc&iacute;as. Cuando trabaja con <a href=\"http://www.contucarga.com/\">Contucarga</a>, puede estar seguro de que sus productos llegar&aacute;n a su destino de forma segura y a tiempo, siempre. &iexcl;P&oacute;ngase en contacto con nosotros hoy para aprender m&aacute;s acerca de c&oacute;mo podemos ayudar a su negocio a tener &eacute;xito!</p>', 'Antonio Ravelo', '2022-09-15')
+2022-10-06T13:58:20.902193Z	   22 Query	ALTER TABLE `contucarga`.`blog_posts`
+CHANGE `meta` `meta` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL
+2022-10-06T13:58:21.069496Z	   22 Query	COMMIT
+2022-10-06T13:58:21.079552Z	   22 Query	SELECT ROUTINE_SCHEMA as function_schema,ROUTINE_NAME as function_name,ROUTINE_DEFINITION as create_statement,ROUTINE_TYPE as function_type FROM information_schema.routines where ROUTINE_SCHEMA='contucarga'
+2022-10-06T13:58:21.085666Z	   22 Query	show full tables from `contucarga`
+2022-10-06T13:58:21.094971Z	   22 Query	SELECT column_name as column_name FROM information_schema.statistics WHERE table_schema = 'contucarga' AND table_name = 'blog_posts' AND index_name = 'PRIMARY' ORDER BY seq_in_index ASC
+2022-10-06T13:58:21.101508Z	   22 Query	SHOW CREATE TABLE `contucarga`.`blog_posts`
+2022-10-06T13:58:21.105682Z	   22 Query	SELECT table_name as table_name,column_name as column_name,column_type as column_type FROM information_schema.columns WHERE table_schema='contucarga' AND table_name='blog_posts' AND data_type='enum'
+2022-10-06T13:58:21.113054Z	   22 Query	SELECT ordinal_position as ordinal_position,column_name as column_name,column_type AS data_type,character_set_name as character_set,collation_name as collation,is_nullable as is_nullable,column_default as column_default,extra as extra,column_name AS foreign_key,column_comment AS comment FROM information_schema.columns WHERE table_schema='contucarga'AND table_name='blog_posts'
+2022-10-06T13:58:21.120643Z	   22 Query	SELECT * FROM `contucarga`.`blog_posts` ORDER BY `id` LIMIT 300 OFFSET 0
+2022-10-06T13:58:21.131114Z	   22 Query	SELECT table_rows as count FROM information_schema.TABLES WHERE TABLE_SCHEMA='contucarga'AND TABLE_NAME='blog_posts'
+2022-10-06T13:58:21.159543Z	   22 Query	SELECT ordinal_position as ordinal_position,column_name as column_name,column_type AS data_type,character_set_name as character_set,collation_name as collation,is_nullable as is_nullable,column_default as column_default,extra as extra,column_name AS foreign_key,column_comment AS comment FROM information_schema.columns WHERE table_schema='contucarga'AND table_name='blog_posts'
+2022-10-06T13:58:21.169004Z	   22 Query	SELECT sub_part as index_length,index_name as index_name,index_type AS index_algorithm,CASE non_unique WHEN 0 THEN'TRUE'ELSE'FALSE'END AS is_unique,column_name as column_name FROM information_schema.statistics WHERE table_schema='contucarga'AND table_name='blog_posts'ORDER BY seq_in_index ASC
+2022-10-06T13:58:24.516309Z	   22 Query	SELECT 1
+2022-10-06T13:58:25.109322Z	   22 Query	START TRANSACTION
+2022-10-06T13:58:25.118253Z	   22 Query	UPDATE `contucarga`.`blog_posts` SET `meta` = 'Si usted está en el negocio de la importación o exportación de mercancías, entonces usted sabe que la logística puede hacer o romper su operación. Una estrategia logística eficiente y eficaz es esencial para que las mercancías lleguen al mercado a tiempo y dentro del presupuesto. En esta entrada del blog, examinaremos el papel de las aduanas en la logística de importación y exportación, así como los factores clave a tener en cuenta al planificar sus estrategias de logística.' WHERE `id` = 3
+2022-10-06T13:58:25.132212Z	   22 Query	COMMIT
+2022-10-06T13:58:25.148943Z	   22 Query	SELECT ROUTINE_SCHEMA as function_schema,ROUTINE_NAME as function_name,ROUTINE_DEFINITION as create_statement,ROUTINE_TYPE as function_type FROM information_schema.routines where ROUTINE_SCHEMA='contucarga'
+2022-10-06T13:58:25.155384Z	   22 Query	show full tables from `contucarga`
+2022-10-06T13:58:25.167063Z	   22 Query	SELECT column_name as column_name FROM information_schema.statistics WHERE table_schema = 'contucarga' AND table_name = 'blog_posts' AND index_name = 'PRIMARY' ORDER BY seq_in_index ASC
+2022-10-06T13:58:25.174201Z	   22 Query	SHOW CREATE TABLE `contucarga`.`blog_posts`
+2022-10-06T13:58:25.178979Z	   22 Query	SELECT table_name as table_name,column_name as column_name,column_type as column_type FROM information_schema.columns WHERE table_schema='contucarga' AND table_name='blog_posts' AND data_type='enum'
+2022-10-06T13:58:25.185775Z	   22 Query	SELECT ordinal_position as ordinal_position,column_name as column_name,column_type AS data_type,character_set_name as character_set,collation_name as collation,is_nullable as is_nullable,column_default as column_default,extra as extra,column_name AS foreign_key,column_comment AS comment FROM information_schema.columns WHERE table_schema='contucarga'AND table_name='blog_posts'
+2022-10-06T13:58:25.193219Z	   22 Query	SELECT * FROM `contucarga`.`blog_posts` ORDER BY `id` LIMIT 300 OFFSET 0
+2022-10-06T13:58:25.207028Z	   22 Query	SELECT table_rows as count FROM information_schema.TABLES WHERE TABLE_SCHEMA='contucarga'AND TABLE_NAME='blog_posts'
+2022-10-06T13:58:25.217966Z	   22 Query	SELECT ordinal_position as ordinal_position,column_name as column_name,column_type AS data_type,character_set_name as character_set,collation_name as collation,is_nullable as is_nullable,column_default as column_default,extra as extra,column_name AS foreign_key,column_comment AS comment FROM information_schema.columns WHERE table_schema='contucarga'AND table_name='blog_posts'
+2022-10-06T13:58:25.228220Z	   22 Query	SELECT sub_part as index_length,index_name as index_name,index_type AS index_algorithm,CASE non_unique WHEN 0 THEN'TRUE'ELSE'FALSE'END AS is_unique,column_name as column_name FROM information_schema.statistics WHERE table_schema='contucarga'AND table_name='blog_posts'ORDER BY seq_in_index ASC
+2022-10-06T13:58:54.516849Z	   22 Query	SELECT 1
+2022-10-06T13:59:24.515708Z	   22 Query	SELECT 1
+2022-10-06T13:59:54.515764Z	   22 Query	SELECT 1
+2022-10-06T14:00:24.516657Z	   22 Query	SELECT 1
+2022-10-06T14:00:54.516673Z	   22 Query	SELECT 1
+2022-10-06T14:01:24.518244Z	   22 Query	SELECT 1
+2022-10-06T14:01:54.516160Z	   22 Query	SELECT 1
+2022-10-06T14:02:24.538037Z	   22 Query	SELECT 1
+2022-10-06T14:02:54.536921Z	   22 Query	SELECT 1
+2022-10-06T14:03:24.517355Z	   22 Query	SELECT 1
+2022-10-06T14:03:54.516357Z	   22 Query	SELECT 1
+2022-10-06T14:04:24.516909Z	   22 Query	SELECT 1
+2022-10-06T14:04:54.544149Z	   22 Query	SELECT 1
+2022-10-06T14:05:24.543805Z	   22 Query	SELECT 1
+2022-10-06T14:05:54.518997Z	   22 Query	SELECT 1
+2022-10-06T14:06:24.518051Z	   22 Query	SELECT 1
+2022-10-06T14:06:40.634743Z	   20 Query	select * from `blog_posts`
+2022-10-06T14:06:54.519340Z	   22 Query	SELECT 1
+2022-10-06T14:07:24.543558Z	   22 Query	SELECT 1
+2022-10-06T14:07:54.543692Z	   22 Query	SELECT 1
+2022-10-06T14:08:22.968460Z	   23 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T14:08:22.982767Z	   23 Query	select * from `blog_posts`
+2022-10-06T14:08:24.646166Z	   22 Query	SELECT 1
+2022-10-06T14:08:54.544626Z	   22 Query	SELECT 1
+2022-10-06T14:09:24.517387Z	   22 Query	SELECT 1
+2022-10-06T14:09:54.518583Z	   22 Query	SELECT 1
+2022-10-06T14:10:24.546201Z	   22 Query	SELECT 1
+2022-10-06T14:10:54.543843Z	   22 Query	SELECT 1
+2022-10-06T14:11:24.544705Z	   22 Query	SELECT 1
+2022-10-06T14:11:54.545224Z	   22 Query	SELECT 1
+2022-10-06T14:12:24.545764Z	   22 Query	SELECT 1
+2022-10-06T14:12:54.545930Z	   22 Query	SELECT 1
+2022-10-06T14:13:24.545902Z	   22 Query	SELECT 1
+2022-10-06T14:13:54.520027Z	   22 Query	SELECT 1
+2022-10-06T14:14:24.519904Z	   22 Query	SELECT 1
+2022-10-06T14:14:54.545612Z	   22 Query	SELECT 1
+2022-10-06T14:15:24.545965Z	   22 Query	SELECT 1
+2022-10-06T14:15:46.792878Z	   24 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T14:15:46.809083Z	   24 Query	select * from `blog_posts`
+2022-10-06T14:15:54.545973Z	   22 Query	SELECT 1
+2022-10-06T14:16:21.567700Z	   22 Query	START TRANSACTION
+2022-10-06T14:16:21.571343Z	   22 Query	UPDATE `contucarga`.`blog_posts` SET `keywords` = 'comercio internacional, logística, importación, exportación, almacenamiento' WHERE `id` = 4
+2022-10-06T14:16:21.578101Z	   22 Query	INSERT INTO `contucarga`.`blog_posts` (`title`, `path`, `meta`, `body`, `author`, `date`, `keywords`) VALUES ('8 factores que influyen en el aumento de los gastos aduaneros en Venezuela', '8-factores-que-influyen-el-aumento-de-las-tasas-aduaneras-venezuela', 'Si está haciendo negocios en Venezuela, es importante que conozcas la normativa aduanera del país. Los cambios recientes han dado lugar a un aumento de las tasas aduaneras, que pueden mermar sus beneficios si no tiene cuidado. En este blog, echaremos un vistazo a 8 de los principales factores que influyen en el aumento de las tasas aduaneras en Venezuela. ¡No se lo pierdas!', '<h1>8 factores que influyen en el aumento de los gastos aduaneros en Venezuela</h1>\n<p>Si est&aacute; haciendo negocios en Venezuela, es importante estar al tanto de las regulaciones aduaneras del pa&iacute;s. Los cambios recientes han dado lugar a un aumento de los gastos de aduana, lo que puede mermar sus beneficios si no tiene cuidado. En este blog, echaremos un vistazo a cuatro de los factores m&aacute;s importantes que influyen en el aumento de los gastos aduaneros en Venezuela.</p>\n<h2>1. La devaluaci&oacute;n del bol&iacute;var</h2>\n<p>Para entender los efectos de la actual crisis sobre las importaciones y exportaciones venezolanas, debemos primero observar el valor del bol&iacute;var venezolano. El bol&iacute;var ha ido perdiendo valor desde hace a&ntilde;os, y actualmente vale menos de una d&eacute;cima parte de un d&oacute;lar estadounidense. Esto ha hecho que los productos importados sean mucho m&aacute;s caros, ya que deben pagarse en d&oacute;lares estadounidenses.</p>\n<h2>2. La escasez de divisas</h2>\n<p>La escasez de divisas es otro problema que afecta negativamente las importaciones y exportaciones en Venezuela. Debido a la devaluaci&oacute;n del bol&iacute;var, muchas empresas han dejado de importar productos para evitar perder dinero. Esto ha llevado a una disminuci&oacute;n de la oferta de productos en el pa&iacute;s, lo que a su vez ha encarecido los precios.</p>\n<h2>3. Los controles cambiarios</h2>\n<p>Desde 2003, el gobierno venezolano ha implementado diversos controles cambiarios con el objetivo de regular el flujo de divisas. Estos controles han restringido la cantidad de d&oacute;lares que las empresas pueden adquirir, lo que ha aumentado significativamente los costes de importaci&oacute;n.</p>\n<h2>4. La tasa de inflaci&oacute;n</h2>\n<p>La inflaci&oacute;n es un problema generalizado en Venezuela, y se ha agravado en los &uacute;ltimos a&ntilde;os debido a la crisis econ&oacute;mica. Seg&uacute;n datos del Banco Central de Venezuela, la tasa de inflaci&oacute;n alcanz&oacute; el 1.37 millones por ciento en 2018. Esto significa que los productos importados se han encarecido significativamente, ya que el valor del bol&iacute;var se ha reducido dr&aacute;sticamente.</p>\n<h2>5. Las sanciones de Estados Unidos a Venezuela</h2>\n<p>En 2017, Estados Unidos impuso sanciones a Venezuela. Estas sanciones han tenido un impacto significativo en las importaciones y exportaciones de Venezuela, ya que han bloqueado el acceso a divisas y ha restringido el comercio con otros pa&iacute;ses.</p>\n<h2>6. El aumento de los precios mundiales del petroleo</h2>\n<p>Venezuela es un pa&iacute;s altamente dependiente del petr&oacute;leo, y el aumento de los precios mundiales ha tenido un impacto significativo en la econom&iacute;a venezolana. Esto se debe a que Venezuela tiene pocas exportaciones no petroleras, por lo que el aumento de los precios internacionales del petr&oacute;leo ha encarecido significativamente las importaciones.</p>\n<h2>7. El control de los funcionarios de aduanas</h2>\n<p>Los funcionarios de aduanas se han vuelto mucho m&aacute;s estrictos en sus inspecciones de las mercanc&iacute;as importadas. Ahora es m&aacute;s probable que confisquen los env&iacute;os que consideren ilegales o de contrabando. Esto ha provocado un aumento de los costes para las empresas, ya que ahora deben tener en cuenta la posibilidad de que sus mercanc&iacute;as sean confiscadas</p>\n<h2>8.Los nuevos aranceles y tasas a las mercanc&iacute;as importadas</h2>\n<p>El gobierno venezolano ha aplicado recientemente nuevos aranceles y tasas impositivas a los productos importados en un esfuerzo por aumentar los ingresos. Estos pueden oscilar entre el 5 y el 30% del valor del env&iacute;o, dependiendo del tipo de bienes que se importen. Se trata de un gasto importante que debe tenerse en cuenta en el coste de hacer negocios en Venezuela</p>\n<p>Las empresas deben tener en cuenta estos factores a la hora de planificar sus env&iacute;os hacia y desde Venezuela. Si desea evitar aumentos significativos en sus gastos aduaneros, es importante estar al tanto de los factores mencionados anteriormente. Mantenerse informado le ayudar&aacute; a tomar las medidas necesarias para minimizar los costes y maximizar los beneficios de sus operaciones comerciales en Venezuela.</p>\n<p>Si est&aacute; buscando ayuda para importar a Venezuela. Nuestra empresa ofrece servicios de agente de aduanas confiables y eficientes, que le ayudar&aacute;n a navegar por el complejo proceso de importaci&oacute;n y optimizar los costos de importaci&oacute;n asociados a sus operaciones de comercio internacional. Contamos con una amplia experiencia en el mercado y un historial impecable de servicio al cliente. <a href=\"http://www.contucarga.com/consulta\">P&oacute;ngase en contacto con nosotros hoy mismo</a> para obtener m&aacute;s informaci&oacute;n.</p>', 'María Hernandez', '2022-09-08', 'comercio internacional, logística, importación, exportación, almacenamiento')
+2022-10-06T14:16:21.584774Z	   22 Query	COMMIT
+2022-10-06T14:16:21.607123Z	   22 Query	SELECT ROUTINE_SCHEMA as function_schema,ROUTINE_NAME as function_name,ROUTINE_DEFINITION as create_statement,ROUTINE_TYPE as function_type FROM information_schema.routines where ROUTINE_SCHEMA='contucarga'
+2022-10-06T14:16:21.614318Z	   22 Query	show full tables from `contucarga`
+2022-10-06T14:16:21.639219Z	   22 Query	SELECT column_name as column_name FROM information_schema.statistics WHERE table_schema = 'contucarga' AND table_name = 'blog_posts' AND index_name = 'PRIMARY' ORDER BY seq_in_index ASC
+2022-10-06T14:16:21.648987Z	   22 Query	SHOW CREATE TABLE `contucarga`.`blog_posts`
+2022-10-06T14:16:21.656229Z	   22 Query	SELECT table_name as table_name,column_name as column_name,column_type as column_type FROM information_schema.columns WHERE table_schema='contucarga' AND table_name='blog_posts' AND data_type='enum'
+2022-10-06T14:16:21.665405Z	   22 Query	SELECT ordinal_position as ordinal_position,column_name as column_name,column_type AS data_type,character_set_name as character_set,collation_name as collation,is_nullable as is_nullable,column_default as column_default,extra as extra,column_name AS foreign_key,column_comment AS comment FROM information_schema.columns WHERE table_schema='contucarga'AND table_name='blog_posts'
+2022-10-06T14:16:21.674232Z	   22 Query	SELECT * FROM `contucarga`.`blog_posts` ORDER BY `id` LIMIT 300 OFFSET 0
+2022-10-06T14:16:21.692165Z	   22 Query	SELECT table_rows as count FROM information_schema.TABLES WHERE TABLE_SCHEMA='contucarga'AND TABLE_NAME='blog_posts'
+2022-10-06T14:16:21.702531Z	   22 Query	SELECT ordinal_position as ordinal_position,column_name as column_name,column_type AS data_type,character_set_name as character_set,collation_name as collation,is_nullable as is_nullable,column_default as column_default,extra as extra,column_name AS foreign_key,column_comment AS comment FROM information_schema.columns WHERE table_schema='contucarga'AND table_name='blog_posts'
+2022-10-06T14:16:21.716410Z	   22 Query	SELECT sub_part as index_length,index_name as index_name,index_type AS index_algorithm,CASE non_unique WHEN 0 THEN'TRUE'ELSE'FALSE'END AS is_unique,column_name as column_name FROM information_schema.statistics WHERE table_schema='contucarga'AND table_name='blog_posts'ORDER BY seq_in_index ASC
+2022-10-06T14:16:24.519624Z	   22 Query	SELECT 1
+2022-10-06T14:16:26.337948Z	   25 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T14:16:26.374850Z	   25 Query	select * from `blog_posts`
+2022-10-06T14:16:43.059394Z	   25 Query	select * from `blog_posts`
+2022-10-06T14:16:54.519349Z	   22 Query	SELECT 1
+2022-10-06T14:17:24.519950Z	   22 Query	SELECT 1
+2022-10-06T14:17:54.532955Z	   22 Query	SELECT 1
+2022-10-06T14:18:24.520437Z	   22 Query	SELECT 1
+2022-10-06T14:18:54.521001Z	   22 Query	SELECT 1
+2022-10-06T14:19:24.521814Z	   22 Query	SELECT 1
+2022-10-06T14:19:54.520314Z	   22 Query	SELECT 1
+2022-10-06T14:20:24.520137Z	   22 Query	SELECT 1
+2022-10-06T14:20:54.521382Z	   22 Query	SELECT 1
+2022-10-06T14:21:15.738067Z	   22 Query	START TRANSACTION
+2022-10-06T14:21:15.743817Z	   22 Query	UPDATE `contucarga`.`blog_posts` SET `img` = '/img/container-crane.jpg' WHERE `id` = 4
+2022-10-06T14:21:15.749698Z	   22 Query	UPDATE `contucarga`.`blog_posts` SET `img` = '/img/container-crane.jpg' WHERE `id` = 2
+2022-10-06T14:21:15.754792Z	   22 Query	UPDATE `contucarga`.`blog_posts` SET `img` = '/img/container-yard-perspective' WHERE `id` = 5
+2022-10-06T14:21:15.759288Z	   22 Query	UPDATE `contucarga`.`blog_posts` SET `img` = '/img/containers-pile' WHERE `id` = 3
+2022-10-06T14:21:15.764508Z	   22 Query	COMMIT
+2022-10-06T14:21:15.788626Z	   22 Query	SELECT ROUTINE_SCHEMA as function_schema,ROUTINE_NAME as function_name,ROUTINE_DEFINITION as create_statement,ROUTINE_TYPE as function_type FROM information_schema.routines where ROUTINE_SCHEMA='contucarga'
+2022-10-06T14:21:15.795775Z	   22 Query	show full tables from `contucarga`
+2022-10-06T14:21:15.815460Z	   22 Query	SELECT column_name as column_name FROM information_schema.statistics WHERE table_schema = 'contucarga' AND table_name = 'blog_posts' AND index_name = 'PRIMARY' ORDER BY seq_in_index ASC
+2022-10-06T14:21:15.820955Z	   22 Query	SHOW CREATE TABLE `contucarga`.`blog_posts`
+2022-10-06T14:21:15.824748Z	   22 Query	SELECT table_name as table_name,column_name as column_name,column_type as column_type FROM information_schema.columns WHERE table_schema='contucarga' AND table_name='blog_posts' AND data_type='enum'
+2022-10-06T14:21:15.830255Z	   22 Query	SELECT ordinal_position as ordinal_position,column_name as column_name,column_type AS data_type,character_set_name as character_set,collation_name as collation,is_nullable as is_nullable,column_default as column_default,extra as extra,column_name AS foreign_key,column_comment AS comment FROM information_schema.columns WHERE table_schema='contucarga'AND table_name='blog_posts'
+2022-10-06T14:21:15.836911Z	   22 Query	SELECT * FROM `contucarga`.`blog_posts` ORDER BY `id` LIMIT 300 OFFSET 0
+2022-10-06T14:21:15.847055Z	   22 Query	SELECT table_rows as count FROM information_schema.TABLES WHERE TABLE_SCHEMA='contucarga'AND TABLE_NAME='blog_posts'
+2022-10-06T14:21:15.855375Z	   22 Query	SELECT ordinal_position as ordinal_position,column_name as column_name,column_type AS data_type,character_set_name as character_set,collation_name as collation,is_nullable as is_nullable,column_default as column_default,extra as extra,column_name AS foreign_key,column_comment AS comment FROM information_schema.columns WHERE table_schema='contucarga'AND table_name='blog_posts'
+2022-10-06T14:21:15.864926Z	   22 Query	SELECT sub_part as index_length,index_name as index_name,index_type AS index_algorithm,CASE non_unique WHEN 0 THEN'TRUE'ELSE'FALSE'END AS is_unique,column_name as column_name FROM information_schema.statistics WHERE table_schema='contucarga'AND table_name='blog_posts'ORDER BY seq_in_index ASC
+2022-10-06T14:21:24.521505Z	   22 Query	SELECT 1
+2022-10-06T14:21:54.521371Z	   22 Query	SELECT 1
+2022-10-06T14:22:24.549543Z	   22 Query	SELECT 1
+2022-10-06T14:22:54.551466Z	   22 Query	SELECT 1
+2022-10-06T14:23:24.547817Z	   22 Query	SELECT 1
+2022-10-06T14:23:54.547933Z	   22 Query	SELECT 1
+2022-10-06T14:24:24.561210Z	   22 Query	SELECT 1
+2022-10-06T14:24:24.627191Z	   26 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T14:24:24.652098Z	   26 Query	select * from `blog_posts`
+2022-10-06T14:24:54.549291Z	   22 Query	SELECT 1
+2022-10-06T14:25:24.548210Z	   22 Query	SELECT 1
+2022-10-06T14:25:25.715818Z	   26 Query	select * from `blog_posts`
+2022-10-06T14:25:27.905176Z	   26 Query	select * from `blog_posts`
+2022-10-06T14:25:54.548539Z	   22 Query	SELECT 1
+2022-10-06T14:26:24.548890Z	   22 Query	SELECT 1
+2022-10-06T14:26:54.549332Z	   22 Query	SELECT 1
+2022-10-06T14:27:24.547706Z	   22 Query	SELECT 1
+2022-10-06T14:27:35.975286Z	   26 Query	select * from `blog_posts`
+2022-10-06T14:27:38.206813Z	   26 Query	select * from `blog_posts`
+2022-10-06T14:27:54.548895Z	   22 Query	SELECT 1
+2022-10-06T14:28:24.549216Z	   22 Query	SELECT 1
+2022-10-06T14:28:54.549568Z	   22 Query	SELECT 1
+2022-10-06T14:29:11.987645Z	   27 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T14:29:12.016435Z	   27 Query	select * from `blog_posts`
+2022-10-06T14:29:24.548861Z	   22 Query	SELECT 1
+2022-10-06T14:29:54.549614Z	   22 Query	SELECT 1
+2022-10-06T14:30:05.599987Z	   27 Query	select * from `blog_posts`
+2022-10-06T14:30:24.549255Z	   22 Query	SELECT 1
+2022-10-06T14:30:54.551970Z	   22 Query	SELECT 1
+2022-10-06T14:31:24.549761Z	   22 Query	SELECT 1
+2022-10-06T14:31:45.422541Z	   28 Connect	root@172.28.0.1 on contucarga using TCP/IP
+2022-10-06T14:31:45.431379Z	   28 Query	select `id`, `img`, `title`, `path`, `meta`, `body`, `author`, `date` from `contucarga`.`blog_posts` limit 100
+2022-10-06T14:31:45.599454Z	   28 Quit	
+2022-10-06T14:31:54.548907Z	   22 Query	SELECT 1
+2022-10-06T14:32:10.088778Z	   29 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T14:32:10.116275Z	   29 Query	select * from `blog_posts`
+2022-10-06T14:32:24.523502Z	   22 Query	SELECT 1
+2022-10-06T14:32:54.523304Z	   22 Query	SELECT 1
+2022-10-06T14:33:24.524316Z	   22 Query	SELECT 1
+2022-10-06T14:33:45.752827Z	   30 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T14:33:45.775425Z	   30 Query	select * from `blog_posts`
+2022-10-06T14:33:54.551000Z	   22 Query	SELECT 1
+2022-10-06T14:34:06.224250Z	   31 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T14:34:06.250139Z	   31 Query	select * from `blog_posts`
+2022-10-06T14:34:24.550379Z	   22 Query	SELECT 1
+2022-10-06T14:34:54.550078Z	   22 Query	SELECT 1
+2022-10-06T14:35:13.701601Z	   31 Query	select * from `blog_posts`
+2022-10-06T14:35:24.550101Z	   22 Query	SELECT 1
+2022-10-06T14:35:54.552379Z	   22 Query	SELECT 1
+2022-10-06T14:35:57.912341Z	   31 Query	select * from `blog_posts`
+2022-10-06T14:36:24.550932Z	   22 Query	SELECT 1
+2022-10-06T14:36:54.550155Z	   22 Query	SELECT 1
+2022-10-06T14:37:24.550986Z	   22 Query	SELECT 1
+2022-10-06T14:37:54.552025Z	   22 Query	SELECT 1
+2022-10-06T14:38:24.550998Z	   22 Query	SELECT 1
+2022-10-06T14:38:54.550756Z	   22 Query	SELECT 1
+2022-10-06T14:39:21.936292Z	   32 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T14:39:21.968190Z	   32 Query	select * from `blog_posts`
+2022-10-06T14:39:24.550838Z	   22 Query	SELECT 1
+2022-10-06T14:39:54.550717Z	   22 Query	SELECT 1
+2022-10-06T14:40:24.552030Z	   22 Query	SELECT 1
+2022-10-06T14:40:44.779491Z	   33 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T14:40:44.805841Z	   33 Query	select * from `blog_posts`
+2022-10-06T14:40:54.551562Z	   22 Query	SELECT 1
+2022-10-06T14:41:24.752645Z	   22 Query	SELECT 1
+2022-10-06T14:41:49.949044Z	   34 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T14:41:49.977273Z	   34 Query	select * from `blog_posts`
+2022-10-06T14:41:54.552184Z	   22 Query	SELECT 1
+2022-10-06T14:42:24.551486Z	   22 Query	SELECT 1
+2022-10-06T14:42:54.552101Z	   22 Query	SELECT 1
+2022-10-06T14:42:59.971749Z	   35 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T14:43:00.020089Z	   35 Query	select * from `blog_posts`
+2022-10-06T14:43:24.551385Z	   22 Query	SELECT 1
+2022-10-06T14:43:54.552073Z	   22 Query	SELECT 1
+2022-10-06T14:44:24.553217Z	   22 Query	SELECT 1
+2022-10-06T14:44:54.553891Z	   22 Query	SELECT 1
+2022-10-06T14:45:24.553502Z	   22 Query	SELECT 1
+2022-10-06T14:45:30.821694Z	   36 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T14:45:30.847091Z	   36 Query	select * from `blog_posts`
+2022-10-06T14:45:40.172763Z	   37 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T14:45:40.245879Z	   37 Query	select * from `blog_posts`
+2022-10-06T14:45:43.377218Z	   37 Query	select * from `blog_posts`
+2022-10-06T14:45:54.652561Z	   22 Query	SELECT 1
+2022-10-06T14:46:24.552724Z	   22 Query	SELECT 1
+2022-10-06T14:46:54.553559Z	   22 Query	SELECT 1
+2022-10-06T14:47:24.554042Z	   22 Query	SELECT 1
+2022-10-06T14:47:54.553751Z	   22 Query	SELECT 1
+2022-10-06T14:48:24.527092Z	   22 Query	SELECT 1
+2022-10-06T14:48:54.527598Z	   22 Query	SELECT 1
+2022-10-06T14:49:24.526832Z	   22 Query	SELECT 1
+2022-10-06T14:49:54.526893Z	   22 Query	SELECT 1
+2022-10-06T14:50:03.132280Z	   22 Query	START TRANSACTION
+2022-10-06T14:50:03.138908Z	   22 Query	INSERT INTO `contucarga`.`blog_posts` (`id`, `path`, `meta`, `body`, `author`, `date`, `keywords`) VALUES (6, 'consideraciones-importantes-para-importar-a-venezuela', 'Si estás buscando importar productos a Venezuela, es importante que conozcas el clima político y económico actual. Esta entrada del blog repasa los aspectos básicos que debe conocer antes de iniciar el proceso.', '<h1>Consideraciones importantes para importar a Venezuela</h1>\n<p>Si est&aacute; pensando en importar a Venezuela, hay algunas cosas que debe saber. El pa&iacute;s ha pasado por mucha agitaci&oacute;n pol&iacute;tica y econ&oacute;mica en los &uacute;ltimos a&ntilde;os, lo que ha hecho que la importaci&oacute;n de bienes sea dif&iacute;cil y a menudo impredecible. En este art&iacute;culo, repasaremos algunas de las consideraciones importantes que debe tener en cuenta antes de iniciar el proceso de importaci&oacute;n.</p>\n<h1>Compruebe si el producto que desea importar est&aacute; sujeto a alg&uacute;n requisito de licencia o registro con el gobierno venezolano</h1>\n<p>Antes de importar cualquier producto a Venezuela, es importante comprobar si est&aacute; sujeto a alg&uacute;n requisito de licencia o registro con el gobierno venezolano. Muchos productos est&aacute;n sujetos a este tipo de requisitos, y no importarlos podr&iacute;a resultar en multas o incluso en la confiscaci&oacute;n del producto. Por lo tanto, es importante que investigue si el producto que desea importar est&aacute; sujeto a alguna regulaci&oacute;n espec&iacute;fica.</p>\n<h2>Aseg&uacute;rese de que su producto cumple todas las normas de calidad y seguridad exigidas por la legislaci&oacute;n venezolana</h2>\n<p>En Venezuela, se exigen normas de calidad y seguridad para todos los productos importados. Aseg&uacute;rese de que su producto cumple con estas normas antes de importarlo a Venezuela, ya que no cumplirlas podr&iacute;a resultar en multas o incluso en la confiscaci&oacute;n del producto. Adem&aacute;s, es importante tener en cuenta que la legislaci&oacute;n venezolana est&aacute; sujeta a cambios, por lo que es importante mantenerse al d&iacute;a con los &uacute;ltimos requisitos.</p>\n<h2>Conseguir un seguro de carga para proteger su producto</h2>\n<p>Al importar un producto a Venezuela, es importante tener en cuenta que puede ser da&ntilde;ado o robado durante el env&iacute;o. Por lo tanto, es importante asegurar su producto con un seguro de carga adecuado. El costo del seguro de carga var&iacute;a dependiendo del valor de su producto, por lo que es importante obtener una cotizaci&oacute;n antes de iniciar el proceso de importaci&oacute;n.</p>\n<h2>Determine si tendr&aacute; que pagar derechos de aduana u otros impuestos sobre sus productos importados</h2>\n<p>En Venezuela, se aplican derechos de aduana y otros impuestos a los productos importados. Aseg&uacute;rese de estar al tanto de todos los derechos de aduana u otros impuestos aplicables a sus productos, ya que no pagar estos podr&iacute;a resultar en multas o incluso en la confiscaci&oacute;n de sus productos. Adem&aacute;s, es importante tener en cuenta que los derechos de aduana u otros impuestos aplicables pueden cambiar con frecuencia, por lo que es importante mantenerse al d&iacute;a con los &uacute;ltimos requisitos antes de iniciar el proceso de importaci&oacute;n.</p>\n<p>Consulte con un profesional de comercio internacional para obtener asesor&iacute;a sobre el proceso de importaci&oacute;n a Venezuela</p>\n<p>Antes de iniciar el proceso de importaci&oacute;n a Venezuela, es importante consultar con un profesional de comercio internacional para obtener asesor&iacute;a sobre el mismo. Un profesional de comercio internacional le ayudar&aacute; a comprender mejor el proceso de importaci&oacute;n y le dar&aacute; consejos &uacute;tiles para garantizar el &eacute;xito de su importaci&oacute;n.</p>\n<h2>Elija una empresa de transporte fiable que tenga experiencia en la importaci&oacute;n a Venezuela</h2>\n<p>Al elegir una empresa de transporte para importar sus productos a Venezuela, es importante que elija una empresa fiable y experimentada. Una empresa de transporte experimentada le ayudar&aacute; a evitar problemas y le garantizar&aacute; que sus productos lleguen a Venezuela de manera segura y oportuna. Adem&aacute;s, es importante tener en cuenta que el costo del transporte var&iacute;a dependiendo de la empresa de transporte que elija, por lo que es importante obtener una cotizaci&oacute;n antes de iniciar el proceso de importaci&oacute;n.</p>\n<h2>Mantenga toda la documentaci&oacute;n relacionada con su env&iacute;o en orden y f&aacute;cilmente disponible en caso de retrasos o problemas en la aduana</h2>\n<p>Cuando se importan productos a Venezuela, es importante mantener toda la documentaci&oacute;n relacionada con el env&iacute;o en orden. Esta documentaci&oacute;n incluye el manifiesto de carga, la factura de venta y el certificado de origen. Mantener esta documentaci&oacute;n en orden le ayudar&aacute; a evitar problemas y retrasos en el proceso de importaci&oacute;n, y le permitir&aacute; recuperar sus productos en caso de que sean retenidos en la aduana.</p>\n<p>Importar a Venezuela puede ser un proceso complicado y a menudo imprevisible, pero no tiene por qu&eacute; ser abrumador. Si se toma el tiempo necesario para investigar, elegir cuidadosamente el m&eacute;todo de env&iacute;o y encontrar un socio fiable que le ayude a navegar por el proceso, puede asegurarse de que su env&iacute;o llegue a salvo y a tiempo.</p>\n<p>Si est&aacute; buscando ayuda para importar a Venezuela, no busque m&aacute;s. Nuestra empresa ofrece servicios de agente de aduanas confiables y eficientes, que le ayudar&aacute;n a navegar por el complejo proceso de importaci&oacute;n. Contamos con una amplia experiencia en el mercado y un historial impecable de servicio al cliente. <a href=\"http://www.contucarga.com/consulta\">P&oacute;ngase en contacto con nosotros</a> hoy mismo para obtener m&aacute;s informaci&oacute;n.</p>', 'María Hernandez', '2022-08-25', 'importar a Venezuela, importación a Venezuela, clima político Venezuela, económico Venezuela, agente de aduanas, importación, exportación, almacenamiento, comercio exterior')
+2022-10-06T14:50:03.152289Z	   22 Query	COMMIT
+2022-10-06T14:50:03.187335Z	   22 Query	SELECT ROUTINE_SCHEMA as function_schema,ROUTINE_NAME as function_name,ROUTINE_DEFINITION as create_statement,ROUTINE_TYPE as function_type FROM information_schema.routines where ROUTINE_SCHEMA='contucarga'
+2022-10-06T14:50:03.196200Z	   22 Query	show full tables from `contucarga`
+2022-10-06T14:50:03.206389Z	   22 Query	SELECT column_name as column_name FROM information_schema.statistics WHERE table_schema = 'contucarga' AND table_name = 'blog_posts' AND index_name = 'PRIMARY' ORDER BY seq_in_index ASC
+2022-10-06T14:50:03.216734Z	   22 Query	SHOW CREATE TABLE `contucarga`.`blog_posts`
+2022-10-06T14:50:03.222394Z	   22 Query	SELECT table_name as table_name,column_name as column_name,column_type as column_type FROM information_schema.columns WHERE table_schema='contucarga' AND table_name='blog_posts' AND data_type='enum'
+2022-10-06T14:50:03.227792Z	   22 Query	SELECT ordinal_position as ordinal_position,column_name as column_name,column_type AS data_type,character_set_name as character_set,collation_name as collation,is_nullable as is_nullable,column_default as column_default,extra as extra,column_name AS foreign_key,column_comment AS comment FROM information_schema.columns WHERE table_schema='contucarga'AND table_name='blog_posts'
+2022-10-06T14:50:03.233914Z	   22 Query	SELECT * FROM `contucarga`.`blog_posts` ORDER BY `id` LIMIT 300 OFFSET 0
+2022-10-06T14:50:03.244474Z	   22 Query	SELECT table_rows as count FROM information_schema.TABLES WHERE TABLE_SCHEMA='contucarga'AND TABLE_NAME='blog_posts'
+2022-10-06T14:50:03.253622Z	   22 Query	SELECT ordinal_position as ordinal_position,column_name as column_name,column_type AS data_type,character_set_name as character_set,collation_name as collation,is_nullable as is_nullable,column_default as column_default,extra as extra,column_name AS foreign_key,column_comment AS comment FROM information_schema.columns WHERE table_schema='contucarga'AND table_name='blog_posts'
+2022-10-06T14:50:03.261812Z	   22 Query	SELECT sub_part as index_length,index_name as index_name,index_type AS index_algorithm,CASE non_unique WHEN 0 THEN'TRUE'ELSE'FALSE'END AS is_unique,column_name as column_name FROM information_schema.statistics WHERE table_schema='contucarga'AND table_name='blog_posts'ORDER BY seq_in_index ASC
+2022-10-06T15:07:30.023100Z	   38 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-06T15:07:30.059713Z	   38 Query	select * from `blog_posts`
+2022-10-06T15:08:13.641251Z	   38 Query	select * from `blog_posts`
+2022-10-10T15:20:03.827185Z	   39 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-10T15:20:03.927863Z	   39 Query	select * from `blog_posts`
+2022-10-10T15:22:50.454318Z	   40 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-10T15:22:50.481283Z	   40 Query	select * from `blog_posts`
+2022-10-10T15:25:01.840252Z	   40 Query	select * from `blog_posts`

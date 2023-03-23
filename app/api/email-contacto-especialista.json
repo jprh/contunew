@@ -1,0 +1,953 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/public/inertia/dist/contucarga.html",
+      "linkedForm": "formcontactoespcialista"
+    },
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ],
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "inputserviciocontacto",
+        "name": "inputserviciocontacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "correo-electronico-contacto",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            },
+            "core:email": {}
+          }
+        },
+        "name": "correo-electronico-contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "nombre-contacto",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            }
+          }
+        },
+        "name": "nombre-contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "apellido-contacto",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            }
+          }
+        },
+        "name": "apellido-contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "compania-contacto",
+        "name": "compania-contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "numero-telefonico-contacto",
+        "name": "numero-telefonico-contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "pagina-web-contacto",
+        "name": "pagina-web-contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "industria-contacto",
+        "name": "industria-contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "ciudad-contacto",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            }
+          }
+        },
+        "name": "ciudad-contacto"
+      },
+      {
+        "type": "text",
+        "fieldName": "pais-contacto",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            }
+          }
+        },
+        "name": "pais-contacto"
+      },
+      {
+        "type": "text",
+        "name": "name"
+      },
+      {
+        "type": "text",
+        "name": "website"
+      },
+      {
+        "type": "text",
+        "name": "address"
+      },
+      {
+        "type": "text",
+        "name": "servicio_de_interes"
+      },
+      {
+        "type": "number",
+        "name": "user_id"
+      },
+      {
+        "type": "number",
+        "name": "company_id"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "queryuser",
+        "module": "dbconnector",
+        "action": "select",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "SELECT",
+            "columns": [
+              {
+                "table": "users",
+                "column": "id"
+              }
+            ],
+            "params": [
+              {
+                "operator": "equal",
+                "type": "expression",
+                "name": ":P1",
+                "value": "{{$_POST['correo-electronico-contacto']}}",
+                "test": ""
+              }
+            ],
+            "table": {
+              "name": "users"
+            },
+            "primary": "id",
+            "joins": [],
+            "wheres": {
+              "condition": "AND",
+              "rules": [
+                {
+                  "id": "users.email",
+                  "field": "users.email",
+                  "type": "string",
+                  "operator": "equal",
+                  "value": "{{$_POST['correo-electronico-contacto']}}",
+                  "data": {
+                    "table": "users",
+                    "column": "email",
+                    "type": "text",
+                    "columnObj": {
+                      "type": "string",
+                      "maxLength": 50,
+                      "primary": false,
+                      "nullable": true,
+                      "name": "email"
+                    }
+                  },
+                  "operation": "="
+                }
+              ],
+              "conditional": null,
+              "valid": true
+            },
+            "query": "SELECT id\nFROM users\nWHERE email = :P1 /* {{$_POST['correo-electronico-contacto']}} */"
+          }
+        },
+        "output": true,
+        "meta": [
+          {
+            "type": "number",
+            "name": "id"
+          }
+        ],
+        "outputType": "array"
+      },
+      {
+        "name": "querycompany",
+        "module": "dbconnector",
+        "action": "select",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "SELECT",
+            "columns": [
+              {
+                "table": "companies",
+                "column": "id"
+              }
+            ],
+            "params": [
+              {
+                "operator": "equal",
+                "type": "expression",
+                "name": ":P1",
+                "value": "{{$_POST['compania-contacto']}}",
+                "test": ""
+              }
+            ],
+            "table": {
+              "name": "companies"
+            },
+            "primary": "id",
+            "joins": [],
+            "wheres": {
+              "condition": "AND",
+              "rules": [
+                {
+                  "id": "companies.name",
+                  "field": "companies.name",
+                  "type": "string",
+                  "operator": "equal",
+                  "value": "{{$_POST['compania-contacto']}}",
+                  "data": {
+                    "table": "companies",
+                    "column": "name",
+                    "type": "text",
+                    "columnObj": {
+                      "type": "text",
+                      "maxLength": 65535,
+                      "primary": false,
+                      "nullable": true,
+                      "name": "name"
+                    }
+                  },
+                  "operation": "="
+                }
+              ],
+              "conditional": null,
+              "valid": true
+            },
+            "query": "SELECT id\nFROM companies\nWHERE name = :P1 /* {{$_POST['compania-contacto']}} */"
+          }
+        },
+        "output": true,
+        "meta": [
+          {
+            "type": "number",
+            "name": "id"
+          }
+        ],
+        "outputType": "array"
+      },
+      {
+        "name": "",
+        "module": "core",
+        "action": "condition",
+        "options": {
+          "if": "{{querycompany.count()==0}}",
+          "then": {
+            "steps": [
+              {
+                "name": "insertnewcompany",
+                "module": "dbupdater",
+                "action": "insert",
+                "options": {
+                  "connection": "db",
+                  "sql": {
+                    "type": "insert",
+                    "values": [
+                      {
+                        "table": "companies",
+                        "column": "name",
+                        "type": "text",
+                        "value": "{{$_POST['compania-contacto']}}"
+                      },
+                      {
+                        "table": "companies",
+                        "column": "website",
+                        "type": "text",
+                        "value": "{{$_POST['pagina-web-contacto']}}"
+                      },
+                      {
+                        "table": "companies",
+                        "column": "city",
+                        "type": "text",
+                        "value": "{{$_POST['ciudad-contacto']}}"
+                      },
+                      {
+                        "table": "companies",
+                        "column": "country",
+                        "type": "text",
+                        "value": "{{$_POST['pais-contacto']}}"
+                      },
+                      {
+                        "table": "companies",
+                        "column": "industry",
+                        "type": "text",
+                        "value": "{{$_POST['industria-contacto']}}"
+                      }
+                    ],
+                    "table": "companies",
+                    "returning": "id",
+                    "query": "INSERT INTO companies\n(name, website, city, country, industry) VALUES (:P1 /* {{$_POST['compania-contacto']}} */, :P2 /* {{$_POST['pagina-web-contacto']}} */, :P3 /* {{$_POST['ciudad-contacto']}} */, :P4 /* {{$_POST['pais-contacto']}} */, :P5 /* {{$_POST['industria-contacto']}} */)",
+                    "params": [
+                      {
+                        "name": ":P1",
+                        "type": "expression",
+                        "value": "{{$_POST['compania-contacto']}}",
+                        "test": ""
+                      },
+                      {
+                        "name": ":P2",
+                        "type": "expression",
+                        "value": "{{$_POST['pagina-web-contacto']}}",
+                        "test": ""
+                      },
+                      {
+                        "name": ":P3",
+                        "type": "expression",
+                        "value": "{{$_POST['ciudad-contacto']}}",
+                        "test": ""
+                      },
+                      {
+                        "name": ":P4",
+                        "type": "expression",
+                        "value": "{{$_POST['pais-contacto']}}",
+                        "test": ""
+                      },
+                      {
+                        "name": ":P5",
+                        "type": "expression",
+                        "value": "{{$_POST['industria-contacto']}}",
+                        "test": ""
+                      }
+                    ]
+                  }
+                },
+                "meta": [
+                  {
+                    "name": "identity",
+                    "type": "text"
+                  },
+                  {
+                    "name": "affected",
+                    "type": "number"
+                  }
+                ]
+              },
+              {
+                "name": "",
+                "module": "core",
+                "action": "condition",
+                "options": {
+                  "if": "{{queryuser.count()==0}}",
+                  "then": {
+                    "steps": [
+                      {
+                        "name": "insertnewuser",
+                        "module": "dbupdater",
+                        "action": "insert",
+                        "options": {
+                          "connection": "db",
+                          "sql": {
+                            "type": "insert",
+                            "values": [
+                              {
+                                "table": "users",
+                                "column": "first_name",
+                                "type": "text",
+                                "value": "{{$_POST['nombre-contacto']}}"
+                              },
+                              {
+                                "table": "users",
+                                "column": "last_name",
+                                "type": "text",
+                                "value": "{{$_POST['apellido-contacto']}}"
+                              },
+                              {
+                                "table": "users",
+                                "column": "email",
+                                "type": "text",
+                                "value": "{{$_POST['correo-electronico-contacto']}}"
+                              },
+                              {
+                                "table": "users",
+                                "column": "company_id",
+                                "type": "number",
+                                "value": "{{insert.identity}}"
+                              },
+                              {
+                                "table": "users",
+                                "column": "country",
+                                "type": "text",
+                                "value": "{{$_POST['pais-contacto']}}"
+                              },
+                              {
+                                "table": "users",
+                                "column": "phone",
+                                "type": "text",
+                                "value": "{{$_POST['numero-telefonico-contacto']}}"
+                              }
+                            ],
+                            "table": "users",
+                            "returning": "id",
+                            "query": "INSERT INTO users\n(first_name, last_name, email, company_id, country, phone) VALUES (:P1 /* {{$_POST['nombre-contacto']}} */, :P2 /* {{$_POST['apellido-contacto']}} */, :P3 /* {{$_POST['correo-electronico-contacto']}} */, :P4 /* {{insert.identity}} */, :P5 /* {{$_POST['pais-contacto']}} */, :P6 /* {{$_POST['numero-telefonico-contacto']}} */)",
+                            "params": [
+                              {
+                                "name": ":P1",
+                                "type": "expression",
+                                "value": "{{$_POST['nombre-contacto']}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P2",
+                                "type": "expression",
+                                "value": "{{$_POST['apellido-contacto']}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P3",
+                                "type": "expression",
+                                "value": "{{$_POST['correo-electronico-contacto']}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P4",
+                                "type": "expression",
+                                "value": "{{insert.identity}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P5",
+                                "type": "expression",
+                                "value": "{{$_POST['pais-contacto']}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P6",
+                                "type": "expression",
+                                "value": "{{$_POST['numero-telefonico-contacto']}}",
+                                "test": ""
+                              }
+                            ]
+                          }
+                        },
+                        "meta": [
+                          {
+                            "name": "identity",
+                            "type": "text"
+                          },
+                          {
+                            "name": "affected",
+                            "type": "number"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "insert_newcomp_newuser",
+                        "module": "dbupdater",
+                        "action": "insert",
+                        "options": {
+                          "connection": "db",
+                          "sql": {
+                            "type": "insert",
+                            "values": [
+                              {
+                                "table": "contact_form",
+                                "column": "servicio_de_interes",
+                                "type": "text",
+                                "value": "{{$_POST.inputserviciocontacto}}"
+                              },
+                              {
+                                "table": "contact_form",
+                                "column": "user_id",
+                                "type": "number",
+                                "value": "{{insertnewuser.identity}}"
+                              },
+                              {
+                                "table": "contact_form",
+                                "column": "company_id",
+                                "type": "number",
+                                "value": "{{insertnewcompany.identity}}"
+                              },
+                              {
+                                "table": "contact_form",
+                                "column": "fecha_contacto",
+                                "type": "datetime",
+                                "value": "{{NOW.toLocalTime()}}"
+                              }
+                            ],
+                            "table": "contact_form",
+                            "returning": "id",
+                            "query": "INSERT INTO contact_form\n(servicio_de_interes, user_id, company_id, fecha_contacto) VALUES (:P1 /* {{$_POST.inputserviciocontacto}} */, :P2 /* {{insertnewuser.identity}} */, :P3 /* {{insertnewcompany.identity}} */, :P4 /* {{NOW.toLocalTime()}} */)",
+                            "params": [
+                              {
+                                "name": ":P1",
+                                "type": "expression",
+                                "value": "{{$_POST.inputserviciocontacto}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P2",
+                                "type": "expression",
+                                "value": "{{insertnewuser.identity}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P3",
+                                "type": "expression",
+                                "value": "{{insertnewcompany.identity}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P4",
+                                "type": "expression",
+                                "value": "{{NOW.toLocalTime()}}",
+                                "test": ""
+                              }
+                            ]
+                          }
+                        },
+                        "meta": [
+                          {
+                            "name": "identity",
+                            "type": "text"
+                          },
+                          {
+                            "name": "affected",
+                            "type": "number"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "else": {
+                    "steps": {
+                      "name": "insert_newcomp_existinguser",
+                      "module": "dbupdater",
+                      "action": "insert",
+                      "options": {
+                        "connection": "db",
+                        "sql": {
+                          "type": "insert",
+                          "values": [
+                            {
+                              "table": "contact_form",
+                              "column": "servicio_de_interes",
+                              "type": "text",
+                              "value": "{{$_POST.inputserviciocontacto}}"
+                            },
+                            {
+                              "table": "contact_form",
+                              "column": "user_id",
+                              "type": "number",
+                              "value": "{{queryuser[0].id}}"
+                            },
+                            {
+                              "table": "contact_form",
+                              "column": "company_id",
+                              "type": "number",
+                              "value": "{{insertnewcompany.identity}}"
+                            },
+                            {
+                              "table": "contact_form",
+                              "column": "fecha_contacto",
+                              "type": "datetime",
+                              "value": "{{NOW.toLocalTime()}}"
+                            }
+                          ],
+                          "table": "contact_form",
+                          "returning": "id",
+                          "query": "INSERT INTO contact_form\n(servicio_de_interes, user_id, company_id, fecha_contacto) VALUES (:P1 /* {{$_POST.inputserviciocontacto}} */, :P2 /* {{queryuser[0].id}} */, :P3 /* {{insertnewcompany.identity}} */, :P4 /* {{NOW.toLocalTime()}} */)",
+                          "params": [
+                            {
+                              "name": ":P1",
+                              "type": "expression",
+                              "value": "{{$_POST.inputserviciocontacto}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P2",
+                              "type": "expression",
+                              "value": "{{queryuser[0].id}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P3",
+                              "type": "expression",
+                              "value": "{{insertnewcompany.identity}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P4",
+                              "type": "expression",
+                              "value": "{{NOW.toLocalTime()}}",
+                              "test": ""
+                            }
+                          ]
+                        }
+                      },
+                      "meta": [
+                        {
+                          "name": "identity",
+                          "type": "text"
+                        },
+                        {
+                          "name": "affected",
+                          "type": "number"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "outputType": "boolean"
+              }
+            ]
+          },
+          "else": {
+            "steps": {
+              "name": "",
+              "module": "core",
+              "action": "condition",
+              "options": {
+                "if": "{{queryuser.count()==0}}",
+                "then": {
+                  "steps": [
+                    {
+                      "name": "insertnewuser_copy",
+                      "module": "dbupdater",
+                      "action": "insert",
+                      "options": {
+                        "connection": "db",
+                        "sql": {
+                          "type": "insert",
+                          "values": [
+                            {
+                              "table": "users",
+                              "column": "first_name",
+                              "type": "text",
+                              "value": "{{$_POST['nombre-contacto']}}"
+                            },
+                            {
+                              "table": "users",
+                              "column": "last_name",
+                              "type": "text",
+                              "value": "{{$_POST['apellido-contacto']}}"
+                            },
+                            {
+                              "table": "users",
+                              "column": "email",
+                              "type": "text",
+                              "value": "{{$_POST['correo-electronico-contacto']}}"
+                            },
+                            {
+                              "table": "users",
+                              "column": "company_id",
+                              "type": "number",
+                              "value": "{{querycompany[0].id}}"
+                            },
+                            {
+                              "table": "users",
+                              "column": "country",
+                              "type": "text",
+                              "value": "{{$_POST['pais-contacto']}}"
+                            },
+                            {
+                              "table": "users",
+                              "column": "phone",
+                              "type": "text",
+                              "value": "{{$_POST['numero-telefonico-contacto']}}"
+                            }
+                          ],
+                          "table": "users",
+                          "returning": "id",
+                          "query": "INSERT INTO users\n(first_name, last_name, email, company_id, country, phone) VALUES (:P1 /* {{$_POST['nombre-contacto']}} */, :P2 /* {{$_POST['apellido-contacto']}} */, :P3 /* {{$_POST['correo-electronico-contacto']}} */, :P4 /* {{querycompany[0].id}} */, :P5 /* {{$_POST['pais-contacto']}} */, :P6 /* {{$_POST['numero-telefonico-contacto']}} */)",
+                          "params": [
+                            {
+                              "name": ":P1",
+                              "type": "expression",
+                              "value": "{{$_POST['nombre-contacto']}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P2",
+                              "type": "expression",
+                              "value": "{{$_POST['apellido-contacto']}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P3",
+                              "type": "expression",
+                              "value": "{{$_POST['correo-electronico-contacto']}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P4",
+                              "type": "expression",
+                              "value": "{{querycompany[0].id}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P5",
+                              "type": "expression",
+                              "value": "{{$_POST['pais-contacto']}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P6",
+                              "type": "expression",
+                              "value": "{{$_POST['numero-telefonico-contacto']}}",
+                              "test": ""
+                            }
+                          ]
+                        }
+                      },
+                      "meta": [
+                        {
+                          "name": "identity",
+                          "type": "text"
+                        },
+                        {
+                          "name": "affected",
+                          "type": "number"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "insert_existingcomp_newuser",
+                      "module": "dbupdater",
+                      "action": "insert",
+                      "options": {
+                        "connection": "db",
+                        "sql": {
+                          "type": "insert",
+                          "values": [
+                            {
+                              "table": "contact_form",
+                              "column": "servicio_de_interes",
+                              "type": "text",
+                              "value": "{{$_POST.inputserviciocontacto}}"
+                            },
+                            {
+                              "table": "contact_form",
+                              "column": "user_id",
+                              "type": "number",
+                              "value": "{{insertnewuser.identity}}"
+                            },
+                            {
+                              "table": "contact_form",
+                              "column": "company_id",
+                              "type": "number",
+                              "value": "{{querycompany[0].id}}"
+                            },
+                            {
+                              "table": "contact_form",
+                              "column": "fecha_contacto",
+                              "type": "datetime",
+                              "value": "{{NOW.toLocalTime()}}"
+                            }
+                          ],
+                          "table": "contact_form",
+                          "returning": "id",
+                          "query": "INSERT INTO contact_form\n(servicio_de_interes, user_id, company_id, fecha_contacto) VALUES (:P1 /* {{$_POST.inputserviciocontacto}} */, :P2 /* {{insertnewuser.identity}} */, :P3 /* {{querycompany[0].id}} */, :P4 /* {{NOW.toLocalTime()}} */)",
+                          "params": [
+                            {
+                              "name": ":P1",
+                              "type": "expression",
+                              "value": "{{$_POST.inputserviciocontacto}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P2",
+                              "type": "expression",
+                              "value": "{{insertnewuser.identity}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P3",
+                              "type": "expression",
+                              "value": "{{querycompany[0].id}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P4",
+                              "type": "expression",
+                              "value": "{{NOW.toLocalTime()}}",
+                              "test": ""
+                            }
+                          ]
+                        }
+                      },
+                      "meta": [
+                        {
+                          "name": "identity",
+                          "type": "text"
+                        },
+                        {
+                          "name": "affected",
+                          "type": "number"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "else": {
+                  "steps": {
+                    "name": "insert_exitingcomp_existinguser",
+                    "module": "dbupdater",
+                    "action": "insert",
+                    "options": {
+                      "connection": "db",
+                      "sql": {
+                        "type": "insert",
+                        "values": [
+                          {
+                            "table": "contact_form",
+                            "column": "servicio_de_interes",
+                            "type": "text",
+                            "value": "{{$_POST.inputserviciocontacto}}"
+                          },
+                          {
+                            "table": "contact_form",
+                            "column": "user_id",
+                            "type": "number",
+                            "value": "{{queryuser[0].id}}"
+                          },
+                          {
+                            "table": "contact_form",
+                            "column": "company_id",
+                            "type": "number",
+                            "value": "{{querycompany[0].id}}"
+                          },
+                          {
+                            "table": "contact_form",
+                            "column": "fecha_contacto",
+                            "type": "datetime",
+                            "value": "{{NOW.toLocalTime()}}"
+                          }
+                        ],
+                        "table": "contact_form",
+                        "returning": "id",
+                        "query": "INSERT INTO contact_form\n(servicio_de_interes, user_id, company_id, fecha_contacto) VALUES (:P1 /* {{$_POST.inputserviciocontacto}} */, :P2 /* {{queryuser[0].id}} */, :P3 /* {{querycompany[0].id}} */, :P4 /* {{NOW.toLocalTime()}} */)",
+                        "params": [
+                          {
+                            "name": ":P1",
+                            "type": "expression",
+                            "value": "{{$_POST.inputserviciocontacto}}",
+                            "test": ""
+                          },
+                          {
+                            "name": ":P2",
+                            "type": "expression",
+                            "value": "{{queryuser[0].id}}",
+                            "test": ""
+                          },
+                          {
+                            "name": ":P3",
+                            "type": "expression",
+                            "value": "{{querycompany[0].id}}",
+                            "test": ""
+                          },
+                          {
+                            "name": ":P4",
+                            "type": "expression",
+                            "value": "{{NOW.toLocalTime()}}",
+                            "test": ""
+                          }
+                        ]
+                      }
+                    },
+                    "meta": [
+                      {
+                        "name": "identity",
+                        "type": "text"
+                      },
+                      {
+                        "name": "affected",
+                        "type": "number"
+                      }
+                    ]
+                  }
+                }
+              },
+              "outputType": "boolean"
+            }
+          }
+        },
+        "outputType": "boolean"
+      },
+      {
+        "name": "refresh",
+        "module": "sockets",
+        "action": "refresh",
+        "options": {
+          "action": "querytableespecialista"
+        },
+        "disabled": true
+      },
+      {
+        "name": "",
+        "module": "mail",
+        "action": "send",
+        "options": {
+          "instance": "gmail",
+          "subject": "Contacto Especialista",
+          "fromName": "Juan",
+          "importance": 2,
+          "toEmail": "{{$_POST['correo-electronico-contacto']}}",
+          "replyTo": "info@contucarga.com",
+          "fromEmail": "juanpabloravelo@gmail.com",
+          "toName": "{{$_POST['nombre-contacto']}}",
+          "body": "Hola {{$_POST['nombre-contacto']}}, hemos recibido su mensaje y pronto un especialista se pondrá en contacto con usted a través de la dirección de correo electrónico {{$_POST['correo-electronico-contacto']}} para conversar sobre su necesidad de {{$_POST.inputserviciocontacto}}"
+        },
+        "disabled": true
+      },
+      {
+        "name": "",
+        "module": "mail",
+        "action": "send",
+        "options": {
+          "instance": "gmail",
+          "subject": "Contacto Especialista - Formulario Página Web",
+          "fromName": "Contucarga",
+          "importance": 2,
+          "toEmail": "juanpabloravelo@gmail.com",
+          "replyTo": "info@contucarga.com",
+          "fromEmail": "juanpabloravelo@gmail.com",
+          "body": "Hola Equipo \nUn visitante de la página web ha realizado una solicitud de contacto a través del formulario en línea. \nA continuación la información para dar respuesta a la solicitud: \n\nServicio: {{$_POST.inputserviciocontacto}}\nContacto: {{$_POST['nombre-contacto']+' '+$_POST['apellido-contacto']}}\nTeléfono: {{$_POST['numero-telefonico-contacto']}}\nCorreo: {{$_POST['correo-electronico-contacto']}}\nCompañía: {{$_POST['compania-contacto']}}\nPágina web: {{$_POST['pagina-web-contacto']}}\nCiudad - País: {{$_POST['ciudad-contacto']+' - '+$_POST['pais-contacto']}}\n\nDemosle respuesta a la solicitud antes de las 48 horas para incrementar la oportunidad de ganar un nuevo negocio!\n\nEquipo de Automatización \nContucarga",
+          "toName": "Dirección Contucarga"
+        },
+        "disabled": true
+      }
+    ]
+  }
+}

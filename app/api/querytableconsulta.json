@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query",
+      "module": "dbconnector",
+      "action": "select",
+      "options": {
+        "connection": "db",
+        "sql": {
+          "type": "SELECT",
+          "columns": [
+            {
+              "table": "consulta",
+              "column": "*"
+            },
+            {
+              "table": "companies",
+              "column": "name"
+            },
+            {
+              "table": "companies",
+              "column": "website"
+            },
+            {
+              "table": "companies",
+              "column": "country"
+            },
+            {
+              "table": "companies",
+              "column": "industry"
+            },
+            {
+              "table": "users",
+              "column": "first_name"
+            },
+            {
+              "table": "users",
+              "column": "last_name"
+            },
+            {
+              "table": "users",
+              "column": "email"
+            },
+            {
+              "table": "users",
+              "column": "country"
+            },
+            {
+              "table": "users",
+              "column": "phone"
+            }
+          ],
+          "params": [],
+          "table": {
+            "name": "consulta"
+          },
+          "primary": "id",
+          "joins": [
+            {
+              "table": "companies",
+              "column": "*",
+              "type": "INNER",
+              "clauses": {
+                "condition": "AND",
+                "rules": [
+                  {
+                    "table": "companies",
+                    "column": "id",
+                    "operator": "equal",
+                    "value": {
+                      "table": "consulta",
+                      "column": "company_id",
+                      "type": "number"
+                    },
+                    "operation": "="
+                  }
+                ]
+              },
+              "primary": "id"
+            },
+            {
+              "table": "users",
+              "column": "*",
+              "type": "INNER",
+              "clauses": {
+                "condition": "AND",
+                "rules": [
+                  {
+                    "table": "users",
+                    "column": "id",
+                    "operator": "equal",
+                    "value": {
+                      "table": "consulta",
+                      "column": "user_id",
+                      "type": "number"
+                    },
+                    "operation": "="
+                  }
+                ]
+              },
+              "primary": "id"
+            }
+          ],
+          "query": "SELECT consulta.*, companies.name, companies.website, companies.country, companies.industry, users.first_name, users.last_name, users.email, users.country, users.phone\nFROM consulta\nINNER JOIN companies ON (companies.id = consulta.company_id) INNER JOIN users ON (users.id = consulta.user_id)",
+          "orders": []
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "number",
+          "name": "id"
+        },
+        {
+          "type": "text",
+          "name": "valor_de_producto"
+        },
+        {
+          "type": "text",
+          "name": "llegada_de_mercancia"
+        },
+        {
+          "type": "text",
+          "name": "tipo_de_producto"
+        },
+        {
+          "type": "text",
+          "name": "tipo_de_entidad"
+        },
+        {
+          "type": "text",
+          "name": "info_adicional"
+        },
+        {
+          "type": "number",
+          "name": "user_id"
+        },
+        {
+          "type": "datetime",
+          "name": "fecha_solicitud"
+        },
+        {
+          "type": "number",
+          "name": "company_id"
+        },
+        {
+          "type": "text",
+          "name": "name"
+        },
+        {
+          "type": "text",
+          "name": "website"
+        },
+        {
+          "type": "text",
+          "name": "country"
+        },
+        {
+          "type": "text",
+          "name": "industry"
+        },
+        {
+          "type": "text",
+          "name": "first_name"
+        },
+        {
+          "type": "text",
+          "name": "last_name"
+        },
+        {
+          "type": "text",
+          "name": "email"
+        },
+        {
+          "type": "text",
+          "name": "phone"
+        }
+      ],
+      "outputType": "array"
+    }
+  }
+}

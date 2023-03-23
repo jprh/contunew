@@ -1,0 +1,301 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "offset"
+      },
+      {
+        "type": "text",
+        "name": "limit"
+      },
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query",
+      "module": "dbconnector",
+      "action": "paged",
+      "options": {
+        "connection": "db",
+        "sql": {
+          "type": "SELECT",
+          "columns": [
+            {
+              "table": "embarques",
+              "column": "*"
+            },
+            {
+              "table": "companies",
+              "column": "name"
+            }
+          ],
+          "params": [],
+          "table": {
+            "name": "embarques"
+          },
+          "primary": "id",
+          "joins": [
+            {
+              "table": "companies",
+              "column": "*",
+              "type": "INNER",
+              "clauses": {
+                "condition": "AND",
+                "rules": [
+                  {
+                    "table": "companies",
+                    "column": "id",
+                    "operator": "equal",
+                    "value": {
+                      "table": "embarques",
+                      "column": "compania",
+                      "type": "number"
+                    },
+                    "operation": "="
+                  }
+                ]
+              },
+              "primary": "id"
+            }
+          ],
+          "query": "SELECT embarques.*, companies.name\nFROM embarques\nINNER JOIN companies ON companies.id = embarques.compania"
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "name": "offset",
+          "type": "number"
+        },
+        {
+          "name": "limit",
+          "type": "number"
+        },
+        {
+          "name": "total",
+          "type": "number"
+        },
+        {
+          "name": "page",
+          "type": "object",
+          "sub": [
+            {
+              "name": "offset",
+              "type": "object",
+              "sub": [
+                {
+                  "name": "first",
+                  "type": "number"
+                },
+                {
+                  "name": "prev",
+                  "type": "number"
+                },
+                {
+                  "name": "next",
+                  "type": "number"
+                },
+                {
+                  "name": "last",
+                  "type": "number"
+                }
+              ]
+            },
+            {
+              "name": "current",
+              "type": "number"
+            },
+            {
+              "name": "total",
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "name": "data",
+          "type": "array",
+          "sub": [
+            {
+              "type": "number",
+              "name": "id"
+            },
+            {
+              "type": "text",
+              "name": "numero_referencia"
+            },
+            {
+              "type": "text",
+              "name": "tipo_de_transporte"
+            },
+            {
+              "type": "text",
+              "name": "empresa_de_transporte"
+            },
+            {
+              "type": "text",
+              "name": "referencia_de_transportista"
+            },
+            {
+              "type": "text",
+              "name": "codigos_arancelarios"
+            },
+            {
+              "type": "text",
+              "name": "numero_de_factura"
+            },
+            {
+              "type": "text",
+              "name": "nombre_del_proveedor"
+            },
+            {
+              "type": "text",
+              "name": "factura_imagen_url"
+            },
+            {
+              "type": "text",
+              "name": "conocimiento_de_embarque"
+            },
+            {
+              "type": "text",
+              "name": "conocimiento_de_embarque_imagen_url"
+            },
+            {
+              "type": "text",
+              "name": "renuncia_de_mercancia_imagen_url"
+            },
+            {
+              "type": "text",
+              "name": "articulos_importados_son_alimentos"
+            },
+            {
+              "type": "text",
+              "name": "registro_sencamer_imagen_url"
+            },
+            {
+              "type": "text",
+              "name": "certificado_de_origen_imagen_url"
+            },
+            {
+              "type": "text",
+              "name": "licencia_de_importacion_imagen_url"
+            },
+            {
+              "type": "text",
+              "name": "imagen_notificacion_de_llegada_de_mercancia"
+            },
+            {
+              "type": "text",
+              "name": "factura_comercial_fecha_creacion"
+            },
+            {
+              "type": "text",
+              "name": "factura_comercial_nombre_archivo"
+            },
+            {
+              "type": "number",
+              "name": "compania"
+            },
+            {
+              "type": "text",
+              "name": "codigos_arancelarios_descripcion"
+            },
+            {
+              "type": "text",
+              "name": "conocimiento_de_embarque_nombre_archivo"
+            },
+            {
+              "type": "text",
+              "name": "conocimiento_de_embarque_fecha_de_creacion"
+            },
+            {
+              "type": "text",
+              "name": "renuncia_de_mercancia_nombre_archivo"
+            },
+            {
+              "type": "text",
+              "name": "renuncia_de_mercancia_fecha_creacion"
+            },
+            {
+              "type": "text",
+              "name": "registro_sencamer_fecha_reacion"
+            },
+            {
+              "type": "text",
+              "name": "registro_sencamer_nombre_archivo"
+            },
+            {
+              "type": "text",
+              "name": "certificado_de_origen_nombre_archivo"
+            },
+            {
+              "type": "text",
+              "name": "certificado_de_origen_fecha_creacion"
+            },
+            {
+              "type": "text",
+              "name": "licencia_de_importacion_nombre_archivo"
+            },
+            {
+              "type": "text",
+              "name": "licencia_de_importacion_fecha_creacion"
+            },
+            {
+              "type": "text",
+              "name": "registro_sanitario_imagen_url"
+            },
+            {
+              "type": "text",
+              "name": "registro_sanitario_fecha_creacion"
+            },
+            {
+              "type": "text",
+              "name": "registro_sanitario_nombre_archivo"
+            },
+            {
+              "type": "text",
+              "name": "certificado_sanitario_fecha_creacion"
+            },
+            {
+              "type": "text",
+              "name": "certificado_sanitario_imagen_url"
+            },
+            {
+              "type": "text",
+              "name": "certificado_sanitario_nombre_archivo"
+            },
+            {
+              "type": "text",
+              "name": "Fecha_creacion_embarque"
+            },
+            {
+              "type": "text",
+              "name": "conocimiento_de_embarque_type"
+            },
+            {
+              "type": "text",
+              "name": "Estado"
+            },
+            {
+              "type": "text",
+              "name": "fecha_de_llegada"
+            },
+            {
+              "type": "text",
+              "name": "name"
+            }
+          ]
+        }
+      ],
+      "outputType": "object"
+    }
+  }
+}

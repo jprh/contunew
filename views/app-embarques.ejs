@@ -1,0 +1,672 @@
+<!-- Wappler include head-page="layouts/app" fontawesome_4="cdn" is="dmx-app" id="appprojects" appConnect="local" jquery_slim_35="cdn" bootstrap5="cdn" components="{dmxBootstrap5Navigation:{},dmxSockets:{},dmxFormatter:{},dmxDatePicker:{},dmxBootstrap5Collapse:{},dmxBootbox:{},dmxBootbox5:{},dmxDataTraversal:{},dmxBootstrap5TableGenerator:{},dmxStateManagement:{},dmxDatastore:{},dmxBrowser:{}}" moment_2="local with locales" -->
+<div is="dmx-browser" id="browser1"></div>
+<dmx-value id="embarqueSteps" dmx-bind:value="0"></dmx-value>
+<dmx-datastore id="datastore1"></dmx-datastore>
+<dmx-serverconnect id="serverconnect1" url="api/compania/company_query"></dmx-serverconnect>
+<dmx-serverconnect id="serverconnecttranslation" url="api/apis/apis_translate_copy" noload></dmx-serverconnect>
+
+
+
+
+<dmx-serverconnect id="serverconnectcontizacion" url="/api/query_user" sockets="true" ttl="90"></dmx-serverconnect>
+<dmx-serverconnect id="serverconnectcodigosquery" url="api/codigos_arancelarios/query_codigos_arancelarios"></dmx-serverconnect>
+<meta name="ac:route" content="/app-embarques">
+
+<!-- Page Content-->
+<div class="page-content">
+
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+
+                    <div class="row">
+                        <div class="col">
+
+                            <h4 class="page-title">Embarques&nbsp;</h4>
+
+                            <ol class="breadcrumb visually-hidden">
+                                <li class="breadcrumb-item"><a is="dmx-link" href="javascript:void(0);">Dastone</a></li>
+                                <li class="breadcrumb-item"><a is="dmx-link" href="javascript:void(0);">Projects</a></li>
+                                <li class="breadcrumb-item active">Projects</li>
+                            </ol>
+                        </div>
+                        <!--end col-->
+                        <div class="col-auto align-self-center">
+                            <a href="#" class="btn btn-sm btn-outline-primary" id="Dash_Date">
+                                <span class="day-name" id="Day_Name">Hoy:</span>&nbsp;
+                                <span class="" id="Select_date">Jan 11</span>
+                                <i data-feather="calendar" class="align-self-center icon-xs ms-1"></i>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-primary">
+                                <i data-feather="download" class="align-self-center icon-xs"></i>
+                            </a>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <div class="row">
+                        <div class="col">
+
+
+
+                            <ol class="breadcrumb visually-hidden">
+                                <li class="breadcrumb-item"><a is="dmx-link" href="javascript:void(0);">Dastone</a></li>
+                                <li class="breadcrumb-item"><a is="dmx-link" href="javascript:void(0);">Projects</a></li>
+                                <li class="breadcrumb-item active">Projects</li>
+                            </ol>
+                        </div>
+                        <!--end col-->
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <!-- end page title end breadcrumb -->
+        <!--end row-->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h4 class="card-title">Formulario de embarques&nbsp;</h4>
+                            </div>
+                            <!--end col-->
+                            <div class="col-auto">
+                                <a href="#" class="text-primary visually-hidden">Ver todos</a>
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <!--end card-header-->
+                    <div class="card-body">
+                        <form id="serverconnectformembarques" class="form-horizontal form-wizard-wrapper" method="post" is="dmx-serverconnect-form" action="api/embarques/insert_embarques" dmx-on:success="run([{'bootbox.alert':{message:'Solicitud Enviada',title:'Envio exitoso'}},{run:{action:`serverconnectformembarques.reset()`}},{run:{action:`browser1.goto(\'lista-embarques\')`}}])">
+                            <fieldset dmx-show="(embarqueSteps.value==0)">
+                                <fieldset>
+                                    <h3>Información del importador</h3>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p class="visually-hidden">Dynamic data from the importer info</p>
+
+                                            <!--end form-group-->
+                                        </div>
+                                        <!--end col-->
+                                        <!--end col-->
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row">
+                                                <label for="txtNumeroReferencia" class="col-lg-3 col-form-label">Compañía</label>
+                                                <div class="col-lg-9">
+                                                    <select id="selectCompania" class="form-select" dmx-bind:options="serverconnect1.data.query" optiontext="name.capitalize()" optionvalue="id" name="compania">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--end form-group-->
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row">
+                                                <label for="txtNumeroReferencia1" class="col-lg-3 col-form-label">Número de referencia</label>
+                                                <div class="col-lg-9">
+                                                    <input id="txtNumeroReferencia1" name="numero_referencia" type="text" class="form-control">
+                                                    <small id="bs5-form-group-help1" class="form-text text-muted">Use este campo para agregar su número de envío/referencia a este embarque</small>
+                                                </div>
+                                            </div>
+                                            <!--end form-group-->
+                                        </div>
+
+                                        <!--end col-->
+                                        <!--end col-->
+                                    </div>
+                                    <!--end row-->
+                                    <!--end row-->
+                                    <!--end row-->
+                                    <!--end row-->
+
+                                    <!--end row-->
+                                </fieldset>
+                                <fieldset>
+                                    <h3>Información del transportista</h3>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <p class="col-form-label text-start">Método o tipo de de Transporte</p>
+                                            <div class="form-group mb-3 d-flex style9" id="inputTransportista_group" is="dmx-radio-group">
+                                                <div class="form-check check-button">
+                                                    <input class="form-check-input check-button-icon style3" type="radio" value="terrestre" id="input_terrestre" name="tipo_de_transporte">
+                                                    <label class="form-check-label" for="input_terrestre" style="margin-bottom: 0px; /* margin-top: auto */ /* margin-bottom: auto */">Terrestre</label>
+                                                </div>
+                                                <div class="form-check check-button">
+                                                    <input class="form-check-input check-button-icon style3" type="radio" value="maritimo" id="input_maritimo" name="tipo_de_transporte" style="background-image: url(&quot;../inertia/src/assets/img/ionicons/boat-outline.svg&quot;)">
+                                                    <label class="form-check-label" for="input_maritimo">Marítimo</label>
+                                                </div>
+                                                <div class="form-check check-button">
+                                                    <input class="form-check-input check-button-icon style3" type="radio" value="aereo" id="input_aereo" name="tipo_de_transporte" style="background-image: url(&quot;../inertia/src/assets/img/ionicons/airplane-outline.svg&quot;);">
+                                                    <label class="form-check-label" for="input_aereo">Aéreo</label>
+                                                </div>
+                                                <div class="form-check check-button">
+                                                    <input type="radio" value="mensajeria" id="input_mensajeria" name="tipo_de_transporte" class="form-check-input check-button-icon style3" style="background-image: url(&quot;../inertia/src/assets/img/ionicons/car-outline.svg&quot;);">
+                                                    <label class="form-check-label" for="input_mensajeria">Mensajería</label>
+                                                </div>
+                                                <div class="form-check check-button">
+                                                    <input type="radio" value="equipaje" id="input_equipaje" name="tipo_de_transporte" class="form-check-input check-button-icon style3" style="background-image: url(&quot;../inertia/src/assets/img/ionicons/briefcase-outline.svg&quot;);">
+                                                    <label class="form-check-label" for="input_equipaje">Equipaje</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <!--end col-->
+                                        <!--end col-->
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="form-group column col-4 col-sm-12 col-lg-4">
+                                            <label for="txtEmpresaTransportista" class="col-form-label">Empresa de Transporte</label><input id="txtEmpresaTransportista" name="empresa_de_transporte" type="text" class="form-control">
+
+                                        </div>
+                                        <div class="form-group column col-4 col-sm-12 col-lg-4">
+                                            <label for="txtReferenciaTransportista1" class="col-form-label">Fecha Estimada de Llegada</label>
+                                            <input id="txtReferenciaTransportista1" name="fecha_de_llegada" type="text" class="form-control"><small id="bs5-form-group-help3" class="form-text text-muted">Incluya la fecha estimada de llegada del embarque al puerto destino&nbsp;</small>
+
+                                        </div>
+                                        <!--end form-group-->
+                                        <div class="form-group column col-4 col-sm-12 col-lg-4">
+                                            <label for="txtReferenciaTransportista" class="col-form-label">Referencia de Transportista / Número de seguimiento</label>
+                                            <input id="txtReferenciaTransportista" name="referencia_de_transportista" type="text" class="form-control"><small id="bs5-form-group-help2" class="form-text text-muted">El número de referencia del transportista es cualquier número que pueda ayudar a identificar su embarque. Por ejemplo: el número de seguimiento o control de la carga&nbsp;</small>
+
+                                        </div>
+                                    </div>
+                                    <!--end row-->
+                                    <!--end row-->
+                                    <!--end row-->
+                                    <!--end row-->
+
+                                    <!--end row-->
+                                    <div class="col-sm-12 text-end">
+                                        <button class="btn btn-primary px-4" dmx-on:click="embarqueSteps.setValue((embarqueSteps.value + 1))">Siguiente</button>
+                                    </div>
+                                </fieldset>
+                            </fieldset>
+                            <!--end fieldset-->
+                            <fieldset dmx-show="(embarqueSteps.value==1)">
+                                <h3>¿Qué está importando?&nbsp;</h3>
+                                <p>Proporcione la información a continuación para ayudarnos a calcular los aranceles e impuestos para este producto. Esta información se guardará en su cuenta para que no tenga que volver a ingresarla en embarques futuros. Una vez que haya completado la información, simplemente haga clic en el botón "Agregar" para adjuntar este artículo a su embarque.</p>
+                                <div class="row mb-4 visually-hidden">
+                                    <div class="col-md-2">
+                                        <label for="txtFirstNameShipping" class="col-form-label pt-0">Códigos Arancelarios</label>
+                                        <div class="input-group">
+
+                                        </div>
+                                        <!--end form-group-->
+                                    </div>
+                                    <div class="h-auto col-md-5">
+                                        <div class="form-group mb-3 row">
+
+
+                                            <div class="col-sm-12">
+                                                <input id="textCodigos2" name="codigos_arancelarios" type="text" class="form-control" dmx-bind:value="datastore1.data.values(`codigo`)" readonly="true">
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                        </div>
+                                        <!--end form-group-->
+                                    </div>
+                                    <div class="h-auto col-md-5">
+                                        <div class="form-group mb-3 row">
+                                            <div class="col-sm-12">
+                                                <input id="textCodigos" name="codigos_arancelarios_descripcion" type="text" class="form-control" dmx-bind:value="datastore1.data.values(`description`)" readonly="true">
+                                            </div>
+
+                                        </div>
+                                        <div class="input-group">
+                                        </div>
+                                        <!--end form-group-->
+                                    </div>
+
+                                    <!--end col-->
+                                    <!--end col-->
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-md-2">
+                                        <label for="txtFirstNameShipping" class="col-form-label pt-0">Seleccione de la lista de códigos utilizados anteriormente:</label>
+                                        <div class="input-group">
+
+                                        </div>
+                                        <!--end form-group-->
+                                    </div>
+                                    <div class="h-auto col-md-10">
+                                        <div class="form-group mb-3 row">
+                                            <div class="col-sm-10">
+                                                <select id="select1" class="form-select" is="dmx-select" dmx-bind:options="serverconnectcodigosquery.data.query" optiontext="descripcion+' '+codigo_hts" optionvalue="codigo_hts" dmx-class:text-muted="datastore1.data.values(`description`).contains(select1.selectedValue)">
+                                                </select>
+                                                <a class="style18" style="color: blue;" is="dmx-link" href="app-codigos-arancelarios"><small id="input1_help" class="form-text text-muted" style="/* color: black */ color: blue !important;">Agregar un código nuevo</small></a>
+                                            </div>
+                                            <div class="d-flex col h-100">
+                                                <button class="btn w-100 btn-light" style="background-color: #1761fd; color: white;" is="dmx-button" value="" type="button" dmx-on:click="run({condition:{if:`!datastore1.data.values(\`codigo\`).contains(select1.selectedValue)`,then:{steps:{run:{action:`datastore1.insert({description: select1.selectedText, codigo: select1.selectedValue})`}}}}})" dmx-class:disabled="datastore1.data.values(`codigo`).contains(select1.selectedValue)">Seleccionar</button>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="input-group">
+                                        </div>
+                                        <!--end form-group-->
+                                    </div>
+
+                                    <!--end col-->
+                                    <!--end col-->
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-md-2">
+                                        <label for="txtFirstNameShipping" class="col-form-label pt-0">Buscar código arancelario por descripción</label>
+                                        <div class="input-group">
+
+                                        </div>
+                                        <!--end form-group-->
+                                    </div>
+                                    <div class="h-auto col-md-10">
+                                        <div class="form-group mb-3 row">
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="input2" name="inputtesting" aria-describedby="input1_help" placeholder="Enter some text">
+                                            </div>
+                                            <div class="d-flex col h-100">
+                                                <button id="btn4" class="btn btn-primary round w-100" dmx-on:click="serverconnecttranslation.load({inputtesting: input2.value})" dmx-on:keydown.enter="serverconnecttranslation.load({inputtesting: input2.value})" style="width: auto;">Enviar</button>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="input-group">
+                                        </div>
+                                        <!--end form-group-->
+                                    </div>
+
+                                    <!--end col-->
+                                    <!--end col-->
+                                </div>
+                                <div class="row mb-4">
+                                    <table class="table" dmx-hide="(!serverconnecttranslation.data.repeatcodigo.top(20).hasItems())">
+                                        <thead>
+                                            <tr>
+                                                <th>Código</th>
+                                                <th>Description</th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="serverconnecttranslation.data.repeatcodigo.top(20)" id="tableRepeat3">
+                                            <tr>
+
+                                                <td dmx-text="htsno"></td>
+                                                <td dmx-text="serverconnecttranslation.data.repeat_traduccion[$index].text"></td>
+                                                <td class="badge-pill">
+                                                    <button dmx-on:click="datastore1.insert({description: serverconnecttranslation.data.repeat_traduccion[$index].text, codigo: htsno})" dmx-class:disabled="datastore1.data.values(`codigo`).contains(htsno)" class="btn btn-primary btn-sm" id="btn2" dmx-on:keypress.enter="datastore1.insert({description: serverconnecttranslation.data.repeat_traduccion[$index].text, codigo: htsno})">Agregar</button>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-12">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Código</th>
+                                                    <th>Descripción</th>
+
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="datastore1.data" id="tableRepeat1">
+                                                <tr>
+                                                    <td dmx-text="codigo"></td>
+                                                    <td dmx-text="description"></td>
+
+                                                    <td>
+                                                        <button id="btn1" class="btn btn-sm btn-danger" dmx-on:click="datastore1.delete({$id: $id, description: description})">Eliminar</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4 visually-hidden">
+
+                                    <div class="col-md-2">
+                                        <label for="txtFirstNameShipping" class="col-form-label pt-0">Búsqueda de código arancelario</label>
+                                        <div class="input-group">
+
+                                        </div>
+                                        <!--end form-group-->
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="form-group mb-3 row">
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="busquedacodigo" name="busqiedacodigoarancelario" aria-describedby="input1_help" placeholder="000.000.0000" is="dmx-input" value="">
+                                                <small id="input1_help3" class="form-text text-muted">Ingrese el código</small>
+
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <p class="text-center">or</p>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="input-group">
+                                        </div>
+                                        <!--end form-group-->
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group mb-3 row">
+                                            <div class="col-sm-12">
+
+                                                <input type="text" class="form-control" id="busquedadescripcion" name="busquedacodigodescripcion" aria-describedby="input1_help" placeholder="Búsqueda por descripción del artículo" is="dmx-input" value="">
+                                                <small id="input1_help4" class="form-text text-muted">Ingrese la descripción</small>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="input-group">
+                                        </div>
+                                        <!--end form-group-->
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <button class="btn btn-secondary w-100" style="background-color: #1761fd; color: white;" is="dmx-button" value="" type="button">Seleccionar</button>
+
+                                    </div>
+                                    <!--end col-->
+                                    <!--end col-->
+                                </div>
+                                <div class="row mb-4">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                            </tr>
+                                        </thead>
+                                        <tbody is="dmx-repeat" dmx-generator="bs5table" id="tableRepeat2"></tbody>
+                                    </table>
+
+                                    <!--end col-->
+                                    <!--end col-->
+                                </div>
+                                <!--end row-->
+                                <div class="col-sm-12 text-end">
+                                    <button class="btn btn-primary px-4" dmx-on:click="embarqueSteps.setValue((embarqueSteps.value-1))">Anterior</button>
+                                    <button class="btn btn-primary px-4" dmx-on:click="embarqueSteps.setValue((embarqueSteps.value+1))">Siguiente</button>
+                                </div>
+                                <!--end row-->
+
+                                <!--end row-->
+                            </fieldset>
+                            <!--end fieldset-->
+                            <fieldset dmx-show="(embarqueSteps.value==2)">
+                                <h3>Detalles de la(s) factura(s)</h3>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Asegúrese de que su factura contenga la siguiente información:</p>
+
+                                        <ol>
+                                            <li class="li-bottom-margin">Descripción detallada del artículo</li>
+                                            <li class="li-bottom-margin">País de fabricación de cada artículo de la factura</li>
+                                            <li class="li-bottom-margin">Código HTS para cada artículo de la factura</li>
+                                            <li class="li-bottom-margin">Cantidad y precio unitario para cada artículo de la factura</li>
+                                            <li class="li-bottom-margin">Información de contacto completa del proveedor</li>
+                                            <li class="li-bottom-margin">Información de contacto completa del vendedor</li>
+                                            <li class="li-bottom-margin">Número de identificación fiscal federal del receptor</li>
+                                        </ol>
+                                    </div>
+                                    <!--end col-->
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label for="txtNombreProveedor" class="col-lg-3 col-form-label">Número de Factura</label>
+                                            <div class="col-lg-9">
+                                                <input id="txtNumeroFactura" name="numero_de_factura" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <!--end form-group-->
+                                    </div>
+                                    <!--end col-->
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label for="ddlCreditCardType" class="col-lg-3 col-form-label">Proveedor</label>
+                                            <div class="col-lg-9">
+                                                <input id="txtNombreProveedor" name="nombre_del_proveedor" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <!--end form-group-->
+                                    </div>
+                                    <!--end col-->
+                                </div>
+                                <!--end row-->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label for="ImagenFactura" class="col-lg-3 col-form-label">Cargue la factura</label>
+                                            <div class="input-group mb-3">
+                                                <input type="file" class="form-control" id="inputFacturaComercialEmbarque" placeholder="No se ha seleccionado ningún archivo" name="facturaComercialEmbarque">
+                                                <label class="input-group-text" for="inputFacturaComercialEmbarque">Cargar archivo</label>
+                                            </div>
+                                        </div>
+
+                                        <!--end form-group-->
+                                    </div>
+                                    <!--end col-->
+                                    <!--end col-->
+                                </div>
+                                <!--end row-->
+
+                                <!--end row-->
+                                <div class="col-sm-12 text-end">
+                                    <button class="btn btn-primary px-4" dmx-on:click="embarqueSteps.setValue((embarqueSteps.value-1))">Anterior</button>
+                                    <button class="btn btn-primary px-4" dmx-on:click="embarqueSteps.setValue((embarqueSteps.value+1))">Siguiente</button>
+                                </div>
+                            </fieldset>
+                            <!--end fieldset-->
+                            <fieldset dmx-show="(embarqueSteps.value==3)">
+                                <h3>Documentos</h3>
+                                <h4>Conocimiento de embarque / Guía area</h4>
+                                <p>Un conocimiento de embarque marítimo es un documento legalmente vinculante para el transporte de mercancías en el extranjero. Sirve como recibo del transportista para el remitente y como documento de cobro. Proporcionar un conocimiento de embarque ayudará a acelerar su despacho. No te preocupes si no lo tienes a mano, este se puede subir en cualquier momento.</p>
+                                <div class="row mb-3">
+                                    <label class="col-md-3 my-1 form-label">¿Cuenta con el conocimiento de embarque?</label>
+                                    <div class="col-md-9">
+                                        <div is="dmx-radio-group" id="groupRadioBL" class="radio-group">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="conocimiento_de_embarque" id="groupRadioBL1" value="si">
+                                                <label class="form-check-label" for="groupRadioBL1">Si</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="conocimiento_de_embarque" id="groupRadioBL2" value="no">
+                                                <label class="form-check-label" for="groupRadioBL2">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" dmx-show="(groupRadioBL.value=='si')">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label for="ImagenFactura" class="col-form-label">Conocimiento de embarque</label>
+                                            <div class="input-group mb-3">
+                                                <input type="file" class="form-control" id="inputFileConocimientoEmbarque" placeholder="No se ha seleccionado ningún archivo" name="ConocimientodeEmbarque">
+                                                <label class="input-group-text" for="inputFacturaComercialEmbarque">Cargar archivo</label>
+                                            </div>
+                                        </div>
+
+                                        <!--end form-group-->
+                                    </div>
+                                    <!--end col-->
+                                    <!--end col-->
+                                </div>
+                                <div class="row" dmx-show="(groupRadioBL.value=='no')">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label for="ImagenFactura" class="col-form-label">Renuncia de la mercancía en caso de que la mercancía no esté consignada al importador</label>
+                                            <div class="input-group mb-3">
+                                                <input type="file" class="form-control" id="inputFileRenunciadeMercancia" placeholder="No se ha seleccionado ningún archivo" name="RenunciadeMercancia">
+                                                <label class="input-group-text" for="inputFileRenunciadeMercancia">Cargar archivo</label>
+                                            </div>
+                                        </div>
+
+                                        <!--end form-group-->
+                                    </div>
+                                    <!--end col-->
+                                    <!--end col-->
+                                </div>
+                                <h4>Registro sanitario sanitario del ministerio de sanidad y asistencia social</h4>
+                                <div class="row mb-3">
+                                    <label class="col-md-3 my-1 form-label">¿Los artículos importados son alimentos?</label>
+                                    <div class="col-md-9">
+                                        <div is="dmx-radio-group" id="group1" class="radio-group">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="articulos_importados_son_alimentos" id="inlineRadioSiAlimentos" value="si">
+                                                <label class="form-check-label" for="groupRadioBL1">Si</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="articulos_importados_son_alimentos" id="inlineRadioNoAlimentos" value="no">
+                                                <label class="form-check-label" for="groupRadioBL2">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end row-->
+                                <div class="row" dmx-show="(group1.value=='si')">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label for="ImagenFactura" class="col-form-label">Registro sanitario</label>
+                                            <div class="input-group mb-3">
+                                                <input type="file" class="form-control" id="inputFileRegistroSanitario" placeholder="No se ha seleccionado ningún archivo" name="RegistroSanitario">
+                                                <label class="input-group-text" for="inputFileRegistroSanitario">Cargar archivo</label>
+                                            </div>
+                                        </div>
+
+                                        <!--end form-group-->
+                                    </div>
+                                    <!--end col-->
+                                    <!--end col-->
+                                </div>
+                                <div class="row" dmx-show="(group1.value=='si')">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label for="ImagenFactura" class="col-form-label">Certificado sanitario del país de origen</label>
+                                            <div class="input-group mb-3">
+                                                <input type="file" class="form-control" id="inputFileCertificadoSanitario" placeholder="No se ha seleccionado ningún archivo" name="CertificadoSanitario">
+                                                <label class="input-group-text" for="inputFileCertificadoSanitario">Cargar archivo</label>
+                                            </div>
+                                        </div>
+
+                                        <!--end form-group-->
+                                    </div>
+                                    <!--end col-->
+                                    <!--end col-->
+                                </div>
+                                <h4>Registro o consulta Sencamer</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label for="ImagenFactura" class="col-form-label">Adjuntar registo o consulta Sencamer</label>
+                                            <div class="input-group mb-3">
+                                                <input type="file" class="form-control" id="inputFileSencamer" placeholder="No se ha seleccionado ningún archivo" name="Sencamer">
+                                                <label class="input-group-text" for="inputFileSencamer">Cargar archivo</label>
+                                            </div>
+                                        </div>
+
+                                        <!--end form-group-->
+                                    </div>
+                                    <!--end col-->
+                                    <!--end col-->
+                                </div>
+                                <h4>Certificado de origen&nbsp;</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label for="ImagenFactura" class="col-form-label">Adjuntar certificado de origen&nbsp;</label>
+                                            <div class="input-group mb-3">
+                                                <input type="file" class="form-control" id="inputFileCertificadodeOrigen" placeholder="No se ha seleccionado ningún archivo" name="CertificadodeOrigen">
+                                                <label class="input-group-text" for="inputFileSencamer">Cargar archivo</label>
+                                            </div>
+                                        </div>
+
+                                        <!--end form-group-->
+                                    </div>
+                                    <!--end col-->
+                                    <!--end col-->
+                                </div>
+                                <h4>Licencia de importación</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label for="ImagenFactura" class="col-form-label">Adjuntar licencia de importación&nbsp;</label>
+                                            <div class="input-group mb-3">
+                                                <input type="file" class="form-control" id="inputFileLicenciadeImportacion" placeholder="No se ha seleccionado ningún archivo" name="LicenciadeImportacion">
+                                                <label class="input-group-text" for="inputFileSencamer">Cargar archivo</label>
+                                            </div>
+                                        </div>
+
+                                        <!--end form-group-->
+                                    </div>
+                                    <!--end col-->
+                                    <!--end col-->
+                                </div>
+                                <div class="col-sm-12 text-end">
+                                    <button class="btn btn-primary px-4" dmx-on:click="embarqueSteps.setValue((embarqueSteps.value-1))">Anterior</button>
+                                    <button class="btn btn-primary px-4" dmx-on:click="embarqueSteps.setValue((embarqueSteps.value+1))">Siguiente</button>
+                                </div>
+                            </fieldset>
+                            <fieldset dmx-show="(embarqueSteps.value==4)">
+                                <h3>Notificación de llegada de la mercancía</h3>
+                                <p>Recibirá un Aviso de llegada cuando su embarque esté aproximadamente a una semana de la llegada y contenga información importante como la ubicación de su carga. Si ya recibió su notificación de llegada, puede cargarlo a continuación. De lo contrario, omita este paso y entréguelo a su agente una vez que lo reciba.</p>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label for="ImagenFactura" class="col-form-label">Notificación de llegada</label>
+                                            <div class="input-group mb-3">
+                                                <input type="file" class="form-control" id="inputFileNotificaciondeLlegada" placeholder="No se ha seleccionado ningún archivo" name="NotificaciondeLlegada">
+                                                <label class="input-group-text" for="inputFacturaComercialEmbarque">Cargar archivo</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 text-end">
+                                        <button class="btn btn-primary px-4" dmx-on:click="embarqueSteps.setValue((embarqueSteps.value-1))">Anterior</button>
+                                        <button class="btn px-4 btn-success" dmx-on:click="serverconnectformembarques.submit()">Enviar</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <!--end form-group-->
+                    </div>
+                </div>
+            </div>
+            <!--end card-body-->
+        </div>
+        <!--end card-->
+    </div>
+    <!--end col-->
+</div>
+<!--end row-->
+<!--end row-->
+
+<!--end row-->
+
+
+
+<footer class="footer text-center text-sm-start style6">
+    &copy;
+
+    <script>
+        document.write(new Date().getFullYear())
+    </script> Dastone <span class="text-muted d-none d-sm-inline-block float-end">Crafted with <i class="mdi mdi-heart text-danger"></i> by Creativehub</span>
+</footer>
+<!--end footer-->
+
+<!-- end page content -->

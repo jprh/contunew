@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/public/ui8-solo-saas.herokuapp.com/registro-empresa-gated.html",
+      "linkedForm": "form2"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "username1",
+        "name": "username1"
+      },
+      {
+        "type": "text",
+        "fieldName": "password1",
+        "ui": {
+          "input": "password"
+        },
+        "name": "password1"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      "SecurityProviders/security_db",
+      {
+        "name": "identity",
+        "module": "auth",
+        "action": "login",
+        "options": {
+          "provider": "security_db",
+          "remember": "",
+          "password": "{{$_POST.password1}}"
+        },
+        "output": true,
+        "meta": []
+      }
+    ]
+  }
+}

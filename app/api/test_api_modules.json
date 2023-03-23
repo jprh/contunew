@@ -1,0 +1,14 @@
+{
+  "name": "JuanPi",
+  "module": "tester",
+  "action": "tester",
+  "options": {},
+  "meta": [
+    {
+      "name": "status",
+      "type": "number",
+      "optionName": "status"
+    }
+  ],
+  "output": true
+}

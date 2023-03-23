@@ -1,0 +1,144 @@
+<!-- Wappler include head-page="layouts/app" fontawesome_4="cdn" is="dmx-app" id="appprojects" appConnect="local" jquery_slim_35="cdn" bootstrap5="cdn" components="{dmxBootstrap5Navigation:{},dmxSockets:{},dmxFormatter:{},dmxDatePicker:{},dmxValidator:{},dmxBootbox:{},dmxBootstrap5TableGenerator:{},dmxBootbox5:{},dmxStateManagement:{},dmxBootstrap5PagingGenerator:{},dmxBrowser:{}}" moment_2="local with locales" -->
+<div is="dmx-browser" id="browser1"></div>
+<dmx-query-manager id="query1"></dmx-query-manager>
+<meta name="ac:route" content="/app-proveedores">
+
+<!-- Page Content-->
+<!-- Page Content-->
+<div class="page-content" style="/* padding-bottom: 4rem */ /* width: 100%vw */">
+    <div class="container-fluid" style="/* width: 100vw */">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="page-title">Proveedores</h4>
+                            <ol class="breadcrumb visually-hidden">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Dastone</a></li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Projects</a></li>
+                                <li class="breadcrumb-item active">Create</li>
+                            </ol>
+                        </div>
+                        <!--end col-->
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card" style="/* margin-bottom: 0px */">
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h4 class="card-title">Registro de Proveedores</h4>
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <!--end card-header-->
+                    <div class="card-body">
+                        <div class="row" style="display: -webkit-box;">
+
+                            <div class="col-lg-12 col">
+                                <form is="dmx-serverconnect-form" id="formProveedores" method="post" action="api/proveedores/insert_proveedores" dmx-generator="bootstrap5" dmx-form-type="horizontal" class="row" dmx-on:success="run([{run:{action:`formProveedores.reset()`}},{run:{action:`browser1.goto(\'app-lista-proveedores\')`}}])">
+                                    <div class="form-group mb-3 row" style="/* width: 50% */">
+                                        <label for="inp_nombre" class="col-sm-2 col-form-label">Nombre</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inp_nombre" name="nombre" aria-describedby="inp_nombre_help" placeholder="Enter Nombre" is="dmx-input" value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 row" style="/* width: 50% */">
+                                        <label for="inp_direccion" class="col-sm-2 col-form-label">Direccion</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inp_direccion" name="direccion" aria-describedby="inp_direccion_help" placeholder="Enter Direccion" is="dmx-input" value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 row">
+                                        <label for="inp_ciudad" class="col-sm-2 col-form-label">Ciudad</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inp_ciudad" name="ciudad" aria-describedby="inp_ciudad_help" placeholder="Enter Ciudad" is="dmx-input" value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 row">
+                                        <label for="inp_estado" class="col-sm-2 col-form-label">Estado</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inp_estado" name="estado" aria-describedby="inp_estado_help" placeholder="Enter Estado" is="dmx-input" value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 row">
+                                        <label for="inp_pais" class="col-sm-2 col-form-label">Pais</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inp_pais" name="pais" aria-describedby="inp_pais_help" placeholder="Enter Pais" is="dmx-input" value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 row">
+                                        <label for="inp_codigo_postal" class="col-sm-2 col-form-label">Codigo postal</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inp_codigo_postal" name="codigo_postal" aria-describedby="inp_codigo_postal_help" placeholder="Enter Codigo postal" is="dmx-input" value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 row">
+                                        <label for="inp_telefono" class="col-sm-2 col-form-label">Telefono</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inp_telefono" name="telefono" aria-describedby="inp_telefono_help" placeholder="Enter Telefono" is="dmx-input" value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 row">
+                                        <label for="inp_fax" class="col-sm-2 col-form-label">Fax</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inp_fax" name="fax" aria-describedby="inp_fax_help" placeholder="Enter Fax" is="dmx-input" value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 row">
+                                        <label for="inp_email" class="col-sm-2 col-form-label">Email</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inp_email" name="email" aria-describedby="inp_email_help" placeholder="Enter Email" is="dmx-input" value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 row">
+                                        <label for="inp_website" class="col-sm-2 col-form-label">Website</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inp_website" name="website" aria-describedby="inp_website_help" placeholder="Enter Website" is="dmx-input" value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 row" style="width: 100% !important;">
+                                        <div class="text-end col-sm-12 pe-4">
+                                            <button class="btn btn-primary round" is="dmx-button" value="" type="submit">Enviar<span class="spinner-border spinner-border-sm" role="status" style="display: none !important;"></span></button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!--end form-->
+                            </div>
+                            <!--end col-->
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+
+    </div><!-- container -->
+
+    <footer class="footer text-center text-sm-start style6">
+        &copy; <script src="/dastone/default/assets/js/jquery.min.js"></script>
+        <script src="/dastone/default/assets/js/moment.js"></script>
+        <script>
+            document.write(new Date().getFullYear())
+        </script> Dastone <span class="text-muted d-none d-sm-inline-block float-end">Crafted with <i class="mdi mdi-heart text-danger"></i> by JPR</span>
+    </footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->

@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/public/contucarga.html",
+      "linkedForm": "subscribcion_boletin"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "name": "email"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "insert",
+      "module": "dbupdater",
+      "action": "insert",
+      "options": {
+        "connection": "db",
+        "sql": {
+          "type": "insert",
+          "values": [
+            {
+              "table": "subscribcion-boletin",
+              "column": "email",
+              "type": "text",
+              "value": "{{$_POST.email}}"
+            }
+          ],
+          "table": "subscribcion-boletin",
+          "returning": "id",
+          "query": "INSERT INTO \"subscribcion-boletin\"\n(email) VALUES (:P1 /* {{$_POST.email}} */)",
+          "params": [
+            {
+              "name": ":P1",
+              "type": "expression",
+              "value": "{{$_POST.email}}"
+            }
+          ]
+        }
+      },
+      "meta": [
+        {
+          "name": "identity",
+          "type": "text"
+        },
+        {
+          "name": "affected",
+          "type": "number"
+        }
+      ]
+    }
+  }
+}

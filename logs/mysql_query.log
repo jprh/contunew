@@ -1,0 +1,861 @@
+/usr/sbin/mysqld, Version: 8.0.28 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2022-10-22T06:57:33.180106Z	    8 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-22T06:57:33.200235Z	    8 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+/usr/sbin/mysqld, Version: 8.0.28 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2022-10-25T17:15:38.001759Z	    8 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-25T17:15:38.022407Z	    8 Query	select * from `blog_posts`
+2022-10-25T17:15:42.044562Z	    8 Query	select * from `blog_posts`
+2022-10-25T17:16:06.255283Z	    9 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-25T17:16:06.291425Z	    9 Query	select * from `blog_posts`
+2022-10-25T17:21:37.350230Z	   10 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-25T17:21:37.355975Z	   10 Query	SELECT VERSION()
+2022-10-25T17:21:37.362714Z	   10 Query	select c.COLUMN_NAME, c.COLUMN_DEFAULT, c.DATA_TYPE, c.COLUMN_TYPE, c.CHARACTER_MAXIMUM_LENGTH, c.IS_NULLABLE, c.COLUMN_KEY, c.EXTRA, c.COLLATION_NAME, c.COLLATION_NAME, c.COLUMN_COMMENT,
+  fk.REFERENCED_TABLE_NAME, fk.REFERENCED_COLUMN_NAME, fk.CONSTRAINT_NAME, rc.UPDATE_RULE, rc.DELETE_RULE, rc.MATCH_OPTION
+  from information_schema.columns c
+left join INFORMATION_SCHEMA.KEY_COLUMN_USAGE fk on fk.TABLE_NAME = c.TABLE_NAME AND
+  fk.COLUMN_NAME = c.COLUMN_NAME AND fk.CONSTRAINT_SCHEMA = c.TABLE_SCHEMA
+left join INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS rc on rc.TABLE_NAME = fk.TABLE_NAME AND
+  rc.CONSTRAINT_NAME = fk.CONSTRAINT_NAME AND rc.CONSTRAINT_SCHEMA = fk.CONSTRAINT_SCHEMA
+where c.table_name = 'images' and c.table_schema = 'contucarga' order by c.TABLE_NAME, c.ORDINAL_POSITION
+2022-10-25T17:21:37.386496Z	   10 Query	SHOW COLLATION like 'utf8%'
+2022-10-25T17:21:37.398669Z	   10 Query	SELECT DISTINCT
+        rc.TABLE_NAME AS 'table',
+        kcu.COLUMN_NAME AS 'column',
+        c.ORDINAL_POSITION,
+        rc.REFERENCED_TABLE_NAME AS 'foreign_key_table',
+        kcu.REFERENCED_COLUMN_NAME AS 'foreign_key_column',
+        rc.CONSTRAINT_NAME AS 'constraint_name',
+        rc.UPDATE_RULE AS on_update,
+        rc.DELETE_RULE AS on_delete
+      FROM
+        information_schema.referential_constraints AS rc
+      JOIN information_schema.key_column_usage AS kcu ON
+        rc.CONSTRAINT_NAME = kcu.CONSTRAINT_NAME
+    JOIN  information_schema.columns c ON
+       c.TABLE_NAME = rc.TABLE_NAME AND c.COLUMN_NAME = kcu.COLUMN_NAME
+      WHERE
+        rc.CONSTRAINT_SCHEMA = 'contucarga'
+    ORDER BY rc.TABLE_NAME, c.ORDINAL_POSITION
+2022-10-25T17:21:37.497166Z	   10 Quit	
+2022-10-25T17:42:32.894419Z	   11 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-25T17:42:32.916013Z	   11 Query	select * from `blog_posts`
+2022-10-25T17:42:58.281267Z	   12 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-25T17:42:58.346281Z	   12 Query	select * from `blog_posts`
+2022-10-25T17:43:05.753676Z	   12 Query	select * from `blog_posts`
+2022-10-25T17:43:12.675837Z	   12 Query	select * from `blog_posts`
+/usr/sbin/mysqld, Version: 8.0.28 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2022-10-25T20:17:56.629027Z	    8 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-25T20:17:56.665613Z	    8 Query	select `id`, `first_name`, `last_name`, `compania`, `email`, `telefono`, `industria`, `pais`, `ciudad`, `servicio_de_interes` from `contact_form`
+2022-10-25T20:18:08.468500Z	    8 Query	select * from `blog_posts`
+2022-10-25T20:19:17.619762Z	    9 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-25T20:19:17.627335Z	    9 Query	SELECT VERSION()
+2022-10-25T20:19:17.633229Z	    9 Query	select c.COLUMN_NAME, c.COLUMN_DEFAULT, c.DATA_TYPE, c.COLUMN_TYPE, c.CHARACTER_MAXIMUM_LENGTH, c.IS_NULLABLE, c.COLUMN_KEY, c.EXTRA, c.COLLATION_NAME, c.COLLATION_NAME, c.COLUMN_COMMENT,
+  fk.REFERENCED_TABLE_NAME, fk.REFERENCED_COLUMN_NAME, fk.CONSTRAINT_NAME, rc.UPDATE_RULE, rc.DELETE_RULE, rc.MATCH_OPTION
+  from information_schema.columns c
+left join INFORMATION_SCHEMA.KEY_COLUMN_USAGE fk on fk.TABLE_NAME = c.TABLE_NAME AND
+  fk.COLUMN_NAME = c.COLUMN_NAME AND fk.CONSTRAINT_SCHEMA = c.TABLE_SCHEMA
+left join INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS rc on rc.TABLE_NAME = fk.TABLE_NAME AND
+  rc.CONSTRAINT_NAME = fk.CONSTRAINT_NAME AND rc.CONSTRAINT_SCHEMA = fk.CONSTRAINT_SCHEMA
+where c.table_name = 'blog_posts' and c.table_schema = 'contucarga' order by c.TABLE_NAME, c.ORDINAL_POSITION
+2022-10-25T20:19:17.663945Z	    9 Query	SHOW COLLATION like 'utf8%'
+2022-10-25T20:19:17.673400Z	    9 Query	SELECT DISTINCT
+        rc.TABLE_NAME AS 'table',
+        kcu.COLUMN_NAME AS 'column',
+        c.ORDINAL_POSITION,
+        rc.REFERENCED_TABLE_NAME AS 'foreign_key_table',
+        kcu.REFERENCED_COLUMN_NAME AS 'foreign_key_column',
+        rc.CONSTRAINT_NAME AS 'constraint_name',
+        rc.UPDATE_RULE AS on_update,
+        rc.DELETE_RULE AS on_delete
+      FROM
+        information_schema.referential_constraints AS rc
+      JOIN information_schema.key_column_usage AS kcu ON
+        rc.CONSTRAINT_NAME = kcu.CONSTRAINT_NAME
+    JOIN  information_schema.columns c ON
+       c.TABLE_NAME = rc.TABLE_NAME AND c.COLUMN_NAME = kcu.COLUMN_NAME
+      WHERE
+        rc.CONSTRAINT_SCHEMA = 'contucarga'
+    ORDER BY rc.TABLE_NAME, c.ORDINAL_POSITION
+2022-10-25T20:19:17.824293Z	    9 Quit	
+2022-10-25T20:19:24.314863Z	   10 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-25T20:19:24.335381Z	   10 Query	select * from `blog_posts`
+2022-10-25T20:19:30.460792Z	   10 Query	select * from `blog_posts`
+2022-10-25T20:19:34.487449Z	   10 Query	select * from `blog_posts`
+2022-10-25T20:21:05.181408Z	   11 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-25T20:21:05.199065Z	   11 Query	select * from `blog_posts`
+2022-10-25T20:24:17.634594Z	   12 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-25T20:24:17.653825Z	   12 Query	select * from `blog_posts`
+2022-10-25T20:24:45.770423Z	   12 Query	select * from `blog_posts`
+2022-10-25T20:28:08.510343Z	   12 Query	select * from `blog_posts`
+2022-10-25T20:40:34.823261Z	   12 Query	select * from `blog_posts`
+2022-10-26T02:57:28.785553Z	   13 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T02:57:28.846890Z	   13 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-26T03:37:41.989582Z	   14 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T03:37:42.027375Z	   14 Query	select * from `blog_posts`
+2022-10-26T03:37:55.551243Z	   14 Query	select * from `blog_posts`
+2022-10-26T04:35:41.855739Z	   15 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T04:35:41.888368Z	   15 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-26T13:32:11.523921Z	   15 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-26T13:32:18.241500Z	   15 Query	select * from `blog_posts`
+2022-10-26T13:32:35.308039Z	   15 Query	select * from `blog_posts`
+2022-10-26T13:32:56.189450Z	   15 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-26T13:33:57.569572Z	   16 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T13:33:57.669480Z	   16 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-26T13:35:19.397511Z	   17 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T13:35:19.413362Z	   17 Query	SELECT VERSION()
+2022-10-26T13:35:19.459427Z	   17 Query	select c.COLUMN_NAME, c.COLUMN_DEFAULT, c.DATA_TYPE, c.COLUMN_TYPE, c.CHARACTER_MAXIMUM_LENGTH, c.IS_NULLABLE, c.COLUMN_KEY, c.EXTRA, c.COLLATION_NAME, c.COLLATION_NAME, c.COLUMN_COMMENT,
+  fk.REFERENCED_TABLE_NAME, fk.REFERENCED_COLUMN_NAME, fk.CONSTRAINT_NAME, rc.UPDATE_RULE, rc.DELETE_RULE, rc.MATCH_OPTION
+  from information_schema.columns c
+left join INFORMATION_SCHEMA.KEY_COLUMN_USAGE fk on fk.TABLE_NAME = c.TABLE_NAME AND
+  fk.COLUMN_NAME = c.COLUMN_NAME AND fk.CONSTRAINT_SCHEMA = c.TABLE_SCHEMA
+left join INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS rc on rc.TABLE_NAME = fk.TABLE_NAME AND
+  rc.CONSTRAINT_NAME = fk.CONSTRAINT_NAME AND rc.CONSTRAINT_SCHEMA = fk.CONSTRAINT_SCHEMA
+where c.table_name = 'consulta' and c.table_schema = 'contucarga' order by c.TABLE_NAME, c.ORDINAL_POSITION
+2022-10-26T13:35:19.555330Z	   17 Query	SHOW COLLATION like 'utf8%'
+2022-10-26T13:35:19.572172Z	   17 Query	SELECT DISTINCT
+        rc.TABLE_NAME AS 'table',
+        kcu.COLUMN_NAME AS 'column',
+        c.ORDINAL_POSITION,
+        rc.REFERENCED_TABLE_NAME AS 'foreign_key_table',
+        kcu.REFERENCED_COLUMN_NAME AS 'foreign_key_column',
+        rc.CONSTRAINT_NAME AS 'constraint_name',
+        rc.UPDATE_RULE AS on_update,
+        rc.DELETE_RULE AS on_delete
+      FROM
+        information_schema.referential_constraints AS rc
+      JOIN information_schema.key_column_usage AS kcu ON
+        rc.CONSTRAINT_NAME = kcu.CONSTRAINT_NAME
+    JOIN  information_schema.columns c ON
+       c.TABLE_NAME = rc.TABLE_NAME AND c.COLUMN_NAME = kcu.COLUMN_NAME
+      WHERE
+        rc.CONSTRAINT_SCHEMA = 'contucarga'
+    ORDER BY rc.TABLE_NAME, c.ORDINAL_POSITION
+2022-10-26T13:35:19.692582Z	   17 Quit	
+2022-10-26T13:39:24.789133Z	   18 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T13:39:24.830292Z	   18 Query	select `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone`, `companies`.`name`, `companies`.`website`, `companies`.`city`, `companies`.`country`, `companies`.`industry`, `companies`.`employee_number`, `consulta`.`valor_de_producto`, `consulta`.`llegada_de_mercancia`, `consulta`.`tipo_de_producto`, `consulta`.`tipo_de_entidad`, `consulta`.`info_adicional`, `consulta`.`fecha_solicitud` from `consulta` inner join `users` on `users`.`id` = `consulta`.`user_id` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-26T13:39:47.309574Z	   18 Query	select `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone`, `companies`.`name`, `companies`.`website`, `companies`.`city`, `companies`.`country`, `companies`.`industry`, `companies`.`employee_number`, `consulta`.`valor_de_producto`, `consulta`.`llegada_de_mercancia`, `consulta`.`tipo_de_producto`, `consulta`.`tipo_de_entidad`, `consulta`.`info_adicional`, `consulta`.`fecha_solicitud` from `consulta` inner join `users` on `users`.`id` = `consulta`.`user_id` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-26T13:39:57.671693Z	   18 Query	select `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone`, `companies`.`name`, `companies`.`website`, `companies`.`city`, `companies`.`country`, `companies`.`industry`, `companies`.`employee_number`, `consulta`.`valor_de_producto`, `consulta`.`llegada_de_mercancia`, `consulta`.`tipo_de_producto`, `consulta`.`tipo_de_entidad`, `consulta`.`info_adicional`, `consulta`.`fecha_solicitud` from `consulta` inner join `users` on `users`.`id` = `consulta`.`user_id` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-26T13:40:17.944327Z	   18 Query	select `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone`, `companies`.`name`, `companies`.`website`, `companies`.`city`, `companies`.`country`, `companies`.`industry`, `companies`.`employee_number`, `consulta`.`valor_de_producto`, `consulta`.`llegada_de_mercancia`, `consulta`.`tipo_de_producto`, `consulta`.`tipo_de_entidad`, `consulta`.`info_adicional`, `consulta`.`fecha_solicitud` from `consulta` inner join `users` on `users`.`id` = `consulta`.`user_id` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-26T13:40:21.647825Z	   18 Query	select `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone`, `companies`.`name`, `companies`.`website`, `companies`.`city`, `companies`.`country`, `companies`.`industry`, `companies`.`employee_number`, `consulta`.`valor_de_producto`, `consulta`.`llegada_de_mercancia`, `consulta`.`tipo_de_producto`, `consulta`.`tipo_de_entidad`, `consulta`.`info_adicional`, `consulta`.`fecha_solicitud` from `consulta` inner join `users` on `users`.`id` = `consulta`.`user_id` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-26T13:40:52.245733Z	   18 Query	select `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone`, `companies`.`name`, `companies`.`website`, `companies`.`city`, `companies`.`country`, `companies`.`industry`, `companies`.`employee_number`, `consulta`.`valor_de_producto`, `consulta`.`llegada_de_mercancia`, `consulta`.`tipo_de_producto`, `consulta`.`tipo_de_entidad`, `consulta`.`info_adicional`, `consulta`.`fecha_solicitud` from `consulta` inner join `users` on `users`.`id` = `consulta`.`user_id` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-26T13:41:09.932588Z	   18 Query	select `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone`, `companies`.`name`, `companies`.`website`, `companies`.`city`, `companies`.`country`, `companies`.`industry`, `companies`.`employee_number`, `consulta`.`valor_de_producto`, `consulta`.`llegada_de_mercancia`, `consulta`.`tipo_de_producto`, `consulta`.`tipo_de_entidad`, `consulta`.`info_adicional`, `consulta`.`fecha_solicitud` from `consulta` inner join `users` on `users`.`id` = `consulta`.`user_id` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-26T13:41:18.665267Z	   18 Query	select `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone`, `companies`.`name`, `companies`.`website`, `companies`.`city`, `companies`.`country`, `companies`.`industry`, `companies`.`employee_number`, `consulta`.`valor_de_producto`, `consulta`.`llegada_de_mercancia`, `consulta`.`tipo_de_producto`, `consulta`.`tipo_de_entidad`, `consulta`.`info_adicional`, `consulta`.`fecha_solicitud` from `consulta` inner join `users` on `users`.`id` = `consulta`.`user_id` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-26T13:41:25.512788Z	   18 Query	select `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone`, `companies`.`name`, `companies`.`website`, `companies`.`city`, `companies`.`country`, `companies`.`industry`, `companies`.`employee_number`, `consulta`.`valor_de_producto`, `consulta`.`llegada_de_mercancia`, `consulta`.`tipo_de_producto`, `consulta`.`tipo_de_entidad`, `consulta`.`info_adicional`, `consulta`.`fecha_solicitud` from `consulta` inner join `users` on `users`.`id` = `consulta`.`user_id` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-26T13:43:11.636998Z	   19 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T13:43:11.665812Z	   19 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-26T13:47:06.122008Z	   19 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-26T16:19:14.499091Z	   20 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T16:19:14.518952Z	   20 Query	select `id`, `first_name`, `last_name`, `compania`, `email`, `telefono`, `industria`, `pais`, `ciudad`, `servicio_de_interes` from `contact_form`
+2022-10-26T16:19:24.519079Z	   21 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T16:19:24.525869Z	   21 Query	SELECT VERSION()
+2022-10-26T16:19:24.532861Z	   21 Query	select c.COLUMN_NAME, c.COLUMN_DEFAULT, c.DATA_TYPE, c.COLUMN_TYPE, c.CHARACTER_MAXIMUM_LENGTH, c.IS_NULLABLE, c.COLUMN_KEY, c.EXTRA, c.COLLATION_NAME, c.COLLATION_NAME, c.COLUMN_COMMENT,
+  fk.REFERENCED_TABLE_NAME, fk.REFERENCED_COLUMN_NAME, fk.CONSTRAINT_NAME, rc.UPDATE_RULE, rc.DELETE_RULE, rc.MATCH_OPTION
+  from information_schema.columns c
+left join INFORMATION_SCHEMA.KEY_COLUMN_USAGE fk on fk.TABLE_NAME = c.TABLE_NAME AND
+  fk.COLUMN_NAME = c.COLUMN_NAME AND fk.CONSTRAINT_SCHEMA = c.TABLE_SCHEMA
+left join INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS rc on rc.TABLE_NAME = fk.TABLE_NAME AND
+  rc.CONSTRAINT_NAME = fk.CONSTRAINT_NAME AND rc.CONSTRAINT_SCHEMA = fk.CONSTRAINT_SCHEMA
+where c.table_name = 'contact_form' and c.table_schema = 'contucarga' order by c.TABLE_NAME, c.ORDINAL_POSITION
+2022-10-26T16:19:24.546611Z	   21 Query	SHOW COLLATION like 'utf8%'
+2022-10-26T16:19:24.556106Z	   21 Query	SELECT DISTINCT
+        rc.TABLE_NAME AS 'table',
+        kcu.COLUMN_NAME AS 'column',
+        c.ORDINAL_POSITION,
+        rc.REFERENCED_TABLE_NAME AS 'foreign_key_table',
+        kcu.REFERENCED_COLUMN_NAME AS 'foreign_key_column',
+        rc.CONSTRAINT_NAME AS 'constraint_name',
+        rc.UPDATE_RULE AS on_update,
+        rc.DELETE_RULE AS on_delete
+      FROM
+        information_schema.referential_constraints AS rc
+      JOIN information_schema.key_column_usage AS kcu ON
+        rc.CONSTRAINT_NAME = kcu.CONSTRAINT_NAME
+    JOIN  information_schema.columns c ON
+       c.TABLE_NAME = rc.TABLE_NAME AND c.COLUMN_NAME = kcu.COLUMN_NAME
+      WHERE
+        rc.CONSTRAINT_SCHEMA = 'contucarga'
+    ORDER BY rc.TABLE_NAME, c.ORDINAL_POSITION
+2022-10-26T16:19:24.733292Z	   21 Quit	
+2022-10-26T16:19:38.783226Z	   20 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-26T16:19:52.352515Z	   20 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-26T16:21:11.591667Z	   22 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T16:21:11.611806Z	   22 Query	select * from `blog_posts`
+2022-10-26T16:21:14.416055Z	   22 Query	select * from `blog_posts`
+2022-10-26T16:22:51.136649Z	   23 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T16:22:51.164008Z	   23 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-26T16:23:33.171960Z	   24 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T16:23:33.195621Z	   24 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-26T16:23:46.239446Z	   24 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+/usr/sbin/mysqld, Version: 8.0.28 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2022-10-26T22:05:07.753583Z	    8 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:05:07.760667Z	    8 Query	select `id`, `valor_de_producto`, `llegada_de_mercancia`, `tipo_de_producto`, `tipo_de_entidad`, `info_adicional`, `user_id`, `fecha_solicitud`, `company_id` from `contucarga`.`consulta` limit 100
+2022-10-26T22:05:07.941908Z	    8 Quit	
+2022-10-26T22:05:13.512210Z	    9 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T22:05:13.540085Z	    9 Query	select `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone`, `companies`.`name`, `companies`.`website`, `companies`.`city`, `companies`.`country`, `companies`.`industry`, `companies`.`employee_number`, `consulta`.`valor_de_producto`, `consulta`.`llegada_de_mercancia`, `consulta`.`tipo_de_producto`, `consulta`.`tipo_de_entidad`, `consulta`.`info_adicional`, `consulta`.`fecha_solicitud` from `consulta` inner join `users` on `users`.`id` = `consulta`.`user_id` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-26T22:05:17.068825Z	    9 Query	select `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone`, `companies`.`name`, `companies`.`website`, `companies`.`city`, `companies`.`country`, `companies`.`industry`, `companies`.`employee_number`, `consulta`.`valor_de_producto`, `consulta`.`llegada_de_mercancia`, `consulta`.`tipo_de_producto`, `consulta`.`tipo_de_entidad`, `consulta`.`info_adicional`, `consulta`.`fecha_solicitud` from `consulta` inner join `users` on `users`.`id` = `consulta`.`user_id` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-26T22:05:18.652137Z	    9 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-26T22:05:20.144624Z	    9 Query	select `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone`, `companies`.`name`, `companies`.`website`, `companies`.`city`, `companies`.`country`, `companies`.`industry`, `companies`.`employee_number`, `consulta`.`valor_de_producto`, `consulta`.`llegada_de_mercancia`, `consulta`.`tipo_de_producto`, `consulta`.`tipo_de_entidad`, `consulta`.`info_adicional`, `consulta`.`fecha_solicitud` from `consulta` inner join `users` on `users`.`id` = `consulta`.`user_id` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-26T22:06:02.704397Z	    9 Query	select `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone`, `companies`.`name`, `companies`.`website`, `companies`.`city`, `companies`.`country`, `companies`.`industry`, `companies`.`employee_number`, `consulta`.`valor_de_producto`, `consulta`.`llegada_de_mercancia`, `consulta`.`tipo_de_producto`, `consulta`.`tipo_de_entidad`, `consulta`.`info_adicional`, `consulta`.`fecha_solicitud` from `consulta` inner join `users` on `users`.`id` = `consulta`.`user_id` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-26T22:06:14.295136Z	   10 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:06:14.304474Z	   10 Query	SELECT users.first_name, users.last_name, users.email, users.country, users.phone, companies.name, companies.website, companies.city, companies.country, companies.industry, companies.employee_number, consulta.valor_de_producto, consulta.llegada_de_mercancia, consulta.tipo_de_producto, consulta.tipo_de_entidad, consulta.info_adicional, consulta.fecha_solicitud
+FROM consulta
+INNER JOIN users ON (users.id = consulta.user_id) INNER JOIN companies ON (companies.id = users.company_id)
+2022-10-26T22:06:45.602370Z	   11 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:06:45.608055Z	   11 Query	SELECT *
+FROM consulta
+2022-10-26T22:06:54.589656Z	   12 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:06:54.607002Z	   12 Query	SELECT users.first_name, users.last_name, users.email, users.country, users.phone, companies.name, companies.website, companies.city, companies.country, companies.industry, companies.employee_number, consulta.valor_de_producto, consulta.llegada_de_mercancia, consulta.tipo_de_producto, consulta.tipo_de_entidad, consulta.info_adicional, consulta.fecha_solicitud
+FROM consulta
+INNER JOIN users ON (users.id = consulta.user_id) INNER JOIN companies ON (companies.id = users.company_id)
+2022-10-26T22:06:55.537137Z	   13 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:06:55.543868Z	   13 Query	SELECT users.first_name, users.last_name, users.email, users.country, users.phone, companies.name, companies.website, companies.city, companies.country, companies.industry, companies.employee_number, consulta.valor_de_producto, consulta.llegada_de_mercancia, consulta.tipo_de_producto, consulta.tipo_de_entidad, consulta.info_adicional, consulta.fecha_solicitud
+FROM consulta
+INNER JOIN users ON (users.id = consulta.user_id) INNER JOIN companies ON (companies.id = users.company_id)
+2022-10-26T22:07:27.855742Z	   14 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:07:27.859976Z	   14 Query	SELECT consulta.valor_de_producto, consulta.llegada_de_mercancia, consulta.tipo_de_producto, consulta.tipo_de_entidad, consulta.info_adicional, consulta.fecha_solicitud
+FROM consulta
+INNER JOIN users ON (users.id = consulta.user_id) INNER JOIN companies ON (companies.id = users.company_id)
+2022-10-26T22:07:28.809199Z	   15 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:07:28.817534Z	   15 Query	SELECT consulta.valor_de_producto, consulta.llegada_de_mercancia, consulta.tipo_de_producto, consulta.tipo_de_entidad, consulta.info_adicional, consulta.fecha_solicitud
+FROM consulta
+INNER JOIN users ON (users.id = consulta.user_id) INNER JOIN companies ON (companies.id = users.company_id)
+2022-10-26T22:07:29.585706Z	   16 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:07:29.591638Z	   16 Query	SELECT consulta.valor_de_producto, consulta.llegada_de_mercancia, consulta.tipo_de_producto, consulta.tipo_de_entidad, consulta.info_adicional, consulta.fecha_solicitud
+FROM consulta
+INNER JOIN users ON (users.id = consulta.user_id) INNER JOIN companies ON (companies.id = users.company_id)
+2022-10-26T22:07:30.811925Z	   17 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:07:30.816979Z	   17 Query	SELECT consulta.valor_de_producto, consulta.llegada_de_mercancia, consulta.tipo_de_producto, consulta.tipo_de_entidad, consulta.info_adicional, consulta.fecha_solicitud
+FROM consulta
+INNER JOIN users ON (users.id = consulta.user_id) INNER JOIN companies ON (companies.id = users.company_id)
+2022-10-26T22:07:33.985148Z	   18 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:07:33.992907Z	   18 Query	SELECT consulta.valor_de_producto, consulta.llegada_de_mercancia, consulta.tipo_de_producto, consulta.tipo_de_entidad, consulta.info_adicional, consulta.fecha_solicitud
+FROM consulta
+INNER JOIN users ON (users.id = consulta.user_id) INNER JOIN companies ON (companies.id = users.company_id)
+2022-10-26T22:07:34.234540Z	   19 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:07:34.240638Z	   19 Query	SELECT consulta.valor_de_producto, consulta.llegada_de_mercancia, consulta.tipo_de_producto, consulta.tipo_de_entidad, consulta.info_adicional, consulta.fecha_solicitud
+FROM consulta
+INNER JOIN users ON (users.id = consulta.user_id) INNER JOIN companies ON (companies.id = users.company_id)
+2022-10-26T22:07:38.230881Z	   20 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:07:38.236700Z	   20 Query	SELECT consulta.valor_de_producto, consulta.llegada_de_mercancia, consulta.tipo_de_producto, consulta.tipo_de_entidad, consulta.info_adicional, consulta.fecha_solicitud, consulta.id
+FROM consulta
+INNER JOIN users ON (users.id = consulta.user_id) INNER JOIN companies ON (companies.id = users.company_id)
+2022-10-26T22:07:38.718822Z	   21 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:07:38.723408Z	   21 Query	SELECT consulta.valor_de_producto, consulta.llegada_de_mercancia, consulta.tipo_de_producto, consulta.tipo_de_entidad, consulta.info_adicional, consulta.fecha_solicitud, consulta.id
+FROM consulta
+INNER JOIN users ON (users.id = consulta.user_id) INNER JOIN companies ON (companies.id = users.company_id)
+2022-10-26T22:07:44.181076Z	   22 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:07:44.188404Z	   22 Query	SELECT consulta.valor_de_producto, consulta.llegada_de_mercancia, consulta.tipo_de_producto, consulta.tipo_de_entidad, consulta.info_adicional, consulta.fecha_solicitud, consulta.id, consulta.company_id, consulta.user_id
+FROM consulta
+INNER JOIN users ON (users.id = consulta.user_id) INNER JOIN companies ON (companies.id = users.company_id)
+2022-10-26T22:07:44.696475Z	   23 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:07:44.703002Z	   23 Query	SELECT consulta.valor_de_producto, consulta.llegada_de_mercancia, consulta.tipo_de_producto, consulta.tipo_de_entidad, consulta.info_adicional, consulta.fecha_solicitud, consulta.id, consulta.company_id, consulta.user_id
+FROM consulta
+INNER JOIN users ON (users.id = consulta.user_id) INNER JOIN companies ON (companies.id = users.company_id)
+2022-10-26T22:08:02.649337Z	   24 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:08:02.654567Z	   24 Query	SELECT consulta.*
+FROM consulta
+INNER JOIN users ON (users.id = consulta.user_id) INNER JOIN companies ON (companies.id = users.company_id)
+2022-10-26T22:08:12.076936Z	   25 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:08:12.082429Z	   25 Query	SELECT consulta.*
+FROM consulta
+INNER JOIN users ON (users.id = consulta.user_id)
+2022-10-26T22:08:16.163415Z	   26 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:08:16.171468Z	   26 Query	SELECT *
+FROM consulta
+2022-10-26T22:08:17.035067Z	   27 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:08:17.040782Z	   27 Query	SELECT *
+FROM consulta
+2022-10-26T22:08:36.476629Z	   28 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:08:36.482725Z	   28 Query	SELECT consulta.*, companies.name
+FROM consulta
+INNER JOIN companies ON (companies.id = consulta.company_id)
+2022-10-26T22:08:37.319019Z	   29 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:08:37.324268Z	   29 Query	SELECT consulta.*, companies.name
+FROM consulta
+INNER JOIN companies ON (companies.id = consulta.company_id)
+2022-10-26T22:08:51.518036Z	   30 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:08:51.521542Z	   30 Query	SELECT consulta.*, companies.name, companies.website, companies.country, companies.industry
+FROM consulta
+INNER JOIN companies ON (companies.id = consulta.company_id)
+2022-10-26T22:09:30.728673Z	   31 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:09:30.736932Z	   31 Query	SELECT consulta.*, companies.name, companies.website, companies.country, companies.industry, users.first_name, users.last_name, users.email, users.phone, users.country
+FROM consulta
+INNER JOIN companies ON (companies.id = consulta.company_id) INNER JOIN users ON (users.id = consulta.user_id)
+2022-10-26T22:09:32.059714Z	   32 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:09:32.063963Z	   32 Query	SELECT consulta.*, companies.name, companies.website, companies.country, companies.industry, users.first_name, users.last_name, users.email, users.phone, users.country
+FROM consulta
+INNER JOIN companies ON (companies.id = consulta.company_id) INNER JOIN users ON (users.id = consulta.user_id)
+2022-10-26T22:09:38.139570Z	   33 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:09:38.145261Z	   33 Query	SELECT consulta.*, companies.name, companies.website, companies.country, companies.industry
+FROM consulta
+INNER JOIN companies ON (companies.id = consulta.company_id) INNER JOIN users ON (users.id = consulta.user_id)
+2022-10-26T22:09:42.562677Z	   34 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:09:42.568620Z	   34 Query	SELECT consulta.*, companies.name, companies.website, companies.country, companies.industry
+FROM consulta
+INNER JOIN companies ON (companies.id = consulta.company_id)
+2022-10-26T22:10:06.779840Z	   35 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:10:06.786679Z	   35 Query	SELECT consulta.*, companies.name, companies.website, companies.country, companies.industry, users.first_name
+FROM consulta
+INNER JOIN companies ON (companies.id = consulta.company_id) INNER JOIN users ON (users.id = consulta.user_id)
+2022-10-26T22:10:20.893196Z	   36 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:10:20.898619Z	   36 Query	SELECT consulta.*, companies.name, companies.website, companies.country, companies.industry
+FROM consulta
+INNER JOIN companies ON (companies.id = consulta.company_id)
+2022-10-26T22:10:50.983293Z	   37 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T22:10:51.005795Z	   37 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `consulta`.`id` as `__dmxPrimary`, `companies`.`id` as `__dmxPrimary_companies` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id`
+2022-10-26T22:10:51.139358Z	   37 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `consulta`.`id` as `__dmxPrimary`, `companies`.`id` as `__dmxPrimary_companies` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id`
+2022-10-26T22:10:51.141813Z	   38 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T22:10:51.147706Z	   37 Query	select `first_name`, `last_name`, `email`, `country`, `phone`, `id` as `__dmxPrimary`, `company_id` as `__dmxForeign` from `users` as `users` where `company_id` in ('35')
+2022-10-26T22:10:51.149090Z	   38 Query	select `first_name`, `last_name`, `email`, `country`, `phone`, `id` as `__dmxPrimary`, `company_id` as `__dmxForeign` from `users` as `users` where `company_id` in ('35')
+2022-10-26T22:11:02.109834Z	   39 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T22:11:02.128824Z	   39 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `consulta`.`id` as `__dmxPrimary`, `companies`.`id` as `__dmxPrimary_companies` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id`
+2022-10-26T22:11:02.147767Z	   39 Query	select `first_name`, `last_name`, `email`, `country`, `phone`, `id` as `__dmxPrimary`, `company_id` as `__dmxForeign` from `users` as `users` where `company_id` in ('35')
+2022-10-26T22:11:17.587453Z	   39 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `consulta`.`id` as `__dmxPrimary`, `companies`.`id` as `__dmxPrimary_companies` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id`
+2022-10-26T22:11:17.598367Z	   39 Query	select `first_name`, `last_name`, `email`, `country`, `phone`, `id` as `__dmxPrimary`, `company_id` as `__dmxForeign` from `users` as `users` where `company_id` in ('35')
+2022-10-26T22:12:35.245635Z	   39 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `consulta`.`id` as `__dmxPrimary`, `companies`.`id` as `__dmxPrimary_companies` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id`
+2022-10-26T22:12:35.261788Z	   39 Query	select `first_name`, `last_name`, `email`, `country`, `phone`, `id` as `__dmxPrimary`, `company_id` as `__dmxForeign` from `users` as `users` where `company_id` in ('35')
+2022-10-26T22:12:59.150701Z	   40 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:12:59.157014Z	   40 Query	select `id`, `tipo_de_servicio`, `tipo_de_operacion`, `modalidad_de_transporte`, `informacion_adicional`, `equipo_especial`, `unidad_peso`, `tipomercanciaproducto`, `zona_destino`, `zona_origen`, `veh_tipo`, `reqerimiento_especial`, `valor_mercancia`, `peso_total`, `fecha_entrega`, `ciudad_destino`, `pais_destino`, `fecha_recogida`, `ciudad_origen`, `pais_origen`, `altura`, `longitud`, `anchura`, `veh_ano`, `veh_modelo`, `veh_fabricante`, `modalidad_de_embarque`, `fecha_solicitud`, `company_id`, `user_id`, `tipo_de_contenedor`, `status` from `contucarga`.`cotizacion` limit 100
+2022-10-26T22:12:59.512663Z	   40 Quit	
+2022-10-26T22:13:07.254183Z	   41 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:13:07.267843Z	   41 Query	select `id`, `valor_de_producto`, `llegada_de_mercancia`, `tipo_de_producto`, `tipo_de_entidad`, `info_adicional`, `user_id`, `fecha_solicitud`, `company_id` from `contucarga`.`consulta` limit 100
+2022-10-26T22:13:07.534661Z	   41 Quit	
+2022-10-26T22:13:14.094894Z	   42 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:13:14.168402Z	   42 Query	select `id`, `first_name`, `last_name`, `gender`, `email`, `company_id`, `avatar`, `country`, `phone` from `contucarga`.`users` limit 100
+2022-10-26T22:13:14.305503Z	   42 Quit	
+2022-10-26T22:13:25.314757Z	   43 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:13:25.323001Z	   43 Query	update `contucarga`.`consulta` set `user_id` = 53 where `id` = 45
+2022-10-26T22:13:25.464550Z	   43 Quit	
+2022-10-26T22:13:27.755118Z	   39 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `consulta`.`id` as `__dmxPrimary`, `companies`.`id` as `__dmxPrimary_companies` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id`
+2022-10-26T22:13:27.766557Z	   39 Query	select `first_name`, `last_name`, `email`, `country`, `phone`, `id` as `__dmxPrimary`, `company_id` as `__dmxForeign` from `users` as `users` where `company_id` in ('35')
+2022-10-26T22:13:42.317209Z	   39 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `consulta`.`id` as `__dmxPrimary`, `companies`.`id` as `__dmxPrimary_companies` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id`
+2022-10-26T22:13:42.327277Z	   39 Query	select `first_name`, `last_name`, `email`, `country`, `phone`, `id` as `__dmxPrimary`, `company_id` as `__dmxForeign` from `users` as `users` where `company_id` in ('35')
+2022-10-26T22:14:12.957359Z	   44 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:14:12.964124Z	   44 Query	SELECT first_name, last_name, email, country, phone
+FROM users AS users
+2022-10-26T22:14:51.372659Z	   45 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:14:51.378190Z	   45 Query	SELECT consulta.*, companies.name, companies.website, companies.country, companies.industry
+FROM consulta
+INNER JOIN companies ON (companies.id = consulta.company_id)
+2022-10-26T22:15:15.477505Z	   46 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:15:15.482701Z	   46 Query	SELECT consulta.*, companies.name, companies.website, companies.country, companies.industry
+FROM consulta
+INNER JOIN companies ON (companies.id = consulta.company_id) INNER JOIN users ON (users.id = consulta.user_id)
+2022-10-26T22:15:16.196627Z	   47 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:15:16.202052Z	   47 Query	SELECT consulta.*, companies.name, companies.website, companies.country, companies.industry
+FROM consulta
+INNER JOIN companies ON (companies.id = consulta.company_id) INNER JOIN users ON (users.id = consulta.user_id)
+2022-10-26T22:15:16.415011Z	   48 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:15:16.439370Z	   48 Query	SELECT consulta.*, companies.name, companies.website, companies.country, companies.industry
+FROM consulta
+INNER JOIN companies ON (companies.id = consulta.company_id) INNER JOIN users ON (users.id = consulta.user_id)
+2022-10-26T22:15:21.300323Z	   49 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:15:21.305626Z	   49 Query	SELECT consulta.*, companies.name, companies.website, companies.country, companies.industry, users.first_name
+FROM consulta
+INNER JOIN companies ON (companies.id = consulta.company_id) INNER JOIN users ON (users.id = consulta.user_id)
+2022-10-26T22:15:32.967510Z	   50 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-26T22:15:32.974373Z	   50 Query	SELECT consulta.*, companies.name, companies.website, companies.country, companies.industry, users.first_name, users.last_name, users.email, users.country, users.phone
+FROM consulta
+INNER JOIN companies ON (companies.id = consulta.company_id) INNER JOIN users ON (users.id = consulta.user_id)
+2022-10-26T22:15:39.621947Z	   51 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T22:15:39.642028Z	   51 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:15:58.735692Z	   51 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:16:02.203002Z	   52 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T22:16:02.261243Z	   52 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:16:12.457777Z	   52 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:18:06.334030Z	   52 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:18:14.995418Z	   52 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:18:23.893878Z	   52 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:18:25.852662Z	   52 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:18:31.496357Z	   53 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T22:18:31.528185Z	   53 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:19:19.928509Z	   54 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T22:19:19.967408Z	   54 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:19:20.086629Z	   54 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:19:24.857539Z	   54 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:19:59.117539Z	   54 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:20:03.250661Z	   54 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:20:26.504446Z	   54 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:20:31.240591Z	   55 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T22:20:31.266819Z	   55 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:20:37.421193Z	   55 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:21:08.030562Z	   55 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:21:18.589453Z	   55 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:21:22.104007Z	   55 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:21:41.104379Z	   56 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T22:21:41.121413Z	   56 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:24:27.200859Z	   57 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T22:24:27.216996Z	   57 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:25:13.071225Z	   57 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:25:20.530315Z	   58 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T22:25:20.550751Z	   58 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T22:25:38.405803Z	   58 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:22:34.561828Z	   58 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:22:35.520651Z	   58 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:22:37.187764Z	   58 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:22:41.542683Z	   58 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:22:49.731077Z	   58 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:24:46.498531Z	   59 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T23:24:46.526401Z	   59 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:27:32.831857Z	   60 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T23:27:32.862367Z	   60 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:27:42.749886Z	   60 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:28:19.773458Z	   60 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:28:29.060875Z	   61 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T23:28:29.081656Z	   61 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:28:45.807018Z	   61 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:28:54.805505Z	   61 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:31:41.643980Z	   62 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T23:31:41.671708Z	   62 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:31:51.374205Z	   63 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T23:31:51.397028Z	   63 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:32:10.978867Z	   63 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:32:56.628830Z	   64 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T23:32:56.668506Z	   64 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:35:17.023812Z	   64 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:35:42.731559Z	   65 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T23:35:42.758871Z	   65 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-26T23:37:21.407174Z	   66 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-26T23:37:21.429056Z	   66 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-26T23:37:24.284486Z	   66 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:02:44.665325Z	   66 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-27T03:02:47.079856Z	   66 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-27T03:02:56.392033Z	   66 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:08:07.685377Z	   67 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:08:07.739418Z	   67 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:13:46.534493Z	   67 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:14:48.821609Z	   67 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:14:54.916653Z	   67 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:15:22.554220Z	   67 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:15:30.244354Z	   68 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:15:30.273466Z	   68 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:16:01.492047Z	   69 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:16:01.516371Z	   69 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:21:07.824424Z	   69 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:21:10.343270Z	   69 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:21:25.292203Z	   69 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:21:27.651608Z	   69 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:21:58.494321Z	   69 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:22:05.703699Z	   69 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:22:08.959200Z	   69 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:23:49.371081Z	   69 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:24:12.944672Z	   69 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:25:01.583987Z	   69 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:25:45.010650Z	   69 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:26:17.859604Z	   69 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:26:38.943970Z	   70 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:26:38.965410Z	   70 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:27:44.050236Z	   71 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:27:44.071846Z	   71 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:27:59.520309Z	   71 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:28:18.313699Z	   72 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:28:18.333082Z	   72 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:30:06.937000Z	   72 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:30:21.184939Z	   73 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:30:21.245121Z	   73 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:32:48.881956Z	   73 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:33:00.731694Z	   74 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:33:00.756492Z	   74 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:33:57.651877Z	   75 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:33:57.678111Z	   75 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:38:17.296999Z	   76 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:38:17.321229Z	   76 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:38:32.328276Z	   77 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:38:32.352285Z	   77 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:39:59.565376Z	   78 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:39:59.589200Z	   78 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:40:29.542520Z	   79 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:40:29.570942Z	   79 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:41:27.277959Z	   80 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:41:27.309686Z	   80 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:45:35.622362Z	   81 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:45:35.645548Z	   81 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:46:16.087358Z	   82 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:46:16.134472Z	   82 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:46:40.479571Z	   83 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:46:40.506790Z	   83 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:47:11.412148Z	   83 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:47:24.357248Z	   84 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:47:24.377337Z	   84 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:47:38.743393Z	   85 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:47:38.781562Z	   85 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:52:19.681156Z	   86 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:52:19.715172Z	   86 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:54:00.051613Z	   87 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:54:00.077647Z	   87 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:54:26.510723Z	   88 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:54:26.539689Z	   88 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:54:41.234774Z	   89 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T03:54:41.263745Z	   89 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:55:18.952831Z	   89 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-27T03:55:39.079129Z	   89 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:56:00.044534Z	   89 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:57:08.777086Z	   89 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:58:53.577882Z	   89 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:59:29.548259Z	   89 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T03:59:32.404639Z	   89 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:00:09.858203Z	   89 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:01:24.388471Z	   89 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:02:02.988214Z	   90 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T04:02:03.006939Z	   90 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:02:29.327656Z	   90 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-27T04:02:32.316954Z	   90 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-27T04:03:18.386157Z	   91 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T04:03:18.403456Z	   91 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-27T04:04:09.890433Z	   91 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:07:01.184986Z	   91 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:07:31.407928Z	   92 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T04:07:31.426845Z	   92 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:07:57.025532Z	   93 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T04:07:57.045834Z	   93 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:08:24.684946Z	   93 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:08:42.223552Z	   93 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:09:03.610287Z	   94 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T04:09:03.633162Z	   94 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:09:26.688210Z	   94 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:09:39.993802Z	   95 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T04:09:40.022470Z	   95 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:12:13.594527Z	   96 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T04:12:13.630611Z	   96 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:12:47.282065Z	   97 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T04:12:47.300789Z	   97 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:13:14.033512Z	   98 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T04:13:14.065242Z	   98 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:15:11.438274Z	   99 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T04:15:11.463878Z	   99 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:15:53.236169Z	   99 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:16:01.850917Z	   99 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:16:39.755472Z	  100 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T04:16:39.785124Z	  100 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:17:22.685627Z	  100 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:19:09.389484Z	  100 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:21:17.548681Z	  100 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:22:10.656187Z	  100 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:24:56.674169Z	  100 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-27T04:25:35.781685Z	  101 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T04:25:35.815771Z	  101 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:28:25.284751Z	  102 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T04:28:25.310375Z	  102 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:28:53.037699Z	  103 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T04:28:53.062799Z	  103 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:29:07.673891Z	  103 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:29:19.007404Z	  103 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:30:09.394838Z	  103 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:32:39.223985Z	  104 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T04:32:39.239455Z	  104 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:41:42.213844Z	  104 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-27T04:50:59.395394Z	  105 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T04:50:59.412495Z	  105 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-27T04:51:34.033677Z	  106 Connect	db_user@172.28.0.3 on contucarga using TCP/IP
+2022-10-27T04:51:34.054260Z	  106 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-27T04:51:51.540131Z	  106 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+/usr/sbin/mysqld, Version: 8.0.28 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.28 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.28 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.28 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2022-10-28T02:45:01.763238Z	    8 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T02:45:01.776767Z	    8 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-28T02:45:04.373177Z	    8 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T02:45:06.076263Z	    8 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-28T02:45:28.723146Z	    8 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T02:46:10.213477Z	    9 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T02:46:10.225240Z	    9 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-28T02:47:37.497113Z	    9 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T02:49:20.489994Z	    9 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T02:52:40.043772Z	   10 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T02:52:40.074687Z	   10 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+/usr/sbin/mysqld, Version: 8.0.28 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2022-10-28T03:08:33.838469Z	    8 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T03:08:33.874325Z	    8 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T03:08:35.908062Z	    8 Query	select * from `blog_posts`
+2022-10-28T04:32:19.206707Z	    9 Connect	db_user@172.28.0.1 on contucarga using TCP/IP
+2022-10-28T04:32:19.227657Z	    9 Query	select `id`, `img`, `title`, `path`, `meta`, `body`, `author`, `date`, `keywords` from `contucarga`.`blog_posts` limit 100
+2022-10-28T04:32:19.466630Z	    9 Quit	
+2022-10-28T04:38:02.850390Z	   10 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T04:38:02.869605Z	   10 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-28T04:38:09.442307Z	   10 Query	select * from `blog_posts`
+2022-10-28T04:45:21.944045Z	   11 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T04:45:21.951444Z	   11 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-28T04:45:41.385244Z	   11 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T04:45:43.427717Z	   11 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+/usr/sbin/mysqld, Version: 8.0.28 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2022-10-28T14:22:46.501597Z	    8 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T14:22:46.517715Z	    8 Query	select * from `blog_posts`
+2022-10-28T15:24:43.858688Z	    9 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T15:24:43.883855Z	    9 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-28T15:24:47.154488Z	    9 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T15:24:48.288468Z	    9 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-28T15:25:49.810337Z	   10 Connect	db_user@172.28.0.1 on contucarga using SSL/TLS
+2022-10-28T15:25:49.816008Z	   10 Query	SELECT version()
+2022-10-28T15:25:49.821995Z	   10 Query	show session status like 'ssl_version'
+2022-10-28T15:25:49.839583Z	   10 Query	SET NAMES utf8mb4
+2022-10-28T15:25:49.842531Z	   10 Query	SHOW VARIABLES
+2022-10-28T15:25:49.896088Z	   10 Query	SELECT ROUTINE_SCHEMA as function_schema,ROUTINE_NAME as function_name,ROUTINE_DEFINITION as create_statement,ROUTINE_TYPE as function_type FROM information_schema.routines where ROUTINE_SCHEMA='contucarga'
+2022-10-28T15:25:49.917457Z	   10 Query	show full tables from `contucarga`
+2022-10-28T15:25:52.773175Z	   10 Query	SELECT column_name as column_name FROM information_schema.statistics WHERE table_schema = 'contucarga' AND table_name = 'companies' AND index_name = 'PRIMARY' ORDER BY seq_in_index ASC
+2022-10-28T15:25:52.781410Z	   10 Query	SHOW CREATE TABLE `contucarga`.`companies`
+2022-10-28T15:25:52.785655Z	   10 Query	SELECT table_name as table_name,column_name as column_name,column_type as column_type FROM information_schema.columns WHERE table_schema='contucarga' AND table_name='companies' AND data_type='enum'
+2022-10-28T15:25:52.791378Z	   10 Query	SELECT ordinal_position as ordinal_position,column_name as column_name,column_type AS data_type,character_set_name as character_set,collation_name as collation,is_nullable as is_nullable,column_default as column_default,extra as extra,column_name AS foreign_key,column_comment AS comment FROM information_schema.columns WHERE table_schema='contucarga'AND table_name='companies'
+2022-10-28T15:25:52.798334Z	   10 Query	SELECT * FROM `contucarga`.`companies` ORDER BY `id` LIMIT 300 OFFSET 0
+2022-10-28T15:25:52.804606Z	   10 Query	SELECT table_rows as count FROM information_schema.TABLES WHERE TABLE_SCHEMA='contucarga'AND TABLE_NAME='companies'
+2022-10-28T15:25:52.814473Z	   10 Query	SELECT COUNT(*) as count FROM `contucarga`.`companies`
+2022-10-28T15:26:56.474383Z	   11 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T15:26:56.484268Z	   11 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-28T15:26:59.143950Z	   11 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-28T15:48:50.859166Z	   12 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T15:48:50.874265Z	   12 Query	select * from `blog_posts`
+2022-10-28T15:50:54.842973Z	   13 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T15:50:54.860097Z	   13 Query	select * from `blog_posts`
+2022-10-28T15:53:02.783581Z	   14 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T15:53:02.793704Z	   14 Query	select * from `blog_posts`
+2022-10-28T15:54:03.695872Z	   15 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T15:54:03.703711Z	   15 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T15:55:09.764556Z	   16 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T15:55:09.779351Z	   16 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T15:56:34.168443Z	   16 Query	select * from `blog_posts`
+2022-10-28T15:56:49.853202Z	   16 Query	select * from `blog_posts`
+2022-10-28T15:59:28.529466Z	   17 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T15:59:28.559310Z	   17 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T15:59:49.785467Z	   17 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T15:59:55.913497Z	   17 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:00:42.048533Z	   18 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:00:42.064929Z	   18 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:03:17.576252Z	   19 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:03:17.598189Z	   19 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-28T16:04:08.675107Z	   20 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:04:08.701643Z	   20 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:06:07.904520Z	   21 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:06:07.933221Z	   21 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:06:18.959021Z	   21 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:08:31.111074Z	   22 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:08:31.154236Z	   22 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:09:05.859103Z	   23 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:09:05.895578Z	   23 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:09:27.123748Z	   24 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:09:27.139867Z	   24 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:10:12.099125Z	   25 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:10:12.122288Z	   25 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:10:48.235449Z	   26 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:10:48.248496Z	   26 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:11:12.014460Z	   27 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:11:12.069880Z	   27 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-28T16:11:57.191600Z	   27 Query	select * from `blog_posts`
+2022-10-28T16:12:05.887391Z	   27 Query	select * from `blog_posts`
+2022-10-28T16:15:06.390630Z	   28 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:15:06.414950Z	   28 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-28T16:15:37.695226Z	   29 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:15:37.720084Z	   29 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-28T16:17:00.501348Z	   30 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:17:00.514017Z	   30 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:18:47.180370Z	   30 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:18:56.242016Z	   31 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:18:56.251190Z	   31 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:19:24.335501Z	   32 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:19:24.366165Z	   32 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:19:25.235994Z	   32 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:21:13.496829Z	   33 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:21:13.511636Z	   33 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:21:28.748485Z	   34 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:21:28.758367Z	   34 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:23:39.121988Z	   35 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:23:39.140375Z	   35 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:23:53.278261Z	   35 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:24:24.612387Z	   36 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:24:24.627954Z	   36 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:26:46.786023Z	   37 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:26:46.804500Z	   37 Query	select * from `blog_posts`
+2022-10-28T16:27:24.018760Z	   37 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:28:31.520993Z	   37 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:29:12.206846Z	   37 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:29:22.368763Z	   38 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T16:29:22.385030Z	   38 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:30:45.105940Z	   38 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:56:00.953428Z	   38 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T16:56:01.568921Z	   38 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:04:13.543194Z	   39 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:04:13.567028Z	   39 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:04:31.116767Z	   40 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:04:31.123723Z	   40 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:05:45.466987Z	   41 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:05:45.475478Z	   41 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:06:26.967592Z	   42 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:06:26.986514Z	   42 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:07:06.547025Z	   43 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:07:06.561045Z	   43 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:07:11.403922Z	   43 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:07:18.584730Z	   43 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:07:22.823218Z	   43 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-28T18:07:52.741798Z	   44 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:07:52.754810Z	   44 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-28T18:08:13.870780Z	   45 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:08:13.946758Z	   45 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:08:23.106459Z	   45 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:08:56.929136Z	   46 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:08:56.938694Z	   46 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:09:13.576001Z	   46 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:09:18.607712Z	   46 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:12:03.565495Z	   47 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:12:03.577143Z	   47 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:12:26.279663Z	   48 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:12:26.288809Z	   48 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:13:13.217786Z	   49 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:13:13.224844Z	   49 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:13:47.816271Z	   50 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:13:47.825067Z	   50 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:13:54.055952Z	   50 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:14:01.471530Z	   50 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:14:53.701543Z	   51 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:14:53.712771Z	   51 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:15:19.300908Z	   52 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:15:19.311318Z	   52 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:17:40.742077Z	   53 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:17:40.755620Z	   53 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:21:50.774810Z	   54 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:21:50.789469Z	   54 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:23:58.433379Z	   55 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:23:58.449064Z	   55 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:24:20.313281Z	   56 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:24:20.328191Z	   56 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:25:12.228535Z	   57 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:25:12.239211Z	   57 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:26:03.689466Z	   58 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:26:03.700644Z	   58 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:27:01.582617Z	   59 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:27:01.589160Z	   59 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:27:28.209462Z	   60 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:27:28.225179Z	   60 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:28:55.283750Z	   61 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:28:55.296869Z	   61 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:37:29.983950Z	   62 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:37:30.012035Z	   62 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:38:11.118465Z	   63 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:38:11.141912Z	   63 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:43:43.343214Z	   64 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:43:43.355634Z	   64 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:43:45.723118Z	   64 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:43:49.339820Z	   64 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:45:08.238411Z	   65 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:45:08.251049Z	   65 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:46:50.651163Z	   65 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:47:25.633261Z	   66 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:47:25.643076Z	   66 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:47:27.762563Z	   66 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:47:47.516924Z	   67 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:47:47.525618Z	   67 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:49:14.444106Z	   68 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:49:14.457605Z	   68 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:49:17.943651Z	   68 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:49:45.681750Z	   68 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:49:50.117844Z	   69 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:49:50.123973Z	   69 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:50:24.828632Z	   70 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:50:24.837960Z	   70 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:50:27.314526Z	   70 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:50:42.065464Z	   71 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:50:42.073477Z	   71 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:51:46.235610Z	   72 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:51:46.245011Z	   72 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:51:48.215146Z	   72 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:51:50.575993Z	   72 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:52:36.393473Z	   73 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:52:36.403586Z	   73 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:52:46.555732Z	   74 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:52:46.568882Z	   74 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:53:00.370138Z	   75 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:53:00.378525Z	   75 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:53:03.822003Z	   75 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:53:24.838382Z	   76 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:53:24.845382Z	   76 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:54:00.276799Z	   77 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:54:00.286434Z	   77 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:54:02.940899Z	   77 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:54:36.242632Z	   78 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:54:36.250980Z	   78 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:57:24.736068Z	   79 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:57:24.759744Z	   79 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:57:50.371092Z	   80 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:57:50.378890Z	   80 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:58:22.905445Z	   81 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:58:22.912929Z	   81 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T18:58:59.192133Z	   82 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:58:59.202530Z	   82 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-28T18:59:49.840625Z	   83 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:59:49.854369Z	   83 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-28T18:59:59.215127Z	   84 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T18:59:59.223926Z	   84 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-28T19:00:45.546550Z	   85 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T19:00:45.556106Z	   85 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T19:00:48.370692Z	   85 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T19:01:21.758116Z	   86 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T19:01:21.776437Z	   86 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T19:01:32.761613Z	   86 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T19:01:44.672959Z	   87 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T19:01:44.683205Z	   87 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T19:01:47.623209Z	   87 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-28T19:01:48.775937Z	   87 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T19:01:58.939802Z	   87 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-28T19:02:25.942210Z	   88 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T19:02:25.963412Z	   88 Query	select `cotizacion`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`city`, `companies`.`country`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`phone` from `cotizacion` inner join `companies` on `companies`.`id` = `cotizacion`.`company_id` inner join `users` on `users`.`id` = `cotizacion`.`user_id`
+2022-10-28T19:02:27.068479Z	   88 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-28T19:03:09.871703Z	   89 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T19:03:09.881570Z	   89 Query	select `consulta`.*, `companies`.`name`, `companies`.`website`, `companies`.`country`, `companies`.`industry`, `users`.`first_name`, `users`.`last_name`, `users`.`email`, `users`.`country`, `users`.`phone` from `consulta` inner join `companies` on `companies`.`id` = `consulta`.`company_id` inner join `users` on `users`.`id` = `consulta`.`user_id`
+2022-10-28T19:03:17.617689Z	   89 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T19:03:51.020052Z	   89 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T19:03:54.071099Z	   89 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-28T19:03:58.650511Z	   90 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T19:03:58.660216Z	   90 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+/usr/sbin/mysqld, Version: 8.0.28 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.28 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.28 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2022-10-28T19:53:02.923881Z	    8 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T19:53:02.940124Z	    8 Query	select * from `blog_posts`
+2022-10-28T21:09:57.583329Z	    9 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T21:09:57.649624Z	    9 Query	select * from `blog_posts`
+2022-10-28T21:20:18.974670Z	   10 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T21:20:19.008293Z	   10 Query	select * from `blog_posts`
+/usr/sbin/mysqld, Version: 8.0.28 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2022-10-28T23:24:56.731998Z	    8 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-28T23:24:56.741996Z	    8 Query	select * from `blog_posts`
+/usr/sbin/mysqld, Version: 8.0.28 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2022-10-29T00:17:42.110419Z	    8 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-29T00:17:42.120800Z	    8 Query	select * from `blog_posts`
+/usr/sbin/mysqld, Version: 8.0.28 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2022-10-29T00:56:44.562733Z	    8 Connect	db_user@172.28.0.2 on contucarga using TCP/IP
+2022-10-29T00:56:44.575221Z	    8 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-29T00:56:57.122375Z	    8 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-29T00:56:59.414988Z	    8 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-29T00:57:00.428871Z	    8 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-29T00:57:38.399445Z	    8 Query	select `users`.*, `companies`.`name` as `company_name`, `companies`.`website` as `company_website` from `users` inner join `companies` on `companies`.`id` = `users`.`company_id`
+2022-10-29T00:58:05.168254Z	    8 Query	select * from `blog_posts`

@@ -1,0 +1,795 @@
+<!-- Wappler include head-page="layouts/main-contucarga" fontawesome_4="cdn" is="dmx-app" id="home" appConnect="local" jquery_slim_35="cdn" bootstrap5="cdn" components="{dmxSwiper:{},dmxBootstrap5Navigation:{},dmxBrowser:{},dmxDatastore:{},dmxSmoothScroll:{},dmxStateManagement:{},dmxVideo:{},dmxFormatter:{}}" -->
+<meta name="ac:route" content="/">
+<dmx-serverconnect id="serverconnect1" url="/api/blog-posts"></dmx-serverconnect>
+<dmx-query-manager id="query1"></dmx-query-manager>
+
+
+
+
+<!-- <dmx-cookie-manager id="cookies1"></dmx-cookie-manager>
+    <dmx-local-manager id="local1"></dmx-local-manager>
+    <dmx-moment id="moment1"></dmx-moment>
+    <dmx-session-manager id="session2"></dmx-session-manager>
+    <dmx-json-datasource id="jsonDS1" is="dmx-serverconnect" url="http://no-tls.jsonip.com"></dmx-json-datasource>
+    <div is="dmx-browser" id="browser1"></div>
+    <dmx-session-manager id="session1"></dmx-session-manager>
+    <dmx-value id="varhablarconespecialista" dmx-bind:value="0"></dmx-value>
+    <dmx-value id="vartappane" dmx-bind:value="0"></dmx-value>
+    <dmx-smooth-scroll id="scroll2"></dmx-smooth-scroll>
+    <dmx-smooth-scroll id="scroll1"></dmx-smooth-scroll>
+
+    <dmx-datastore id="datastore1"></dmx-datastore>
+    <dmx-value id="varquotestep" dmx-bind:value="0"></dmx-value>
+    <dmx-array id="arrcantidadvehiculos"></dmx-array> -->
+
+<!-- <dmx-preloader id="preloader1" spinner="chasingDots" bgcolor="#2693FF" color="#FFFFFF"></dmx-preloader> -->
+
+
+<!-- Hero -->
+<section class="bg-pistachio bg-topography-light bg-cover overlay overlay-darkblue overlay-20 py-10 ">
+    <!-- for eager load -->
+
+    <div class="container text-center">
+        <h1 class="text-uppercase font-weight-bold fx-fade-in text-info letter-spacing-xxl display-4 text-center" wappler-command="editContent" contenteditable="false">Contucarga</h1>
+        <h1 class="text-dark font-weight-normal fx-fade-up mb-1" wappler-command="editContent">Operador Logístico Integral</h1>
+        <h1 class="text-dark font-weight-normal mb-6 mb-md-7 fx-fade-up animation-delay-2">con más de&nbsp;<span class="white">40 años de experiencia.</span></h1>
+    </div>
+
+    <div class="bg-white shadow-light-sm position-absolute left-0 right-0 bottom-0 box-buttons mb-md-n6 pt-md-5 pb-md-5 pl-md-5 pr-md-5 w-md-75 w-sm-75 mb-4 pt-4 pb-4 pl-4 pr-4 direction-row" style="">
+        <a class="btn-lg mb-2 btn-primary style54 mr-md-0 mb-lg-0 mr-lg-4" data-toggle="modal" data-target="#modal_especialista" is="dmx-link" href="">Hablar con un
+            Especialista<i class="fa fa-arrow-right"></i></a>
+        <a class="btn-lg mb-2 mb-lg-0  btn-primary style54 flex-md-shrink-1" data-toggle="modal" data-target="#modal_quote" is="dmx-link" href="">Cotizar Ahora<i class="fa fa-arrow-right"></i></a>
+    </div>
+</section>
+
+<!-- Companies -->
+<section class="pt-md-10 pt-6" id="nosotros">
+    <div class="container mb-4 mt-4 style46 mt-md-0 w-md-75 w-sm-100">
+        <div class="row">
+            <div class="col-lg-12 col-xl-12">
+                <h1 class="text-darkblue fx-fade-up style74"><span class="text-info">
+                        <font color="#1f2c73" dmx-on:click="">Comprometidos a proporcionar soluciones efectivas de agenciamiento de aduanas, transporte, consolidación y logística de carga&nbsp;</font>desde 1989&nbsp;
+                    </span></h1>
+
+                <hr class="border-gray-300 my-5 fx-fade-up animation-delay-3 hidden">
+
+                <p class="lead text-muted fx-fade-up animation-delay-3 mt-4">Brindamos un servicio global de asistencia logística en el área de comercio exterior que aumente la efectividad de nuestros clientes en sus procesos, minimizando sus costos
+                    asociados la gestión de comercio exterior y logística a través de soluciones óptimas.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mt-md-5 py-4 mt-lg-6 mb-xl-6">
+    <div class="container w-md-75 w-sm-100">
+        <h3 class="text-center text-primary text-uppercase-bold-sm line-height-lg mb-3">las empresas más reconocidas nos han escogido como sus aliados</h3>
+        <div class="row justify-content-between align-items-center mt-5">
+            <div class="style77 col-4 col-lg-2 mb-lg-0 mb-5">
+
+                <img width="120" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556897/Linde-logo_yi9pul.png" alt="linde group logo">
+
+
+
+
+                <div class="text-dark mx-auto img-fluid style76" style="width: 70px;">
+
+                </div>
+            </div>
+            <div class="style77 col-4 col-lg-2 mb-lg-0 mb-5">
+                <img src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556899/puma-logo_s4jdgd.png" width="120" alt="puma logo">
+                <div class="text-dark mx-auto img-fluid" style="width: 140px;">
+
+                </div>
+            </div>
+            <div class="style77 col-4 col-lg-2 mb-lg-0 mb-5">
+                <img src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556898/McDonalds-logo_gpphd7.png" width="120" alt="McDonald logo">
+                <div class="text-dark mx-auto img-fluid" style="width: 110px;">
+
+                </div>
+            </div>
+            <div class="style77 col-4 col-lg-2 mb-4 mb-lg-0">
+                <img src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556896/BK-logo_kdm9uo.png" width="120" alt="BK logo">
+                <div class="text-dark mx-auto img-fluid" style="width: 55px;">
+
+                </div>
+            </div>
+            <div class="style77 col-4 col-lg-2 mb-4 mb-lg-0">
+                <img src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556898/pizza-hut-logo_jbntgh.png" width="120" alt="Pizza hut logo">
+                <div class="text-dark mx-auto img-fluid" style="width: 140px;">
+
+                </div>
+            </div>
+            <div class="style77 col-4 col-lg-2 mb-4 mb-lg-0">
+                <img src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556898/makro-logo_tnim3e.png" width="120" alt="makro logo">
+                <div class="text-dark mx-auto img-fluid" style="width: 110px;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mt-xl-5 pt-xl-2 mb-4 mt-4 pt-4 pb-4" id="servicios">
+    <div class="container w-md-75 w-sm-100">
+        <h1 class="display-4 text-darkblue fx-fade-up"><span class="text-info">
+                <font color="#1f2c73">Nuestra oferta de servicios</font>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </span></h1>
+        <p class="lead text-muted fx-fade-up animation-delay-3 mt-2 mb-5 pb-0">Nuestro personal se capacita constantemente para estar al día en todo lo relacionado a la materia aduanera: valoración, tributación, legislación, acuerdos, convenios,
+            tratados y normativas; para garantizarle fluidez en la entrega de la mercancía y el cumplimiento de todo lo relacionado a los aranceles.</p>
+        <div dmx-animate-enter.delay:3000="fadeIn" class="row mb-5 row-cols-md-2">
+            <div class="col-lg-4 mb-4 colum-grid">
+                <div class="card hover-lift">
+                    <img class="card-img-top style24 img-fluid" loading="lazy" alt="Agenciamiento de aduanas" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556899/port_naceoj.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">Agenciamiento de Aduana&nbsp;</h4>
+                        <p class="card-text height-service-p">Optimizamos el trámite aduanero para la exportación o importación de mercancía cumpliendo con todas las regulaciones exigidas.&nbsp;<br></p>
+                        <a data-target="#tab-1-0" dmx-on:click="run({run:{action:`vartappane.setValue(1)`}})" class="link" style="cursor: pointer" href="#detalleservicios">
+                            Conozca Más<i class="fa fa-angle-right style72"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-lg-4 mb-4 ">
+                <div class="card hover-lift">
+                    <img class="card-img-top style24 img-fluid" loading="lazy" alt="Agenciamiento de Carga" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556899/vessel-aereal_aygz1b.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">Agenciamiento de Carga&nbsp;</h4>
+                        <p class="card-text height-service-p">A través de nuestra red de agentes internacionales transportamos carga desde y hasta cualquier lugar del mundo de manera segura.&nbsp;<br></p>
+                        <a data-target="#tab-1-1" dmx-on:click="run({run:{action:`vartappane.setValue(2)`}})" class="link" style="cursor: pointer" href="#detalleservicios">
+                            Conozca Más<i class="fa fa-angle-right style72"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card hover-lift">
+                    <img class="card-img-top style24 img-fluid" loading="lazy" alt="Transporte de Mercancía" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556898/plane-cargo_cdopep.jpg">
+                    <div class="card-body ">
+                        <h4 class="card-title">Transporte de Mercancía&nbsp;</h4>
+                        <p class="card-text height-service-p">Coordinamos operaciones marítima, areas y terrestres a nivel nacional e internacional a través de los nuestros aliados calificados y experimentados.<br></p>
+                        <a data-target="#tab-1-2" dmx-on:click="run({run:{action:`vartappane.setValue(3)`}})" class="link" style="cursor: pointer" href="#detalleservicios">
+                            Conozca Más<i class="fa fa-angle-right style71"></i>
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xl-4 col-lg-4 mb-4">
+                <div class="card hover-lift">
+                    <img class="card-img-top style24" loading="lazy" alt="Consolidación" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630560476/fork-lift_gmfgfv.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">Consolidación</h4>
+                        <p class="card-text height-service-p">Nuestra experiencia en la consolidación de mercancía le ayudará a optimizar sus recursos, agilizar su distribución y generar resultados eficientes.&nbsp;<br></p>
+                        <a data-target="#tab-1-0" dmx-on:click="run([{run:{action:`vartappane.setValue(4)`}},{run:{action:`scroll1.goto(\'#detalleservicios\')`}}])" class="link" style="cursor: pointer" href="#detalleservicios">
+                            Conozca Más<i class="fa fa-angle-right style71"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card hover-lift">
+                    <img class="card-img-top style24" loading="lazy" alt="Asesoría y Proyectos Logísticos" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556898/logistic-yard_pbtxdp.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">Asesoría y Proyectos</h4>
+                        <p class="card-text height-service-p">Contamos con la experiencia&nbsp; en planificación logística y ejecución de proyectos de cargas sobredimencionadas o con características especiales.<br></p>
+                        <a data-target="#tab-1-0" dmx-on:click="run({run:{action:`vartappane.setValue(5)`}})" class="link" style="cursor: pointer" href="#detalleservicios">
+                            Conozca Más<i class="fa fa-angle-right style71"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 mb-4">
+                <div class="card hover-lift">
+                    <img class="card-img-top style24" loading="lazy" alt="Seguros de Carga" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556896/container-crane_fb7edf.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">Seguro de Carga</h4>
+                        <p class="card-text height-service-p">Le ayudamos a reducir los riesgos y cubrir su mercancía contra los posibles daños que pueda sufrir durante el proceso logístico.&nbsp;<br></p>
+                        <a data-target="#tab-1-0" dmx-on:click="run([{run:{action:`vartappane.setValue(6)`}},{run:{action:`scroll1.goto(\'#detalleservicios\')`}}])" class="link" style="cursor: pointer" href="#detalleservicios">
+                            Conozca Más<i class="fa fa-angle-right style71"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-jarallax data-speed="0.8" class=" overlay overlay-80 mt-9 py-9 parallax pl-4 pr-4 text-center img-bg-banner-ctas">
+    <div class="position-relative text-white style38">
+        <h1>Gestione su Proceso Logístico con los Especialistas</h1>
+
+        <p class="lead mb-5 style94">¿Listo para optimizar su presupuesto logístico?</p>
+        <div class="style51">
+            <div class="d-flex flex-column flex-xl-row align-items-xl-stretch flex-lg-row align-items-lg-stretch justify-content-center align-items-center">
+                <a style="vertical-align: middle;" class="btn-light btn-lg style53 mb-2 mb-lg-0 mr-lg-4" data-toggle="modal" data-target="#modalespecialista" dmx-on:click="modal_especialista.show()">Hablar con un Especialista<i class="fas fa-arrow-right fa-xs ml-2"></i></a>
+                <a style="/* vertical-align:  */" class="btn-light btn-lg style53" data-toggle="modal" data-target="#modal_quote">Cotizar Ahora<i class="fas fa-arrow-right fa-xs ml-2 style33"></i></a>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</section>
+<section class="pb-4 pt-6 fx-fade-up pb-md-6">
+    <div class="container">
+        <div class="text-dark text-uppercase-bold-sm">
+            Artículos
+        </div>
+
+        <div class="row mt-4" is="dmx-repeat" id="repeat1" dmx-bind:repeat="serverconnect1.data.query.slice(1, 4)">
+            <!-- Post -->
+            <div class="col-md-4 mb-6">
+                <!-- Featured image -->
+                <a href="#!">
+                    <img class="img-fluid rounded hover-lift-light" alt="" dmx-bind:src="img" loading="lazy">
+                </a>
+
+                <!-- Title -->
+                <a href="#!" class="h5 text-dark text-decoration-none mt-4 style184" dmx-html="title" style="/* overflow-wrap: break-word */ /* word-wrap: break-word */ /* hyphens:auto */ /* white-space: nowrap */ text-overflow: ellipsis; display: -webkit-box; /* line-height: 5rem */ -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                    The things you think about determine the quality of your mind
+                </a>
+                <!-- Read more -->
+                <a href="#!" class="d-inline-block border-bottom border-primary text-decoration-none mt-2 pb-1" dmx-bind:href="'blog/'+path">Leer más</a>
+            </div>
+
+            <!-- Post -->
+
+            <!-- Post -->
+        </div>
+
+        <!-- Go to previous posts -->
+        <a href="#!" class="btn btn-pastel-primary hover-lift-light text-uppercase-bold-sm mt-7 style183 visually-hidden">
+            <i class="fas fa-chevron-left fa-sm mr-2"></i>
+            Go to archives
+        </a>
+    </div>
+</section>
+<section class="bg-white style105 mt-0 pt-6 pb-5">
+
+
+    <div class="container text-center text-md-left w-lg-75 w-sm-100">
+        <!-- Title -->
+        <h2 class="text-darkblue text-left">Contucarga le Ofrece</h2>
+
+        <!-- Features -->
+        <div class="row mt-4 row-cols-1">
+            <div class="d-flex flex-row align-items-center justify-content-md-start w-md-50  w-lg-30 mt-lg-4 flex-md-row align-items-md-center pt-2 pb-2">
+                <img src="/inertia/dist/assets/img/ionicons/people-outline.svg" width="50" height="50" alt="Equipo profesional de aduanas" class="pt-2 pb-2">
+                <h5 class="text-dark w-100 text-left mb-0 ml-0 pl-4">Equipo Profesional Experto</h5>
+            </div>
+            <div class="d-flex flex-row align-items-center justify-content-md-start w-md-50  w-lg-30 mt-lg-4 flex-md-row align-items-md-center pt-2 pb-2">
+                <img src="/inertia/dist/assets/img/ionicons/person-outline.svg" width="50" height="50" alt="Atencíón de aduanas personal y directa">
+                <h5 class="text-dark w-100 text-left mb-0 ml-0 pl-4">
+                    Atención Personalizada y Directa
+                </h5>
+            </div>
+            <div class="d-flex flex-row align-items-center justify-content-md-start w-md-50  w-lg-30 mt-lg-4 flex-md-row align-items-md-center pt-2 pb-2">
+                <img src="/inertia/dist/assets/img/ionicons/mail-unread-outline.svg" width="50" height="50" alt="Comunicación constante y anticipada" class="pt-2 pb-2">
+                <h5 class="text-dark w-100 text-left mb-0 ml-0 pl-4">
+                    Comunicación Constante y Anticipada
+                </h5>
+            </div>
+            <div class="d-flex flex-row align-items-center justify-content-md-start w-md-50  w-lg-30 mt-lg-4 flex-md-row align-items-md-center pt-2 pb-2">
+
+
+                <img src="/inertia/dist/assets/img/ionicons/analytics-outline.svg" width="50" height="50" alt="Información y trazabilidad de proceso logístico" class="pt-2 pb-2">
+                <h5 class="text-dark w-100 text-left mb-0 ml-0 pl-4">
+                    Información y Trazabilidad del Proceso
+                </h5>
+            </div>
+            <div class="d-flex flex-row align-items-center justify-content-md-start w-md-50  w-lg-30 mt-lg-4 flex-md-row align-items-md-center pt-2 pb-2">
+
+                <img src="/inertia/dist/assets/img/ionicons/pricetags-outline.svg" width="50" height="40" alt="Servicios y tarifas de carga competitivas" class="pt-2 pb-2">
+                <h5 class="text-dark w-100 text-left mb-0 ml-0 pl-4">
+                    Servicio y Tarifas Competitivas
+                </h5>
+            </div>
+            <div class="d-flex flex-row align-items-center justify-content-md-start w-md-50  w-lg-30 mt-lg-4 flex-md-row align-items-md-center pt-2 pb-2">
+                <img src="/inertia/dist/assets/img/ionicons/train-outline.svg" width="50" height="50" alt="Servicio logístico integral" class="pt-2 pb-2">
+                <h5 class="text-dark w-100 text-left mb-0 ml-0 pl-4">
+                    Servicio Logístico Integral
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div class="container-lg rounded rounded-sm style103 mt-xl-5 mt-md-5 mt-xl-2 pt-xl-0 pb-xl-0 pl-xl-0 pr-xl-0">
+        <div class="row style107">
+            <div class="rounded rounded-sm style106 col-12 mt-5 pt-0 pb-0 pl-1 pr-1" dmx-on:click="video1.play()">
+
+                <i class="fa fa-play-circle style110 fa-2x" dmx-show="video1.ended || video1.paused"></i><video is="dmx-video" id="video1" class="style102" poster="/img/Screen-Shot-2021-06-15-at-1.46.06-AM.jpg" width="100%" controls="true" src="https://res.cloudinary.com/dbi1zp0na/video/upload/v1630556900/Aerial-of-a-container-ship-864038_3_jcps9f.mp4">
+
+                </video>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section class="pt-6 style40 border-0 mt-2 pb-5" id="detalleservicios">
+
+    <div class="pb-lg-4 shadow-soft shadow-md--none container-fluid w-lg-75 w-sm-100 mb-4 pl-2 pr-2 pl-md-4 pr-md-4 style108 mt-xl-0">
+
+
+        <h1 class="mb-5 text-left text-darkblue mt-xl-8">Somos una Extensión de su Equipo Logístico&nbsp;</h1>
+        <div class="accordion d-md-none" id="accordion1">
+            <div class="card">
+                <div class="card-header style96" id="accordion1_headingOne">
+                    <h5 class="mb-0 w-100">
+                        <button id="accordionbutton" class="btn btn-link w-100 text-left" type="button" data-toggle="collapse" data-target="#accordion1_collapseOne" aria-expanded="true" aria-controls="collapseOne">Agenciamiento de Aduana</button>
+                    </h5>
+
+                </div>
+                <div id="accordion1_collapseOne" class="collapse" is="dmx-bs4-collapse" aria-labelledby="accordion1_headingOne" data-parent="#accordion1">
+                    <img src="/img/container-yard-diagonal" loading="lazy" class="style100">
+                    <div class="card-body" style="padding: 1.5rem;">
+                        <p class="style9">Ofrecemos apoyo en las operaciones de comercio internacional incuyendo:&nbsp;<br></p>
+                        <ul class="list-group">
+                            <li class="list-group-item style68">Nacionalización de mercancía</li>
+                            <li class="list-group-item style68">Exportación de mercancía</li>
+                            <li class="list-group-item style68">Mudanzas internacionales y menaje de casa&nbsp;</li>
+                            <li class="list-group-item style68">Trámites de regímenes especiales o <i>In-Bond</i></li>
+                            <li class="list-group-item style68">Gestión de pagos de servicios por cuenta del cliente</li>
+                            <li class="list-group-item style68">Gestión de registro sanitario</li>
+                            <li class="list-group-item style68">Consulta ante organismos públicos</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="card-header style96" id="accordion1_headingTwo">
+                    <h5 class="mb-0">
+                        <button id="accordion1_collapseTwo_Btn" class="btn btn-link collapsed w-100 text-left" type="button" data-toggle="collapse" data-target="#accordion1_collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Agenciamiento de
+                            Carga</button>
+                    </h5>
+                </div>
+                <div id="accordion1_collapseTwo" class="collapse" is="dmx-bs4-collapse" aria-labelledby="accordion1_headingOne" data-parent="#accordion1">
+                    <img src="/img/container-yard-perspective" loading="lazy" class="style100">
+                    <div class="card-body" style="padding: 1.5rem;">
+                        <p class="style9">Ofrecemos apoyo en las operaciones de comercio internacional incuyendo:&nbsp;<br></p>
+                        <ul class="list-group">
+                            <li class="list-group-item style68">
+                                Fletes areos y marítimos competitivos
+                            </li>
+                            <li class="list-group-item style68">Desconsolidación de mercancía&nbsp;</li>
+                            <li class="list-group-item style68">Seguimiento de embarque</li>
+                            <li class="list-group-item style68">Gestión y seguimiento de documentación asociada como conocimiento y guías de embarque</li>
+                            <li class="list-group-item style68">Recepción, verificación y reembalaje de mercancía</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="card-header style96" id="accordion1_headingThree">
+                    <h5 class="mb-0">
+                        <button id="accordion1_collapseThree_Btn" class="btn btn-link collapsed w-100 text-left" type="button" data-toggle="collapse" data-target="#accordion1_collapseThree" aria-expanded="false" aria-controls="collapseThree">Transporte de
+                            Mercancía</button>
+                    </h5>
+                </div>
+                <div id="accordion1_collapseThree" class="collapse" is="dmx-bs4-collapse" aria-labelledby="accordion1_headingOne" data-parent="#accordion1">
+                    <img src="/img/container-flatbeds.jpg" loading="lazy" class="style100">
+                    <div class="card-body" style="padding: 1.5rem;">
+                        <p>Coordinamos el transporte por vía aérea, marítima o terreste que su carga necesite a nivel nacianal o internaciona:&nbsp;<br></p>
+                        <ul class="list-group">
+                            <li class="list-group-item style68">Contendor completo (FCL)</li>
+                            <li class="list-group-item style68">Carga suelta (LCL)</li>
+                            <li class="list-group-item style68">Maquinaria y sobredimensionado</li>
+                            <li class="list-group-item style68">Carga&nbsp;
+                                Multimodal</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header style96" id="accordion1_headingFour">
+                    <h5 class="mb-0">
+                        <button id="accordion1_collapseFour_Btn" class="btn btn-link collapsed w-100 text-left" type="button" data-toggle="collapse" data-target="#accordion1_collapseFour" aria-expanded="false" aria-controls="collapseThree">Consolidación</button>
+                    </h5>
+                </div>
+                <div id="accordion1_collapseFour" class="collapse" is="dmx-bs4-collapse" aria-labelledby="accordion1_headingOne" data-parent="#accordion1">
+                    <img src="/img/loading-docks" loading="lazy" class="style100">
+                    <div class="card-body" style="padding: 1.5rem;">
+                        <p>La consolidación de carga le permite optimizar sus costos de transporte y almacenage de mercancía cuando cuenta con un volumen de carga bajo, manteniendo la regularidad y servicio necesario.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header style96" id="accordion1_headingFive">
+                    <h5 class="mb-0">
+                        <button id="accordion1_collapseFive_Btn" class="btn btn-link collapsed w-100 text-left" type="button" data-toggle="collapse" data-target="#accordion1_collapseFive" aria-expanded="false" aria-controls="collapseThree">Asesoría y
+                            Proyectos</button>
+                    </h5>
+                </div>
+                <div id="accordion1_collapseFive" class="collapse" is="dmx-bs4-collapse" aria-labelledby="accordion1_headingOne" data-parent="#accordion1">
+                    <img src="/img/plant" loading="lazy" class="style100">
+                    <div class="card-body" style="padding: 1.5rem;">
+                        <p>Contar con la asesoría especializada de Contucarga le puede apoyar a reducir costos, mitigar riesgos, optimizar su operación, o mantenerse al día con los cambio legales que pueden impactar su gestión de comercio exterior. Le ayudamos
+                            a entender y abordar de forma eficiente:</p>
+                        <ul class="list-group">
+                            <li class="list-group-item style68">Requisitos y documentos necesarios para la gestión y trámites de importación o exportación</li>
+                            <li class="list-group-item style68">Régimenes cambiario y portuario</li>
+                            <li class="list-group-item style68">Mercancías sujetas a regímenes especiales</li>
+                            <li class="list-group-item style68">Permisos de organismos competentes según el régimen o artículo de importación</li>
+                            <li class="list-group-item style68">Registro de productos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header style96" id="accordion1_headingSix">
+                    <h5 class="mb-0">
+                        <button id="accordion1_collapseSix_Btn" class="btn btn-link collapsed w-100 text-left" type="button" data-toggle="collapse" data-target="#accordion1_collapseSix" aria-expanded="false" aria-controls="collapseThree">Seguro de
+                            Carga</button>
+                    </h5>
+                </div>
+                <div id="accordion1_collapseSix" class="collapse" is="dmx-bs4-collapse" aria-labelledby="accordion1_headingOne" data-parent="#accordion1">
+                    <img src="/img/container-piles-left" loading="lazy" class="style100">
+                    <div class="card-body" style="padding: 1.5rem;">
+                        <p>Contamos con el respaldo de los mejores aliadas de seguros a nivel nacional e internacional, para ofrecerle a nuestros clientes pólizas y fianzas óptimas para sus tipos de mercancía y niveles de riesgo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-none d-md-flex w-100 container pl-0">
+
+            <div class="col-md-4 col-lg-3 pr-0 pr-md-2 pr-lg-0 nav nav-tabs tab-benefits col align-self-start border-0" id="benefitsTabs" role="tablist" dmx-class:active="(var_tap_pane.value==4)" dmx-on:click="var_tap_pane.setValue(4)">
+                <a class="w-100 style13 mt-2 mb-2 pt-3 pb-3 pl-2 active" id="tab-1-0-tab" data-toggle="tab" role="tab" aria-controls="0" aria-selected="true" data-target="#tab-1-0" dmx-on:click="vartappane.setValue(1)" dmx-class:active="(vartappane.value==1)||(vartappane.value==0)" href="#detalleservicios">Agenciamiento de
+                    Aduana</a>
+                <a class="w-100 style13 h-auto mt-2 mb-2 pt-3 pb-3 pl-2" id="tab-1-1-tab" data-toggle="tab" role="tab" aria-controls="1" aria-selected="false" data-target="#tab-1-1" href="#detalleservicios" dmx-on:click="vartappane.setValue(2)" dmx-class:active="vartappane.value==2">Agenciamiento de
+                    Carga</a>
+                <a class="w-100 style13 h-auto mt-2 mb-2 pt-3 pb-3 pl-2" id="tab-1-2-tab" data-toggle="tab" href="#detalleservicios" role="tab" aria-controls="2" aria-selected="false" data-target="#tab-1-2" dmx-on:click="vartappane.setValue(3)" dmx-class:active="vartappane.value==3">Transporte de
+                    Mercancía</a>
+                <a class="w-100 style13 h-auto mt-2 mb-2 pt-3 pb-3 pl-2" id="tab-1-2-tab1" data-toggle="tab" role="tab" aria-controls="3" aria-selected="false" data-target="#tab-1-3" href="#detalleservicios" dmx-on:click="vartappane.setValue(4)" dmx-class:active="vartappane.value==4">Consolidación</a>
+                <a class="w-100 style13 h-auto mt-2 mb-2 pt-3 pb-3 pl-2" id="tab-1-2-tab2" data-toggle="tab" role="tab" aria-controls="4" aria-selected="false" data-target="#tab-1-4" href="#detalleservicios" dmx-on:click="vartappane.setValue(5)" dmx-class:active="vartappane.value==5">Asesoría y Proyectos</a>
+                <a class="w-100 style13 h-auto mt-2 mb-2 pt-3 pb-3 pl-2" id="tab-1-2-tab3" data-toggle="tab" role="tab" aria-controls="5" aria-selected="false" data-target="#tab-1-5" href="#detalleservicios" dmx-on:click="vartappane.setValue(6)" dmx-class:active="vartappane.value==6">Seguro de Carga</a>
+            </div>
+            <div class="tab-content col-12 col-md-8 col-lg-9 pl-0 pr-0 style66 rounded rounded-sm">
+
+                <div id="tab-1-0" role="tabpanel" aria-labelledby="tab-1-0-tab" class="tab-pane fade active show" dmx-class:active="(vartappane.value==1)||(vartappane.value==0)" dmx-class:show="(vartappane.value==1)||(vartappane.value==0)">
+                    <div class="card-image-overlay">
+
+                        <img width="1840" height="1000" loading="lazy" sizes="(max-width: 1840px) 100vw, 1840px" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556896/container-yard-diagonal_vem42r.jpg" class="img-fluid style19" alt="Agenciamiento de aduanas contenedores" />
+
+                    </div>
+                    <div class="container style11 w-60 mb-4 pt-4 pb-4 pl-4 pr-4">
+                        <p class="style9">Ofrecemos apoyo en las operaciones de comercio internacional incluyendo:&nbsp;<br></p>
+                        <ul class="list-group">
+                            <li class="list-group-item style68">Nacionalización de mercancía</li>
+                            <li class="list-group-item style68">Exportación de mercancía</li>
+                            <li class="list-group-item style68">Mudanzas internacionales y menaje de casa&nbsp;</li>
+                            <li class="list-group-item style68">Trámites de regímenes especiales o <i>In-Bond</i></li>
+                            <li class="list-group-item style68">Gestión de pagos de servicios por cuenta del cliente</li>
+                            <li class="list-group-item style68">Gestión de registro sanitario</li>
+                            <li class="list-group-item style68">Consulta ante organismos públicos</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="tab-pane fade " id="tab-1-1" role="tabpanel" aria-labelledby="tab-1-1-tab" dmx-class:show="(vartappane.value==2)" dmx-class:active="(vartappane.value==2)">
+                    <div>
+
+                        <img width="1840" height="1000" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556899/vessel-side_kneeox.jpg" class="img-fluid style19" loading="lazy" sizes="(max-width: 1840px) 100vw, 1840px" alt="Agenciamiento de carga contendores y puerto" />
+                        <div class="card-image-overlay__content">
+
+
+                        </div>
+                    </div>
+                    <div class="container style11 w-60 mb-4 pt-4 pb-4 pl-4 pr-4">
+                        <p>Contamos con una infraestructura de servicios internacionales flexible y adaptable a través de nuestra red de agentes y aliados que nos permite ofrecer a nuestros clientes:&nbsp;<br></p>
+                        <ul class="list-group">
+                            <li class="list-group-item style68">Fletes aereos y marítimos competitivos</li>
+                            <li class="list-group-item style68">Desconsolidación de mercancía&nbsp;</li>
+                            <li class="list-group-item style68">Seguimiento de embarque</li>
+                            <li class="list-group-item style68">Gestión y seguimiento de documentación asociada como conocimiento y guías de embarque</li>
+                            <li class="list-group-item style68">Recepción, verificación y reembalaje de mercancía</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-pane fade " id="tab-1-2" role="tabpanel" aria-labelledby="tab-1-2-tab" dmx-class:active="(vartappane.value==3)" dmx-class:show="(vartappane.value==3)">
+                    <div class="card-image-overlay">
+
+                        <img width="1840" height="1000" class="img-fluid style19" loading="lazy" sizes="(max-width: 1840px) 100vw, 1840px" alt="Transporte de carga camiones, barcos y aviones" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556898/port-unloading_rud8vs.jpg" />
+                        <div class="card-image-overlay__content">
+
+
+                        </div>
+                    </div>
+                    <div class="container style11 w-60 mb-4 pt-4 pb-4 pl-4 pr-4">
+                        <p>Coordinamos el transporte por vía aérea, marítima o terreste que su carga necesite a nivel nacianal o internaciona:&nbsp;<br></p>
+                        <ul class="list-group">
+                            <li class="list-group-item style68">Contendor completo (FCL)</li>
+                            <li class="list-group-item style68">Carga suelta (LCL)</li>
+                            <li class="list-group-item style68">Maquinaria y sobredimensionado</li>
+                            <li class="list-group-item style68">Carga&nbsp;
+                                Multimodal</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab-1-3" role="tabpanel" aria-labelledby="tab-1-2-tab1" dmx-class:active="(vartappane.value==4)" dmx-class:show="(vartappane.value==4)">
+                    <div class="card-image-overlay">
+
+                        <img width="1840" height="1000" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630555413/hannes-egler-nT4k2JDtwTQ-unsplash_mtsawr.jpg" class="img-fluid style19 " loading="lazy" sizes="(max-width: 1840px) 100vw, 1840px" alt="Consolidación de mercancía">
+                        <div class="card-image-overlay__content">
+
+
+                        </div>
+                    </div>
+                    <div class="container style11 w-60 mb-4 pt-4 pb-4 pl-4 pr-4">
+                        <p>La consolidación de carga le permite optimizar sus costos de transporte y almacenaje de mercancía cuando cuenta con un volumen de carga bajo, manteniendo la regularidad y servicio necesario.&nbsp;<br></p>
+                    </div>
+                </div>
+                <div class="tab-pane fade " id="tab-1-4" role="tabpanel" aria-labelledby="tab-1-2-tab2" dmx-class:active="(vartappane.value==5)" dmx-class:show="(vartappane.value==5)">
+                    <div class="card-image-overlay">
+
+                        <img width="1840" height="1000" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556898/plant_sww2vp.jpg" class="img-fluid style19" loading="lazy" sizes="(max-width: 1840px) 100vw, 1840px" alt="Asesoría y proyectos logísticos">
+                        <div class="card-image-overlay__content">
+
+
+                        </div>
+                    </div>
+                    <div class="container style11 w-60 mb-4 pt-4 pb-4 pl-4 pr-4">
+                        <p>Contar con la asesoría especializada de Contucarga le puede apoyar a reducir costos, mitigar riesgos, optimizar su operación, o mantenerse al día con los cambio legales que pueden impactar su gestión de comercio exterior. Le ayudamos
+                            a entender y abordar de forma eficiente:</p>
+                        <ul class="list-group">
+                            <li class="list-group-item style68">Requisitos y documentos necesarios para la gestión y trámites de importación o exportación</li>
+                            <li class="list-group-item style68">Regímenes cambiario y portuario</li>
+                            <li class="list-group-item style68">Mercancías sujetas a regímenes especiales</li>
+                            <li class="list-group-item style68">Permisos de organismos competentes según el régimen o artículo de importación</li>
+                            <li class="list-group-item style68">Registro de productos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab-1-5" role="tabpanel" aria-labelledby="tab-1-2-tab3" dmx-class:active="(vartappane.value==6)" dmx-class:show="(vartappane.value==6)">
+                    <div class="card-image-overlay">
+
+                        <img width="1840" height="1000" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556896/container-piles-left_mbgjmo.jpg" class="img-fluid style19" loading="lazy" sizes="(max-width: 1840px) 100vw, 1840px" alt="Seguro de mercancía">
+                        <div class="card-image-overlay__content">
+
+
+                        </div>
+                    </div>
+                    <div class="container style11 w-60 mb-4 pt-4 pb-4 pl-4 pr-4">
+                        <p>Contamos con el respaldo de los mejores aliadas de seguros a nivel nacional e internacional, para&nbsp; ofrecerle a nuestros clientes pólizas y fianzas óptimas para sus tipos de mercancía y niveles de riesgo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-none">
+            <div class="dropdown accordion-benefits">
+
+
+                <div class="style95">
+                    <button id="tab-movil-1-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="style32" dmx-on:click="">Agenciamiento de Aduana<i class="fa fa-arrow-down style42"></i>
+                    </button>
+                    <div class="dropdown-menu style46" aria-labelledby="tab-movil-1-0">
+                        <div class="card-image-overlay py-3 px-5">
+                            <img width="1840" height="1000" src="../../../img/hannes-egler-nT4k2JDtwTQ-unsplash.jpg" class="img-fluid" alt="Railyard and dryage" loading="lazy" sizes="(max-width: 1840px) 100vw, 1840px" />
+                            <div class="card-image-overlay__content">
+                                <h3></h3>
+                                <p>Work with a leading Intermodal Marketing Company (IMC) that is backed by a centralized marketplace of freight and rail solutions. Whether you need to move a spot load in a tough lane or Peak season coverage, we can provide you
+                                    superior reach and purchasing power.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <button type="button" id="tab-movil-1-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="style32">Agenciamiento de Carga<i class="fa fa-arrow-down style42"></i></button>
+                    <div class="dropdown-menu style46" aria-labelledby="tab-movil-1-1">
+                        <div class="card-image-overlay py-3 px-5">
+                            <img width="1840" height="1000" src="../../../img/frank-mckenna-tjX_sniNzgQ-unsplash.jpg" class="img-fluid" alt="Contiainers loading area" loading="lazy" sizes="(max-width: 1840px) 100vw, 1840px" />
+                            <div class="card-image-overlay__content">
+                                <h3></h3>
+                                <p>We run network analyses to help customers identify modal conversions, and scale up or down with your volume. Leverage our web portal and tools to enjoy real-time visibility, tracking updates, access to load details and more on
+                                    all your shipments.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <button type="button" id="tab-movil-1-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="style32">Transporte de Mercancía<i class="fa fa-arrow-down style42"></i></button>
+
+                    <div class="dropdown-menu style46" aria-labelledby="tab-movil-1-2">
+                        <div class="card-image-overlay py-3 px-5">
+                            <img width="1840" height="1000" src="/img/container-flatbeds.jpg" class="img-fluid" alt="Shipper rep team" loading="lazy" sizes="(max-width: 1840px) 100vw, 1840px" />
+                            <div class="card-image-overlay__content">
+                                <h3></h3>
+                                <p>Our trained and tenured team specializes in intermodal capacity, pricing and opportunities configured by a single point-of-contact who can service your business needs across a more diversified network.</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <button type="button" id="tab-movil-1-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="style32">Consolidación<i class="fa fa-arrow-down style42"></i></button>
+
+
+                <div class="dropdown-menu style46" aria-labelledby="tab-movil-1-3">
+                    <div class="card-image-overlay py-3 px-5">
+                        <img width="1840" height="1000" src="../../../img/chuttersnap-5Rlrs3sKVJU-unsplash.jpg" class="img-fluid" alt="Shipper rep team" loading="lazy" sizes="(max-width: 1840px) 100vw, 1840px">
+                        <div class="card-image-overlay__content">
+                            <h3></h3>
+                            <p>Our trained and tenured team specializes in intermodal capacity, pricing and opportunities configured by a single point-of-contact who can service your business needs across a more diversified network.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="tab-movil-1-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="style32">Asesoría y Proyectos<i class="fa fa-arrow-down style42"></i></button>
+
+                <div class="dropdown-menu style46" aria-labelledby="tab-movil-1-4">
+                    <div class="card-image-overlay py-3 px-5">
+                        <img width="1840" height="1000" src="../../../img/chuttersnap-5Rlrs3sKVJU-unsplash.jpg" class="img-fluid" alt="Shipper rep team" loading="lazy" srcset="../../wp-content/uploads/2018/12/IMDL_T-3.jpg 1840w, ../../wp-content/uploads/2018/12/IMDL_T-3-300x163.jpg 300w, ../../wp-content/uploads/2018/12/IMDL_T-3-768x417.jpg 768w, ../../wp-content/uploads/2018/12/IMDL_T-3-1024x557.jpg 1024w" sizes="(max-width: 1840px) 100vw, 1840px">
+                        <div class="card-image-overlay__content">
+                            <h3></h3>
+                            <p>Our trained and tenured team specializes in intermodal capacity, pricing and opportunities configured by a single point-of-contact who can service your business needs across a more diversified network.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="tab-movil-1-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="style32">Seguro de Carga<i class="fa fa-arrow-down style42"></i></button>
+
+                <div class="dropdown-menu style46" aria-labelledby="tab-movil-1-5">
+                    <div class="card-image-overlay py-3 px-5">
+                        <img width="1840" height="1000" src="../../../img/chuttersnap-5Rlrs3sKVJU-unsplash.jpg" class="img-fluid" alt="Shipper rep team" loading="lazy" srcset="../../wp-content/uploads/2018/12/IMDL_T-3.jpg 1840w, ../../wp-content/uploads/2018/12/IMDL_T-3-300x163.jpg 300w, ../../wp-content/uploads/2018/12/IMDL_T-3-768x417.jpg 768w, ../../wp-content/uploads/2018/12/IMDL_T-3-1024x557.jpg 1024w" sizes="(max-width: 1840px) 100vw, 1840px">
+                        <div class="card-image-overlay__content">
+                            <h3></h3>
+                            <p>Our trained and tenured team specializes in intermodal capacity, pricing and opportunities configured by a single point-of-contact who can service your business needs across a more diversified network.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Older posts -->
+
+<section class="style63 bg-dark bg-topography-dark position-relative h-600">
+    <div class="container">
+        <div class="row justify-content-center" style="/* display: flex */">
+            <div class="position-relative text-white style38 text-center col-12 col-lg-9 col-xl-7">
+                <h1 class="mb-3">Presencia Logística en Cuatro Continentes&nbsp;</h1>
+                <h4 class="style65 mb-6 w-100">Contamos con Agentes Aliados en las principales ciudades de Europa, Asia, África y América lo que nos permite ofrecer las mejores opciones de transporte internacional para su mercancía.</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hire people-->
+
+<!-- Testimonials -->
+
+<!-- Call to Action -->
+
+<section class="bg-topography-light bg-pistachio bg-cover py-6" id="industrias">
+
+    <div class="container w-sm-100 w-md-75">
+
+        <h1 class="text-dark">Distintas Industrias&nbsp;</h1>
+        <p class="text-darkblue lead">Nuestra experiencia con gran número de empresas e industrias y foco en optimización de tiempo y recursos, nos convierten en su mejor aliado en logítica y comercio exterior.</p>
+    </div>
+
+    <!-- Swiper -->
+    <div class="d-flex justify-content-end mt-2 mb-4 pr-4">
+        <a class="btn btn-light w-auto mr-2" dmx-on:click="swiper1.slidePrev()" internal>
+            <i class="fa fa-arrow-left"></i>
+        </a>
+        <a class="btn btn-light w-auto" dmx-on:click="swiper1.slideNext()" internal>
+            <i class="fa fa-arrow-right"></i>
+        </a>
+    </div>
+    <div is="dmx-swiper" id="swiper1" slides-offset-before="120" grab-cursor="true" loop="true" keyboard="true" slides-per-view-md="3" slides-per-view-lg="4" space-between-xl="-30" space-between-lg="-4" slides-per-view-xl="4">
+        <div class="swiper-slide">
+
+
+            <div class="card shadow-light mx-xl-4 ml-2 mr-2">
+                <img alt="oL" loading="lazy" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556896/construction_h0hu3r.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title ">Construcción</h4>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <div class="swiper-slide">
+            <div class="card shadow-light mx-xl-4 ml-2 mr-2">
+                <img class="card-img-top" alt="Industria aviación" loading="lazy" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630561873/plane_wt5nvm.jpg">
+                <div class="card-body">
+                    <h4 class="card-title">Aviación</h4>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="card shadow-light mx-xl-4 ml-2 mr-2">
+                <img class="card-img-top" alt="Industria electrónica" loading="lazy" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556897/electronics-blue_wxblox.jpg">
+                <div class="card-body">
+                    <h4 class="card-title">Electrónica</h4>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="card shadow-light mx-xl-4 ml-2 mr-2">
+                <img class="card-img-top" alt="Industria tecnología" loading="lazy" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556899/technology_trqom7.jpg">
+                <div class="card-body">
+                    <h4 class="card-title">Tecnología</h4>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="card shadow-light mx-xl-4 ml-2 mr-2">
+                <img class="card-img-top" alt="Industria automotriz" loading="lazy" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556896/automotriz_cmzj36.jpg">
+                <div class="card-body">
+                    <h4 class="card-title">Automotriz</h4>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="card shadow-light mx-xl-4 ml-2 mr-2">
+                <img class="card-img-top" alt="Industria comercio" loading="lazy" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556899/retail_qlzfzb.jpg">
+                <div class="card-body">
+                    <h4 class="card-title">Comercio</h4>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="card shadow-light mx-xl-4 ml-2 mr-2">
+                <img class="card-img-top" alt="Industria agropecuaria" loading="lazy" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556896/agroindustry_pqx1of.jpg">
+                <div class="card-body">
+                    <h4 class="card-title">Agropecuaria</h4>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="card shadow-light mx-xl-4 ml-2 mr-2">
+                <img class="card-img-top" alt="Industria manufactura" loading="lazy" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556897/Factory_yhxkge.jpg">
+                <div class="card-body">
+                    <h4 class="card-title">Manufactura</h4>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="card shadow-light mx-xl-4 ml-2 mr-2">
+                <img class="card-img-top" loading="lazy" alt="Industria salud y farma" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556898/pharma_bgntht.jpg">
+                <div class="card-body">
+                    <h4 class="card-title">Salud y Farma</h4>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="card shadow-light mx-xl-4 ml-2 mr-2">
+                <img class="card-img-top" loading="lazy" alt="Industria metalúrgica" src="https://res.cloudinary.com/dbi1zp0na/image/upload/v1630556898/metalurgica_eis0js.jpg">
+                <div class="card-body">
+                    <h4 class="card-title">Metalúrgica</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Subscribe form -->
+<%- await include('/partials/banner-subscribe', Object.assign({}, locals)) %>

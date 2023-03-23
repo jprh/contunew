@@ -1,0 +1,18 @@
+{
+  "name": "security_dev",
+  "module": "auth",
+  "action": "provider",
+  "options": {
+    "secret": "",
+    "provider": "Single",
+    "connection": "db",
+    "username": "",
+    "password": ""
+  },
+  "meta": [
+    {
+      "name": "identity",
+      "type": "text"
+    }
+  ]
+}

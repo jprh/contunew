@@ -1,0 +1,210 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/views/app-proveedores.ejs",
+      "linkedForm": "form1"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "name": "nombre"
+      },
+      {
+        "type": "text",
+        "name": "direccion"
+      },
+      {
+        "type": "text",
+        "name": "ciudad"
+      },
+      {
+        "type": "text",
+        "name": "estado"
+      },
+      {
+        "type": "text",
+        "name": "pais"
+      },
+      {
+        "type": "text",
+        "name": "codigo_postal"
+      },
+      {
+        "type": "text",
+        "name": "telefono"
+      },
+      {
+        "type": "text",
+        "name": "fax"
+      },
+      {
+        "type": "text",
+        "name": "email"
+      },
+      {
+        "type": "text",
+        "name": "website"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "insert",
+        "module": "dbupdater",
+        "action": "insert",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "insert",
+            "values": [
+              {
+                "table": "proveedores",
+                "column": "nombre",
+                "type": "text",
+                "value": "{{$_POST.nombre}}"
+              },
+              {
+                "table": "proveedores",
+                "column": "direccion",
+                "type": "text",
+                "value": "{{$_POST.direccion}}"
+              },
+              {
+                "table": "proveedores",
+                "column": "ciudad",
+                "type": "text",
+                "value": "{{$_POST.ciudad}}"
+              },
+              {
+                "table": "proveedores",
+                "column": "estado",
+                "type": "text",
+                "value": "{{$_POST.estado}}"
+              },
+              {
+                "table": "proveedores",
+                "column": "pais",
+                "type": "text",
+                "value": "{{$_POST.pais}}"
+              },
+              {
+                "table": "proveedores",
+                "column": "codigo_postal",
+                "type": "text",
+                "value": "{{$_POST.codigo_postal}}"
+              },
+              {
+                "table": "proveedores",
+                "column": "telefono",
+                "type": "text",
+                "value": "{{$_POST.telefono}}"
+              },
+              {
+                "table": "proveedores",
+                "column": "fax",
+                "type": "text",
+                "value": "{{$_POST.fax}}"
+              },
+              {
+                "table": "proveedores",
+                "column": "email",
+                "type": "text",
+                "value": "{{$_POST.email}}"
+              },
+              {
+                "table": "proveedores",
+                "column": "website",
+                "type": "text",
+                "value": "{{$_POST.website}}"
+              }
+            ],
+            "table": "proveedores",
+            "returning": "id",
+            "query": "INSERT INTO proveedores\n(nombre, direccion, ciudad, estado, pais, codigo_postal, telefono, fax, email, website) VALUES (:P1 /* {{$_POST.nombre}} */, :P2 /* {{$_POST.direccion}} */, :P3 /* {{$_POST.ciudad}} */, :P4 /* {{$_POST.estado}} */, :P5 /* {{$_POST.pais}} */, :P6 /* {{$_POST.codigo_postal}} */, :P7 /* {{$_POST.telefono}} */, :P8 /* {{$_POST.fax}} */, :P9 /* {{$_POST.email}} */, :P10 /* {{$_POST.website}} */)",
+            "params": [
+              {
+                "name": ":P1",
+                "type": "expression",
+                "value": "{{$_POST.nombre}}",
+                "test": ""
+              },
+              {
+                "name": ":P2",
+                "type": "expression",
+                "value": "{{$_POST.direccion}}",
+                "test": ""
+              },
+              {
+                "name": ":P3",
+                "type": "expression",
+                "value": "{{$_POST.ciudad}}",
+                "test": ""
+              },
+              {
+                "name": ":P4",
+                "type": "expression",
+                "value": "{{$_POST.estado}}",
+                "test": ""
+              },
+              {
+                "name": ":P5",
+                "type": "expression",
+                "value": "{{$_POST.pais}}",
+                "test": ""
+              },
+              {
+                "name": ":P6",
+                "type": "expression",
+                "value": "{{$_POST.codigo_postal}}",
+                "test": ""
+              },
+              {
+                "name": ":P7",
+                "type": "expression",
+                "value": "{{$_POST.telefono}}",
+                "test": ""
+              },
+              {
+                "name": ":P8",
+                "type": "expression",
+                "value": "{{$_POST.fax}}",
+                "test": ""
+              },
+              {
+                "name": ":P9",
+                "type": "expression",
+                "value": "{{$_POST.email}}",
+                "test": ""
+              },
+              {
+                "name": ":P10",
+                "type": "expression",
+                "value": "{{$_POST.website}}",
+                "test": ""
+              }
+            ]
+          }
+        },
+        "meta": [
+          {
+            "name": "identity",
+            "type": "text"
+          },
+          {
+            "name": "affected",
+            "type": "number"
+          }
+        ]
+      },
+      {
+        "name": "refresh",
+        "module": "sockets",
+        "action": "refresh",
+        "options": {
+          "action": "proveedores/query_paged_proveedores"
+        }
+      }
+    ]
+  }
+}

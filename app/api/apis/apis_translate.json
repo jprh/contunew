@@ -1,0 +1,636 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/views/app-embarques.ejs",
+      "linkedForm": "serverconnectformembarques"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "busqiedacodigoarancelario",
+        "name": "busqiedacodigoarancelario"
+      },
+      {
+        "type": "text",
+        "fieldName": "busquedacodigodescripcion",
+        "name": "busquedacodigodescripcion"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "apitraduccion",
+        "module": "api",
+        "action": "send",
+        "options": {
+          "method": "POST",
+          "url": "https://api-free.deepl.com/v2/translate",
+          "params": {
+            "target_lang": "EN",
+            "text": "Zapatos",
+            "source_lang": "ES"
+          },
+          "headers": {
+            "Authorization": ""
+          },
+          "schema": [
+            {
+              "type": "object",
+              "name": "data",
+              "sub": [
+                {
+                  "type": "array",
+                  "name": "translations",
+                  "sub": [
+                    {
+                      "type": "text",
+                      "name": "detected_source_language"
+                    },
+                    {
+                      "type": "text",
+                      "name": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "object",
+              "name": "headers",
+              "sub": [
+                {
+                  "type": "text",
+                  "name": "access-control-allow-origin"
+                },
+                {
+                  "type": "text",
+                  "name": "content-encoding"
+                },
+                {
+                  "type": "text",
+                  "name": "content-type"
+                },
+                {
+                  "type": "text",
+                  "name": "date"
+                },
+                {
+                  "type": "text",
+                  "name": "server"
+                },
+                {
+                  "type": "text",
+                  "name": "strict-transport-security"
+                }
+              ]
+            }
+          ]
+        },
+        "output": true,
+        "meta": [
+          {
+            "type": "object",
+            "name": "data",
+            "sub": [
+              {
+                "type": "array",
+                "name": "translations",
+                "sub": [
+                  {
+                    "type": "text",
+                    "name": "detected_source_language"
+                  },
+                  {
+                    "type": "text",
+                    "name": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "object",
+            "name": "headers",
+            "sub": [
+              {
+                "type": "text",
+                "name": "access-control-allow-origin"
+              },
+              {
+                "type": "text",
+                "name": "content-encoding"
+              },
+              {
+                "type": "text",
+                "name": "content-type"
+              },
+              {
+                "type": "text",
+                "name": "date"
+              },
+              {
+                "type": "text",
+                "name": "server"
+              },
+              {
+                "type": "text",
+                "name": "strict-transport-security"
+              }
+            ]
+          }
+        ],
+        "outputType": "object"
+      },
+      {
+        "name": "resultados",
+        "module": "core",
+        "action": "setvalue",
+        "options": {
+          "value": "{{api.data.translations[0].text}}"
+        },
+        "meta": [],
+        "outputType": "text",
+        "output": true
+      },
+      {
+        "name": "repeat",
+        "module": "core",
+        "action": "repeat",
+        "options": {
+          "repeat": "{{api.data.translations}}",
+          "outputFields": [],
+          "exec": {
+            "steps": {
+              "name": "traduccion",
+              "module": "core",
+              "action": "setvalue",
+              "options": {
+                "value": "{{text}}"
+              },
+              "meta": [],
+              "outputType": "array",
+              "output": true
+            }
+          }
+        },
+        "output": true,
+        "meta": [
+          {
+            "name": "$index",
+            "type": "number"
+          },
+          {
+            "name": "$number",
+            "type": "number"
+          },
+          {
+            "name": "$name",
+            "type": "text"
+          },
+          {
+            "name": "$value",
+            "type": "object"
+          }
+        ],
+        "outputType": "array"
+      },
+      {
+        "name": "apicodigos",
+        "module": "api",
+        "action": "send",
+        "options": {
+          "url": "https://hts.usitc.gov/api/search",
+          "schema": [
+            {
+              "type": "object",
+              "name": "data",
+              "sub": [
+                {
+                  "type": "array",
+                  "name": "results",
+                  "sub": [
+                    {
+                      "type": "text",
+                      "name": "other"
+                    },
+                    {
+                      "type": "text",
+                      "name": "superior"
+                    },
+                    {
+                      "type": "text",
+                      "name": "indent"
+                    },
+                    {
+                      "type": "text",
+                      "name": "description"
+                    },
+                    {
+                      "type": "text",
+                      "name": "statisticalSuffix"
+                    },
+                    {
+                      "type": "text",
+                      "name": "score"
+                    },
+                    {
+                      "type": "text",
+                      "name": "special"
+                    },
+                    {
+                      "type": "text",
+                      "name": "htsno"
+                    },
+                    {
+                      "type": "text",
+                      "name": "footnotes"
+                    },
+                    {
+                      "type": "text",
+                      "name": "general"
+                    },
+                    {
+                      "type": "text",
+                      "name": "units"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "object",
+              "name": "headers",
+              "sub": [
+                {
+                  "type": "text",
+                  "name": "connection"
+                },
+                {
+                  "type": "text",
+                  "name": "content-type"
+                },
+                {
+                  "type": "text",
+                  "name": "date"
+                },
+                {
+                  "type": "text",
+                  "name": "keep-alive"
+                },
+                {
+                  "type": "text",
+                  "name": "server"
+                },
+                {
+                  "type": "text",
+                  "name": "strict-transport-security"
+                },
+                {
+                  "type": "text",
+                  "name": "transfer-encoding"
+                }
+              ]
+            }
+          ],
+          "params": {
+            "query": "{{repeat[0].text}}"
+          }
+        },
+        "output": true,
+        "meta": [
+          {
+            "type": "object",
+            "name": "data",
+            "sub": [
+              {
+                "type": "array",
+                "name": "results",
+                "sub": [
+                  {
+                    "type": "text",
+                    "name": "other"
+                  },
+                  {
+                    "type": "text",
+                    "name": "superior"
+                  },
+                  {
+                    "type": "text",
+                    "name": "indent"
+                  },
+                  {
+                    "type": "text",
+                    "name": "description"
+                  },
+                  {
+                    "type": "text",
+                    "name": "statisticalSuffix"
+                  },
+                  {
+                    "type": "text",
+                    "name": "score"
+                  },
+                  {
+                    "type": "text",
+                    "name": "special"
+                  },
+                  {
+                    "type": "text",
+                    "name": "htsno"
+                  },
+                  {
+                    "type": "text",
+                    "name": "footnotes"
+                  },
+                  {
+                    "type": "text",
+                    "name": "general"
+                  },
+                  {
+                    "type": "text",
+                    "name": "units"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "object",
+            "name": "headers",
+            "sub": [
+              {
+                "type": "text",
+                "name": "connection"
+              },
+              {
+                "type": "text",
+                "name": "content-type"
+              },
+              {
+                "type": "text",
+                "name": "date"
+              },
+              {
+                "type": "text",
+                "name": "keep-alive"
+              },
+              {
+                "type": "text",
+                "name": "server"
+              },
+              {
+                "type": "text",
+                "name": "strict-transport-security"
+              },
+              {
+                "type": "text",
+                "name": "transfer-encoding"
+              }
+            ]
+          }
+        ],
+        "outputType": "object",
+        "disabled": true
+      },
+      {
+        "name": "results",
+        "module": "core",
+        "action": "setvalue",
+        "options": {
+          "value": "{{apicodigos.data.results[0].htsno}}"
+        },
+        "meta": [],
+        "outputType": "text",
+        "output": true,
+        "disabled": true
+      },
+      {
+        "name": "repeat1",
+        "module": "core",
+        "action": "repeat",
+        "options": {
+          "repeat": "{{apicodigos.data.results}}",
+          "outputFields": [
+            "description",
+            "htsno"
+          ],
+          "exec": {
+            "steps": [
+              {
+                "name": "htsno",
+                "module": "core",
+                "action": "setvalue",
+                "options": {
+                  "value": "{{htsno}}"
+                },
+                "meta": [],
+                "outputType": "array",
+                "output": true
+              },
+              {
+                "name": "descipcion",
+                "module": "core",
+                "action": "setvalue",
+                "options": {
+                  "value": "{{description}}"
+                },
+                "meta": [],
+                "outputType": "array",
+                "output": true
+              }
+            ]
+          }
+        },
+        "output": true,
+        "meta": [
+          {
+            "name": "$index",
+            "type": "number"
+          },
+          {
+            "name": "$number",
+            "type": "number"
+          },
+          {
+            "name": "$name",
+            "type": "text"
+          },
+          {
+            "name": "$value",
+            "type": "object"
+          },
+          {
+            "name": "other",
+            "type": "text"
+          },
+          {
+            "name": "superior",
+            "type": "text"
+          },
+          {
+            "name": "indent",
+            "type": "text"
+          },
+          {
+            "name": "description",
+            "type": "text"
+          },
+          {
+            "name": "statisticalSuffix",
+            "type": "text"
+          },
+          {
+            "name": "score",
+            "type": "text"
+          },
+          {
+            "name": "special",
+            "type": "text"
+          },
+          {
+            "name": "htsno",
+            "type": "text"
+          },
+          {
+            "name": "footnotes",
+            "type": "text"
+          },
+          {
+            "name": "general",
+            "type": "text"
+          },
+          {
+            "name": "units",
+            "type": "text"
+          }
+        ],
+        "outputType": "array",
+        "disabled": true
+      },
+      {
+        "name": "api_copy",
+        "module": "api",
+        "action": "send",
+        "options": {
+          "method": "POST",
+          "url": "https://api-free.deepl.com/v2/translate",
+          "params": {
+            "target_lang": "EN",
+            "text": "{{$value}}"
+          },
+          "headers": {
+            "Authorization": ""
+          },
+          "schema": [
+            {
+              "type": "object",
+              "name": "data",
+              "sub": [
+                {
+                  "type": "array",
+                  "name": "translations",
+                  "sub": [
+                    {
+                      "type": "text",
+                      "name": "detected_source_language"
+                    },
+                    {
+                      "type": "text",
+                      "name": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "object",
+              "name": "headers",
+              "sub": [
+                {
+                  "type": "text",
+                  "name": "access-control-allow-origin"
+                },
+                {
+                  "type": "text",
+                  "name": "content-encoding"
+                },
+                {
+                  "type": "text",
+                  "name": "content-type"
+                },
+                {
+                  "type": "text",
+                  "name": "date"
+                },
+                {
+                  "type": "text",
+                  "name": "server"
+                },
+                {
+                  "type": "text",
+                  "name": "strict-transport-security"
+                }
+              ]
+            }
+          ]
+        },
+        "output": true,
+        "meta": [
+          {
+            "type": "object",
+            "name": "data",
+            "sub": [
+              {
+                "type": "array",
+                "name": "translations",
+                "sub": [
+                  {
+                    "type": "text",
+                    "name": "detected_source_language"
+                  },
+                  {
+                    "type": "text",
+                    "name": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "object",
+            "name": "headers",
+            "sub": [
+              {
+                "type": "text",
+                "name": "access-control-allow-origin"
+              },
+              {
+                "type": "text",
+                "name": "content-encoding"
+              },
+              {
+                "type": "text",
+                "name": "content-type"
+              },
+              {
+                "type": "text",
+                "name": "date"
+              },
+              {
+                "type": "text",
+                "name": "server"
+              },
+              {
+                "type": "text",
+                "name": "strict-transport-security"
+              }
+            ]
+          }
+        ],
+        "outputType": "object",
+        "disabled": true
+      }
+    ]
+  }
+}

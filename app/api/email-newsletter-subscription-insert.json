@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/views/partials/banner-subscribe.ejs",
+      "linkedForm": "subscribcion_boletin"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "email",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            },
+            "core:email": {
+              "param": "",
+              "message": "Por favor ingrese un correo electrónico válido."
+            }
+          }
+        },
+        "name": "email"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "validate",
+        "module": "validator",
+        "action": "validate",
+        "options": {
+          "data": [
+            {
+              "name": "validate_2",
+              "value": "{{$_POST.email}}",
+              "rules": {
+                "db:notexists": {
+                  "param": {
+                    "connection": "db",
+                    "table": "email_newsletter_subscription",
+                    "column": "email"
+                  },
+                  "message": "El correo ya forma parte de nuestra base de datos"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "insert",
+        "module": "dbupdater",
+        "action": "insert",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "insert",
+            "values": [
+              {
+                "table": "Form-subimmition",
+                "column": "email",
+                "type": "text",
+                "value": "{{$_POST.email}}"
+              }
+            ],
+            "table": "email_newsletter_subscription",
+            "returning": "id",
+            "query": "INSERT INTO email_newsletter_subscription\n(email) VALUES (:P1 /* {{$_POST.email}} */)",
+            "params": [
+              {
+                "name": ":P1",
+                "type": "expression",
+                "value": "{{$_POST.email}}"
+              }
+            ]
+          }
+        },
+        "meta": [
+          {
+            "name": "identity",
+            "type": "text"
+          },
+          {
+            "name": "affected",
+            "type": "number"
+          }
+        ],
+        "output": true
+      }
+    ]
+  }
+}

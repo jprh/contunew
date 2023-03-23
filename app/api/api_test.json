@@ -1,0 +1,2458 @@
+[
+  {
+    "name": "api",
+    "module": "api",
+    "action": "send",
+    "options": {
+      "url": "https://api.ziflow.io/v1/proofs/demo-75a58af3-2d31-4b0f-a757-66789b561c04",
+      "headers": {
+        "apikey": "ts5gssa4jh3nr9n1bc8kdntjhs"
+      },
+      "schema": [
+        {
+          "type": "object",
+          "name": "data",
+          "sub": [
+            {
+              "type": "array",
+              "name": "proofs",
+              "sub": [
+                {
+                  "type": "text",
+                  "name": "id"
+                },
+                {
+                  "type": "text",
+                  "name": "name"
+                },
+                {
+                  "type": "object",
+                  "name": "owner",
+                  "sub": [
+                    {
+                      "type": "text",
+                      "name": "id"
+                    },
+                    {
+                      "type": "text",
+                      "name": "type"
+                    },
+                    {
+                      "type": "text",
+                      "name": "email"
+                    },
+                    {
+                      "type": "array",
+                      "name": "roles",
+                      "sub": [
+                        {
+                          "type": "text",
+                          "name": "$value"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "name": "phone"
+                    },
+                    {
+                      "type": "text",
+                      "name": "company"
+                    },
+                    {
+                      "type": "object",
+                      "name": "tenant",
+                      "sub": [
+                        {
+                          "type": "text",
+                          "name": "subdomain"
+                        },
+                        {
+                          "type": "text",
+                          "name": "tenant_id"
+                        },
+                        {
+                          "type": "text",
+                          "name": "company_name"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "verified"
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "blocked"
+                    },
+                    {
+                      "type": "text",
+                      "name": "timezone"
+                    },
+                    {
+                      "type": "text",
+                      "name": "first_name"
+                    },
+                    {
+                      "type": "text",
+                      "name": "last_name"
+                    },
+                    {
+                      "type": "object",
+                      "name": "proofing_defaults",
+                      "sub": [
+                        {
+                          "type": "boolean",
+                          "name": "view"
+                        },
+                        {
+                          "type": "boolean",
+                          "name": "comment"
+                        },
+                        {
+                          "type": "boolean",
+                          "name": "decision"
+                        },
+                        {
+                          "type": "boolean",
+                          "name": "share"
+                        },
+                        {
+                          "type": "boolean",
+                          "name": "manage"
+                        },
+                        {
+                          "type": "text",
+                          "name": "notification"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "name": "version"
+                },
+                {
+                  "type": "array",
+                  "name": "versions",
+                  "sub": [
+                    {
+                      "type": "text",
+                      "name": "version"
+                    },
+                    {
+                      "type": "text",
+                      "name": "version_id"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "name": "status"
+                },
+                {
+                  "type": "object",
+                  "name": "progress",
+                  "sub": [
+                    {
+                      "type": "boolean",
+                      "name": "notified"
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "opened"
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "commented"
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "completed"
+                    }
+                  ]
+                },
+                {
+                  "type": "boolean",
+                  "name": "locked"
+                },
+                {
+                  "type": "boolean",
+                  "name": "archived"
+                },
+                {
+                  "type": "array",
+                  "name": "stages",
+                  "sub": [
+                    {
+                      "type": "text",
+                      "name": "id"
+                    },
+                    {
+                      "type": "text",
+                      "name": "name"
+                    },
+                    {
+                      "type": "text",
+                      "name": "deadline"
+                    },
+                    {
+                      "type": "object",
+                      "name": "status",
+                      "sub": [
+                        {
+                          "type": "text",
+                          "name": "status"
+                        },
+                        {
+                          "type": "object",
+                          "name": "progress",
+                          "sub": [
+                            {
+                              "type": "boolean",
+                              "name": "notified"
+                            },
+                            {
+                              "type": "boolean",
+                              "name": "opened"
+                            },
+                            {
+                              "type": "boolean",
+                              "name": "commented"
+                            },
+                            {
+                              "type": "boolean",
+                              "name": "completed"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "boolean",
+                          "name": "locked"
+                        },
+                        {
+                          "type": "text",
+                          "name": "decision_status"
+                        },
+                        {
+                          "type": "text",
+                          "name": "decision_status_label"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "array",
+                      "name": "members",
+                      "sub": [
+                        {
+                          "type": "text",
+                          "name": "id"
+                        },
+                        {
+                          "type": "object",
+                          "name": "contact",
+                          "sub": [
+                            {
+                              "type": "text",
+                              "name": "id"
+                            },
+                            {
+                              "type": "text",
+                              "name": "type"
+                            },
+                            {
+                              "type": "text",
+                              "name": "email"
+                            },
+                            {
+                              "type": "text",
+                              "name": "roles"
+                            },
+                            {
+                              "type": "text",
+                              "name": "phone"
+                            },
+                            {
+                              "type": "text",
+                              "name": "company"
+                            },
+                            {
+                              "type": "text",
+                              "name": "tenant"
+                            },
+                            {
+                              "type": "boolean",
+                              "name": "verified"
+                            },
+                            {
+                              "type": "boolean",
+                              "name": "blocked"
+                            },
+                            {
+                              "type": "text",
+                              "name": "timezone"
+                            },
+                            {
+                              "type": "text",
+                              "name": "first_name"
+                            },
+                            {
+                              "type": "text",
+                              "name": "last_name"
+                            },
+                            {
+                              "type": "object",
+                              "name": "proofing_defaults",
+                              "sub": [
+                                {
+                                  "type": "boolean",
+                                  "name": "view"
+                                },
+                                {
+                                  "type": "boolean",
+                                  "name": "comment"
+                                },
+                                {
+                                  "type": "boolean",
+                                  "name": "decision"
+                                },
+                                {
+                                  "type": "boolean",
+                                  "name": "share"
+                                },
+                                {
+                                  "type": "boolean",
+                                  "name": "manage"
+                                },
+                                {
+                                  "type": "text",
+                                  "name": "notification"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "email"
+                        },
+                        {
+                          "type": "boolean",
+                          "name": "view"
+                        },
+                        {
+                          "type": "boolean",
+                          "name": "comment"
+                        },
+                        {
+                          "type": "boolean",
+                          "name": "decision"
+                        },
+                        {
+                          "type": "boolean",
+                          "name": "manage"
+                        },
+                        {
+                          "type": "boolean",
+                          "name": "share"
+                        },
+                        {
+                          "type": "text",
+                          "name": "notification"
+                        },
+                        {
+                          "type": "object",
+                          "name": "progress",
+                          "sub": [
+                            {
+                              "type": "boolean",
+                              "name": "notified"
+                            },
+                            {
+                              "type": "boolean",
+                              "name": "opened"
+                            },
+                            {
+                              "type": "boolean",
+                              "name": "commented"
+                            },
+                            {
+                              "type": "boolean",
+                              "name": "completed"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "number",
+                          "name": "comments"
+                        },
+                        {
+                          "type": "number",
+                          "name": "replies"
+                        },
+                        {
+                          "type": "text",
+                          "name": "proof_url"
+                        },
+                        {
+                          "type": "text",
+                          "name": "decision_status"
+                        },
+                        {
+                          "type": "text",
+                          "name": "decision_status_label"
+                        },
+                        {
+                          "type": "object",
+                          "name": "decision_checklist",
+                          "sub": [
+                            {
+                              "type": "array",
+                              "name": "options"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "boolean",
+                          "name": "electronically_signed"
+                        },
+                        {
+                          "type": "object",
+                          "name": "created_by",
+                          "sub": [
+                            {
+                              "type": "text",
+                              "name": "id"
+                            },
+                            {
+                              "type": "text",
+                              "name": "type"
+                            },
+                            {
+                              "type": "text",
+                              "name": "email"
+                            },
+                            {
+                              "type": "text",
+                              "name": "roles"
+                            },
+                            {
+                              "type": "text",
+                              "name": "phone"
+                            },
+                            {
+                              "type": "text",
+                              "name": "company"
+                            },
+                            {
+                              "type": "text",
+                              "name": "tenant"
+                            },
+                            {
+                              "type": "boolean",
+                              "name": "verified"
+                            },
+                            {
+                              "type": "boolean",
+                              "name": "blocked"
+                            },
+                            {
+                              "type": "text",
+                              "name": "timezone"
+                            },
+                            {
+                              "type": "text",
+                              "name": "first_name"
+                            },
+                            {
+                              "type": "text",
+                              "name": "last_name"
+                            },
+                            {
+                              "type": "object",
+                              "name": "proofing_defaults",
+                              "sub": [
+                                {
+                                  "type": "boolean",
+                                  "name": "view"
+                                },
+                                {
+                                  "type": "boolean",
+                                  "name": "comment"
+                                },
+                                {
+                                  "type": "boolean",
+                                  "name": "decision"
+                                },
+                                {
+                                  "type": "boolean",
+                                  "name": "share"
+                                },
+                                {
+                                  "type": "boolean",
+                                  "name": "manage"
+                                },
+                                {
+                                  "type": "text",
+                                  "name": "notification"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "name": "lock",
+                      "sub": [
+                        {
+                          "type": "text",
+                          "name": "type"
+                        },
+                        {
+                          "type": "text",
+                          "name": "next_stage_name"
+                        },
+                        {
+                          "type": "text",
+                          "name": "next_stage_id"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "name": "skip"
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "skipped"
+                    },
+                    {
+                      "type": "text",
+                      "name": "stage_previous_id"
+                    },
+                    {
+                      "type": "object",
+                      "name": "final_status_calculation",
+                      "sub": [
+                        {
+                          "type": "text",
+                          "name": "type"
+                        },
+                        {
+                          "type": "text",
+                          "name": "reviewer_id"
+                        },
+                        {
+                          "type": "text",
+                          "name": "reviewer_email"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "only_one_decision"
+                    },
+                    {
+                      "type": "text",
+                      "name": "custom_email_subject"
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "send_new_proof_email"
+                    },
+                    {
+                      "type": "text",
+                      "name": "custom_email_message"
+                    },
+                    {
+                      "type": "object",
+                      "name": "stage_trigger",
+                      "sub": [
+                        {
+                          "type": "object",
+                          "name": "trigger",
+                          "sub": [
+                            {
+                              "type": "text",
+                              "name": "type"
+                            },
+                            {
+                              "type": "text",
+                              "name": "parent_stage_id"
+                            },
+                            {
+                              "type": "text",
+                              "name": "parent_stage_name"
+                            },
+                            {
+                              "type": "boolean",
+                              "name": "or_deadline"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "name": "deadline",
+                          "sub": [
+                            {
+                              "type": "text",
+                              "name": "days"
+                            },
+                            {
+                              "type": "text",
+                              "name": "time"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "trigger_id"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "allow_private_comments"
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "allow_public_comments"
+                    }
+                  ]
+                },
+                {
+                  "type": "object",
+                  "name": "folder",
+                  "sub": [
+                    {
+                      "type": "text",
+                      "name": "id"
+                    },
+                    {
+                      "type": "text",
+                      "name": "name"
+                    },
+                    {
+                      "type": "object",
+                      "name": "owner",
+                      "sub": [
+                        {
+                          "type": "text",
+                          "name": "id"
+                        },
+                        {
+                          "type": "text",
+                          "name": "type"
+                        },
+                        {
+                          "type": "text",
+                          "name": "email"
+                        },
+                        {
+                          "type": "array",
+                          "name": "roles",
+                          "sub": [
+                            {
+                              "type": "text",
+                              "name": "$value"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "name": "phone"
+                        },
+                        {
+                          "type": "text",
+                          "name": "company"
+                        },
+                        {
+                          "type": "object",
+                          "name": "tenant",
+                          "sub": [
+                            {
+                              "type": "text",
+                              "name": "subdomain"
+                            },
+                            {
+                              "type": "text",
+                              "name": "tenant_id"
+                            },
+                            {
+                              "type": "text",
+                              "name": "company_name"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "boolean",
+                          "name": "verified"
+                        },
+                        {
+                          "type": "boolean",
+                          "name": "blocked"
+                        },
+                        {
+                          "type": "text",
+                          "name": "timezone"
+                        },
+                        {
+                          "type": "text",
+                          "name": "first_name"
+                        },
+                        {
+                          "type": "text",
+                          "name": "last_name"
+                        },
+                        {
+                          "type": "object",
+                          "name": "proofing_defaults",
+                          "sub": [
+                            {
+                              "type": "boolean",
+                              "name": "view"
+                            },
+                            {
+                              "type": "boolean",
+                              "name": "comment"
+                            },
+                            {
+                              "type": "boolean",
+                              "name": "decision"
+                            },
+                            {
+                              "type": "boolean",
+                              "name": "share"
+                            },
+                            {
+                              "type": "boolean",
+                              "name": "manage"
+                            },
+                            {
+                              "type": "text",
+                              "name": "notification"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "name": "parent_folder_id"
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "private"
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "archived"
+                    },
+                    {
+                      "type": "array",
+                      "name": "folder_path",
+                      "sub": [
+                        {
+                          "type": "text",
+                          "name": "$value"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "name": "brief"
+                },
+                {
+                  "type": "text",
+                  "name": "subscription"
+                },
+                {
+                  "type": "object",
+                  "name": "created_by",
+                  "sub": [
+                    {
+                      "type": "text",
+                      "name": "id"
+                    },
+                    {
+                      "type": "text",
+                      "name": "type"
+                    },
+                    {
+                      "type": "text",
+                      "name": "email"
+                    },
+                    {
+                      "type": "array",
+                      "name": "roles",
+                      "sub": [
+                        {
+                          "type": "text",
+                          "name": "$value"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "name": "phone"
+                    },
+                    {
+                      "type": "text",
+                      "name": "company"
+                    },
+                    {
+                      "type": "object",
+                      "name": "tenant",
+                      "sub": [
+                        {
+                          "type": "text",
+                          "name": "subdomain"
+                        },
+                        {
+                          "type": "text",
+                          "name": "tenant_id"
+                        },
+                        {
+                          "type": "text",
+                          "name": "company_name"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "verified"
+                    },
+                    {
+                      "type": "boolean",
+                      "name": "blocked"
+                    },
+                    {
+                      "type": "text",
+                      "name": "timezone"
+                    },
+                    {
+                      "type": "text",
+                      "name": "first_name"
+                    },
+                    {
+                      "type": "text",
+                      "name": "last_name"
+                    },
+                    {
+                      "type": "object",
+                      "name": "proofing_defaults",
+                      "sub": [
+                        {
+                          "type": "boolean",
+                          "name": "view"
+                        },
+                        {
+                          "type": "boolean",
+                          "name": "comment"
+                        },
+                        {
+                          "type": "boolean",
+                          "name": "decision"
+                        },
+                        {
+                          "type": "boolean",
+                          "name": "share"
+                        },
+                        {
+                          "type": "boolean",
+                          "name": "manage"
+                        },
+                        {
+                          "type": "text",
+                          "name": "notification"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "name": "created_at"
+                },
+                {
+                  "type": "array",
+                  "name": "source_files",
+                  "sub": [
+                    {
+                      "type": "text",
+                      "name": "id"
+                    },
+                    {
+                      "type": "text",
+                      "name": "type"
+                    },
+                    {
+                      "type": "text",
+                      "name": "name"
+                    },
+                    {
+                      "type": "number",
+                      "name": "size"
+                    },
+                    {
+                      "type": "text",
+                      "name": "subtitles"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "name": "decision_status"
+                },
+                {
+                  "type": "text",
+                  "name": "decision_status_label"
+                },
+                {
+                  "type": "text",
+                  "name": "public_link"
+                },
+                {
+                  "type": "boolean",
+                  "name": "lock_on_decisions"
+                },
+                {
+                  "type": "boolean",
+                  "name": "allow_source_download"
+                },
+                {
+                  "type": "boolean",
+                  "name": "secure_proofing"
+                },
+                {
+                  "type": "boolean",
+                  "name": "minor_version"
+                },
+                {
+                  "type": "boolean",
+                  "name": "require_sign_in"
+                },
+                {
+                  "type": "text",
+                  "name": "download_link"
+                },
+                {
+                  "type": "boolean",
+                  "name": "suppress_all_emails"
+                },
+                {
+                  "type": "boolean",
+                  "name": "suppress_creation_email"
+                },
+                {
+                  "type": "text",
+                  "name": "workflow_template"
+                },
+                {
+                  "type": "text",
+                  "name": "custom_properties"
+                },
+                {
+                  "type": "text",
+                  "name": "pass_through_value"
+                },
+                {
+                  "type": "text",
+                  "name": "proof_security"
+                },
+                {
+                  "type": "text",
+                  "name": "email_branding"
+                },
+                {
+                  "type": "text",
+                  "name": "thumbnail_link"
+                },
+                {
+                  "type": "boolean",
+                  "name": "require_electronic_signature"
+                }
+              ]
+            },
+            {
+              "type": "number",
+              "name": "count"
+            },
+            {
+              "type": "number",
+              "name": "page"
+            },
+            {
+              "type": "boolean",
+              "name": "has_more"
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "name": "headers",
+          "sub": [
+            {
+              "type": "text",
+              "name": "content-encoding"
+            },
+            {
+              "type": "text",
+              "name": "content-type"
+            },
+            {
+              "type": "text",
+              "name": "date"
+            },
+            {
+              "type": "text",
+              "name": "server"
+            },
+            {
+              "type": "text",
+              "name": "vary"
+            }
+          ]
+        }
+      ]
+    },
+    "output": true,
+    "meta": [
+      {
+        "type": "object",
+        "name": "data",
+        "sub": [
+          {
+            "type": "array",
+            "name": "proofs",
+            "sub": [
+              {
+                "type": "text",
+                "name": "id"
+              },
+              {
+                "type": "text",
+                "name": "name"
+              },
+              {
+                "type": "object",
+                "name": "owner",
+                "sub": [
+                  {
+                    "type": "text",
+                    "name": "id"
+                  },
+                  {
+                    "type": "text",
+                    "name": "type"
+                  },
+                  {
+                    "type": "text",
+                    "name": "email"
+                  },
+                  {
+                    "type": "array",
+                    "name": "roles",
+                    "sub": [
+                      {
+                        "type": "text",
+                        "name": "$value"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "name": "phone"
+                  },
+                  {
+                    "type": "text",
+                    "name": "company"
+                  },
+                  {
+                    "type": "object",
+                    "name": "tenant",
+                    "sub": [
+                      {
+                        "type": "text",
+                        "name": "subdomain"
+                      },
+                      {
+                        "type": "text",
+                        "name": "tenant_id"
+                      },
+                      {
+                        "type": "text",
+                        "name": "company_name"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "boolean",
+                    "name": "verified"
+                  },
+                  {
+                    "type": "boolean",
+                    "name": "blocked"
+                  },
+                  {
+                    "type": "text",
+                    "name": "timezone"
+                  },
+                  {
+                    "type": "text",
+                    "name": "first_name"
+                  },
+                  {
+                    "type": "text",
+                    "name": "last_name"
+                  },
+                  {
+                    "type": "object",
+                    "name": "proofing_defaults",
+                    "sub": [
+                      {
+                        "type": "boolean",
+                        "name": "view"
+                      },
+                      {
+                        "type": "boolean",
+                        "name": "comment"
+                      },
+                      {
+                        "type": "boolean",
+                        "name": "decision"
+                      },
+                      {
+                        "type": "boolean",
+                        "name": "share"
+                      },
+                      {
+                        "type": "boolean",
+                        "name": "manage"
+                      },
+                      {
+                        "type": "text",
+                        "name": "notification"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "name": "version"
+              },
+              {
+                "type": "array",
+                "name": "versions",
+                "sub": [
+                  {
+                    "type": "text",
+                    "name": "version"
+                  },
+                  {
+                    "type": "text",
+                    "name": "version_id"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "name": "status"
+              },
+              {
+                "type": "object",
+                "name": "progress",
+                "sub": [
+                  {
+                    "type": "boolean",
+                    "name": "notified"
+                  },
+                  {
+                    "type": "boolean",
+                    "name": "opened"
+                  },
+                  {
+                    "type": "boolean",
+                    "name": "commented"
+                  },
+                  {
+                    "type": "boolean",
+                    "name": "completed"
+                  }
+                ]
+              },
+              {
+                "type": "boolean",
+                "name": "locked"
+              },
+              {
+                "type": "boolean",
+                "name": "archived"
+              },
+              {
+                "type": "array",
+                "name": "stages",
+                "sub": [
+                  {
+                    "type": "text",
+                    "name": "id"
+                  },
+                  {
+                    "type": "text",
+                    "name": "name"
+                  },
+                  {
+                    "type": "text",
+                    "name": "deadline"
+                  },
+                  {
+                    "type": "object",
+                    "name": "status",
+                    "sub": [
+                      {
+                        "type": "text",
+                        "name": "status"
+                      },
+                      {
+                        "type": "object",
+                        "name": "progress",
+                        "sub": [
+                          {
+                            "type": "boolean",
+                            "name": "notified"
+                          },
+                          {
+                            "type": "boolean",
+                            "name": "opened"
+                          },
+                          {
+                            "type": "boolean",
+                            "name": "commented"
+                          },
+                          {
+                            "type": "boolean",
+                            "name": "completed"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "boolean",
+                        "name": "locked"
+                      },
+                      {
+                        "type": "text",
+                        "name": "decision_status"
+                      },
+                      {
+                        "type": "text",
+                        "name": "decision_status_label"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "array",
+                    "name": "members",
+                    "sub": [
+                      {
+                        "type": "text",
+                        "name": "id"
+                      },
+                      {
+                        "type": "object",
+                        "name": "contact",
+                        "sub": [
+                          {
+                            "type": "text",
+                            "name": "id"
+                          },
+                          {
+                            "type": "text",
+                            "name": "type"
+                          },
+                          {
+                            "type": "text",
+                            "name": "email"
+                          },
+                          {
+                            "type": "text",
+                            "name": "roles"
+                          },
+                          {
+                            "type": "text",
+                            "name": "phone"
+                          },
+                          {
+                            "type": "text",
+                            "name": "company"
+                          },
+                          {
+                            "type": "text",
+                            "name": "tenant"
+                          },
+                          {
+                            "type": "boolean",
+                            "name": "verified"
+                          },
+                          {
+                            "type": "boolean",
+                            "name": "blocked"
+                          },
+                          {
+                            "type": "text",
+                            "name": "timezone"
+                          },
+                          {
+                            "type": "text",
+                            "name": "first_name"
+                          },
+                          {
+                            "type": "text",
+                            "name": "last_name"
+                          },
+                          {
+                            "type": "object",
+                            "name": "proofing_defaults",
+                            "sub": [
+                              {
+                                "type": "boolean",
+                                "name": "view"
+                              },
+                              {
+                                "type": "boolean",
+                                "name": "comment"
+                              },
+                              {
+                                "type": "boolean",
+                                "name": "decision"
+                              },
+                              {
+                                "type": "boolean",
+                                "name": "share"
+                              },
+                              {
+                                "type": "boolean",
+                                "name": "manage"
+                              },
+                              {
+                                "type": "text",
+                                "name": "notification"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "name": "email"
+                      },
+                      {
+                        "type": "boolean",
+                        "name": "view"
+                      },
+                      {
+                        "type": "boolean",
+                        "name": "comment"
+                      },
+                      {
+                        "type": "boolean",
+                        "name": "decision"
+                      },
+                      {
+                        "type": "boolean",
+                        "name": "manage"
+                      },
+                      {
+                        "type": "boolean",
+                        "name": "share"
+                      },
+                      {
+                        "type": "text",
+                        "name": "notification"
+                      },
+                      {
+                        "type": "object",
+                        "name": "progress",
+                        "sub": [
+                          {
+                            "type": "boolean",
+                            "name": "notified"
+                          },
+                          {
+                            "type": "boolean",
+                            "name": "opened"
+                          },
+                          {
+                            "type": "boolean",
+                            "name": "commented"
+                          },
+                          {
+                            "type": "boolean",
+                            "name": "completed"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "number",
+                        "name": "comments"
+                      },
+                      {
+                        "type": "number",
+                        "name": "replies"
+                      },
+                      {
+                        "type": "text",
+                        "name": "proof_url"
+                      },
+                      {
+                        "type": "text",
+                        "name": "decision_status"
+                      },
+                      {
+                        "type": "text",
+                        "name": "decision_status_label"
+                      },
+                      {
+                        "type": "object",
+                        "name": "decision_checklist",
+                        "sub": [
+                          {
+                            "type": "array",
+                            "name": "options"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "boolean",
+                        "name": "electronically_signed"
+                      },
+                      {
+                        "type": "object",
+                        "name": "created_by",
+                        "sub": [
+                          {
+                            "type": "text",
+                            "name": "id"
+                          },
+                          {
+                            "type": "text",
+                            "name": "type"
+                          },
+                          {
+                            "type": "text",
+                            "name": "email"
+                          },
+                          {
+                            "type": "text",
+                            "name": "roles"
+                          },
+                          {
+                            "type": "text",
+                            "name": "phone"
+                          },
+                          {
+                            "type": "text",
+                            "name": "company"
+                          },
+                          {
+                            "type": "text",
+                            "name": "tenant"
+                          },
+                          {
+                            "type": "boolean",
+                            "name": "verified"
+                          },
+                          {
+                            "type": "boolean",
+                            "name": "blocked"
+                          },
+                          {
+                            "type": "text",
+                            "name": "timezone"
+                          },
+                          {
+                            "type": "text",
+                            "name": "first_name"
+                          },
+                          {
+                            "type": "text",
+                            "name": "last_name"
+                          },
+                          {
+                            "type": "object",
+                            "name": "proofing_defaults",
+                            "sub": [
+                              {
+                                "type": "boolean",
+                                "name": "view"
+                              },
+                              {
+                                "type": "boolean",
+                                "name": "comment"
+                              },
+                              {
+                                "type": "boolean",
+                                "name": "decision"
+                              },
+                              {
+                                "type": "boolean",
+                                "name": "share"
+                              },
+                              {
+                                "type": "boolean",
+                                "name": "manage"
+                              },
+                              {
+                                "type": "text",
+                                "name": "notification"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "name": "lock",
+                    "sub": [
+                      {
+                        "type": "text",
+                        "name": "type"
+                      },
+                      {
+                        "type": "text",
+                        "name": "next_stage_name"
+                      },
+                      {
+                        "type": "text",
+                        "name": "next_stage_id"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "name": "skip"
+                  },
+                  {
+                    "type": "boolean",
+                    "name": "skipped"
+                  },
+                  {
+                    "type": "text",
+                    "name": "stage_previous_id"
+                  },
+                  {
+                    "type": "object",
+                    "name": "final_status_calculation",
+                    "sub": [
+                      {
+                        "type": "text",
+                        "name": "type"
+                      },
+                      {
+                        "type": "text",
+                        "name": "reviewer_id"
+                      },
+                      {
+                        "type": "text",
+                        "name": "reviewer_email"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "boolean",
+                    "name": "only_one_decision"
+                  },
+                  {
+                    "type": "text",
+                    "name": "custom_email_subject"
+                  },
+                  {
+                    "type": "boolean",
+                    "name": "send_new_proof_email"
+                  },
+                  {
+                    "type": "text",
+                    "name": "custom_email_message"
+                  },
+                  {
+                    "type": "object",
+                    "name": "stage_trigger",
+                    "sub": [
+                      {
+                        "type": "object",
+                        "name": "trigger",
+                        "sub": [
+                          {
+                            "type": "text",
+                            "name": "type"
+                          },
+                          {
+                            "type": "text",
+                            "name": "parent_stage_id"
+                          },
+                          {
+                            "type": "text",
+                            "name": "parent_stage_name"
+                          },
+                          {
+                            "type": "boolean",
+                            "name": "or_deadline"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "name": "deadline",
+                        "sub": [
+                          {
+                            "type": "text",
+                            "name": "days"
+                          },
+                          {
+                            "type": "text",
+                            "name": "time"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "name": "trigger_id"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "boolean",
+                    "name": "allow_private_comments"
+                  },
+                  {
+                    "type": "boolean",
+                    "name": "allow_public_comments"
+                  }
+                ]
+              },
+              {
+                "type": "object",
+                "name": "folder",
+                "sub": [
+                  {
+                    "type": "text",
+                    "name": "id"
+                  },
+                  {
+                    "type": "text",
+                    "name": "name"
+                  },
+                  {
+                    "type": "object",
+                    "name": "owner",
+                    "sub": [
+                      {
+                        "type": "text",
+                        "name": "id"
+                      },
+                      {
+                        "type": "text",
+                        "name": "type"
+                      },
+                      {
+                        "type": "text",
+                        "name": "email"
+                      },
+                      {
+                        "type": "array",
+                        "name": "roles",
+                        "sub": [
+                          {
+                            "type": "text",
+                            "name": "$value"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "name": "phone"
+                      },
+                      {
+                        "type": "text",
+                        "name": "company"
+                      },
+                      {
+                        "type": "object",
+                        "name": "tenant",
+                        "sub": [
+                          {
+                            "type": "text",
+                            "name": "subdomain"
+                          },
+                          {
+                            "type": "text",
+                            "name": "tenant_id"
+                          },
+                          {
+                            "type": "text",
+                            "name": "company_name"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "boolean",
+                        "name": "verified"
+                      },
+                      {
+                        "type": "boolean",
+                        "name": "blocked"
+                      },
+                      {
+                        "type": "text",
+                        "name": "timezone"
+                      },
+                      {
+                        "type": "text",
+                        "name": "first_name"
+                      },
+                      {
+                        "type": "text",
+                        "name": "last_name"
+                      },
+                      {
+                        "type": "object",
+                        "name": "proofing_defaults",
+                        "sub": [
+                          {
+                            "type": "boolean",
+                            "name": "view"
+                          },
+                          {
+                            "type": "boolean",
+                            "name": "comment"
+                          },
+                          {
+                            "type": "boolean",
+                            "name": "decision"
+                          },
+                          {
+                            "type": "boolean",
+                            "name": "share"
+                          },
+                          {
+                            "type": "boolean",
+                            "name": "manage"
+                          },
+                          {
+                            "type": "text",
+                            "name": "notification"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "name": "parent_folder_id"
+                  },
+                  {
+                    "type": "boolean",
+                    "name": "private"
+                  },
+                  {
+                    "type": "boolean",
+                    "name": "archived"
+                  },
+                  {
+                    "type": "array",
+                    "name": "folder_path",
+                    "sub": [
+                      {
+                        "type": "text",
+                        "name": "$value"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "name": "brief"
+              },
+              {
+                "type": "text",
+                "name": "subscription"
+              },
+              {
+                "type": "object",
+                "name": "created_by",
+                "sub": [
+                  {
+                    "type": "text",
+                    "name": "id"
+                  },
+                  {
+                    "type": "text",
+                    "name": "type"
+                  },
+                  {
+                    "type": "text",
+                    "name": "email"
+                  },
+                  {
+                    "type": "array",
+                    "name": "roles",
+                    "sub": [
+                      {
+                        "type": "text",
+                        "name": "$value"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "name": "phone"
+                  },
+                  {
+                    "type": "text",
+                    "name": "company"
+                  },
+                  {
+                    "type": "object",
+                    "name": "tenant",
+                    "sub": [
+                      {
+                        "type": "text",
+                        "name": "subdomain"
+                      },
+                      {
+                        "type": "text",
+                        "name": "tenant_id"
+                      },
+                      {
+                        "type": "text",
+                        "name": "company_name"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "boolean",
+                    "name": "verified"
+                  },
+                  {
+                    "type": "boolean",
+                    "name": "blocked"
+                  },
+                  {
+                    "type": "text",
+                    "name": "timezone"
+                  },
+                  {
+                    "type": "text",
+                    "name": "first_name"
+                  },
+                  {
+                    "type": "text",
+                    "name": "last_name"
+                  },
+                  {
+                    "type": "object",
+                    "name": "proofing_defaults",
+                    "sub": [
+                      {
+                        "type": "boolean",
+                        "name": "view"
+                      },
+                      {
+                        "type": "boolean",
+                        "name": "comment"
+                      },
+                      {
+                        "type": "boolean",
+                        "name": "decision"
+                      },
+                      {
+                        "type": "boolean",
+                        "name": "share"
+                      },
+                      {
+                        "type": "boolean",
+                        "name": "manage"
+                      },
+                      {
+                        "type": "text",
+                        "name": "notification"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "name": "created_at"
+              },
+              {
+                "type": "array",
+                "name": "source_files",
+                "sub": [
+                  {
+                    "type": "text",
+                    "name": "id"
+                  },
+                  {
+                    "type": "text",
+                    "name": "type"
+                  },
+                  {
+                    "type": "text",
+                    "name": "name"
+                  },
+                  {
+                    "type": "number",
+                    "name": "size"
+                  },
+                  {
+                    "type": "text",
+                    "name": "subtitles"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "name": "decision_status"
+              },
+              {
+                "type": "text",
+                "name": "decision_status_label"
+              },
+              {
+                "type": "text",
+                "name": "public_link"
+              },
+              {
+                "type": "boolean",
+                "name": "lock_on_decisions"
+              },
+              {
+                "type": "boolean",
+                "name": "allow_source_download"
+              },
+              {
+                "type": "boolean",
+                "name": "secure_proofing"
+              },
+              {
+                "type": "boolean",
+                "name": "minor_version"
+              },
+              {
+                "type": "boolean",
+                "name": "require_sign_in"
+              },
+              {
+                "type": "text",
+                "name": "download_link"
+              },
+              {
+                "type": "boolean",
+                "name": "suppress_all_emails"
+              },
+              {
+                "type": "boolean",
+                "name": "suppress_creation_email"
+              },
+              {
+                "type": "text",
+                "name": "workflow_template"
+              },
+              {
+                "type": "text",
+                "name": "custom_properties"
+              },
+              {
+                "type": "text",
+                "name": "pass_through_value"
+              },
+              {
+                "type": "text",
+                "name": "proof_security"
+              },
+              {
+                "type": "text",
+                "name": "email_branding"
+              },
+              {
+                "type": "text",
+                "name": "thumbnail_link"
+              },
+              {
+                "type": "boolean",
+                "name": "require_electronic_signature"
+              }
+            ]
+          },
+          {
+            "type": "number",
+            "name": "count"
+          },
+          {
+            "type": "number",
+            "name": "page"
+          },
+          {
+            "type": "boolean",
+            "name": "has_more"
+          }
+        ]
+      },
+      {
+        "type": "object",
+        "name": "headers",
+        "sub": [
+          {
+            "type": "text",
+            "name": "content-encoding"
+          },
+          {
+            "type": "text",
+            "name": "content-type"
+          },
+          {
+            "type": "text",
+            "name": "date"
+          },
+          {
+            "type": "text",
+            "name": "server"
+          },
+          {
+            "type": "text",
+            "name": "vary"
+          }
+        ]
+      }
+    ],
+    "outputType": "object"
+  },
+  {
+    "name": "api_coments",
+    "module": "api",
+    "action": "send",
+    "options": {
+      "url": "https://api.ziflow.io/v1/proofs/demo-75a58af3-2d31-4b0f-a757-66789b561c04/comments",
+      "headers": {
+        "apikey": "ts5gssa4jh3nr9n1bc8kdntjhs"
+      },
+      "schema": [
+        {
+          "type": "array",
+          "name": "data",
+          "sub": [
+            {
+              "type": "text",
+              "name": "id"
+            },
+            {
+              "type": "object",
+              "name": "location",
+              "sub": [
+                {
+                  "type": "text",
+                  "name": "page"
+                },
+                {
+                  "type": "text",
+                  "name": "start_time"
+                },
+                {
+                  "type": "text",
+                  "name": "end_time"
+                },
+                {
+                  "type": "text",
+                  "name": "asset_id"
+                }
+              ]
+            },
+            {
+              "type": "array",
+              "name": "replies"
+            },
+            {
+              "type": "boolean",
+              "name": "deleted"
+            },
+            {
+              "type": "array",
+              "name": "markers"
+            },
+            {
+              "type": "array",
+              "name": "labels"
+            },
+            {
+              "type": "text",
+              "name": "parent_comment_id"
+            },
+            {
+              "type": "text",
+              "name": "proof_id"
+            },
+            {
+              "type": "text",
+              "name": "comment"
+            },
+            {
+              "type": "number",
+              "name": "sequence"
+            },
+            {
+              "type": "text",
+              "name": "created_at"
+            },
+            {
+              "type": "object",
+              "name": "reviewer",
+              "sub": [
+                {
+                  "type": "text",
+                  "name": "email"
+                },
+                {
+                  "type": "text",
+                  "name": "reviewer_id"
+                }
+              ]
+            },
+            {
+              "type": "array",
+              "name": "likes",
+              "sub": [
+                {
+                  "type": "text",
+                  "name": "email"
+                },
+                {
+                  "type": "text",
+                  "name": "reviewer_id"
+                }
+              ]
+            },
+            {
+              "type": "array",
+              "name": "attachments"
+            },
+            {
+              "type": "boolean",
+              "name": "private"
+            },
+            {
+              "type": "object",
+              "name": "comment_resolve",
+              "sub": [
+                {
+                  "type": "text",
+                  "name": "type"
+                },
+                {
+                  "type": "text",
+                  "name": "resolve_reviewer"
+                },
+                {
+                  "type": "text",
+                  "name": "unresolve_date"
+                },
+                {
+                  "type": "text",
+                  "name": "resolve_date"
+                },
+                {
+                  "type": "text",
+                  "name": "unresolve_reviewer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "name": "headers",
+          "sub": [
+            {
+              "type": "text",
+              "name": "content-encoding"
+            },
+            {
+              "type": "text",
+              "name": "content-type"
+            },
+            {
+              "type": "text",
+              "name": "date"
+            },
+            {
+              "type": "text",
+              "name": "server"
+            },
+            {
+              "type": "text",
+              "name": "vary"
+            }
+          ]
+        }
+      ]
+    },
+    "output": true,
+    "meta": [
+      {
+        "type": "array",
+        "name": "data",
+        "sub": [
+          {
+            "type": "text",
+            "name": "id"
+          },
+          {
+            "type": "object",
+            "name": "location",
+            "sub": [
+              {
+                "type": "text",
+                "name": "page"
+              },
+              {
+                "type": "text",
+                "name": "start_time"
+              },
+              {
+                "type": "text",
+                "name": "end_time"
+              },
+              {
+                "type": "text",
+                "name": "asset_id"
+              }
+            ]
+          },
+          {
+            "type": "array",
+            "name": "replies"
+          },
+          {
+            "type": "boolean",
+            "name": "deleted"
+          },
+          {
+            "type": "array",
+            "name": "markers"
+          },
+          {
+            "type": "array",
+            "name": "labels"
+          },
+          {
+            "type": "text",
+            "name": "parent_comment_id"
+          },
+          {
+            "type": "text",
+            "name": "proof_id"
+          },
+          {
+            "type": "text",
+            "name": "comment"
+          },
+          {
+            "type": "number",
+            "name": "sequence"
+          },
+          {
+            "type": "text",
+            "name": "created_at"
+          },
+          {
+            "type": "object",
+            "name": "reviewer",
+            "sub": [
+              {
+                "type": "text",
+                "name": "email"
+              },
+              {
+                "type": "text",
+                "name": "reviewer_id"
+              }
+            ]
+          },
+          {
+            "type": "array",
+            "name": "likes",
+            "sub": [
+              {
+                "type": "text",
+                "name": "email"
+              },
+              {
+                "type": "text",
+                "name": "reviewer_id"
+              }
+            ]
+          },
+          {
+            "type": "array",
+            "name": "attachments"
+          },
+          {
+            "type": "boolean",
+            "name": "private"
+          },
+          {
+            "type": "object",
+            "name": "comment_resolve",
+            "sub": [
+              {
+                "type": "text",
+                "name": "type"
+              },
+              {
+                "type": "text",
+                "name": "resolve_reviewer"
+              },
+              {
+                "type": "text",
+                "name": "unresolve_date"
+              },
+              {
+                "type": "text",
+                "name": "resolve_date"
+              },
+              {
+                "type": "text",
+                "name": "unresolve_reviewer"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "object",
+        "name": "headers",
+        "sub": [
+          {
+            "type": "text",
+            "name": "content-encoding"
+          },
+          {
+            "type": "text",
+            "name": "content-type"
+          },
+          {
+            "type": "text",
+            "name": "date"
+          },
+          {
+            "type": "text",
+            "name": "server"
+          },
+          {
+            "type": "text",
+            "name": "vary"
+          }
+        ]
+      }
+    ],
+    "outputType": "object"
+  },
+  {
+    "name": "api_reviewersURL",
+    "module": "api",
+    "action": "send",
+    "options": {
+      "url": "https://api.ziflow.io/v1/proofs/demo-75a58af3-2d31-4b0f-a757-66789b561c04/proof-url",
+      "headers": {
+        "apikey": "ts5gssa4jh3nr9n1bc8kdntjhs",
+        "X-Frame-Option": "ALLOW-FROM"
+      },
+      "schema": [
+        {
+          "type": "object",
+          "name": "data",
+          "sub": [
+            {
+              "type": "text",
+              "name": "proof_url"
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "name": "headers",
+          "sub": [
+            {
+              "type": "text",
+              "name": "content-encoding"
+            },
+            {
+              "type": "text",
+              "name": "content-type"
+            },
+            {
+              "type": "text",
+              "name": "date"
+            },
+            {
+              "type": "text",
+              "name": "server"
+            },
+            {
+              "type": "text",
+              "name": "vary"
+            }
+          ]
+        }
+      ]
+    },
+    "output": true,
+    "meta": [
+      {
+        "type": "object",
+        "name": "data",
+        "sub": [
+          {
+            "type": "text",
+            "name": "proof_url"
+          }
+        ]
+      },
+      {
+        "type": "object",
+        "name": "headers",
+        "sub": [
+          {
+            "type": "text",
+            "name": "content-encoding"
+          },
+          {
+            "type": "text",
+            "name": "content-type"
+          },
+          {
+            "type": "text",
+            "name": "date"
+          },
+          {
+            "type": "text",
+            "name": "server"
+          },
+          {
+            "type": "text",
+            "name": "vary"
+          }
+        ]
+      }
+    ],
+    "outputType": "object"
+  }
+]

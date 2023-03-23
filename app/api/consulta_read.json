@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query",
+      "module": "dbconnector",
+      "action": "select",
+      "options": {
+        "connection": "db",
+        "sql": {
+          "type": "SELECT",
+          "columns": [
+            {
+              "table": "consulta",
+              "column": "*"
+            },
+            {
+              "table": "users",
+              "column": "first_name"
+            },
+            {
+              "table": "users",
+              "column": "last_name"
+            },
+            {
+              "table": "users",
+              "column": "email"
+            },
+            {
+              "table": "companies",
+              "column": "name"
+            },
+            {
+              "table": "companies",
+              "column": "website"
+            }
+          ],
+          "params": [],
+          "table": {
+            "name": "consulta"
+          },
+          "primary": "id",
+          "joins": [
+            {
+              "table": "users",
+              "column": "*",
+              "type": "INNER",
+              "clauses": {
+                "condition": "AND",
+                "rules": [
+                  {
+                    "table": "users",
+                    "column": "id",
+                    "operator": "equal",
+                    "value": {
+                      "table": "consulta",
+                      "column": "user_id",
+                      "type": "number"
+                    },
+                    "operation": "="
+                  }
+                ]
+              },
+              "primary": "id"
+            },
+            {
+              "table": "companies",
+              "column": "*",
+              "type": "INNER",
+              "clauses": {
+                "condition": "AND",
+                "rules": [
+                  {
+                    "table": "companies",
+                    "column": "id",
+                    "operator": "equal",
+                    "value": {
+                      "table": "users",
+                      "column": "company_id",
+                      "type": "number"
+                    },
+                    "operation": "="
+                  }
+                ]
+              },
+              "primary": "id"
+            }
+          ],
+          "query": "SELECT consulta.*, users.first_name, users.last_name, users.email, companies.name, companies.website\nFROM consulta\nINNER JOIN users ON (users.id = consulta.user_id) INNER JOIN companies ON (companies.id = users.company_id)"
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "number",
+          "name": "id"
+        },
+        {
+          "type": "text",
+          "name": "valor_de_producto"
+        },
+        {
+          "type": "text",
+          "name": "llegada_de_mercancia"
+        },
+        {
+          "type": "text",
+          "name": "tipo_de_producto"
+        },
+        {
+          "type": "text",
+          "name": "tipo_de_entidad"
+        },
+        {
+          "type": "text",
+          "name": "info_adicional"
+        },
+        {
+          "type": "number",
+          "name": "user_id"
+        },
+        {
+          "type": "datetime",
+          "name": "fecha_solicitud"
+        },
+        {
+          "type": "number",
+          "name": "company_id"
+        },
+        {
+          "type": "text",
+          "name": "first_name"
+        },
+        {
+          "type": "text",
+          "name": "last_name"
+        },
+        {
+          "type": "text",
+          "name": "email"
+        },
+        {
+          "type": "text",
+          "name": "name"
+        },
+        {
+          "type": "text",
+          "name": "website"
+        }
+      ],
+      "outputType": "array"
+    }
+  }
+}

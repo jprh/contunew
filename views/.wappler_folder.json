@@ -1,0 +1,51 @@
+{
+  "home.ejs": {
+    "layoutPage": "main-contucarga",
+    "description": ""
+  },
+  "blog-post.ejs": {
+    "layoutPage": "main-contucarga",
+    "description": ""
+  },
+  "Table.ejs": {
+    "layoutPage": "main-contucarga",
+    "description": ""
+  },
+  "Agenda.ejs": {
+    "layoutPage": "main-contucarga",
+    "description": ""
+  },
+  "app-contactos.ejs": {
+    "layoutPage": "app",
+    "description": ""
+  },
+  "app-projects.ejs": {
+    "layoutPage": "app",
+    "description": ""
+  },
+  "app-signin-signup.ejs": {
+    "layoutPage": "sign-in-sign-up",
+    "description": ""
+  },
+  "app-despachos.ejs": {
+    "layoutPage": "app",
+    "description": ""
+  },
+  "blog-post-test.ejs": {
+    "layoutPage": "main-contucarga",
+    "description": ""
+  },
+  "blog.ejs": {
+    "layoutPage": "main-contucarga"
+  },
+  "blog-new.ejs": {
+    "layoutPage": "main-contucarga",
+    "description": ""
+  },
+  "blog-copy.ejs": {
+    "layoutPage": "main-contucarga"
+  },
+  "app-cotizaciones.ejs": {
+    "layoutPage": "app"
+  }
+}

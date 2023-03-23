@@ -1,0 +1,12 @@
+{
+  "name": "gmail",
+  "module": "mail",
+  "action": "setup",
+  "options": {
+    "host": "smtp.gmail.com",
+    "port": 465,
+    "username": "",
+    "password": "",
+    "useSSL": true
+  }
+}

@@ -1,0 +1,321 @@
+<!-- Wappler include head-page="layouts/app" fontawesome_4="cdn" is="dmx-app" id="appprojects" appConnect="local" jquery_slim_35="cdn" bootstrap5="cdn" components="{dmxBootstrap5Navigation:{},dmxSockets:{},dmxFormatter:{},dmxDatePicker:{},dmxStateManagement:{},dmxBootstrap5TableGenerator:{},dmxBootstrap5PagingGenerator:{},dmxLightbox:{},dmxDownload:{},dmxBootbox5:{},dmxNotifications:{},dmxBootstrap5Popovers:{},dmxBootstrap5Tooltips:{},dmxBootstrap5Offcanvas:{},dmxDataTraversal:{},dmxMasonry:{},dmxBrowser:{}}" moment_2="local with locales" bootstrap_icons="cdn" -->
+<dmx-download id="download1"></dmx-download>
+<dmx-value id="varimgpath" dmx-bind:value="offcanvas1.data_detail1.data.conocimiento_de_embarque_imagen_url"></dmx-value>
+
+<div is="dmx-browser" id="browser1"></div>
+<div class="offcanvas offcanvas-end" id="offcanvas1" is="dmx-bs5-offcanvas" tabindex="-1" nobackdrop="true" style="width: 500px;" scroll="true">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Detalles del Embarque</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="container">
+            <ul class="nav nav-tabs" id="navTabs1_tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="navTabs1_1_tab" data-bs-toggle="tab" href="#" data-bs-target="#navTabs1_1" role="tab" aria-controls="navTabs1_1" aria-selected="true">Detalles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="navTabs1_2_tab" data-bs-toggle="tab" href="#" data-bs-target="#navTabs1_2" role="tab" aria-controls="navTabs1_2" aria-selected="false">Documentos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" id="navTabs1_3_tab" data-bs-toggle="tab" href="#" data-bs-target="#navTabs1_3" role="tab" aria-controls="navTabs1_3" aria-selected="false">Mensajes</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="navTabs1_content">
+                <div class="tab-pane fade show active pt-4" id="navTabs1_1" role="tabpanel">
+                    <div class="row mt-0">
+                        <div class="col" is="dmx-data-detail" id="data_detail1" dmx-bind:data="serverconnect1.data.query.data" key="id">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody dmx-generator="bs5table" dmx-populate="data_detail1.data">
+                                        <tr>
+                                            <th>Fecha creacion embarque</th>
+                                            <td dmx-text="data_detail1.data.Fecha_creacion_embarque.formatDate('dd-MM-yyyy')"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Estado</th>
+                                            <td dmx-text="data_detail1.data.Estado"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Compañía</th>
+                                            <td dmx-text="data_detail1.data.name.capitalize()"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Fecha de llegada</th>
+                                            <td dmx-text="data_detail1.data.fecha_de_llegada"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Numero referencia</th>
+                                            <td dmx-text="data_detail1.data.numero_referencia"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Tipo de transporte</th>
+                                            <td dmx-text="data_detail1.data.tipo_de_transporte.capitalize()"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Empresa de transporte</th>
+                                            <td dmx-text="data_detail1.data.empresa_de_transporte.capitalize()"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Referencia de transportista</th>
+                                            <td dmx-text="data_detail1.data.referencia_de_transportista"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Códigos arancelarios</th>
+                                            <td>
+                                                <ul class="list-group" is="dmx-repeat" id="repeat2" dmx-bind:repeat="data_detail1.data.codigos_arancelarios_descripcion.split(',')" dmxorgdomid="d271">
+                                                    <li class="list-group-item" dmx-html="data_detail1.data.codigos_arancelarios_descripcion.split(',')[$index]" style="border-color: transparent;" dmxorgdomid="d273"></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Descripción de Códigos Arancelarios</th>
+                                            <td>
+                                                <ul class="list-group" is="dmx-repeat" id="repeat3" dmx-bind:repeat="data_detail1.data.codigos_arancelarios_descripcion.split(',')" dmxorgdomid="d271">
+                                                    <li class="list-group-item" dmx-html="data_detail1.data.codigos_arancelarios_descripcion.split(',')[$index]" style="border-color: transparent;" dmxorgdomid="d273"></li>
+                                                </ul>
+                                            </td>
+
+
+
+                                        </tr>
+                                        <tr>
+                                            <th>Numero de factura</th>
+                                            <td dmx-text="data_detail1.data.numero_de_factura"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Nombre del proveedor</th>
+                                            <td dmx-text="data_detail1.data.nombre_del_proveedor.capitalize()"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Articulos importados son alimentos</th>
+                                            <td dmx-text="data_detail1.data.articulos_importados_son_alimentos.capitalize()"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade pt-4" id="navTabs1_2" role="tabpanel">
+                    <div class="row mt-auto gx-4 gy-4">
+                        <div class="col-4">
+
+                            <p class="mb-0 fw-bold">Conocimiento de Embarque</p><small class="text-danger" dmx-show="!data_detail1.data.conocimiento_de_embarque_imagen_url.length()&gt;0">Documento Faltante</small>
+
+
+                            <a dmx-bind:download="data_detail1.data.conocimiento_de_embarque_imagen_url" dmx-lightbox="" dmx-bind:href="data_detail1.data.conocimiento_de_embarque_imagen_url" class="mb-0"><img dmx-bind:src="data_detail1.data.conocimiento_de_embarque_imagen_url" class="rounded">
+                                <a download dmx-bind:href="data_detail1.data.conocimiento_de_embarque_imagen_url">
+                                    <i class="bi-caret-down me-2"></i>Descargar
+                                </a></a>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-0 fw-bold">Renuncia de la Mercancía</p>
+                            <small class="text-danger" dmx-show="!data_detail1.data.renuncia_de_mercancia_imagen_url&gt;0">Documento Faltante</small>
+                            <a dmx-lightbox=""><img dmx-bind:src="data_detail1.data.renuncia_de_mercancia_imagen_url" class="rounded"></a>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-0 fw-bold">Licencia de Importación</p>
+                            <small class="text-danger" dmx-show="!data_detail1.data.licencia_de_importacion_imagen_url.length()&gt;0">Documento Faltante</small>
+                            <a><img dmx-bind:src="data_detail1.data.licencia_de_importacion_imagen_url" class="rounded"></a>
+
+
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-0 fw-bold">Certificado de Origen&nbsp;</p>
+                            <small class="text-danger" dmx-show="!data_detail1.data.certificado_de_origen_imagen_url.length()&gt;0">Documento Faltante</small>
+                            <a><img dmx-bind:src="data_detail1.data.certificado_de_origen_imagen_url" class="rounded"></a>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-0 fw-bold">Registro de Sencamer</p>
+                            <small class="text-danger" dmx-show="!data_detail1.data.registro_sencamer_imagen_url.length()&gt;0">Documento Faltante</small>
+                            <a><img dmx-bind:src="data_detail1.data.registro_sencamer_imagen_url" class="rounded"></a>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-0 fw-bold">Registro Sanitario</p>
+                            <small class="text-danger" dmx-show="!data_detail1.data.registro_sanitario_imagen_url.length()&gt;0">Documento Faltante</small>
+                            <a><img dmx-bind:src="data_detail1.data.registro_sanitario_imagen_url" class="rounded"></a>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-0 fw-bold">Certificado Sanitario</p>
+                            <small class="text-danger" dmx-show="!data_detail1.data.certificado_sanitario_imagen_url.length()&gt;0">Documento Faltante</small><a><img dmx-bind:src="data_detail1.data.certificado_sanitario_imagen_url" class="rounded"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="navTabs1_3" role="tabpanel">
+                    <p>Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex. Nulla ut duis ipsum nisi elit fugiat commodo sunt reprehenderit laborum veniam eu veniam. Eiusmod minim exercitation fugiat irure ex labore incididunt do fugiat commodo aliquip sit id deserunt reprehenderit aliquip nostrud. Amet ex cupidatat excepteur aute veniam incididunt mollit cupidatat esse irure officia elit do ipsum ullamco Lorem. Ullamco ut ad minim do mollit labore ipsum laboris ipsum commodo sunt tempor enim incididunt. Commodo quis sunt dolore aliquip aute tempor irure magna enim minim reprehenderit. Ullamco consectetur culpa veniam sint cillum aliqua incididunt velit ullamco sunt ullamco quis quis commodo voluptate. Mollit nulla nostrud adipisicing aliqua cupidatat aliqua pariatur mollit voluptate voluptate consequat non.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<dmx-lightbox id="lightbox1"></dmx-lightbox>
+<dmx-serverconnect id="serverconnectupdatestatus" url="api/embarques/update_embarques_status" sockets="true"></dmx-serverconnect>
+<dmx-serverconnect id="serverconnect1" url="api/embarques/query_paged_embarques" dmx-param:offset="query1.data.offset" dmx-param:limit="5" sockets="true" dmx-param:sort="query1.data.sort" dmx-param:dir="query1.data.dir"></dmx-serverconnect>
+<dmx-query-manager id="query1"></dmx-query-manager>
+<meta name="ac:route" content="/app-lista-embarques">
+
+<!-- Page Content-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="page-title">Embarques</h4>
+                            <ol class="breadcrumb visually-hidden">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Dastone</a></li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Projects</a></li>
+                                <li class="breadcrumb-item active">Projects</li>
+                            </ol>
+                        </div>
+                        <!--end col-->
+                        <div class="col-auto align-self-center">
+                            <a href="#" class="btn btn-sm btn-outline-primary" id="Dash_Date">
+                                <span class="day-name" id="Day_Name">Hoy:</span>&nbsp;
+                                <span class="" id="Select_date">Jan 11</span>
+                                <i data-feather="calendar" class="align-self-center icon-xs ms-1"></i>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-primary">
+                                <i data-feather="download" class="align-self-center icon-xs"></i>
+                            </a>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-lg-6">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <h5 class="mt-0">Lista de embarques</h5>
+                    </li>
+                </ul>
+            </div>
+            <!--end col-->
+
+            <div class="col-lg-6 text-end">
+                <div class="text-end">
+                    <ul class="list-inline ul-flex">
+                        <li class="list-inline-item">
+                            <div class="input-group">
+                                <input type="text" id="example-input1-group2" name="example-input1-group2" class="form-control form-control-sm" placeholder="Buscar">
+                                <button type="button" class="btn btn-soft-primary btn-sm"><i class="fas fa-search"></i></button>
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <button type="button" class="btn btn-soft-primary btn-sm"><i class="fas fa-filter"></i></button>
+                        </li>
+                        <li class="list-inline-item">
+                            <button type="button" class="btn btn-soft-primary btn-sm text-nowrap">Nuevo Contacto</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--end col-->
+
+        </div>
+        <!--end row-->
+
+        <div class="row">
+            <div class="col-12">
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h4 class="card-title">Todos los Embarques</h4>
+                            </div>
+                            <!--end col-->
+                            <div class="col-auto">
+                                <a href="#" class="text-primary">Ver todos</a>
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <!--end card-header-->
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-sm">
+                                <thead>
+                                    <tr>
+                                        <th class="sorting" dmx-on:click="query1.set('sort','Fecha_creacion_embarque');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='Fecha_creacion_embarque' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='Fecha_creacion_embarque' && query1.data.dir == 'desc'">Fecha creación</th>
+                                        <th class="sorting" dmx-on:click="query1.set('sort','null');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='null' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='null' && query1.data.dir == 'desc'">Estado</th>
+                                        <th class="sorting" dmx-on:click="query1.set('sort','name');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='name' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='name' && query1.data.dir == 'desc'">Compañía</th>
+                                        <th class="sorting" dmx-on:click="query1.set('sort','tipo_de_transporte');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='tipo_de_transporte' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='tipo_de_transporte' && query1.data.dir == 'desc'">Tipo de transporte</th>
+                                        <th class="sorting" dmx-on:click="query1.set('sort','empresa_de_transporte');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='empresa_de_transporte' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='empresa_de_transporte' && query1.data.dir == 'desc'">Empresa transporte</th>
+                                    </tr>
+                                </thead>
+                                <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="serverconnect1.data.query.data" id="tableRepeat1" dmx-state="query1" dmx-sort="sort" dmx-order="dir">
+                                    <tr>
+                                        <td dmx-text="Fecha_creacion_embarque.formatDate('dd-MM-yyyy')"></td>
+                                        <td>
+                                            <select id="select1" class="form-select style14" dmxorgdomid="d322" dmx-bind:value="Estado" dmx-on:changed="run([{'bootbox.confirm':{message:'Está seguro de querer cambiar el estado del embarque?',title:'Modificación de Estado del Embarque',buttons:{confirm:{label:'Confirmar',className:'btn-success'},cancel:{label:'Cancelar',className:'btn-danger'}},then:{steps:{run:{action:`serverconnectupdatestatus.load({status: value, id: id})`}}}}},{run:{action:`select1.setValue(Estado)`}}])">
+                                                <option value="Activo">Activo</option>
+                                                <option selected="" value="Completado">Completado</option>
+                                                <option value="En proceso">En proceso</option>
+                                            </select>
+                                        </td>
+                                        <td dmx-text="name.capitalize()"></td>
+                                        <td dmx-text="tipo_de_transporte.capitalize()"></td>
+                                        <td dmx-text="empresa_de_transporte.capitalize()"></td>
+                                        <td>
+                                            <button id="btn1" class="btn round btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas1" dmx-on:click="offcanvas1.data_detail1.select(id)">+</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--end table-responsive-->
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <ul class="pagination" dmx-populate="serverconnect1.data.query" dmx-state="query1" dmx-offset="offset" dmx-generator="bs5paging">
+                    <li class="page-item" dmx-class:disabled="serverconnect1.data.query.page.current == 1" aria-label="First">
+                        <a href="javascript:void(0)" class="page-link" dmx-on:click="query1.set('offset',serverconnect1.data.query.page.offset.first)"><span aria-hidden="true">&lsaquo;&lsaquo;</span></a>
+                    </li>
+                    <li class="page-item" dmx-class:disabled="serverconnect1.data.query.page.current == 1" aria-label="Previous">
+                        <a href="javascript:void(0)" class="page-link" dmx-on:click="query1.set('offset',serverconnect1.data.query.page.offset.prev)"><span aria-hidden="true">&lsaquo;</span></a>
+                    </li>
+                    <li class="page-item" dmx-class:active="title == serverconnect1.data.query.page.current" dmx-class:disabled="!active" dmx-repeat="serverconnect1.data.query.getServerConnectPagination(2,1,'...')">
+                        <a href="javascript:void(0)" class="page-link" dmx-on:click="query1.set('offset',(page-1)*serverconnect1.data.query.limit)">{{title}}</a>
+                    </li>
+                    <li class="page-item" dmx-class:disabled="serverconnect1.data.query.page.current ==  serverconnect1.data.query.page.total" aria-label="Next">
+                        <a href="javascript:void(0)" class="page-link" dmx-on:click="query1.set('offset',serverconnect1.data.query.page.offset.next)"><span aria-hidden="true">&rsaquo;</span></a>
+                    </li>
+                    <li class="page-item" dmx-class:disabled="serverconnect1.data.query.page.current ==  serverconnect1.data.query.page.total" aria-label="Last">
+                        <a href="javascript:void(0)" class="page-link" dmx-on:click="query1.set('offset',serverconnect1.data.query.page.offset.last)"><span aria-hidden="true">&rsaquo;&rsaquo;</span></a>
+                    </li>
+                </ul>
+                <!--end card-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <!--end row-->
+
+        <!--end row-->
+
+    </div><!-- container -->
+
+    <footer class="footer text-center text-sm-start">
+        &copy;
+
+        <script>
+            document.write(new Date().getFullYear())
+        </script> Dastone <span class="text-muted d-none d-sm-inline-block float-end">Crafted with <i class="mdi mdi-heart text-danger"></i> by Creativehub</span>
+    </footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->

@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "$_POST": [
+      {
+        "type": "text",
+        "name": "username"
+      },
+      {
+        "type": "text",
+        "ui": {
+          "input": "password"
+        },
+        "name": "password"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "insert",
+      "module": "dbupdater",
+      "action": "insert",
+      "options": {
+        "connection": "db",
+        "sql": {
+          "type": "insert",
+          "values": [
+            {
+              "table": "user",
+              "column": "username",
+              "type": "text",
+              "value": "{{$_POST.username}}"
+            },
+            {
+              "table": "user",
+              "column": "password",
+              "type": "text",
+              "value": "{{$_POST.password}}"
+            }
+          ],
+          "table": "user",
+          "returning": "id",
+          "query": "INSERT INTO user\n(username, password) VALUES (:P1 /* {{$_POST.username}} */, :P2 /* {{$_POST.password}} */)",
+          "params": [
+            {
+              "name": ":P1",
+              "type": "expression",
+              "value": "{{$_POST.username}}"
+            },
+            {
+              "name": ":P2",
+              "type": "expression",
+              "value": "{{$_POST.password}}"
+            }
+          ]
+        }
+      },
+      "meta": [
+        {
+          "name": "identity",
+          "type": "text"
+        },
+        {
+          "name": "affected",
+          "type": "number"
+        }
+      ]
+    }
+  }
+}

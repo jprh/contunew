@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "offset"
+      },
+      {
+        "type": "text",
+        "name": "limit"
+      },
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query",
+      "module": "dbconnector",
+      "action": "paged",
+      "options": {
+        "connection": "db",
+        "sql": {
+          "type": "SELECT",
+          "columns": [
+            {
+              "table": "cotizacion",
+              "column": "*"
+            },
+            {
+              "table": "companies",
+              "column": "name"
+            }
+          ],
+          "params": [],
+          "table": {
+            "name": "cotizacion"
+          },
+          "primary": "id",
+          "joins": [
+            {
+              "table": "companies",
+              "column": "*",
+              "type": "INNER",
+              "clauses": {
+                "condition": "AND",
+                "rules": [
+                  {
+                    "table": "companies",
+                    "column": "id",
+                    "operator": "equal",
+                    "value": {
+                      "table": "cotizacion",
+                      "column": "company_id",
+                      "type": "number"
+                    },
+                    "operation": "="
+                  }
+                ]
+              },
+              "primary": "id"
+            }
+          ],
+          "query": "SELECT cotizacion.*, companies.name\nFROM cotizacion\nINNER JOIN companies ON companies.id = cotizacion.company_id"
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "name": "offset",
+          "type": "number"
+        },
+        {
+          "name": "limit",
+          "type": "number"
+        },
+        {
+          "name": "total",
+          "type": "number"
+        },
+        {
+          "name": "page",
+          "type": "object",
+          "sub": [
+            {
+              "name": "offset",
+              "type": "object",
+              "sub": [
+                {
+                  "name": "first",
+                  "type": "number"
+                },
+                {
+                  "name": "prev",
+                  "type": "number"
+                },
+                {
+                  "name": "next",
+                  "type": "number"
+                },
+                {
+                  "name": "last",
+                  "type": "number"
+                }
+              ]
+            },
+            {
+              "name": "current",
+              "type": "number"
+            },
+            {
+              "name": "total",
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "name": "data",
+          "type": "array",
+          "sub": [
+            {
+              "type": "number",
+              "name": "id"
+            },
+            {
+              "type": "text",
+              "name": "tipo_de_servicio"
+            },
+            {
+              "type": "text",
+              "name": "tipo_de_operacion"
+            },
+            {
+              "type": "text",
+              "name": "modalidad_de_transporte"
+            },
+            {
+              "type": "text",
+              "name": "informacion_adicional"
+            },
+            {
+              "type": "text",
+              "name": "equipo_especial"
+            },
+            {
+              "type": "text",
+              "name": "unidad_peso"
+            },
+            {
+              "type": "text",
+              "name": "tipomercanciaproducto"
+            },
+            {
+              "type": "text",
+              "name": "zona_destino"
+            },
+            {
+              "type": "text",
+              "name": "zona_origen"
+            },
+            {
+              "type": "text",
+              "name": "veh_tipo"
+            },
+            {
+              "type": "text",
+              "name": "reqerimiento_especial"
+            },
+            {
+              "type": "text",
+              "name": "valor_mercancia"
+            },
+            {
+              "type": "text",
+              "name": "peso_total"
+            },
+            {
+              "type": "text",
+              "name": "fecha_entrega"
+            },
+            {
+              "type": "text",
+              "name": "ciudad_destino"
+            },
+            {
+              "type": "text",
+              "name": "pais_destino"
+            },
+            {
+              "type": "text",
+              "name": "fecha_recogida"
+            },
+            {
+              "type": "text",
+              "name": "ciudad_origen"
+            },
+            {
+              "type": "text",
+              "name": "pais_origen"
+            },
+            {
+              "type": "text",
+              "name": "altura"
+            },
+            {
+              "type": "text",
+              "name": "longitud"
+            },
+            {
+              "type": "text",
+              "name": "anchura"
+            },
+            {
+              "type": "text",
+              "name": "veh_ano"
+            },
+            {
+              "type": "text",
+              "name": "veh_modelo"
+            },
+            {
+              "type": "text",
+              "name": "veh_fabricante"
+            },
+            {
+              "type": "text",
+              "name": "modalidad_de_embarque"
+            },
+            {
+              "type": "datetime",
+              "name": "fecha_solicitud"
+            },
+            {
+              "type": "number",
+              "name": "company_id"
+            },
+            {
+              "type": "number",
+              "name": "user_id"
+            },
+            {
+              "type": "text",
+              "name": "tipo_de_contenedor"
+            },
+            {
+              "type": "text",
+              "name": "cantidad_de_contenedores"
+            },
+            {
+              "type": "text",
+              "name": "status"
+            },
+            {
+              "type": "date",
+              "name": "fecha_de_respuesta"
+            },
+            {
+              "type": "text",
+              "name": "name"
+            }
+          ]
+        }
+      ],
+      "outputType": "object"
+    }
+  }
+}

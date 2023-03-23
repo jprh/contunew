@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "url"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "fileDownload1",
+      "module": "fs",
+      "action": "download",
+      "options": {
+        "path": "{{'/public'+$_GET.url}}",
+        "filename": "download"
+      },
+      "outputType": "boolean",
+      "output": true
+    }
+  }
+}

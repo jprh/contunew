@@ -1,0 +1,23 @@
+{
+    type: 'tester',
+    module : 'tester',
+    action : 'tester',
+    groupTitle : 'tester group title',
+    groupIcon : 'fas fa-lg fa-table comp-data',
+    title : 'tester title',
+    icon : 'fas fa-lg fa-table comp-data ',
+    dataPickObject: true,
+    dataScheme: [
+    {name: 'status', type: 'number', optionName: 'status'}
+  ],
+    properties : [
+    {   
+      group: 'tester',
+      variables: [
+          
+                { name: 'name', optionName: 'name', title: 'name', type: 'text', required:'true', defaultValue: 'name', help:'help me' }
+                { name: 'output', optionName: 'output', title: 'Output', type: 'boolean', defaultValue: 'true'}
+      ]
+    }   
+  ]
+ }

@@ -1,0 +1,47 @@
+{
+  "name": "security_db",
+  "module": "auth",
+  "action": "provider",
+  "options": {
+    "secret": "",
+    "provider": "Database",
+    "connection": "db",
+    "users": {
+      "table": "user",
+      "identity": "id",
+      "username": "username",
+      "password": "password"
+    },
+    "permissions": {
+      "Write": {
+        "table": "user",
+        "identity": "id",
+        "conditions": [
+          {
+            "column": "role",
+            "operator": "=",
+            "value": "1"
+          }
+        ]
+      },
+      "read": {
+        "table": "user",
+        "identity": "id",
+        "conditions": [
+          {
+            "column": "role",
+            "operator": "=",
+            "value": "2"
+          }
+        ]
+      }
+    },
+    "passwordVerify": true
+  },
+  "meta": [
+    {
+      "name": "identity",
+      "type": "text"
+    }
+  ]
+}

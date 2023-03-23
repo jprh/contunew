@@ -1,0 +1,31 @@
+{
+  type: 'PDFtoText_getValue',
+  module : 'PDFtoText',
+  action : 'getValue',
+  groupTitle : 'My Modules',
+  groupIcon : 'fas fa-lg fa-project-diagram comp-images',
+  title : 'PDF to Text',
+  icon : 'fas fa-lg fa-file-pdf comp-images',
+  dataScheme: [
+  { name: 'numpages', type: 'number' },
+  { name: 'numrender', type: 'number' },
+  { name: 'info', type: 'object', sub: [
+    { name: 'PDFFormatVersion', type: 'text' },
+    { name: 'IsAcroFormPresent', type: 'boolean' },
+    { name: 'IsXFAPresent', type: 'boolean' }
+  ]},
+  { name: 'text', type: 'text' },
+  { name: 'version', type: 'text' }
+]
+  dataPickObject: true,
+  properties : [
+    {
+      group: 'Source File',
+      variables: [
+        { name: 'name', optionName: 'name', title: 'Name', type: 'text', required: true, defaultValue: ''},
+        { name: 'path', optionName: 'path', title: 'Path', type: 'file', required: true, defaultValue: '', serverDataBindings: true},
+        { name: 'output', optionName: 'output', title: 'Output', type: 'boolean', defaultValue: false }
+      ]
+    }
+  ]
+}

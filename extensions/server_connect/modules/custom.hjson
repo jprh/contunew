@@ -1,0 +1,20 @@
+{
+  type: 'imageToBase64_getValue',
+  module : 'imageToBase64',
+  action : 'getValue',
+  groupTitle : 'My Modules',
+  groupIcon : 'fas fa-lg fa-project-diagram comp-images',
+  title : 'Image to Base64',
+  icon : 'fas fa-lg fa-file-alt comp-images',
+  dataPickObject: true,
+  properties : [
+    {
+      group: 'Source Image',
+      variables: [
+        { name: 'name', optionName: 'name', title: 'Name', type: 'text', required: true, defaultValue: ''},
+        { name: 'path', optionName: 'path', title: 'Path', type: 'text', required: true, defaultValue: '', serverDataBindings: true},
+        { name: 'output', optionName: 'output', title: 'Output', type: 'boolean', defaultValue: false }
+      ]
+    }
+  ]
+}

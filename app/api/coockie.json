@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "$_COOKIE": [
+      {
+        "type": "text",
+        "fieldName": "visit",
+        "name": "new"
+      },
+      {
+        "type": "text",
+        "name": "ip"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "visit",
+      "module": "core",
+      "action": "setcookie",
+      "options": {
+        "value": "{{$_COOKIE.new}}"
+      }
+    }
+  }
+}

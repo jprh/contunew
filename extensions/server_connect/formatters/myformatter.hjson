@@ -1,0 +1,22 @@
+{
+  type: 'method_boeh',
+  groupTitle : 'Custom Formatters',
+  groupIcon : 'fa fa-lg fa-key',
+  addTitle: 'Add Boeh',
+  title : 'Add Boeh',
+  icon : 'fa fa-lg fa-hashtag',
+  state : 'opened',
+  help : 'Say boeh en more',
+  properties : [
+    {
+      group: 'Boeh Properties',
+      variables: [
+        {
+            name: '1', optionName: '1', title: 'Param 1', type: 'text',
+            serverDataBindings: true, defaultValue: '',
+            help: 'Some great param.'
+        }
+      ]
+    }
+  ]
+}

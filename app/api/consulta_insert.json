@@ -1,0 +1,1061 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/views/landing-page-consulta.ejs",
+      "linkedForm": "formconsulta"
+    },
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ],
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "correo-electronico-contacto-consulta",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            },
+            "core:email": {
+              "message": "Por favor ingrese un correo electrónico válido."
+            }
+          }
+        },
+        "name": "correo-electronico-contacto-consulta"
+      },
+      {
+        "type": "text",
+        "fieldName": "nombre-contacto-consulta",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            },
+            "core:maxlength": {
+              "param": "50",
+              "message": "Por favor ingresen no más de {50} caracteres."
+            }
+          }
+        },
+        "name": "nombre-contacto-consulta"
+      },
+      {
+        "type": "text",
+        "fieldName": "apellido-contacto-consulta",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            },
+            "core:maxlength": {
+              "param": "50",
+              "message": "Por favor ingresen no más de {50} caracteres."
+            }
+          }
+        },
+        "name": "apellido-contacto-consulta"
+      },
+      {
+        "type": "text",
+        "fieldName": "compania-contacto-consulta",
+        "options": {
+          "rules": {
+            "core:maxlength": {
+              "param": "50",
+              "message": "Por favor ingresen no más de {50} caracteres."
+            }
+          }
+        },
+        "name": "compania-contacto-consulta"
+      },
+      {
+        "type": "text",
+        "fieldName": "numero-telefonico-contacto-consulta",
+        "name": "numero-telefonico-contacto-consulta"
+      },
+      {
+        "type": "text",
+        "fieldName": "pagina-web-contacto-consulta",
+        "options": {
+          "rules": {
+            "core:url": {
+              "param": "",
+              "message": "por favor ingrese un URL válido"
+            }
+          }
+        },
+        "name": "pagina-web-contacto-consulta"
+      },
+      {
+        "type": "text",
+        "fieldName": "industria-contacto-consulta",
+        "options": {
+          "rules": {
+            "core:maxlength": {
+              "param": "50",
+              "message": "Por favor ingresen no más de {50} caracteres."
+            }
+          }
+        },
+        "name": "industria-contacto-consulta"
+      },
+      {
+        "type": "text",
+        "fieldName": "valor-producto",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            }
+          }
+        },
+        "name": "valor-producto"
+      },
+      {
+        "type": "text",
+        "fieldName": "llegada-mercancia",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            }
+          }
+        },
+        "name": "llegada-mercancia"
+      },
+      {
+        "type": "text",
+        "fieldName": "tipo-de-producto",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            }
+          }
+        },
+        "name": "tipo-de-producto"
+      },
+      {
+        "type": "text",
+        "fieldName": "tipo-de-entidad",
+        "options": {
+          "rules": {
+            "core:required": {
+              "param": "",
+              "message": "Este campo es requerido"
+            }
+          }
+        },
+        "name": "tipo-de-entidad"
+      },
+      {
+        "type": "text",
+        "fieldName": "informacion-adicional-consulta",
+        "name": "informacion-adicional-consulta"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "query_user",
+        "module": "dbconnector",
+        "action": "select",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "SELECT",
+            "columns": [
+              {
+                "table": "users",
+                "column": "id"
+              }
+            ],
+            "params": [
+              {
+                "operator": "equal",
+                "type": "expression",
+                "name": ":P1",
+                "value": "{{$_POST['correo-electronico-contacto-consulta']}}",
+                "test": ""
+              }
+            ],
+            "table": {
+              "name": "users"
+            },
+            "primary": "id",
+            "joins": [],
+            "wheres": {
+              "condition": "AND",
+              "rules": [
+                {
+                  "id": "users.email",
+                  "field": "users.email",
+                  "type": "string",
+                  "operator": "equal",
+                  "value": "{{$_POST['correo-electronico-contacto-consulta']}}",
+                  "data": {
+                    "table": "users",
+                    "column": "email",
+                    "type": "text",
+                    "columnObj": {
+                      "type": "string",
+                      "maxLength": 50,
+                      "primary": false,
+                      "nullable": true,
+                      "name": "email"
+                    }
+                  },
+                  "operation": "=",
+                  "table": "users"
+                }
+              ],
+              "conditional": null,
+              "valid": true
+            },
+            "query": "SELECT id\nFROM users\nWHERE email = :P1 /* {{$_POST['correo-electronico-contacto-consulta']}} */"
+          }
+        },
+        "output": false,
+        "meta": [
+          {
+            "type": "number",
+            "name": "id"
+          }
+        ],
+        "outputType": "array"
+      },
+      {
+        "name": "query_company",
+        "module": "dbconnector",
+        "action": "select",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "SELECT",
+            "columns": [
+              {
+                "table": "companies",
+                "column": "id"
+              }
+            ],
+            "params": [
+              {
+                "operator": "equal",
+                "type": "expression",
+                "name": ":P1",
+                "value": "{{$_POST['compania-contacto-consulta']}}",
+                "test": ""
+              }
+            ],
+            "table": {
+              "name": "companies"
+            },
+            "primary": "id",
+            "joins": [],
+            "query": "SELECT id\nFROM companies\nWHERE name = :P1 /* {{$_POST['compania-contacto-consulta']}} */",
+            "wheres": {
+              "condition": "OR",
+              "rules": [
+                {
+                  "id": "companies.name",
+                  "field": "companies.name",
+                  "type": "string",
+                  "operator": "equal",
+                  "value": "{{$_POST['compania-contacto-consulta']}}",
+                  "data": {
+                    "table": "companies",
+                    "column": "name",
+                    "type": "text",
+                    "columnObj": {
+                      "type": "text",
+                      "maxLength": 65535,
+                      "primary": false,
+                      "nullable": true,
+                      "name": "name"
+                    }
+                  },
+                  "operation": "="
+                }
+              ],
+              "conditional": null,
+              "valid": true
+            }
+          }
+        },
+        "output": false,
+        "meta": [
+          {
+            "type": "number",
+            "name": "id"
+          }
+        ],
+        "outputType": "array"
+      },
+      {
+        "name": "",
+        "module": "core",
+        "action": "condition",
+        "options": {
+          "if": "{{query_company.count()==0}}",
+          "then": {
+            "steps": [
+              {
+                "name": "insert_new_company",
+                "module": "dbupdater",
+                "action": "insert",
+                "options": {
+                  "connection": "db",
+                  "sql": {
+                    "type": "insert",
+                    "values": [
+                      {
+                        "table": "companies",
+                        "column": "name",
+                        "type": "text",
+                        "value": "{{$_POST['compania-contacto-consulta']}}"
+                      },
+                      {
+                        "table": "companies",
+                        "column": "website",
+                        "type": "text",
+                        "value": "{{$_POST['pagina-web-contacto-consulta']}}"
+                      }
+                    ],
+                    "table": "companies",
+                    "returning": "id",
+                    "query": "INSERT INTO companies\n(name, website) VALUES (:P1 /* {{$_POST['compania-contacto-consulta']}} */, :P2 /* {{$_POST['pagina-web-contacto-consulta']}} */)",
+                    "params": [
+                      {
+                        "name": ":P1",
+                        "type": "expression",
+                        "value": "{{$_POST['compania-contacto-consulta']}}",
+                        "test": ""
+                      },
+                      {
+                        "name": ":P2",
+                        "type": "expression",
+                        "value": "{{$_POST['pagina-web-contacto-consulta']}}",
+                        "test": ""
+                      }
+                    ]
+                  }
+                },
+                "meta": [
+                  {
+                    "name": "identity",
+                    "type": "text"
+                  },
+                  {
+                    "name": "affected",
+                    "type": "number"
+                  }
+                ],
+                "output": false
+              },
+              {
+                "name": "",
+                "module": "core",
+                "action": "condition",
+                "options": {
+                  "if": "{{query_user.count()==0}}",
+                  "then": {
+                    "steps": [
+                      {
+                        "name": "insert_new_user",
+                        "module": "dbupdater",
+                        "action": "insert",
+                        "options": {
+                          "connection": "db",
+                          "sql": {
+                            "type": "insert",
+                            "values": [
+                              {
+                                "table": "users",
+                                "column": "first_name",
+                                "type": "text",
+                                "value": "{{$_POST['nombre-contacto-consulta']}}"
+                              },
+                              {
+                                "table": "users",
+                                "column": "last_name",
+                                "type": "text",
+                                "value": "{{$_POST['apellido-contacto-consulta']}}"
+                              },
+                              {
+                                "table": "users",
+                                "column": "email",
+                                "type": "text",
+                                "value": "{{$_POST['correo-electronico-contacto-consulta']}}"
+                              },
+                              {
+                                "table": "users",
+                                "column": "company_id",
+                                "type": "number",
+                                "value": "{{insert_new_company.identity}}"
+                              }
+                            ],
+                            "table": "users",
+                            "returning": "id",
+                            "query": "INSERT INTO users\n(first_name, last_name, email, company_id) VALUES (:P1 /* {{$_POST['nombre-contacto-consulta']}} */, :P2 /* {{$_POST['apellido-contacto-consulta']}} */, :P3 /* {{$_POST['correo-electronico-contacto-consulta']}} */, :P4 /* {{insert_new_company.identity}} */)",
+                            "params": [
+                              {
+                                "name": ":P1",
+                                "type": "expression",
+                                "value": "{{$_POST['nombre-contacto-consulta']}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P2",
+                                "type": "expression",
+                                "value": "{{$_POST['apellido-contacto-consulta']}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P3",
+                                "type": "expression",
+                                "value": "{{$_POST['correo-electronico-contacto-consulta']}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P4",
+                                "type": "expression",
+                                "value": "{{insert_new_company.identity}}",
+                                "test": ""
+                              }
+                            ]
+                          }
+                        },
+                        "meta": [
+                          {
+                            "name": "identity",
+                            "type": "text"
+                          },
+                          {
+                            "name": "affected",
+                            "type": "number"
+                          }
+                        ],
+                        "output": false
+                      },
+                      {
+                        "name": "insert_consulta_newuser_newcomp",
+                        "module": "dbupdater",
+                        "action": "insert",
+                        "options": {
+                          "connection": "db",
+                          "sql": {
+                            "type": "insert",
+                            "values": [
+                              {
+                                "table": "consulta",
+                                "column": "valor_de_producto",
+                                "type": "text",
+                                "value": "{{$_POST['valor-producto']}}"
+                              },
+                              {
+                                "table": "consulta",
+                                "column": "llegada_de_mercancia",
+                                "type": "text",
+                                "value": "{{$_POST['llegada-mercancia']}}"
+                              },
+                              {
+                                "table": "consulta",
+                                "column": "tipo_de_producto",
+                                "type": "text",
+                                "value": "{{$_POST['tipo-de-producto']}}"
+                              },
+                              {
+                                "table": "consulta",
+                                "column": "tipo_de_entidad",
+                                "type": "text",
+                                "value": "{{$_POST['tipo-de-entidad']}}"
+                              },
+                              {
+                                "table": "consulta",
+                                "column": "user_id",
+                                "type": "number",
+                                "value": "{{insert_new_user.identity}}"
+                              },
+                              {
+                                "table": "consulta",
+                                "column": "fecha_solicitud",
+                                "type": "datetime",
+                                "value": "{{NOW.toLocalTime()}}"
+                              },
+                              {
+                                "table": "consulta",
+                                "column": "company_id",
+                                "type": "number",
+                                "value": "{{insert_new_company.identity}}"
+                              },
+                              {
+                                "table": "consulta",
+                                "column": "info_adicional",
+                                "type": "text",
+                                "value": "{{$_POST['informacion-adicional-consulta']}}"
+                              }
+                            ],
+                            "table": "consulta",
+                            "returning": "id",
+                            "query": "INSERT INTO consulta\n(valor_de_producto, llegada_de_mercancia, tipo_de_producto, tipo_de_entidad, user_id, fecha_solicitud, company_id, info_adicional) VALUES (:P1 /* {{$_POST['valor-producto']}} */, :P2 /* {{$_POST['llegada-mercancia']}} */, :P3 /* {{$_POST['tipo-de-producto']}} */, :P4 /* {{$_POST['tipo-de-entidad']}} */, :P5 /* {{insert_new_user.identity}} */, :P6 /* {{NOW.toLocalTime()}} */, :P7 /* {{insert_new_company.identity}} */, :P8 /* {{$_POST['informacion-adicional-consulta']}} */)",
+                            "params": [
+                              {
+                                "name": ":P1",
+                                "type": "expression",
+                                "value": "{{$_POST['valor-producto']}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P2",
+                                "type": "expression",
+                                "value": "{{$_POST['llegada-mercancia']}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P3",
+                                "type": "expression",
+                                "value": "{{$_POST['tipo-de-producto']}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P4",
+                                "type": "expression",
+                                "value": "{{$_POST['tipo-de-entidad']}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P5",
+                                "type": "expression",
+                                "value": "{{insert_new_user.identity}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P6",
+                                "type": "expression",
+                                "value": "{{NOW.toLocalTime()}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P7",
+                                "type": "expression",
+                                "value": "{{insert_new_company.identity}}",
+                                "test": ""
+                              },
+                              {
+                                "name": ":P8",
+                                "type": "expression",
+                                "value": "{{$_POST['informacion-adicional-consulta']}}",
+                                "test": ""
+                              }
+                            ]
+                          }
+                        },
+                        "meta": [
+                          {
+                            "name": "identity",
+                            "type": "text"
+                          },
+                          {
+                            "name": "affected",
+                            "type": "number"
+                          }
+                        ],
+                        "output": false
+                      }
+                    ]
+                  },
+                  "else": {
+                    "steps": {
+                      "name": "insert_consulta_existinguser_newcomp",
+                      "module": "dbupdater",
+                      "action": "insert",
+                      "options": {
+                        "connection": "db",
+                        "sql": {
+                          "type": "insert",
+                          "values": [
+                            {
+                              "table": "consulta",
+                              "column": "valor_de_producto",
+                              "type": "text",
+                              "value": "{{$_POST['valor-producto']}}"
+                            },
+                            {
+                              "table": "consulta",
+                              "column": "llegada_de_mercancia",
+                              "type": "text",
+                              "value": "{{$_POST['llegada-mercancia']}}"
+                            },
+                            {
+                              "table": "consulta",
+                              "column": "tipo_de_producto",
+                              "type": "text",
+                              "value": "{{$_POST['tipo-de-producto']}}"
+                            },
+                            {
+                              "table": "consulta",
+                              "column": "tipo_de_entidad",
+                              "type": "text",
+                              "value": "{{$_POST['tipo-de-entidad']}}"
+                            },
+                            {
+                              "table": "consulta",
+                              "column": "user_id",
+                              "type": "number",
+                              "value": "{{query_user[0].id}}"
+                            },
+                            {
+                              "table": "consulta",
+                              "column": "fecha_solicitud",
+                              "type": "datetime",
+                              "value": "{{NOW.toLocalTime()}}"
+                            },
+                            {
+                              "table": "consulta",
+                              "column": "company_id",
+                              "type": "number",
+                              "value": "{{insert_new_company.identity}}"
+                            },
+                            {
+                              "table": "consulta",
+                              "column": "info_adicional",
+                              "type": "text",
+                              "value": "{{$_POST['informacion-adicional-consulta']}}"
+                            }
+                          ],
+                          "table": "consulta",
+                          "returning": "id",
+                          "query": "INSERT INTO consulta\n(valor_de_producto, llegada_de_mercancia, tipo_de_producto, tipo_de_entidad, user_id, fecha_solicitud, company_id, info_adicional) VALUES (:P1 /* {{$_POST['valor-producto']}} */, :P2 /* {{$_POST['llegada-mercancia']}} */, :P3 /* {{$_POST['tipo-de-producto']}} */, :P4 /* {{$_POST['tipo-de-entidad']}} */, :P5 /* {{query_user[0].id}} */, :P6 /* {{NOW.toLocalTime()}} */, :P7 /* {{insert_new_company.identity}} */, :P8 /* {{$_POST['informacion-adicional-consulta']}} */)",
+                          "params": [
+                            {
+                              "name": ":P1",
+                              "type": "expression",
+                              "value": "{{$_POST['valor-producto']}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P2",
+                              "type": "expression",
+                              "value": "{{$_POST['llegada-mercancia']}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P3",
+                              "type": "expression",
+                              "value": "{{$_POST['tipo-de-producto']}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P4",
+                              "type": "expression",
+                              "value": "{{$_POST['tipo-de-entidad']}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P5",
+                              "type": "expression",
+                              "value": "{{query_user[0].id}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P6",
+                              "type": "expression",
+                              "value": "{{NOW.toLocalTime()}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P7",
+                              "type": "expression",
+                              "value": "{{insert_new_company.identity}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P8",
+                              "type": "expression",
+                              "value": "{{$_POST['informacion-adicional-consulta']}}",
+                              "test": ""
+                            }
+                          ]
+                        }
+                      },
+                      "meta": [
+                        {
+                          "name": "identity",
+                          "type": "text"
+                        },
+                        {
+                          "name": "affected",
+                          "type": "number"
+                        }
+                      ],
+                      "output": false
+                    }
+                  }
+                },
+                "outputType": "boolean"
+              }
+            ]
+          },
+          "else": {
+            "steps": {
+              "name": "",
+              "module": "core",
+              "action": "condition",
+              "options": {
+                "if": "{{query_user.count()==0}}",
+                "then": {
+                  "steps": [
+                    {
+                      "name": "insert_new_user_copy",
+                      "module": "dbupdater",
+                      "action": "insert",
+                      "options": {
+                        "connection": "db",
+                        "sql": {
+                          "type": "insert",
+                          "values": [
+                            {
+                              "table": "users",
+                              "column": "first_name",
+                              "type": "text",
+                              "value": "{{$_POST['nombre-contacto-consulta']}}"
+                            },
+                            {
+                              "table": "users",
+                              "column": "last_name",
+                              "type": "text",
+                              "value": "{{$_POST['apellido-contacto-consulta']}}"
+                            },
+                            {
+                              "table": "users",
+                              "column": "email",
+                              "type": "text",
+                              "value": "{{$_POST['correo-electronico-contacto-consulta']}}"
+                            },
+                            {
+                              "table": "users",
+                              "column": "company_id",
+                              "type": "number",
+                              "value": "{{query_company[0].id}}"
+                            }
+                          ],
+                          "table": "users",
+                          "returning": "id",
+                          "query": "INSERT INTO users\n(first_name, last_name, email, company_id) VALUES (:P1 /* {{$_POST['nombre-contacto-consulta']}} */, :P2 /* {{$_POST['apellido-contacto-consulta']}} */, :P3 /* {{$_POST['correo-electronico-contacto-consulta']}} */, :P4 /* {{query_company[0].id}} */)",
+                          "params": [
+                            {
+                              "name": ":P1",
+                              "type": "expression",
+                              "value": "{{$_POST['nombre-contacto-consulta']}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P2",
+                              "type": "expression",
+                              "value": "{{$_POST['apellido-contacto-consulta']}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P3",
+                              "type": "expression",
+                              "value": "{{$_POST['correo-electronico-contacto-consulta']}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P4",
+                              "type": "expression",
+                              "value": "{{query_company[0].id}}",
+                              "test": ""
+                            }
+                          ]
+                        }
+                      },
+                      "meta": [
+                        {
+                          "name": "identity",
+                          "type": "text"
+                        },
+                        {
+                          "name": "affected",
+                          "type": "number"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "insert_consulta_newuser_newcomp_copy",
+                      "module": "dbupdater",
+                      "action": "insert",
+                      "options": {
+                        "connection": "db",
+                        "sql": {
+                          "type": "insert",
+                          "values": [
+                            {
+                              "table": "consulta",
+                              "column": "valor_de_producto",
+                              "type": "text",
+                              "value": "{{$_POST['valor-producto']}}"
+                            },
+                            {
+                              "table": "consulta",
+                              "column": "llegada_de_mercancia",
+                              "type": "text",
+                              "value": "{{$_POST['llegada-mercancia']}}"
+                            },
+                            {
+                              "table": "consulta",
+                              "column": "tipo_de_producto",
+                              "type": "text",
+                              "value": "{{$_POST['tipo-de-producto']}}"
+                            },
+                            {
+                              "table": "consulta",
+                              "column": "tipo_de_entidad",
+                              "type": "text",
+                              "value": "{{$_POST['tipo-de-entidad']}}"
+                            },
+                            {
+                              "table": "consulta",
+                              "column": "user_id",
+                              "type": "number",
+                              "value": "{{insert_new_user_copy.identity}}"
+                            },
+                            {
+                              "table": "consulta",
+                              "column": "fecha_solicitud",
+                              "type": "datetime",
+                              "value": "{{NOW.toLocalTime()}}"
+                            },
+                            {
+                              "table": "consulta",
+                              "column": "company_id",
+                              "type": "number",
+                              "value": "{{query_company[0].id}}"
+                            },
+                            {
+                              "table": "consulta",
+                              "column": "info_adicional",
+                              "type": "text",
+                              "value": "{{$_POST['informacion-adicional-consulta']}}"
+                            }
+                          ],
+                          "table": "consulta",
+                          "returning": "id",
+                          "query": "INSERT INTO consulta\n(valor_de_producto, llegada_de_mercancia, tipo_de_producto, tipo_de_entidad, user_id, fecha_solicitud, company_id, info_adicional) VALUES (:P1 /* {{$_POST['valor-producto']}} */, :P2 /* {{$_POST['llegada-mercancia']}} */, :P3 /* {{$_POST['tipo-de-producto']}} */, :P4 /* {{$_POST['tipo-de-entidad']}} */, :P5 /* {{insert_new_user_copy.identity}} */, :P6 /* {{NOW.toLocalTime()}} */, :P7 /* {{query_company[0].id}} */, :P8 /* {{$_POST['informacion-adicional-consulta']}} */)",
+                          "params": [
+                            {
+                              "name": ":P1",
+                              "type": "expression",
+                              "value": "{{$_POST['valor-producto']}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P2",
+                              "type": "expression",
+                              "value": "{{$_POST['llegada-mercancia']}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P3",
+                              "type": "expression",
+                              "value": "{{$_POST['tipo-de-producto']}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P4",
+                              "type": "expression",
+                              "value": "{{$_POST['tipo-de-entidad']}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P5",
+                              "type": "expression",
+                              "value": "{{insert_new_user_copy.identity}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P6",
+                              "type": "expression",
+                              "value": "{{NOW.toLocalTime()}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P7",
+                              "type": "expression",
+                              "value": "{{query_company[0].id}}",
+                              "test": ""
+                            },
+                            {
+                              "name": ":P8",
+                              "type": "expression",
+                              "value": "{{$_POST['informacion-adicional-consulta']}}",
+                              "test": ""
+                            }
+                          ]
+                        }
+                      },
+                      "meta": [
+                        {
+                          "name": "identity",
+                          "type": "text"
+                        },
+                        {
+                          "name": "affected",
+                          "type": "number"
+                        }
+                      ],
+                      "output": true
+                    }
+                  ]
+                },
+                "else": {
+                  "steps": {
+                    "name": "insert_consulta_existinguser_newcomp_copy",
+                    "module": "dbupdater",
+                    "action": "insert",
+                    "options": {
+                      "connection": "db",
+                      "sql": {
+                        "type": "insert",
+                        "values": [
+                          {
+                            "table": "consulta",
+                            "column": "valor_de_producto",
+                            "type": "text",
+                            "value": "{{$_POST['valor-producto']}}"
+                          },
+                          {
+                            "table": "consulta",
+                            "column": "llegada_de_mercancia",
+                            "type": "text",
+                            "value": "{{$_POST['llegada-mercancia']}}"
+                          },
+                          {
+                            "table": "consulta",
+                            "column": "tipo_de_producto",
+                            "type": "text",
+                            "value": "{{$_POST['tipo-de-producto']}}"
+                          },
+                          {
+                            "table": "consulta",
+                            "column": "tipo_de_entidad",
+                            "type": "text",
+                            "value": "{{$_POST['tipo-de-entidad']}}"
+                          },
+                          {
+                            "table": "consulta",
+                            "column": "user_id",
+                            "type": "number",
+                            "value": "{{query_user[0].id}}"
+                          },
+                          {
+                            "table": "consulta",
+                            "column": "fecha_solicitud",
+                            "type": "datetime",
+                            "value": "{{NOW.toLocalTime()}}"
+                          },
+                          {
+                            "table": "consulta",
+                            "column": "company_id",
+                            "type": "number",
+                            "value": "{{query_company[0].id}}"
+                          },
+                          {
+                            "table": "consulta",
+                            "column": "info_adicional",
+                            "type": "text",
+                            "value": "{{$_POST['informacion-adicional-consulta']}}"
+                          }
+                        ],
+                        "table": "consulta",
+                        "returning": "id",
+                        "query": "INSERT INTO consulta\n(valor_de_producto, llegada_de_mercancia, tipo_de_producto, tipo_de_entidad, user_id, fecha_solicitud, company_id, info_adicional) VALUES (:P1 /* {{$_POST['valor-producto']}} */, :P2 /* {{$_POST['llegada-mercancia']}} */, :P3 /* {{$_POST['tipo-de-producto']}} */, :P4 /* {{$_POST['tipo-de-entidad']}} */, :P5 /* {{query_user[0].id}} */, :P6 /* {{NOW.toLocalTime()}} */, :P7 /* {{query_company[0].id}} */, :P8 /* {{$_POST['informacion-adicional-consulta']}} */)",
+                        "params": [
+                          {
+                            "name": ":P1",
+                            "type": "expression",
+                            "value": "{{$_POST['valor-producto']}}",
+                            "test": ""
+                          },
+                          {
+                            "name": ":P2",
+                            "type": "expression",
+                            "value": "{{$_POST['llegada-mercancia']}}",
+                            "test": ""
+                          },
+                          {
+                            "name": ":P3",
+                            "type": "expression",
+                            "value": "{{$_POST['tipo-de-producto']}}",
+                            "test": ""
+                          },
+                          {
+                            "name": ":P4",
+                            "type": "expression",
+                            "value": "{{$_POST['tipo-de-entidad']}}",
+                            "test": ""
+                          },
+                          {
+                            "name": ":P5",
+                            "type": "expression",
+                            "value": "{{query_user[0].id}}",
+                            "test": ""
+                          },
+                          {
+                            "name": ":P6",
+                            "type": "expression",
+                            "value": "{{NOW.toLocalTime()}}",
+                            "test": ""
+                          },
+                          {
+                            "name": ":P7",
+                            "type": "expression",
+                            "value": "{{query_company[0].id}}",
+                            "test": ""
+                          },
+                          {
+                            "name": ":P8",
+                            "type": "expression",
+                            "value": "{{$_POST['informacion-adicional-consulta']}}",
+                            "test": ""
+                          }
+                        ]
+                      }
+                    },
+                    "meta": [
+                      {
+                        "name": "identity",
+                        "type": "text"
+                      },
+                      {
+                        "name": "affected",
+                        "type": "number"
+                      }
+                    ],
+                    "output": true
+                  }
+                }
+              },
+              "outputType": "boolean"
+            }
+          }
+        },
+        "outputType": "boolean"
+      }
+    ]
+  }
+}

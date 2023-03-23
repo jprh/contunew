@@ -1,0 +1,85 @@
+{
+  "projectName": "Contucarga-New",
+  "styleFile": "/css/style.css",
+  "assetsFolder": "/assets",
+  "designFramework": "bootstrap5",
+  "frameworks": [
+    {
+      "name": "fontawesome_5",
+      "type": "cdn"
+    },
+    {
+      "name": "bootstrap5",
+      "type": "local"
+    },
+    {
+      "name": "appConnect",
+      "type": "local"
+    }
+  ],
+  "hostingType": "docker",
+  "projectServerModel": "node",
+  "runtime": "capacitor",
+  "webRootFolder": "/public",
+  "useRouting": true,
+  "addBase": true,
+  "routingHandler": "node",
+  "targets": [
+    {
+      "name": "Development",
+      "remoteURL": "http://localhost:8100",
+      "webServerPort": 8100,
+      "webServerLang": "node",
+      "targetType": "docker",
+      "webServer": "node",
+      "NodeVersion": "14",
+      "NodeOS": "bullseye",
+      "webLoggingMaxFiles": "5",
+      "webLoggingMaxFileSize": "10m",
+      "databaseLoggingMaxFiles": "5",
+      "databaseLoggingMaxFileSize": "10m",
+      "databaseType": "mysql",
+      "mySQLVersion": "8.0.x",
+      "databasePort": 9906,
+      "mySQL_rootPassword": "pZs8HgLS",
+      "mySQL_databaseName": "contucarga-new",
+      "mySQL_username": "db_user",
+      "mySQL_password": "lE3nws8o",
+      "NodeImageType": "slim",
+      "usage": "production",
+      "dockerTimezone": "Etc/UTC"
+    },
+    {
+      "name": "production",
+      "remoteURL": "http://161.35.121.27",
+      "webServerPort": 80,
+      "webServerLang": "node",
+      "targetType": "docker",
+      "webServer": "node",
+      "NodeVersion": "14",
+      "NodeOS": "bullseye",
+      "webLoggingMaxFiles": "5",
+      "webLoggingMaxFileSize": "10m",
+      "databaseLoggingMaxFiles": "5",
+      "databaseLoggingMaxFileSize": "10m",
+      "databaseType": "mysql",
+      "mySQLVersion": "8.0.x",
+      "databasePort": 9906,
+      "mySQL_rootPassword": "pZs8HgLS",
+      "mySQL_databaseName": "contucarga-new",
+      "mySQL_username": "db_user",
+      "mySQL_password": "lE3nws8o",
+      "NodeImageType": "slim",
+      "dockerType": "remote",
+      "dockerUseTLS": true,
+      "dockerHost": "161.35.121.27",
+      "dockerPort": 2376,
+      "dockerCertFolder": "~/.docker/machine/machines/Contu-new",
+      "dockerMachineName": "Contu-new",
+      "dockerProjectName": "contucarga-new__testing"
+    }
+  ],
+  "activeTarget": "production",
+  "projectType": "web",
+  "activeGitRemote": "contu_new"
+}

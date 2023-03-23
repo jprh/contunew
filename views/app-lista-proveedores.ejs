@@ -1,0 +1,175 @@
+<!-- Wappler include head-page="layouts/app" fontawesome_4="cdn" is="dmx-app" id="appprojects" appConnect="local" jquery_slim_35="cdn" bootstrap5="cdn" components="{dmxBootstrap5Navigation:{},dmxSockets:{},dmxFormatter:{},dmxDatePicker:{},dmxValidator:{},dmxBootbox:{},dmxBootstrap5TableGenerator:{},dmxBootbox5:{},dmxStateManagement:{},dmxBootstrap5PagingGenerator:{},dmxBootstrap5Offcanvas:{},dmxBrowser:{},dmxDataTraversal:{}}" moment_2="local with locales" -->
+<div is="dmx-browser" id="browser1"></div>
+
+<div class="offcanvas offcanvas-end" id="offcanvas1" is="dmx-bs5-offcanvas" tabindex="-1" nobackdrop="true">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Detalle de Proveedor</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="row">
+            <div class="col" is="dmx-data-detail" id="data_detail2" dmx-bind:data="serverconnect1.data.query.data" key="id">
+                <dl>
+                    <dt>Nombre</dt>
+                    <dd dmx-html="data_detail2.data.nombre"></dd>
+                </dl>
+                <dl>
+                    <dt>Dirección</dt>
+                    <dd dmx-html="data_detail2.data.direccion"></dd>
+                </dl>
+                <dl>
+                    <dt>Ciudad</dt>
+                    <dd dmx-html="data_detail2.data.ciudad"></dd>
+                </dl>
+                <dl>
+                    <dt>País</dt>
+                    <dd dmx-html="data_detail2.data.pais"></dd>
+                </dl>
+                <dl>
+                    <dt>Código Postal</dt>
+                    <dd dmx-html="data_detail2.data.codigo_postal"></dd>
+                </dl>
+                <dl>
+                    <dt>Teléfono</dt>
+                    <dd dmx-html="data_detail2.data.telefono"></dd>
+                </dl>
+                <dl>
+                    <dt>Fax</dt>
+                    <dd dmx-html="data_detail2.data.fax"></dd>
+                </dl>
+                <dl>
+                    <dt>Email</dt>
+                    <dd dmx-html="data_detail2.data.email"></dd>
+                </dl>
+                <dl>
+                    <dt>Website</dt>
+                    <dd dmx-html="data_detail2.data.website"></dd>
+                </dl>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<dmx-serverconnect id="serverconnect1" url="api/proveedores/query_paged_proveedores" dmx-param:offset="query1.data.offset" dmx-param:sort="query1.data.sort" dmx-param:dir="query1.data.dir" dmx-param:limit="5" sockets="true"></dmx-serverconnect>
+<dmx-query-manager id="query1"></dmx-query-manager>
+<meta name="ac:route" content="/app-lista-proveedores">
+
+<!-- Page Content-->
+<!-- Page Content-->
+<div class="page-content" style="/* padding-bottom: 4rem */ /* width: 100%vw */">
+    <div class="container-fluid" style="/* width: 100vw */">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="page-title">Proveedores</h4>
+                            <ol class="breadcrumb visually-hidden">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Dastone</a></li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Projects</a></li>
+                                <li class="breadcrumb-item active">Create</li>
+                            </ol>
+                        </div>
+                        <!--end col-->
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card" style="/* margin-bottom: 0px */">
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h4 class="card-title">Registro de Proveedores</h4>
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <!--end card-header-->
+                    <div class="card-body">
+                        <div class="row" style="display: -webkit-box;">
+
+                            <div class="col-lg-12 col">
+                                <div class="table-responsive">
+                                    <table class="table table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th class="sorting" dmx-on:click="query1.set('sort','nombre');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='nombre' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='nombre' && query1.data.dir == 'desc'">Nombre</th>
+                                                <th class="sorting" dmx-on:click="query1.set('sort','telefono');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='telefono' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='telefono' && query1.data.dir == 'desc'">Telefono</th>
+                                                <th class="sorting" dmx-on:click="query1.set('sort','email');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='email' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='email' && query1.data.dir == 'desc'">Email</th>
+                                                <th class="sorting" dmx-on:click="query1.set('sort','website');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='website' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='website' && query1.data.dir == 'desc'">Website</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="serverconnect1.data.query.data" id="tableRepeat1" dmx-state="query1" dmx-sort="sort" dmx-order="dir">
+                                            <tr style="cursor: pointer;">
+                                                <td dmx-text="nombre.capitalize()"></td>
+                                                <td dmx-text="telefono"></td>
+                                                <td dmx-text="email"></td>
+                                                <td dmx-text="website"></td>
+                                                <td>
+                                                    <button id="btn2" class="btn btn-secondary round btn-sm" data-bs-toggle="offcanvas" data-bs-target="#offcanvas1" dmx-on:click="offcanvas1.data_detail2.select(id)">Mostrar Más</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!--end form-->
+                            </div>
+                            <!--end col-->
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+        </div>
+        <ul class="pagination" dmx-populate="serverconnect1.data.query" dmx-state="query1" dmx-offset="offset" dmx-generator="bs5paging">
+            <li class="page-item" dmx-class:disabled="serverconnect1.data.query.page.current == 1" aria-label="First">
+                <a href="javascript:void(0)" class="page-link" dmx-on:click="query1.set('offset',serverconnect1.data.query.page.offset.first)"><span aria-hidden="true">&lsaquo;&lsaquo;</span></a>
+            </li>
+            <li class="page-item" dmx-class:disabled="serverconnect1.data.query.page.current == 1" aria-label="Previous">
+                <a href="javascript:void(0)" class="page-link" dmx-on:click="query1.set('offset',serverconnect1.data.query.page.offset.prev)"><span aria-hidden="true">&lsaquo;</span></a>
+            </li>
+            <li class="page-item" dmx-class:active="title == serverconnect1.data.query.page.current" dmx-class:disabled="!active" dmx-repeat="serverconnect1.data.query.getServerConnectPagination(2,1,'...')">
+                <a href="javascript:void(0)" class="page-link" dmx-on:click="query1.set('offset',(page-1)*serverconnect1.data.query.limit)">{{title}}</a>
+            </li>
+            <li class="page-item" dmx-class:disabled="serverconnect1.data.query.page.current ==  serverconnect1.data.query.page.total" aria-label="Next">
+                <a href="javascript:void(0)" class="page-link" dmx-on:click="query1.set('offset',serverconnect1.data.query.page.offset.next)"><span aria-hidden="true">&rsaquo;</span></a>
+            </li>
+            <li class="page-item" dmx-class:disabled="serverconnect1.data.query.page.current ==  serverconnect1.data.query.page.total" aria-label="Last">
+                <a href="javascript:void(0)" class="page-link" dmx-on:click="query1.set('offset',serverconnect1.data.query.page.offset.last)"><span aria-hidden="true">&rsaquo;&rsaquo;</span></a>
+            </li>
+        </ul>
+        <div class="row">
+            <div class="col">
+                <button id="btn1" class="btn btn-primary round" dmx-on:click="browser1.goto('app-proveedores')">Agregar Proveedor</button>
+            </div>
+        </div>
+        <!--end row-->
+
+    </div><!-- container -->
+
+    <footer class="footer text-center text-sm-start style6">
+        &copy; <script src="/dastone/default/assets/js/jquery.min.js"></script>
+        <script src="/dastone/default/assets/js/moment.js"></script>
+        <script>
+            document.write(new Date().getFullYear())
+        </script> Dastone <span class="text-muted d-none d-sm-inline-block float-end">Crafted with <i class="mdi mdi-heart text-danger"></i> by JPR</span>
+    </footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->

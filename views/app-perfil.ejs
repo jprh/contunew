@@ -1,0 +1,292 @@
+<!-- Wappler include head-page="layouts/app" fontawesome_4="cdn" is="dmx-app" id="appprojects" appConnect="local" jquery_slim_35="cdn" bootstrap5="cdn" components="{dmxBootstrap5Navigation:{},dmxSockets:{},dmxFormatter:{},dmxDatePicker:{},dmxValidator:{}}" moment_2="local with locales" -->
+<dmx-serverconnect id="serverconnectcontizacion" url="/api/query_user" sockets="true"></dmx-serverconnect>
+<meta name="ac:route" content="/app-perfil">
+
+<!-- Page Content-->
+<!-- Page Content-->
+<div class="page-content" style="/* padding-bottom: 4rem */">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="page-title">Perfil de Usuario</h4>
+                            <ol class="breadcrumb visually-hidden">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Dastone</a></li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Projects</a></li>
+                                <li class="breadcrumb-item active">Create</li>
+                            </ol>
+                        </div>
+                        <!--end col-->
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end page-title-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card" style="/* margin-bottom: 0px */">
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h4 class="card-title">Detalles de Perfil&nbsp;</h4>
+                                <p class="text-muted mb-0">Basic example to create project form styles.</p>
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <!--end card-header-->
+                    <div class="card-body">
+                        <div class="d-flex flex-column flex-lg-row" style="display: -webkit-box;">
+                            <div class="col-lg-6 col-12">
+                                <form>
+                                    <!--end form-group-->
+                                    <div class="form-group">
+                                        <div class="row mb-3">
+                                            <div class="col-6 mb-2 mb-lg-0">
+                                                <label class="form-label" for="profileName">Nombre</label>
+                                                <input type="text" class="form-control" id="profileName" placeholder="Pedro" name="nombre">
+                                            </div>
+                                            <!--end col-->
+                                            <div class="col-6 mb-2 mb-lg-0">
+                                                <label class="form-label" for="profileLastName">Apellido</label>
+                                                <input type="text" class="form-control" id="profileLastName" placeholder="Perez" name="apellido">
+                                            </div>
+                                            <!--end col-->
+
+                                            <!--end col-->
+
+
+
+
+
+                                            <!--end col-->
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-6">
+                                                <label class="form-label" for="profileLastName">Teléfono</label>
+                                                <input type="tel" class="form-control" placeholder="XXX-XXX-XX-XX" name="telefono" id="profilePhone">
+
+                                            </div>
+                                            <div class="col-6 mb-2 mb-lg-0">
+                                                <label class="form-label" for="profileEmail">Correo Electrónico</label>
+                                                <input type="email" class="form-control" id="profileEmail" placeholder="email@domain.com" name="email">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-6">
+                                                <label for="profileCompany" class="form-label">Compañía</label>
+                                                <input type="text" class="form-control" id="profileCompany" name="compania" aria-describedby="input21_help">
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="profileRIF" class="form-label"># de RIF</label>
+                                                <input type="number" class="form-control" id="profileRIF" name="rif" aria-describedby="input21_help">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-6">
+                                                <label for="profilePaginaWeb" class="form-label">Página web</label>
+                                                <input type="text" class="form-control" id="profilePaginaWeb" name="paginaweb" aria-describedby="input21_help" placeholder="www.acme.com">
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="profileIndustry" class="form-label">Industria</label>
+                                                <input class="form-control" id="profileIndustry" name="industria" aria-describedby="input21_help">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-6">
+                                                <label for="input28" class="form-label">Calle, urbanización</label>
+                                                <input type="text" class="form-control" id="input28" name="ciudad-contacto" aria-describedby="input21_help" required="" data-msg-required="Este campo es requerido">
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="input29" class="form-label">Municipio</label>
+                                                <input type="text" class="form-control" id="input29" name="pais-contacto" aria-describedby="input21_help" required="" data-msg-required="Este campo es requerido">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-6">
+                                                <label for="input1" class="form-label">Ciudad</label>
+                                                <input type="text" class="form-control" id="input1" name="ciudad-contacto1" aria-describedby="input21_help" required="" data-msg-required="Este campo es requerido">
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="input1" class="form-label">Estado</label>
+                                                <input type="text" class="form-control" id="input1" name="pais-contacto1" aria-describedby="input21_help" required="" data-msg-required="Este campo es requerido">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-6">
+                                                <label for="input2" class="form-label">País</label>
+                                                <input type="text" class="form-control" id="input2" name="ciudad-contacto2" aria-describedby="input21_help" required="" data-msg-required="Este campo es requerido">
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="input2" class="form-label">Código postal</label>
+                                                <input type="text" class="form-control" id="input2" name="pais-contacto2" aria-describedby="input21_help" required="" data-msg-required="Este campo es requerido">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-6">
+                                                <label for="profileContact" class="form-label">Persona Contacto</label>
+                                                <input type="text" class="form-control" id="profileContact" name="personaContacto" aria-describedby="input21_help">
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="profileDateofBirth" class="form-label">Fecha de nacimiento</label>
+                                                <input type="date" class="form-control" id="profileDateofBirth" name="nacimiento" aria-describedby="input21_help" data-rule-date="" data-msg-date="Por favor ingrese una fecha válida" lang="es" format="DD/MM/YYYY">
+                                            </div>
+                                        </div>
+                                        <!--end row-->
+                                    </div>
+                                    <!--end form-group-->
+                                    <!--end form-group-->
+                                    <div class="form-group">
+                                        <label class="form-label" for="pro-message">Message</label>
+                                        <textarea class="form-control" rows="5" id="pro-message" placeholder="writing here.."></textarea>
+                                    </div>
+                                    <!--end form-group-->
+
+                                    <button class="btn btn-soft-primary btn-sm">Actualizar información</button>
+                                    <button type="button" class="btn btn-soft-danger btn-sm">Cancelar</button>
+                                </form>
+                                <!--end form-->
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-5 ms-auto align-self-center col-12 align-self-lg-start">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="pro-avatar">Imagen de perfil</label>
+                                        <img src="assets/img/avatar-3.jpg" alt="" class="thumb-xlg mt-2 mb-2 ms-2 me-2">
+                                        <div class="add-file btn btn-soft-primary btn-sm position-relative overflow-hidden">
+                                            Cambiar imagen de perfil
+                                            <input type="file" name="file" class="add-file-input">
+                                        </div>
+                                    </div>
+                                    <!--end form-group-->
+                                    <h5 class="font-weight-normal my-5 visually-hidden">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised.</h5>
+                                    <div class="form-group">
+                                        <label for="team-leader">Project team members</label>
+                                        <div class="img-group ms-3">
+                                            <a class="user-avatar user-avatar-group" href="#">
+                                                <img src="/dastone/default/assets/images/users/user-3.jpg" alt="user" class="thumb-xs rounded-circle">
+                                            </a>
+                                            <a class="user-avatar user-avatar-group" href="#">
+                                                <img src="/dastone/default/assets/images/users/user-5.jpg" alt="user" class="thumb-xs rounded-circle">
+                                            </a>
+                                            <a class="user-avatar user-avatar-group" href="#">
+                                                <img src="/dastone/default/assets/images/users/user-10.jpg" alt="user" class="thumb-xs rounded-circle">
+                                            </a>
+                                            <a class="user-avatar user-avatar-group" href="#">
+                                                <img src="/dastone/default/assets/images/users/user-4.jpg" alt="user" class="thumb-xs rounded-circle">
+                                            </a>
+                                        </div>
+                                        <!--end img-group-->
+                                        <button type="button" class="btn btn-soft-primary btn-sm add-member ms-3 px-3">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <!--end form-group-->
+                                </form>
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <div class="d-flex mt-4 flex-column" style="display: -webkit-box;">
+                            <div class="divider"></div>
+                            <div class="col-lg-6">
+                                <form>
+                                    <!--end form-group-->
+                                    <div class="form-group">
+
+                                        <div class="row mb-3">
+                                            <h3>Destinatario de facturas</h3>
+                                            <div class="col-12">
+                                                <label for="input3" class="form-label">Si desea que se envíen copias de sus facturas a una dirección específica (o varias direcciones), utilice el siguiente formulario para agregarlas a su cuenta.<br></label>
+                                                <div class="input-group mb-3">
+                                                    <input type="email" class="form-control" placeholder="Correo electrónico de destinatario" aria-label="Email" aria-describedby="button-addon3">
+                                                    <button class="btn btn-primary" type="button" id="button-addon2">Agregar correo</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <!--end form-->
+                            </div>
+                            <!--end col-->
+                            <!--end col-->
+                        </div>
+                        <div class="d-flex mt-4 flex-column" style="display: -webkit-box;">
+                            <div class="divider"></div>
+                            <div class="col-lg-6">
+                                <form>
+                                    <!--end form-group-->
+                                    <div class="form-group">
+
+                                        <div class="row mb-3">
+                                            <h3>Actualizar contraseña</h3>
+                                            <div class="col-12">
+                                                <label for="profileContact" class="form-label">Contraseña</label>
+                                                <input type="text" class="form-control" id="profileContact" name="personaContacto" aria-describedby="input21_help">
+                                                <small id="bs5-form-group-help1" class="form-text text-muted">** Las contraseñas deben tener al menos 6 caracteres de longitud</small>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="profileContact1" class="form-label">Repetir contraseña</label>
+                                                <input type="text" class="form-control" id="profileContact1" name="personaContacto1" aria-describedby="input21_help">
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-soft-primary btn-sm">Actualizar contraseña</button>
+                                    </div>
+
+                                </form>
+                                <!--end form-->
+                            </div>
+                            <!--end col-->
+                            <!--end col-->
+                        </div>
+                        <div class="d-flex mt-4 flex-column" style="display: -webkit-box;">
+                            <div class="divider"></div>
+                            <div class="col-lg-6">
+                                <form>
+                                    <!--end form-group-->
+                                    <div class="form-group">
+
+                                        <div class="row mb-3">
+                                            <h3>Borrar cuenta</h3>
+                                            <label for="input3" class="form-label">Si desea eliminar su cuenta, tenga en cuenta que una vez eliminada, sus datos personales y de entradas se eliminarán de forma permanente.</label>
+                                        </div>
+                                        <button type="submit" class="btn btn-soft-danger btn-sm">Borrar mi cuenta</button>
+                                    </div>
+
+                                </form>
+                                <!--end form-->
+                            </div>
+                            <!--end col-->
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end card-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+
+    </div><!-- container -->
+
+    <footer class="footer text-center text-sm-start">
+        &copy; <script src="/dastone/default/assets/js/jquery.min.js"></script>
+        <script src="/dastone/default/assets/js/moment.js"></script>
+        <script>
+            document.write(new Date().getFullYear())
+        </script> Dastone <span class="text-muted d-none d-sm-inline-block float-end">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span>
+    </footer>
+    <!--end footer-->
+</div>
+<!-- end page content -->

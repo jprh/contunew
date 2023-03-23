@@ -1,0 +1,124 @@
+<!-- Wappler include head-page="layouts/main-contucarga" fontawesome_4="cdn" is="dmx-app" id="home" appConnect="local" jquery_slim_35="cdn" bootstrap5="cdn" components="{dmxSwiper:{},dmxBootstrap5Navigation:{},dmxBrowser:{},dmxDatastore:{},dmxSmoothScroll:{},dmxStateManagement:{},dmxVideo:{},dmxRouting:{},dmxMasonry:{},dmxDataTraversal:{},dmxFormatter:{},dmxBootstrap5Modal:{}}" -->
+<dmx-serverconnect id="serverconnect1" url="/api/blog-posts"></dmx-serverconnect>
+<dmx-data-view id="data_view1" dmx-bind:data="serverconnect1.data.query" filter="(id == 1)"></dmx-data-view>
+<dmx-data-view id="data_view2" dmx-bind:data="serverconnect1.data.query" filter="(id != 1)&amp;&amp;(id &lt; 5)"></dmx-data-view>
+<dmx-data-view id="data_view3" dmx-bind:data="serverconnect1.data.query" filter="id&gt;=5"></dmx-data-view>
+<div is="dmx-browser" id="browser1"></div>
+<meta name="ac:route" content="/blog">
+
+<body class="bg-light" is="dmx-app" id="contucarga">
+    <!-- <dmx-preloader id="preloader1" spinner="chasingDots" bgcolor="#2693FF" color="#FFFFFF"></dmx-preloader> -->
+    <!-- Featured posts -->
+
+    <section class="fx-fade-up top-padding-hero" style="/* position: relative */">
+        <div class="container">
+            <h1 class="text-dark text-uppercase-bold-sm">Artículos Destacados sobre Aduana y Comercio Exterior</h1>
+            <div class="row mt-4" id="repeatleft" is="dmx-repeat" dmx-bind:repeat="data_view1.data">
+
+                <!-- Main post -->
+                <div class="col-lg-7">
+                    <!-- Featured image -->
+                    <a href="#!" dmx-bind:href="'blog/'+path">
+                        <img class="img-fluid rounded hover-lift-light" alt="" dmx-bind:src="img" loading="lazy">
+                    </a>
+
+                    <!-- Title -->
+                    <a href="#" class="h2 d-block text-dark text-decoration-none mt-4" dmx-html="title" dmx-bind:href="'blog/'+path">
+                        Not what we have but what we enjoy, constitutes our abundance
+                    </a>
+
+                    <!-- Intro -->
+                    <p class="text-secondary mt-3" dmx-html="meta">
+                        Of all things which wisdom provides to make life entirely happy, much the greatest is the possession of friendship. It is not so much our friends' help that helps us, as the confidence of their help.
+                    </p>
+
+                    <!-- Read more -->
+                    <a href="#!" class="d-inline-block border-bottom border-primary text-decoration-none mt-2 pb-1" dmx-bind:href="'blog/'+path">Leer Artículo</a>
+                </div>
+
+                <!-- Side posts -->
+                <div class="col-lg-5 pt-5 pt-lg-0 pl-lg-4" id="">
+
+                    <!-- Post -->
+                    <div class="row mb-0 pb-4" id="repeatright" dmx-repeat:repeatright="data_view2.data">
+                        <div class="col-md-6">
+                            <!-- Featured image -->
+                            <a href="#!" dmx-bind:href="'blog/'+path">
+                                <img class="img-fluid rounded hover-lift-light" alt="" dmx-bind:src="img" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="col-md-6 pt-3">
+                            <!-- Title -->
+                            <a href="#!" class="h5 d-block text-dark text-decoration-none" dmx-html="title" dmx-bind:href="'blog/'+path">
+                                The happiness of your life depends upon the quality of your thoughts
+                            </a>
+
+                            <!-- Read more -->
+                            <a href="#!" class="d-inline-block border-bottom border-primary text-decoration-none mt-2 pb-1" dmx-bind:href="'blog/'+path" dmx-on:click="">Leer Artículo</a>
+                        </div>
+                    </div>
+
+                    <!-- Post -->
+                    <!-- <div class="row mt-5">
+                        <div class="col-md-6">
+
+                            <a href="#!">
+                                <img src="/inertia/dist/assets/img/unsplash/51.jpeg" class="img-fluid rounded hover-lift-light" alt="">
+                            </a>
+                        </div>
+                        <div class="col-md-6 pt-3">
+
+                            <a href="#!" class="h5 d-block text-dark text-decoration-none">
+                                You have power over your mind, not outside events
+                            </a>
+
+
+                            <a href="#!" class="d-inline-block border-bottom border-primary text-decoration-none mt-2 pb-1">Leer Artículo</a>
+                        </div>
+                    </div> -->
+
+                    <!-- Post -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Older posts -->
+    <section class="mt-7 fx-fade-up">
+        <div class="container">
+            <div class="text-dark text-uppercase-bold-sm">Más Artículos</div>
+
+            <div class="row mt-4" is="dmx-repeat" id="repeatlowerrow" dmx-bind:repeat="data_view3.data">
+                <!-- Post -->
+                <div class="col-md-4">
+                    <!-- Featured image -->
+                    <a dmx-bind:href="'blog/'+path">
+                        <img class="img-fluid rounded hover-lift-light" alt="" dmx-bind:src="img">
+                    </a>
+
+                    <!-- Title -->
+                    <a href="#!" class="h5 d-block text-dark text-decoration-none mt-4" dmx-html="title" dmx-bind:href="'blog/'+path">
+                        The things you think about determine the quality of your mind
+                    </a>
+
+                    <!-- Read more -->
+                    <a href="#!" class="d-inline-block border-bottom border-primary text-decoration-none mt-2 pb-1" dmx-bind:href="'blog/'+path">Leer Artículo</a>
+                </div>
+
+                <!-- Post -->
+
+                <!-- Post -->
+            </div>
+
+            <!-- Go to previous posts -->
+            <a href="#!" class="btn btn-pastel-primary hover-lift-light text-uppercase-bold-sm mt-7 visually-hidden">
+                <i class="fas fa-chevron-left fa-sm mr-2"></i>
+                Go to archives
+            </a>
+        </div>
+    </section>
+    <%- await include('/partials/banner-subscribe', Object.assign({}, locals)) %>
+
+    <!-- Subscribe -->
+
+</body>

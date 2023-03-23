@@ -1,0 +1,28 @@
+{
+  "name": "security",
+  "module": "auth",
+  "action": "provider",
+  "options": {
+    "connection": "",
+    "secret": "",
+    "provider": "Static",
+    "users": {
+      "admin": "",
+      "user123  ": ""
+    },
+    "perms": {
+      "write": [
+        ""
+      ],
+      "read": [
+        "  "
+      ]
+    }
+  },
+  "meta": [
+    {
+      "name": "identity",
+      "type": "text"
+    }
+  ]
+}

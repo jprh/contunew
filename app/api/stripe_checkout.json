@@ -1,0 +1,285 @@
+{
+  "meta": {
+    "$_POST": [
+      {
+        "type": "array",
+        "name": "lineItems",
+        "sub": [
+          {
+            "type": "text",
+            "name": "price"
+          },
+          {
+            "type": "number",
+            "name": "quantity"
+          }
+        ]
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "",
+      "module": "core",
+      "action": "trycatch",
+      "options": {
+        "try": {
+          "steps": [
+            {
+              "name": "createCheckoutSession",
+              "module": "stripe",
+              "action": "createCheckoutSession",
+              "options": {
+                "payment_method_types": [
+                  "card"
+                ],
+                "mode": "payment",
+                "cancel_url": "https://www.contucarga.com/",
+                "success_url": "https://www.contucarga.com/sucess",
+                "line_items": "{{$_POST.lineItems}}"
+              },
+              "outputType": "object",
+              "meta": [
+                {
+                  "name": "allow_promotion_codes",
+                  "type": "boolean"
+                },
+                {
+                  "name": "amount_subtotal",
+                  "type": "number"
+                },
+                {
+                  "name": "amount_total",
+                  "type": "number"
+                },
+                {
+                  "name": "billing_address_collection",
+                  "type": "text"
+                },
+                {
+                  "name": "cancel_url",
+                  "type": "text"
+                },
+                {
+                  "name": "client_reference_id",
+                  "type": "text"
+                },
+                {
+                  "name": "currency",
+                  "type": "text"
+                },
+                {
+                  "name": "customer",
+                  "type": "text",
+                  "expand": [
+                    "stripe_customer",
+                    "stripe_deleted_customer"
+                  ]
+                },
+                {
+                  "name": "customer_details",
+                  "type": "object",
+                  "ref": "stripe_payment_pages_checkout_session_customer_details"
+                },
+                {
+                  "name": "customer_email",
+                  "type": "text"
+                },
+                {
+                  "name": "id",
+                  "type": "text"
+                },
+                {
+                  "name": "line_items",
+                  "type": "object",
+                  "sub": [
+                    {
+                      "name": "data",
+                      "type": "array",
+                      "sub": [
+                        {
+                          "name": "amount_subtotal",
+                          "type": "number"
+                        },
+                        {
+                          "name": "amount_total",
+                          "type": "number"
+                        },
+                        {
+                          "name": "currency",
+                          "type": "text"
+                        },
+                        {
+                          "name": "description",
+                          "type": "text"
+                        },
+                        {
+                          "name": "discounts",
+                          "type": "array",
+                          "sub": [
+                            {
+                              "name": "amount",
+                              "type": "number"
+                            },
+                            {
+                              "name": "discount",
+                              "type": "object",
+                              "ref": "stripe_discount"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "id",
+                          "type": "text"
+                        },
+                        {
+                          "name": "object",
+                          "type": "text"
+                        },
+                        {
+                          "name": "price",
+                          "type": "object",
+                          "ref": "stripe_price"
+                        },
+                        {
+                          "name": "quantity",
+                          "type": "number"
+                        },
+                        {
+                          "name": "taxes",
+                          "type": "array",
+                          "sub": [
+                            {
+                              "name": "amount",
+                              "type": "number"
+                            },
+                            {
+                              "name": "rate",
+                              "type": "object",
+                              "ref": "stripe_tax_rate"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "has_more",
+                      "type": "boolean"
+                    },
+                    {
+                      "name": "object",
+                      "type": "text"
+                    },
+                    {
+                      "name": "url",
+                      "type": "text"
+                    }
+                  ]
+                },
+                {
+                  "name": "livemode",
+                  "type": "boolean"
+                },
+                {
+                  "name": "locale",
+                  "type": "text"
+                },
+                {
+                  "name": "metadata",
+                  "type": "object"
+                },
+                {
+                  "name": "mode",
+                  "type": "text"
+                },
+                {
+                  "name": "object",
+                  "type": "text"
+                },
+                {
+                  "name": "payment_intent",
+                  "type": "text",
+                  "expand": [
+                    "stripe_payment_intent"
+                  ]
+                },
+                {
+                  "name": "payment_method_options",
+                  "type": "object",
+                  "ref": "stripe_checkout_session_payment_method_options"
+                },
+                {
+                  "name": "payment_method_types",
+                  "type": "array",
+                  "sub": []
+                },
+                {
+                  "name": "payment_status",
+                  "type": "text"
+                },
+                {
+                  "name": "setup_intent",
+                  "type": "text",
+                  "expand": [
+                    "stripe_setup_intent"
+                  ]
+                },
+                {
+                  "name": "shipping",
+                  "type": "object",
+                  "ref": "stripe_shipping"
+                },
+                {
+                  "name": "shipping_address_collection",
+                  "type": "object",
+                  "ref": "stripe_payment_pages_payment_page_resources_shipping_address_collection"
+                },
+                {
+                  "name": "submit_type",
+                  "type": "text"
+                },
+                {
+                  "name": "subscription",
+                  "type": "text",
+                  "expand": [
+                    "stripe_subscription"
+                  ]
+                },
+                {
+                  "name": "success_url",
+                  "type": "text"
+                },
+                {
+                  "name": "total_details",
+                  "type": "object",
+                  "ref": "stripe_payment_pages_checkout_session_total_details"
+                }
+              ],
+              "output": true
+            },
+            {
+              "name": "id",
+              "module": "core",
+              "action": "setvalue",
+              "options": {
+                "value": "{{createCheckoutSession.id}}"
+              },
+              "output": true
+            }
+          ]
+        },
+        "catch": {
+          "steps": {
+            "name": "error",
+            "module": "core",
+            "action": "setvalue",
+            "options": {
+              "value": "There was an error: {{$_ERROR}}"
+            },
+            "output": true
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1137 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/views/app-embarques.ejs",
+      "linkedForm": "serverconnectformembarques"
+    },
+    "$_POST": [
+      {
+        "type": "text",
+        "fieldName": "numero_referencia",
+        "name": "numero_referencia"
+      },
+      {
+        "type": "text",
+        "fieldName": "tipo_de_transporte",
+        "name": "tipo_de_transporte"
+      },
+      {
+        "type": "text",
+        "fieldName": "empresa_de_transporte",
+        "name": "empresa_de_transporte"
+      },
+      {
+        "type": "text",
+        "fieldName": "referencia_de_transportista",
+        "name": "referencia_de_transportista"
+      },
+      {
+        "type": "array",
+        "fieldName": "codigos_arancelarios",
+        "name": "codigos_arancelarios"
+      },
+      {
+        "type": "array",
+        "fieldName": "codigos_arancelarios_descripcion",
+        "name": "codigos_arancelarios_descripcion"
+      },
+      {
+        "type": "text",
+        "fieldName": "busqiedacodigoarancelario",
+        "name": "busqiedacodigoarancelario"
+      },
+      {
+        "type": "text",
+        "fieldName": "busquedacodigodescripcion",
+        "name": "busquedacodigodescripcion"
+      },
+      {
+        "type": "text",
+        "fieldName": "txtCodigoProducto",
+        "name": "txtCodigoProducto"
+      },
+      {
+        "type": "text",
+        "fieldName": "txtDescripcionProducto",
+        "name": "txtDescripcionProducto"
+      },
+      {
+        "type": "text",
+        "fieldName": "numero_de_factura",
+        "name": "numero_de_factura"
+      },
+      {
+        "type": "text",
+        "fieldName": "nombre_del_proveedor",
+        "name": "nombre_del_proveedor"
+      },
+      {
+        "type": "file",
+        "fieldName": "facturaComercialEmbarque",
+        "name": "facturaComercialEmbarque",
+        "sub": [
+          {
+            "type": "text",
+            "name": "name"
+          },
+          {
+            "type": "text",
+            "name": "type"
+          },
+          {
+            "type": "number",
+            "name": "size"
+          },
+          {
+            "type": "text",
+            "name": "error"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "type": "text",
+        "fieldName": "conocimiento_de_embarque",
+        "name": "conocimiento_de_embarque"
+      },
+      {
+        "type": "file",
+        "fieldName": "ConocimientodeEmbarque",
+        "name": "ConocimientodeEmbarque",
+        "sub": [
+          {
+            "type": "text",
+            "name": "name"
+          },
+          {
+            "type": "text",
+            "name": "type"
+          },
+          {
+            "type": "number",
+            "name": "size"
+          },
+          {
+            "type": "text",
+            "name": "error"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "type": "file",
+        "fieldName": "RenunciadeMercancia",
+        "name": "RenunciadeMercancia",
+        "sub": [
+          {
+            "type": "text",
+            "name": "name"
+          },
+          {
+            "type": "text",
+            "name": "type"
+          },
+          {
+            "type": "number",
+            "name": "size"
+          },
+          {
+            "type": "text",
+            "name": "error"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "type": "text",
+        "fieldName": "articulos_importados_son_alimentos",
+        "name": "articulos_importados_son_alimentos"
+      },
+      {
+        "type": "file",
+        "fieldName": "RegistroSanitario",
+        "name": "RegistroSanitario",
+        "sub": [
+          {
+            "type": "text",
+            "name": "name"
+          },
+          {
+            "type": "text",
+            "name": "type"
+          },
+          {
+            "type": "number",
+            "name": "size"
+          },
+          {
+            "type": "text",
+            "name": "error"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "type": "file",
+        "fieldName": "CertificadoSanitario",
+        "name": "CertificadoSanitario",
+        "sub": [
+          {
+            "type": "text",
+            "name": "name"
+          },
+          {
+            "type": "text",
+            "name": "type"
+          },
+          {
+            "type": "number",
+            "name": "size"
+          },
+          {
+            "type": "text",
+            "name": "error"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "type": "file",
+        "fieldName": "Sencamer",
+        "name": "Sencamer",
+        "sub": [
+          {
+            "type": "text",
+            "name": "name"
+          },
+          {
+            "type": "text",
+            "name": "type"
+          },
+          {
+            "type": "number",
+            "name": "size"
+          },
+          {
+            "type": "text",
+            "name": "error"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "type": "file",
+        "fieldName": "CertificadodeOrigen",
+        "name": "CertificadodeOrigen",
+        "sub": [
+          {
+            "type": "text",
+            "name": "name"
+          },
+          {
+            "type": "text",
+            "name": "type"
+          },
+          {
+            "type": "number",
+            "name": "size"
+          },
+          {
+            "type": "text",
+            "name": "error"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "type": "file",
+        "fieldName": "LicenciadeImportacion",
+        "name": "LicenciadeImportacion",
+        "sub": [
+          {
+            "type": "text",
+            "name": "name"
+          },
+          {
+            "type": "text",
+            "name": "type"
+          },
+          {
+            "type": "number",
+            "name": "size"
+          },
+          {
+            "type": "text",
+            "name": "error"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "type": "file",
+        "fieldName": "NotificaciondeLlegada",
+        "name": "NotificaciondeLlegada",
+        "sub": [
+          {
+            "type": "text",
+            "name": "name"
+          },
+          {
+            "type": "text",
+            "name": "type"
+          },
+          {
+            "type": "number",
+            "name": "size"
+          },
+          {
+            "type": "text",
+            "name": "error"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "type": "text",
+        "fieldName": "compania",
+        "name": "compania"
+      },
+      {
+        "type": "text",
+        "fieldName": "select1",
+        "name": "select1"
+      },
+      {
+        "type": "text",
+        "name": "fecha_de_llegada"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "facturaComercial",
+        "module": "upload",
+        "action": "upload",
+        "options": {
+          "fields": "{{$_POST.facturaComercialEmbarque}}",
+          "path": "/public/assets/documents/documentos_de_embarques",
+          "template": "{name}{guid}{ext}"
+        },
+        "meta": [
+          {
+            "name": "name",
+            "type": "text"
+          },
+          {
+            "name": "path",
+            "type": "text"
+          },
+          {
+            "name": "url",
+            "type": "text"
+          },
+          {
+            "name": "type",
+            "type": "text"
+          },
+          {
+            "name": "size",
+            "type": "text"
+          },
+          {
+            "name": "error",
+            "type": "number"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "name": "conocimientoDeEmbarque",
+        "module": "upload",
+        "action": "upload",
+        "options": {
+          "fields": "{{$_POST.ConocimientodeEmbarque}}",
+          "path": "/public/assets/documents/documentos_de_embarques",
+          "template": "{name}{guid}{ext}"
+        },
+        "meta": [
+          {
+            "name": "name",
+            "type": "text"
+          },
+          {
+            "name": "path",
+            "type": "text"
+          },
+          {
+            "name": "url",
+            "type": "text"
+          },
+          {
+            "name": "type",
+            "type": "text"
+          },
+          {
+            "name": "size",
+            "type": "text"
+          },
+          {
+            "name": "error",
+            "type": "number"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "name": "renunciaDeMercancia",
+        "module": "upload",
+        "action": "upload",
+        "options": {
+          "fields": "{{$_POST.RenunciadeMercancia}}",
+          "path": "/public/assets/documents/documentos_de_embarques",
+          "template": "{name}{guid}{ext}"
+        },
+        "meta": [
+          {
+            "name": "name",
+            "type": "text"
+          },
+          {
+            "name": "path",
+            "type": "text"
+          },
+          {
+            "name": "url",
+            "type": "text"
+          },
+          {
+            "name": "type",
+            "type": "text"
+          },
+          {
+            "name": "size",
+            "type": "text"
+          },
+          {
+            "name": "error",
+            "type": "number"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "name": "registroSanitario",
+        "module": "upload",
+        "action": "upload",
+        "options": {
+          "fields": "{{$_POST.RegistroSanitario}}",
+          "path": "/public/assets/documents/documentos_de_embarques",
+          "template": "{name}{guid}{ext}"
+        },
+        "meta": [
+          {
+            "name": "name",
+            "type": "text"
+          },
+          {
+            "name": "path",
+            "type": "text"
+          },
+          {
+            "name": "url",
+            "type": "text"
+          },
+          {
+            "name": "type",
+            "type": "text"
+          },
+          {
+            "name": "size",
+            "type": "text"
+          },
+          {
+            "name": "error",
+            "type": "number"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "name": "certificadoSanitario",
+        "module": "upload",
+        "action": "upload",
+        "options": {
+          "fields": "{{$_POST.CertificadoSanitario}}",
+          "path": "/public/assets/documents/documentos_de_embarques",
+          "template": "{name}{guid}{ext}"
+        },
+        "meta": [
+          {
+            "name": "name",
+            "type": "text"
+          },
+          {
+            "name": "path",
+            "type": "text"
+          },
+          {
+            "name": "url",
+            "type": "text"
+          },
+          {
+            "name": "type",
+            "type": "text"
+          },
+          {
+            "name": "size",
+            "type": "text"
+          },
+          {
+            "name": "error",
+            "type": "number"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "name": "Sencame",
+        "module": "upload",
+        "action": "upload",
+        "options": {
+          "fields": "{{$_POST.Sencamer}}",
+          "path": "/public/assets/documents/documentos_de_embarques",
+          "template": "{name}{guid}{ext}"
+        },
+        "meta": [
+          {
+            "name": "name",
+            "type": "text"
+          },
+          {
+            "name": "path",
+            "type": "text"
+          },
+          {
+            "name": "url",
+            "type": "text"
+          },
+          {
+            "name": "type",
+            "type": "text"
+          },
+          {
+            "name": "size",
+            "type": "text"
+          },
+          {
+            "name": "error",
+            "type": "number"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "name": "CertificadoDeOrigen",
+        "module": "upload",
+        "action": "upload",
+        "options": {
+          "fields": "{{$_POST.CertificadodeOrigen}}",
+          "path": "/public/assets/documents/documentos_de_embarques",
+          "template": "{name}{guid}{ext}"
+        },
+        "meta": [
+          {
+            "name": "name",
+            "type": "text"
+          },
+          {
+            "name": "path",
+            "type": "text"
+          },
+          {
+            "name": "url",
+            "type": "text"
+          },
+          {
+            "name": "type",
+            "type": "text"
+          },
+          {
+            "name": "size",
+            "type": "text"
+          },
+          {
+            "name": "error",
+            "type": "number"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "name": "licenciaDeImportacion",
+        "module": "upload",
+        "action": "upload",
+        "options": {
+          "fields": "{{$_POST.LicenciadeImportacion}}",
+          "path": "/public/assets/documents/documentos_de_embarques",
+          "template": "{name}{guid}{ext}"
+        },
+        "meta": [
+          {
+            "name": "name",
+            "type": "text"
+          },
+          {
+            "name": "path",
+            "type": "text"
+          },
+          {
+            "name": "url",
+            "type": "text"
+          },
+          {
+            "name": "type",
+            "type": "text"
+          },
+          {
+            "name": "size",
+            "type": "text"
+          },
+          {
+            "name": "error",
+            "type": "number"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "name": "notificacionDeLlegada",
+        "module": "upload",
+        "action": "upload",
+        "options": {
+          "fields": "{{$_POST.NotificaciondeLlegada}}",
+          "path": "/public/assets/documents/documentos_de_embarques",
+          "template": "{name}{guid}{ext}"
+        },
+        "meta": [
+          {
+            "name": "name",
+            "type": "text"
+          },
+          {
+            "name": "path",
+            "type": "text"
+          },
+          {
+            "name": "url",
+            "type": "text"
+          },
+          {
+            "name": "type",
+            "type": "text"
+          },
+          {
+            "name": "size",
+            "type": "text"
+          },
+          {
+            "name": "error",
+            "type": "number"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "name": "insert",
+        "module": "dbupdater",
+        "action": "insert",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "insert",
+            "values": [
+              {
+                "table": "embarques",
+                "column": "numero_referencia",
+                "type": "text",
+                "value": "{{$_POST.numero_referencia}}"
+              },
+              {
+                "table": "embarques",
+                "column": "tipo_de_transporte",
+                "type": "text",
+                "value": "{{$_POST.tipo_de_transporte}}"
+              },
+              {
+                "table": "embarques",
+                "column": "empresa_de_transporte",
+                "type": "text",
+                "value": "{{$_POST.empresa_de_transporte}}"
+              },
+              {
+                "table": "embarques",
+                "column": "referencia_de_transportista",
+                "type": "text",
+                "value": "{{$_POST.referencia_de_transportista}}"
+              },
+              {
+                "table": "embarques",
+                "column": "factura_imagen_url",
+                "type": "text",
+                "value": "{{facturaComercial.url}}"
+              },
+              {
+                "table": "embarques",
+                "column": "factura_comercial_fecha_creacion",
+                "type": "text",
+                "value": "{{NOW}}"
+              },
+              {
+                "table": "embarques",
+                "column": "factura_comercial_nombre_archivo",
+                "type": "text",
+                "value": "{{facturaComercial.name}}"
+              },
+              {
+                "table": "embarques",
+                "column": "numero_de_factura",
+                "type": "text",
+                "value": "{{$_POST.numero_de_factura}}"
+              },
+              {
+                "table": "embarques",
+                "column": "codigos_arancelarios_descripcion",
+                "type": "text",
+                "value": "{{$_POST.codigos_arancelarios_descripcion}}"
+              },
+              {
+                "table": "embarques",
+                "column": "conocimiento_de_embarque_nombre_archivo",
+                "type": "text",
+                "value": "{{conocimientoDeEmbarque.name}}"
+              },
+              {
+                "table": "embarques",
+                "column": "conocimiento_de_embarque_fecha_de_creacion",
+                "type": "text",
+                "value": "{{NOW}}"
+              },
+              {
+                "table": "embarques",
+                "column": "conocimiento_de_embarque_imagen_url",
+                "type": "text",
+                "value": "{{conocimientoDeEmbarque.url}}"
+              },
+              {
+                "table": "embarques",
+                "column": "renuncia_de_mercancia_imagen_url",
+                "type": "text",
+                "value": "{{renunciaDeMercancia.url}}"
+              },
+              {
+                "table": "embarques",
+                "column": "renuncia_de_mercancia_nombre_archivo",
+                "type": "text",
+                "value": "{{renunciaDeMercancia.name}}"
+              },
+              {
+                "table": "embarques",
+                "column": "renuncia_de_mercancia_fecha_creacion",
+                "type": "text",
+                "value": "{{NOW}}"
+              },
+              {
+                "table": "embarques",
+                "column": "registro_sanitario_imagen_url",
+                "type": "text",
+                "value": "{{registroSanitario.url}}"
+              },
+              {
+                "table": "embarques",
+                "column": "registro_sanitario_fecha_creacion",
+                "type": "text",
+                "value": "{{NOW}}"
+              },
+              {
+                "table": "embarques",
+                "column": "registro_sanitario_nombre_archivo",
+                "type": "text",
+                "value": "{{registroSanitario.name}}"
+              },
+              {
+                "table": "embarques",
+                "column": "certificado_sanitario_fecha_creacion",
+                "type": "text",
+                "value": "{{NOW}}"
+              },
+              {
+                "table": "embarques",
+                "column": "certificado_sanitario_imagen_url",
+                "type": "text",
+                "value": "{{certificadoSanitario.url}}"
+              },
+              {
+                "table": "embarques",
+                "column": "certificado_sanitario_nombre_archivo",
+                "type": "text",
+                "value": "{{certificadoSanitario.name}}"
+              },
+              {
+                "table": "embarques",
+                "column": "nombre_del_proveedor",
+                "type": "text",
+                "value": "{{$_POST.nombre_del_proveedor}}"
+              },
+              {
+                "table": "embarques",
+                "column": "licencia_de_importacion_imagen_url",
+                "type": "text",
+                "value": "{{licenciaDeImportacion.url}}"
+              },
+              {
+                "table": "embarques",
+                "column": "licencia_de_importacion_nombre_archivo",
+                "type": "text",
+                "value": "{{licenciaDeImportacion.name}}"
+              },
+              {
+                "table": "embarques",
+                "column": "licencia_de_importacion_fecha_creacion",
+                "type": "text",
+                "value": "{{NOW}}"
+              },
+              {
+                "table": "embarques",
+                "column": "certificado_de_origen_imagen_url",
+                "type": "text",
+                "value": "{{CertificadoDeOrigen.url}}"
+              },
+              {
+                "table": "embarques",
+                "column": "certificado_de_origen_nombre_archivo",
+                "type": "text",
+                "value": "{{CertificadoDeOrigen.name}}"
+              },
+              {
+                "table": "embarques",
+                "column": "certificado_de_origen_fecha_creacion",
+                "type": "text",
+                "value": "{{NOW}}"
+              },
+              {
+                "table": "embarques",
+                "column": "registro_sencamer_imagen_url",
+                "type": "text",
+                "value": "{{Sencame.url}}"
+              },
+              {
+                "table": "embarques",
+                "column": "registro_sencamer_fecha_reacion",
+                "type": "text",
+                "value": "{{NOW}}"
+              },
+              {
+                "table": "embarques",
+                "column": "registro_sencamer_nombre_archivo",
+                "type": "text",
+                "value": "{{Sencame.name}}"
+              },
+              {
+                "table": "embarques",
+                "column": "compania",
+                "type": "number",
+                "value": "{{$_POST.compania}}"
+              },
+              {
+                "table": "embarques",
+                "column": "articulos_importados_son_alimentos",
+                "type": "text",
+                "value": "{{$_POST.articulos_importados_son_alimentos}}"
+              },
+              {
+                "table": "embarques",
+                "column": "conocimiento_de_embarque",
+                "type": "text",
+                "value": "{{$_POST.conocimiento_de_embarque}}"
+              },
+              {
+                "table": "embarques",
+                "column": "codigos_arancelarios",
+                "type": "text",
+                "value": "{{$_POST.codigos_arancelarios}}"
+              },
+              {
+                "table": "embarques",
+                "column": "Fecha_creacion_embarque",
+                "type": "text",
+                "value": "{{NOW}}"
+              },
+              {
+                "table": "embarques",
+                "column": "conocimiento_de_embarque_type",
+                "type": "text",
+                "value": "{{conocimientoDeEmbarque.type}}"
+              },
+              {
+                "table": "embarques",
+                "column": "Estado",
+                "type": "text",
+                "value": "Activo"
+              },
+              {
+                "table": "embarques",
+                "column": "fecha_de_llegada",
+                "type": "text",
+                "value": "{{$_POST.fecha_de_llegada}}"
+              }
+            ],
+            "table": "embarques",
+            "returning": "id",
+            "query": "INSERT INTO embarques\n(numero_referencia, tipo_de_transporte, empresa_de_transporte, referencia_de_transportista, factura_imagen_url, factura_comercial_fecha_creacion, factura_comercial_nombre_archivo, numero_de_factura, codigos_arancelarios_descripcion, conocimiento_de_embarque_nombre_archivo, conocimiento_de_embarque_fecha_de_creacion, conocimiento_de_embarque_imagen_url, renuncia_de_mercancia_imagen_url, renuncia_de_mercancia_nombre_archivo, renuncia_de_mercancia_fecha_creacion, registro_sanitario_imagen_url, registro_sanitario_fecha_creacion, registro_sanitario_nombre_archivo, certificado_sanitario_fecha_creacion, certificado_sanitario_imagen_url, certificado_sanitario_nombre_archivo, nombre_del_proveedor, licencia_de_importacion_imagen_url, licencia_de_importacion_nombre_archivo, licencia_de_importacion_fecha_creacion, certificado_de_origen_imagen_url, certificado_de_origen_nombre_archivo, certificado_de_origen_fecha_creacion, registro_sencamer_imagen_url, registro_sencamer_fecha_reacion, registro_sencamer_nombre_archivo, compania, articulos_importados_son_alimentos, conocimiento_de_embarque, codigos_arancelarios, Fecha_creacion_embarque, conocimiento_de_embarque_type, Estado, fecha_de_llegada) VALUES (:P1 /* {{$_POST.numero_referencia}} */, :P2 /* {{$_POST.tipo_de_transporte}} */, :P3 /* {{$_POST.empresa_de_transporte}} */, :P4 /* {{$_POST.referencia_de_transportista}} */, :P5 /* {{facturaComercial.url}} */, :P6 /* {{NOW}} */, :P7 /* {{facturaComercial.name}} */, :P8 /* {{$_POST.numero_de_factura}} */, :P9 /* {{$_POST.codigos_arancelarios_descripcion}} */, :P10 /* {{conocimientoDeEmbarque.name}} */, :P11 /* {{NOW}} */, :P12 /* {{conocimientoDeEmbarque.url}} */, :P13 /* {{renunciaDeMercancia.url}} */, :P14 /* {{renunciaDeMercancia.name}} */, :P15 /* {{NOW}} */, :P16 /* {{registroSanitario.url}} */, :P17 /* {{NOW}} */, :P18 /* {{registroSanitario.name}} */, :P19 /* {{NOW}} */, :P20 /* {{certificadoSanitario.url}} */, :P21 /* {{certificadoSanitario.name}} */, :P22 /* {{$_POST.nombre_del_proveedor}} */, :P23 /* {{licenciaDeImportacion.url}} */, :P24 /* {{licenciaDeImportacion.name}} */, :P25 /* {{NOW}} */, :P26 /* {{CertificadoDeOrigen.url}} */, :P27 /* {{CertificadoDeOrigen.name}} */, :P28 /* {{NOW}} */, :P29 /* {{Sencame.url}} */, :P30 /* {{NOW}} */, :P31 /* {{Sencame.name}} */, :P32 /* {{$_POST.compania}} */, :P33 /* {{$_POST.articulos_importados_son_alimentos}} */, :P34 /* {{$_POST.conocimiento_de_embarque}} */, :P35 /* {{$_POST.codigos_arancelarios}} */, :P36 /* {{NOW}} */, :P37 /* {{conocimientoDeEmbarque.type}} */, 'Activo', :P38 /* {{$_POST.fecha_de_llegada}} */)",
+            "params": [
+              {
+                "name": ":P1",
+                "type": "expression",
+                "value": "{{$_POST.numero_referencia}}",
+                "test": ""
+              },
+              {
+                "name": ":P2",
+                "type": "expression",
+                "value": "{{$_POST.tipo_de_transporte}}",
+                "test": ""
+              },
+              {
+                "name": ":P3",
+                "type": "expression",
+                "value": "{{$_POST.empresa_de_transporte}}",
+                "test": ""
+              },
+              {
+                "name": ":P4",
+                "type": "expression",
+                "value": "{{$_POST.referencia_de_transportista}}",
+                "test": ""
+              },
+              {
+                "name": ":P5",
+                "type": "expression",
+                "value": "{{facturaComercial.url}}",
+                "test": ""
+              },
+              {
+                "name": ":P6",
+                "type": "expression",
+                "value": "{{NOW}}",
+                "test": ""
+              },
+              {
+                "name": ":P7",
+                "type": "expression",
+                "value": "{{facturaComercial.name}}",
+                "test": ""
+              },
+              {
+                "name": ":P8",
+                "type": "expression",
+                "value": "{{$_POST.numero_de_factura}}",
+                "test": ""
+              },
+              {
+                "name": ":P9",
+                "type": "expression",
+                "value": "{{$_POST.codigos_arancelarios_descripcion}}",
+                "test": ""
+              },
+              {
+                "name": ":P10",
+                "type": "expression",
+                "value": "{{conocimientoDeEmbarque.name}}",
+                "test": ""
+              },
+              {
+                "name": ":P11",
+                "type": "expression",
+                "value": "{{NOW}}",
+                "test": ""
+              },
+              {
+                "name": ":P12",
+                "type": "expression",
+                "value": "{{conocimientoDeEmbarque.url}}",
+                "test": ""
+              },
+              {
+                "name": ":P13",
+                "type": "expression",
+                "value": "{{renunciaDeMercancia.url}}",
+                "test": ""
+              },
+              {
+                "name": ":P14",
+                "type": "expression",
+                "value": "{{renunciaDeMercancia.name}}",
+                "test": ""
+              },
+              {
+                "name": ":P15",
+                "type": "expression",
+                "value": "{{NOW}}",
+                "test": ""
+              },
+              {
+                "name": ":P16",
+                "type": "expression",
+                "value": "{{registroSanitario.url}}",
+                "test": ""
+              },
+              {
+                "name": ":P17",
+                "type": "expression",
+                "value": "{{NOW}}",
+                "test": ""
+              },
+              {
+                "name": ":P18",
+                "type": "expression",
+                "value": "{{registroSanitario.name}}",
+                "test": ""
+              },
+              {
+                "name": ":P19",
+                "type": "expression",
+                "value": "{{NOW}}",
+                "test": ""
+              },
+              {
+                "name": ":P20",
+                "type": "expression",
+                "value": "{{certificadoSanitario.url}}",
+                "test": ""
+              },
+              {
+                "name": ":P21",
+                "type": "expression",
+                "value": "{{certificadoSanitario.name}}",
+                "test": ""
+              },
+              {
+                "name": ":P22",
+                "type": "expression",
+                "value": "{{$_POST.nombre_del_proveedor}}",
+                "test": ""
+              },
+              {
+                "name": ":P23",
+                "type": "expression",
+                "value": "{{licenciaDeImportacion.url}}",
+                "test": ""
+              },
+              {
+                "name": ":P24",
+                "type": "expression",
+                "value": "{{licenciaDeImportacion.name}}",
+                "test": ""
+              },
+              {
+                "name": ":P25",
+                "type": "expression",
+                "value": "{{NOW}}",
+                "test": ""
+              },
+              {
+                "name": ":P26",
+                "type": "expression",
+                "value": "{{CertificadoDeOrigen.url}}",
+                "test": ""
+              },
+              {
+                "name": ":P27",
+                "type": "expression",
+                "value": "{{CertificadoDeOrigen.name}}",
+                "test": ""
+              },
+              {
+                "name": ":P28",
+                "type": "expression",
+                "value": "{{NOW}}",
+                "test": ""
+              },
+              {
+                "name": ":P29",
+                "type": "expression",
+                "value": "{{Sencame.url}}",
+                "test": ""
+              },
+              {
+                "name": ":P30",
+                "type": "expression",
+                "value": "{{NOW}}",
+                "test": ""
+              },
+              {
+                "name": ":P31",
+                "type": "expression",
+                "value": "{{Sencame.name}}",
+                "test": ""
+              },
+              {
+                "name": ":P32",
+                "type": "expression",
+                "value": "{{$_POST.compania}}",
+                "test": ""
+              },
+              {
+                "name": ":P33",
+                "type": "expression",
+                "value": "{{$_POST.articulos_importados_son_alimentos}}",
+                "test": ""
+              },
+              {
+                "name": ":P34",
+                "type": "expression",
+                "value": "{{$_POST.conocimiento_de_embarque}}",
+                "test": ""
+              },
+              {
+                "name": ":P35",
+                "type": "expression",
+                "value": "{{$_POST.codigos_arancelarios}}",
+                "test": ""
+              },
+              {
+                "name": ":P36",
+                "type": "expression",
+                "value": "{{NOW}}",
+                "test": ""
+              },
+              {
+                "name": ":P37",
+                "type": "expression",
+                "value": "{{conocimientoDeEmbarque.type}}",
+                "test": ""
+              },
+              {
+                "name": ":P38",
+                "type": "expression",
+                "value": "{{$_POST.fecha_de_llegada}}",
+                "test": ""
+              }
+            ]
+          }
+        },
+        "meta": [
+          {
+            "name": "identity",
+            "type": "text"
+          },
+          {
+            "name": "affected",
+            "type": "number"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/ui8-solo-saas.herokuapp.com/">
+    <script src="/dmxAppConnect/dmxAppConnect.js"></script>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="/ui8-solo-saas.herokuapp.com/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/ui8-solo-saas.herokuapp.com/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/ui8-solo-saas.herokuapp.com/img/favicon-16x16.png">
+    <link rel="manifest" href="https://ui8-solo-saas.herokuapp.com/img/site.webmanifest">
+    <link rel="mask-icon" href="/ui8-solo-saas.herokuapp.com/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="A Premium SaaS Landing Page Kit">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ui8">
+    <meta name="twitter:title" content="Solo">
+    <meta name="twitter:description" content="A Premium SaaS Landing Page Kit">
+    <meta name="twitter:creator" content="@ui8">
+    <meta name="twitter:image" content="https://ui8-solo-saas.herokuapp.com/img/twitter-card.png">
+    <meta property="og:title" content="Solo">
+    <meta property="og:type" content="Article">
+    <meta property="og:url" content="https://ui8.net/ui8/products/solo-saas-landing-page-kit">
+    <meta property="og:image" content="https://ui8-solo-saas.herokuapp.com/img/fb-og-image.png">
+    <meta property="og:description" content="A Premium SaaS Landing Page Kit">
+    <meta property="og:site_name" content="Solo">
+    <meta property="fb:admins" content="132951670226590">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Poppins:wght@600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.min.css" />
+    <link rel="stylesheet" media="all" href="/ui8-solo-saas.herokuapp.com/css/app.css">
+    <script src="/ui8-solo-saas.herokuapp.com/js/lib/jquery.min.js"></script>
+    <script>
+        var viewportmeta = document.querySelector('meta[name="viewport"]');
+if (viewportmeta) {
+  if (screen.width < 375) {
+    var newScale = screen.width / 375;
+    viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+  } else {
+    viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+  }
+}
+    </script>
+
+    <script defer="" src="/f97fc317-3fe8-4b45-83d5-8fef112023ad/scripts/bundle.js"></script>
+
+    <script src="/dmxAppConnect/dmxBootstrap5Collapse/dmxBootstrap5Collapse.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxBootstrap5Navigation/dmxBootstrap5Navigation.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxBrowser/dmxBrowser.js" defer=""></script>
+    <script src="/dmxAppConnect/dmxSmoothScroll/dmxSmoothScroll.js" defer=""></script>
+</head>
+
+<body is="dmx-app" id="index">
+    <dmx-smooth-scroll id="scroll1"></dmx-smooth-scroll>
+    <div is="dmx-browser" id="browser1"></div>
+    <script>
+        console.log(localStorage.getItem('darkMode'));
+if (localStorage.getItem('darkMode') === "on") {
+		document.body.classList.add("dark");
+		document.addEventListener("DOMContentLoaded", function() {
+		  document.querySelector('.js-switch-theme input').checked = true;
+		});
+}
+    </script>
+    <nav class="header navbar navbar-expand-lg header__center navbar-expand navbar-dark fixed-top " dmx-class:bg-light="browser1.scrollY.position">
+
+
+        <div class="container header__center center"><a class="header__logo" href="/ui8-solo-saas.herokuapp.com/index.html"><img class="header__pic header__pic_dark" src="/ui8-solo-saas.herokuapp.com/img/logo-dark.png" alt="" /><img class="header__pic header__pic_light" src="/ui8-solo-saas.herokuapp.com/img/logo-light.png" alt="" />
+            </a>
+            <div class="header__wrapper d-flex justify-content-end">
+                <div class="header__btns">
+                    <a class="header__btn btn btn_transparent" data-effect="mfp-zoom-in" href="#registroempresa">Registro Empresa</a>
+                    <a class="header__btn btn btn_transparent" data-effect="mfp-zoom-in" dmx-on:click="scroll1.goto('#registroempresa')">EIN</a>
+                    <a class="header__btn btn btn_transparent" href="#aperturadecuenta" data-effect="mfp-zoom-in">Cuenta Bancaria</a>
+                    <a class="header__btn btn btn_transparent js-popup-open" href="#popup-sign-in" data-effect="mfp-zoom-in">Contáctenos</a><a class="header__btn btn btn_orange js-popup-open" href="#popup-sign-up" data-effect="mfp-zoom-in">Comience su Trámite</a>
+                </div>
+                <picture class="header__preview">
+                    <source media="(max-width: 767px)" srcset="img/header-pic-mobile@2x.png, img/header-pic-mobile@2x.png 2x" /><img srcset="img/header-pic@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/header-pic.png" alt="" />
+                </picture>
+            </div>
+        </div>
+
+
+        <button class="header__burger"></button>
+    </nav>
+    <!-- <div class="page">
+        <header class="header">
+            <div class="header__center center"><a class="header__logo" href="/ui8-solo-saas.herokuapp.com/index.html"><img class="header__pic header__pic_dark" src="/ui8-solo-saas.herokuapp.com/img/logo-dark.png" alt="" /><img class="header__pic header__pic_light" src="/ui8-solo-saas.herokuapp.com/img/logo-light.png" alt="" /></a>
+                <div class="header__wrapper d-flex justify-content-end">
+                    <div class="header__btns"><a class="header__btn btn btn_transparent js-popup-open" href="#popup-sign-in" data-effect="mfp-zoom-in">Registro Empresa</a>
+                        <a class="header__btn btn btn_transparent js-popup-open" href="#popup-sign-in" data-effect="mfp-zoom-in">EIN</a>
+                        <a class="header__btn btn btn_transparent js-popup-open" href="#popup-sign-in" data-effect="mfp-zoom-in">Cuenta Bancaria</a>
+                        <a class="header__btn btn btn_transparent js-popup-open" href="#popup-sign-in" data-effect="mfp-zoom-in">Contáctenos</a><a class="header__btn btn btn_orange js-popup-open" href="#popup-sign-up" data-effect="mfp-zoom-in">Sign up</a>
+                    </div>
+                    <picture class="header__preview">
+                        <source media="(max-width: 767px)" srcset="img/header-pic-mobile@2x.png, img/header-pic-mobile@2x.png 2x" /><img srcset="img/header-pic@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/header-pic.png" alt="" />
+                    </picture>
+                </div><button class="header__burger"></button>
+            </div>
+        </header> -->
+    <!-- <div class="main container-flex">
+      <div class="main__center center">
+        <div class="main__wrap container-fluit">
+          <div class="stage container-fluid">RISK-FREE 30 DAY TRIAL</div>
+          <h1 class="main__title d1"><span data-aos="animation-scale-top" data-aos-duration="600">The best way</span>
+            <span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">to organize </span><span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="400">your work.</span>
+          </h1>
+          <div class="main__text">Organize your tasks, lists and reminders in one app.</div>
+          <div class="main__btns"><button class="main__btn btn btn_orange">Try it free</button><button class="main__btn btn btn_border"><svg class="icon icon-play">
+                <use xlink:href="img/sprite.svg#icon-play"></use>
+              </svg><span>Watch how it works</span></button></div>
+        </div>
+        <div class="main__bg" data-aos>
+          <div class="main__preview"><img srcset="img/figures-1.1@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures-1.1.png" alt=""></div>
+          <div class="main__preview"><img srcset="img/figures-1.2@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures-1.2.png" alt=""></div>
+          <div class="main__preview"><img srcset="img/figures-1.3@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures-1.3.png" alt=""></div>
+        </div>
+        <div class="main__partners">
+          <div class="main__info">Thousands of teams worldwide are using Solo</div>
+          <div class="main__list">
+            <div class="main__logo"><img src="/ui8-solo-saas.herokuapp.com/img/rotashow.svg" alt=""></div>
+            <div class="main__logo"><img src="/ui8-solo-saas.herokuapp.com/img/waves.svg" alt=""></div>
+            <div class="main__logo"><img src="/ui8-solo-saas.herokuapp.com/img/rotashow.svg" alt=""></div>
+            <div class="main__logo"><img src="/ui8-solo-saas.herokuapp.com/img/travelers.svg" alt=""></div>
+            <div class="main__logo"><img src="/ui8-solo-saas.herokuapp.com/img/goldlines.svg" alt=""></div>
+            <div class="main__logo"><img src="/ui8-solo-saas.herokuapp.com/img/velocity.svg" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="main container-fluid">
+        <div class="main__center center">
+            <div class="main__wrap d-flex flex-column align-items-center flex-lg-column align-items-lg-start">
+                <h2 class="stage ">NOSOTROS NOS ENCARGAMOS DE LOS TRÁMITES</h2>
+                <h1 class="main__title d1"><span data-aos="animation-scale-top" data-aos-duration="600">COMIENCE SU </span>
+                    <span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">EMPRESA EN USA</span><span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="400"></span>
+                </h1>
+                <p class="main__text">Le ayudamos a registrar su empresa, solicitar el EIN y abrir su cuenta bancaria Estados Unidos, para que se pueda enfocar en lo que mejor sabe hacer: su negocio.</p>
+                <div class="main__btns">
+                    <button class="main__btn btn btn_orange">Comence Ahora</button>
+                    <button class="main__btn btn btn_border">¿Cómo funciona?</button>
+                </div>
+            </div>
+            <div class="main__bg" data-aos>
+                <div class="main__preview"><img srcset="img/figures-1.1@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures-1.1.png" alt=""></div>
+                <div class="main__preview"><img srcset="img/figures-1.2@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures-1.2.png" alt=""></div>
+                <div class="main__preview"><img src="/ui8-solo-saas.herokuapp.com/img/box@2x.png" alt=""></div>
+            </div>
+            <div class="main__partners container-fluid visually-hidden">
+                <div class="main__info">Thousands of teams worldwide are using Solo</div>
+                <div class="main__list">
+                    <div class="main__logo"><img src="/ui8-solo-saas.herokuapp.com/img/rotashow.svg" alt=""></div>
+                    <div class="main__logo"><img src="/ui8-solo-saas.herokuapp.com/img/waves.svg" alt=""></div>
+                    <div class="main__logo"><img src="/ui8-solo-saas.herokuapp.com/img/rotashow.svg" alt=""></div>
+                    <div class="main__logo"><img src="/ui8-solo-saas.herokuapp.com/img/travelers.svg" alt=""></div>
+                    <div class="main__logo"><img src="/ui8-solo-saas.herokuapp.com/img/goldlines.svg" alt=""></div>
+                    <div class="main__logo"><img src="/ui8-solo-saas.herokuapp.com/img/velocity.svg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="steps steps__center center container-fluid">
+        <div class="features__wrap container-fluid">
+            <div class="features__row">
+                <div class="features__col">
+                    <div class="features__icon"><img src="/ui8-solo-saas.herokuapp.com/img/chat.svg" alt=""></div>
+                    <p class="features__category">Tramitación el línea de forma rápida y sencilla</p>
+                    <p class="features__text">Obtenga los documentos de su empresa en formato digital en cualquiera de los 50 estados de los Estados Unidos.&nbsp;</p>
+                </div>
+                <div class="features__col">
+                    <div class="features__icon"><img src="/ui8-solo-saas.herokuapp.com/img/folder-replace.svg" alt=""></div>
+                    <p class="features__category">Solo necesita su pasaporte</p>
+                    <p class="features__text">El único documento necesario para poder hacer el trámite en su nombre es una imagen de su pasaporte.&nbsp;</p>
+                </div>
+                <div class="features__col">
+                    <div class="features__icon "><img src="/ui8-solo-saas.herokuapp.com/img/comment-add.svg" alt=""></div>
+                    <p class="features__category">Desde cualquier lugar del mundo</p>
+                    <p class="features__text">Puede abrir su empresa sin necesidad de estar en los Estados Unidos desde cualquier parte del mundo.&nbsp;</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="productivity container-fluid">
+        <div class="productivity__center center">
+            <div class="productivity__container">
+                <div class="productivity__bg"></div>
+                <div class="productivity__row">
+                    <div class="productivity__wrap">
+                        <div class="stage">NUESTRA VENTAJA</div>
+                        <h2 class="productivity__title h2" data-aos="animation-scale-top" data-aos-duration="600">¿Por qué nosotros?&nbsp;</h2>
+                        <p class="productivity__info">Ayudamos a emprendedores y empresarios al rededor del mundo a comenzar sus empresas en Estados Unidos, facilitándoles</p>
+                        <button class="productivity__btn btn btn_border">Comience su Empresa</button>
+                    </div>
+                    <div class="productivity__gallery">
+                        <div class="productivity__preview"><img srcset="img/figures-6.1@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures-6.1.png" alt=""></div>
+                        <div class="productivity__preview" data-aos="animation-translate-down" data-aos-duration="1000"><img srcset="img/figures-6.2@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures-6.2.png" alt=""></div>
+                    </div>
+                    <div class="productivity__list">
+                        <div class="productivity__item">
+                            <div class="productivity__icon">
+                                <img alt="" src="/img/ball@2x.png">
+                            </div>
+                            <div class="productivity__details">
+                                <p class="productivity__category" data-aos="animation-scale-top" data-aos-duration="600">Comunicación de primer nivel</p>
+                                <p class="productivity__text">Recibirá información oportuna de manera eficiente y contará con nuestros sistema que le permitirá centralizar la gestión de comunicación y documentos</p>
+                            </div>
+                        </div>
+                        <div class="productivity__item">
+                            <div class="productivity__icon">
+                                <img alt="" src="/img/cube@2x.png">
+                            </div>
+                            <div class="productivity__details">
+                                <p class="productivity__category" data-aos="animation-scale-top" data-aos-duration="600">Atención y soporte bilingüe</p>
+                                <p class="productivity__text">Ofrecemos asistencia en inglés y español; y contamos con soporte y servicio en más de 175 países.</p>
+                            </div>
+                        </div>
+                        <div class="productivity__item">
+                            <div class="productivity__icon">
+                                <img alt="" src="/img/triangle@2x.png">
+                            </div>
+                            <div class="productivity__details">
+                                <p class="productivity__category" data-aos="animation-scale-top" data-aos-duration="600">Sin gastos ocultos</p>
+                                <p class="productivity__text">¡Compare el precio total! Otros servicios incluyen varias tarifas de “corresponsalía” y de “manejo” disfrazadas de tarifa estatal.&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="advantages">
+        <div class="advantages__center center">
+            <div class="advantages__head">
+                <div class="advantages__photo"><img srcset="img/figures@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures.png" alt=""></div>
+                <p class="stage">De idea a ejecución</p>
+                <h2 class="advantages__title h2" data-aos="animation-scale-top" data-aos-duration="600">Comience su compañía con confianza&nbsp;</h2>
+            </div>
+            <div class="advantages__list">
+                <div class="advantages__item" id="registroempresa" style="">
+                    <div class="advantages__bg">
+                        <div class="advantages__preview"><img src="/img/Empresa.png" alt=""></div>
+                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cube.png" alt=""></div>
+                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/ball.png" alt=""></div>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <div class="advantages__wrap d-flex flex-column align-items-start">
+                            <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/img/Object.png" alt="" class="style151"></div>
+                            <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Registro en empresa en los Estados Unidos</h2>
+                            <p class="advantages__text">Presentamos todos los formularios, pagamos las tasas, conseguimos un agente registrado y nos ocupamos de todos los trámites.</p><button class="advantages__btn btn btn_border">Registre su Empresa</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="advantages__item flex-row-reverse" id="solicitudein">
+                    <div class="advantages__bg container-fluid">
+                        <div class="advantages__preview"><img src="/img/Ein.png" alt=""></div>
+                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/triangle@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/triangle.png" alt=""></div>
+                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/cube@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cube.png" alt=""></div>
+                    </div>
+                    <div class="advantages__wrap">
+                        <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img src="/ui8-solo-saas.herokuapp.com/img/figures-2.3.png" alt="" class="style151"></div>
+                        <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Solicitud del EIN o ITIN</h2>
+                        <p class="advantages__text">Obtenga una identificación fiscal única (número de identificación del empleador) del IRS que puede usar con Shopify, Google Ads, Stripe.</p><button class="advantages__btn btn btn_border">Solicite su EIN o ITIN</button>
+                    </div>
+                </div>
+                <div class="advantages__item" id="aperturadecuenta">
+                    <div class="advantages__bg">
+                        <div class="advantages__preview"><img src="/img/Banking.png" alt=""></div>
+                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cube.png" alt=""></div>
+                        <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/ball.png" alt=""></div>
+                    </div>
+                    <div class="advantages__wrap">
+                        <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img src="/ui8-solo-saas.herokuapp.com/img/figures-2.5@2x.png" alt=""></div>
+                        <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Apertura de cuenta bancaria&nbsp;</h2>
+                        <p class="advantages__text">Una de las primeras tareas después de formar una empresa es abrir una cuenta bancaria comercial. Abra una cuenta bancaria y tenga la posibilidad de operar completamente en línea<span style="color: var(--body-text); font-family: var(--body-font); font-size: var(--text-body);">, simplificar su contabilidad y establecer credibilidad con sus clientes y proveedores.</span></p><button class="advantages__btn btn btn_border">Abra su Cuenta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="steps container-fluid" style="margin-bottom: 96px;">
+        <div class="steps__center center container-fluid mb-0" style="/* margin-bottom: 96px */">
+            <p class="stage">Desarrollo de Negocio</p>
+
+
+            <h2 class="steps__title h2" data-aos="animation-scale-top" data-aos-duration="600">Potenciamos sus Principales<br>Necesidades Comerciales</h2>
+            <div class="steps__list mb-0" style="/* margin-bottom: 96px */">
+                <div class="steps__item container-fluid border-0 d-flex">
+                    <img src="/img/Group%20769.png" class="mb-4">
+                    <h2 class="options__info">Plan de Negocio</h2>
+                    <p class="steps__text">Desarrolle fácil y rápidamente un plan de negocios que cubra todos los aspectos básicos de la empresa para inicial o desarrolla un proyecto.&nbsp;</p>
+                </div>
+                <div class="steps__item container-fluid border-0 d-flex">
+                    <img src="/img/glossy.png" class="mb-4">
+                    <h2 class="options__info">Creación de Marca&nbsp;</h2>
+                    <p class="steps__text">Obtenga un nombre libre de conflictos de marca, diseño de logo, dominio web, correo electrónico de negocios y más para mercadear su negocio.&nbsp;</p>
+                </div>
+                <div class="steps__item container-fluid border-0 d-flex">
+                    <img src="/img/Group%20771.png" class="mb-4">
+                    <h2 class="options__info">Presencia Web</h2>
+                    <p class="steps__text">Herramientas para establecer una imaginen confiable para su nueva compañía. Página web, e-commerce o plataformas alternativas.</p>
+                </div>
+                <div class="steps__item container-fluid border-0 d-flex">
+                    <img src="/img/Group 772.png" class="mb-4">
+                    <h2 class="options__info">Marketplaces y Pagos</h2>
+                    <p class="steps__text">Le apoyamos en la creación de sus cuenta y perfiles en las principales plataformas de pago y marketplaces en línea como Amazon, Stripe y Paypal.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="additiona_services_banner" style="margin-bottom: 120px;">
+        <div class="offer__center center">
+            <div class="offer__container d-flex align-items-center flex-md-column flex-lg-row" style="/* padding: 60px */">
+                <h2 class="offer__title h2 text-start text-center mb-md-4 mb-4" data-aos="animation-scale-top" data-aos-duration="600" style="/* font-size: 32px */">Descubra los Servicios de Desarrollo de Negocio</h2><button class="offer__btn btn btn_orange style138 ms-xl-3" style="min-width: 180px;">Conozca Más</button>
+                <div class="offer__preview"></div>
+            </div>
+        </div>
+    </div>
+    <div class="questions">
+        <div class="center container-fluid text-start">
+            <div class="d-flex flex-column align-items-center">
+                <p class="stage">¿Como funciona?</p>
+                <h2 class="steps__title h2 centered text-center" data-aos="animation-scale-top" data-aos-duration="600">Inicie su negocio en minutos</h2>
+            </div>
+            <ul class="nav nav-tabs questions__nav" id="navTabs1_tabs" role="tablist" style="border-bottom: 0px;">
+                <li class="nav-item questions__link" style="/* margin-right: 0px */">
+                    <a class="questions__link active pt-2 pb-2" id="navTabs1_1_tab" data-bs-toggle="tab" data-bs-target="#navTabs1_1" role="tab" aria-controls="navTabs1_1" aria-selected="true">Formulario</a>
+                </li>
+                <li class="nav-item questions__link">
+                    <a class="questions__link pt-2 pb-2" id="navTabs1_2_tab" data-bs-toggle="tab" data-bs-target="#navTabs1_2" role="tab" aria-controls="navTabs1_2" aria-selected="false">Registro</a>
+                </li>
+                <li class="nav-item questions__link">
+                    <a class="questions__link pt-2 pb-2" id="navTabs1_3_tab" data-bs-toggle="tab" data-bs-target="#navTabs1_3" role="tab" aria-controls="navTabs1_3" aria-selected="false">Emisión de EIN</a>
+
+                </li>
+                <li class="nav-item questions__link"><a class="questions__link pt-2 pb-2" id="navTabs1_3_tab1" data-bs-toggle="tab" data-bs-target="#navTabs1_4" role="tab" aria-controls="navTabs1_3" aria-selected="false">Documentos</a></li>
+                <li class="nav-item questions__link"><a class="questions__link pt-2 pb-2" id="navTabs1_3_tab2" data-bs-toggle="tab" data-bs-target="#navTabs1_5" role="tab" aria-controls="navTabs1_3" aria-selected="false">Cuenta Bancaria</a></li>
+                <li class="nav-item questions__link"><a class="questions__link pt-2 pb-2" id="navTabs1_3_tab3" data-bs-toggle="tab" data-bs-target="#navTabs1_6" role="tab" aria-controls="navTabs1_3" aria-selected="false">Servicios</a></li>
+            </ul>
+            <div class="tab-content" id="navTabs1_content">
+                <div class="tab-pane fade show active" id="navTabs1_1" role="tabpanel">
+                    <div class="advantages__item ">
+                        <div class="advantages__bg">
+                            <div class="advantages__preview"><img src="/img/Group 766.png" alt=""></div>
+                            <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cube.png" alt=""></div>
+                            <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/ball.png" alt=""></div>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="advantages__wrap d-flex flex-column align-items-start">
+                                <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cursor.png" alt=""></div>
+                                <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Formulario de Aplicación</h2>
+                                <p class="advantages__text">En menos pocos minutos, complete el formulario en nuestro sitio web con la información de la empresa, indicando el tipo de empresa que desea registrar y enviando una imagen del pasaporte vigente de cada propietario. Así se comienza el proceso de apertura de la empresa.</p><button class="advantages__btn btn btn_border">Registre su Empresa</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="navTabs1_2" role="tabpanel">
+                    <div class="advantages__item ">
+                        <div class="advantages__bg">
+                            <div class="advantages__preview"><img src="/img/Group%20767.png" alt=""></div>
+                            <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cube.png" alt=""></div>
+                            <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/ball.png" alt=""></div>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="advantages__wrap d-flex flex-column align-items-start">
+                                <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cursor.png" alt=""></div>
+                                <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Registro de la Empresa&nbsp;</h2>
+                                <p class="advantages__text">Completamos el papeleo y organizamos toda la información necesaria para el registro de su empresa y solicitud del EIN number ante el estado en su nombre.
+                                    En la mayoría de los estados, el proceso de registro toma menos de 5 días hábiles. Los tiempos varían en función de los sistemas y procesos de cada estado. Una vez que se complete el proceso, recibirá una copia digital del documento.</p>
+                                <button class="advantages__btn btn btn_border">Registre su Empresa</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="navTabs1_3" role="tabpanel">
+                    <div class="advantages__item ">
+                        <div class="advantages__bg">
+                            <div class="advantages__preview"><img src="/img/Group 781.png" alt=""></div>
+                            <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cube.png" alt=""></div>
+                            <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/ball.png" alt=""></div>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="advantages__wrap d-flex flex-column align-items-start">
+                                <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cursor.png" alt=""></div>
+                                <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Emisión del EIN</h2>
+                                <p class="advantages__text">Tan pronto como recibamos la confirmación del registro ante el estado, enviaremos su solicitud de EIN al IRS. Si alguno de los miembros de la empresa tiene SSN, el proceso se realiza en menos de un día. Si ninguno de los miembros posee SSN, debido a las interrupciones de COVID-19, el IRS puede demorar hasta 50 días en procesar su documento.</p>
+                                <button class="advantages__btn btn btn_border">Registre su Empresa</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="navTabs1_4" role="tabpanel">
+                    <div class="advantages__item ">
+                        <div class="advantages__bg">
+                            <div class="advantages__preview"><img src="/img/Group 765.png" alt=""></div>
+                            <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cube.png" alt=""></div>
+                            <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/ball.png" alt=""></div>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="advantages__wrap d-flex flex-column align-items-start">
+                                <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cursor.png" alt=""></div>
+                                <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Entrega de los Documentos la Empresa</h2>
+                                <p class="advantages__text">Recibas los documentos de su empresa, incluidos el certificado de constitución de la empresa y el número de identificación de empleado (EIN por su siglas en inglés), a través de nuestra plataforma en línea. Tan pronto como se reciben los documentos, se puede comenzar la solicitud de apertura de la cuenta bancaria.&nbsp;</p>
+                                <button class="advantages__btn btn btn_border">Registre su Empresa</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="navTabs1_5" role="tabpanel">
+                    <div class="advantages__item ">
+                        <div class="advantages__bg">
+                            <div class="advantages__preview"><img src="/img/Group 764.png" alt=""></div>
+                            <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cube.png" alt=""></div>
+                            <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/ball.png" alt=""></div>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="advantages__wrap d-flex flex-column align-items-start">
+                                <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cursor.png" alt=""></div>
+                                <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Apertura de Cuenta Bancaria</h2>
+                                <p class="advantages__text">Tan pronto como recibamos la confirmación del registro ante el estado, enviaremos su solicitud de EIN al IRS. Si alguno de los miembros de la empresa tiene SSN, el proceso se realiza en menos de un día. Si ninguno de los miembros posee SSN, debido a las interrupciones de COVID-19, el IRS puede demorar hasta 50 días en procesar su documento.</p>
+                                <button class="advantages__btn btn btn_border">Registre su Empresa</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="navTabs1_6" role="tabpanel">
+                    <div class="advantages__item ">
+                        <div class="advantages__bg">
+                            <div class="advantages__preview"><img src="/img/Group 768.png" alt=""></div>
+                            <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cube@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cube.png" alt=""></div>
+                            <div class="advantages__preview" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400"><img srcset="img/ball@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/ball.png" alt=""></div>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="advantages__wrap d-flex flex-column align-items-start">
+                                <div class="advantages__icon" data-aos="animation-scale-top" data-aos-duration="800"><img srcset="img/cursor@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/cursor.png" alt=""></div>
+                                <h2 class="advantages__info" data-aos="animation-scale-top" data-aos-duration="800" data-aos-delay="400">Servicios Continuos</h2>
+                                <p class="advantages__text">Le ofrecemos servicios continuos para mantener a su empresa en cumplimiento con todos los requerimientos del estado y servicios para el desarrollo de su negocio. Para que se pueda enfocar en la gestión y desarrollo de su empresa.&nbsp;</p>
+                                <button class="advantages__btn btn btn_border">Registre su Empresa</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="quality">
+        <div class="quality__center center">
+            <div class="quality__body d-flex flex-lg-row flex-row-reverse flex-xl-row-reverse flex-md-row">
+                <div class="quality__bg"></div>
+                <div class="quality__gallery">
+                    <div class="quality__preview"><img srcset="img/figures-2.1@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures-2.1.png" alt=""></div>
+                    <div class="quality__preview" data-aos="animation-translate-up" data-aos-duration="1000"><img srcset="img/figures-2.2@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures-2.2.png" alt=""></div>
+                    <div class="quality__preview" data-aos="animation-translate-down" data-aos-duration="1000" data-aos-delay="400"><img srcset="img/figures-2.3@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures-2.3.png" alt=""></div>
+                    <div class="quality__preview" data-aos="animation-translate-down" data-aos-duration="1000" data-aos-delay="800"><img srcset="img/figures-2.4@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures-2.4.png" alt=""></div>
+                    <div class="quality__preview"><img srcset="img/figures-2.5@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures-2.5.png" alt=""></div>
+                </div>
+                <div class="quality__wrap d-flex flex-xl-column justify-content-xl-start align-items-xl-start flex-column align-items-center align-items-md-start style147">
+                    <h2 class="quality__title h2" data-aos="animation-scale-top" data-aos-duration="600">Presencia Global y Soporte Bilingüe</h2>
+                    <p class="quality__text">Contamos con cobertura en más de 175 países con soporte bilingüe, en inglés y español a empresarios y emprendedores de todas partes del mundo.&nbsp;</p><button class="quality__btn btn btn_border">Contáctenos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="review">
+        <div class="review__center center">
+            <h2 class="review__title h2" data-aos="animation-scale-top" data-aos-duration="600">Lo que opinan nuestros Clientes</h2>
+            <div class="review__container">
+                <div class="review__slider owl-carousel js-slider-review">
+                    <div class="review__item">
+                        <div class="review__text">“ Solo makes life easierto me. With Solo you can organize your work and life in seconds. <br>5 stars!!! ”</div>
+                        <div class="review__rating">
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                        </div>
+                        <div class="review__author">Jaida Barton</div>
+                        <div class="review__company">Visual Designer at UI8</div>
+                    </div>
+                    <div class="review__item">
+                        <div class="review__text">“ Solo keeps things simple, the best apps of the year I've ever used. I’ sure that the upcoming updates will be more complete..”</div>
+                        <div class="review__rating">
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                        </div>
+                        <div class="review__author">Jedidiah Cassin</div>
+                        <div class="review__company">via. Google Play</div>
+                    </div>
+                    <div class="review__item">
+                        <div class="review__text">“ I used to have a hard time figuring out how to organize online meetings, Solo helped me to find a great solution!</div>
+                        <div class="review__rating">
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                        </div>
+                        <div class="review__author">Fae Schumm</div>
+                        <div class="review__company">via. Apple Store</div>
+                    </div>
+                    <div class="review__item">
+                        <div class="review__text">“ Solo makes life easierto me. With Solo you can organize your work and life in seconds. 5 stars!!! ”</div>
+                        <div class="review__rating">
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                        </div>
+                        <div class="review__author">Jaida Barton</div>
+                        <div class="review__company">Visual Designer at UI8</div>
+                    </div>
+                    <div class="review__item">
+                        <div class="review__text">“ Solo keeps things simple, the best apps of the year I've ever used. I’ sure that the upcoming updates will be more complete..”</div>
+                        <div class="review__rating">
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                        </div>
+                        <div class="review__author">Jedidiah Cassin</div>
+                        <div class="review__company">via. Google Play</div>
+                    </div>
+                    <div class="review__item">
+                        <div class="review__text">“ I used to have a hard time figuring out how to organize online meetings, Solo helped me to find a great solution!</div>
+                        <div class="review__rating">
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                            <div class="review__icon"><img src="/ui8-solo-saas.herokuapp.com/img/star-fill.svg" alt=""></div>
+                        </div>
+                        <div class="review__author">Fae Schumm</div>
+                        <div class="review__company">via. Apple Store</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="invite">
+        <div class="invite__center center">
+            <div class="invite__container d-flex">
+                <div class="invite__bg"></div>
+                <div class="invite__wrap">
+                    <h2 class="invite__title d1" data-aos="animation-scale-top" data-aos-duration="600">Comience su Empresa Hoy</h2>
+                    <p class="invite__text">No espere más por el negocio de sus sueños. Comience su procese en línea o contáctenos para comenzar su empresa.&nbsp;</p><button class="invite__btn btn btn_orange">Comience Ahora</button>
+                </div>
+                <div class="invite__gallery">
+                    <div class="invite__preview"><img srcset="img/figures-7.1@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures-7.1.png" alt=""></div>
+                    <div class="invite__preview" data-aos="animation-translate-down" data-aos-duration="1000"><img srcset="img/figures-7.2@2x.png 2x" src="/ui8-solo-saas.herokuapp.com/img/figures-7.2.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer__center center">
+            <div class="footer__body">
+                <div class="footer__wrap"><a class="footer__logo" href="/ui8-solo-saas.herokuapp.com/index.html"><img class="footer__pic footer__pic_dark" src="/ui8-solo-saas.herokuapp.com/img/logo-dark.png" alt="" /><img class="footer__pic footer__pic_light" src="/ui8-solo-saas.herokuapp.com/img/logo-light.png" alt="" /></a>
+                    <div class="footer__text">Join millions of people who organize work and life with Solo App.</div>
+                </div>
+                <div class="footer__line">
+                    <div class="footer__downloads"><a class="footer__download" href="#"><img src="/ui8-solo-saas.herokuapp.com/img/google-play.svg" alt="" /></a><a class="footer__download" href="#"><img src="/ui8-solo-saas.herokuapp.com/img/app-store.svg" alt="" /></a></div>
+                    <div class="footer__nav"><a class="footer__link" href="/ui8-solo-saas.herokuapp.com/downloads.html">Downloads</a><a class="footer__link" href="/ui8-solo-saas.herokuapp.com/pricing.html">Pricing</a><a class="footer__link" href="/ui8-solo-saas.herokuapp.com/features.html">Features</a><a class="footer__link" href="/ui8-solo-saas.herokuapp.com/about-us.html">About Us</a><a class="footer__link" href="/ui8-solo-saas.herokuapp.com/contact.html">Contact</a></div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__copyright">© Solo Inc. Designed by UI8 Team</div>
+                <div class="footer__social"><a class="footer__link" href="#"><svg class="icon icon-facebook">
+                            <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                        </svg></a><a class="footer__link" href="#"><svg class="icon icon-twitter">
+                            <use xlink:href="img/sprite.svg#icon-twitter"></use>
+                        </svg></a><a class="footer__link" href="#"><svg class="icon icon-instagram">
+                            <use xlink:href="img/sprite.svg#icon-instagram"></use>
+                        </svg></a></div>
+            </div>
+        </div><label class="switch js-switch-theme"><input class="switch__input" type="checkbox" /><span class="switch__in"><span class="switch__box"></span><span class="switch__icon switch__icon_dark"><svg class="icon icon-dark">
+                        <use xlink:href="img/sprite.svg#icon-dark"></use>
+                    </svg></span><span class="switch__icon switch__icon_light"><svg class="icon icon-light">
+                        <use xlink:href="img/sprite.svg#icon-light"></use>
+                    </svg></span></span></label>
+    </div>
+    <div class="popup mfp-hide" id="popup-sign-up">
+        <div class="popup__title h2">Sign up</div>
+        <div class="popup__variants"><a class="popup__variant" href="#"><img src="/ui8-solo-saas.herokuapp.com/img/google.svg" alt="">Sign up via Google</a><a class="popup__variant" href="#"><img src="/ui8-solo-saas.herokuapp.com/img/apple.svg" alt="">Sign up via Apple</a></div>
+        <div class="popup__details">Or continue with email</div>
+        <div class="popup__btns"><a class="popup__btn btn btn_dark js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Enter your email</a><a class="popup__btn btn btn_orange js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Continue</a></div>
+        <div class="popup__note">By clicking the Continue button, you agree to the terms of service and privacy policy.</div>
+    </div>
+    <div class="popup mfp-hide" id="popup-code">
+        <div class="popup__title h2">Check your <br>inbox</div>
+        <div class="popup__info">Solo just sent you a 6-Digit Code to <a href="mailto:tam@ui8.net">tam@ui8.net</a> please check your inbox and enter the code below.</div>
+        <div class="popup__code">
+            <div class="popup__number"><input type="tel"></div>
+            <div class="popup__number"><input type="tel"></div>
+            <div class="popup__number"><input type="tel"></div>
+            <div class="popup__number"><input type="tel"></div>
+            <div class="popup__number"><input type="tel"></div>
+            <div class="popup__number"><input type="tel"></div>
+        </div>
+        <div class="popup__btns"><button class="popup__btn btn btn_orange">Enter</button><a class="popup__link" href="#">Resend digit code</a></div>
+    </div>
+    <div class="popup mfp-hide" id="popup-sign-in">
+        <div class="popup__title h2">Sign in</div>
+        <div class="popup__variants"><a class="popup__variant" href="#"><img src="/ui8-solo-saas.herokuapp.com/img/google.svg" alt="">Sign up via Google</a><a class="popup__variant" href="#"><img src="/ui8-solo-saas.herokuapp.com/img/apple.svg" alt="">Sign up via Apple</a></div>
+        <div class="popup__details">Or continue with email & password</div>
+        <div class="popup__btns"><a class="popup__btn btn btn_dark js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Enter your email</a><a class="popup__btn btn btn_dark js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Password</a><a class="popup__btn btn btn_orange js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Sign In</a></div>
+        <div class="popup__note"> </div>
+    </div>
+    </div><!-- scripts-->
+
+    <script src="/ui8-solo-saas.herokuapp.com/js/lib/svg4everybody.min.js"></script>
+    <script src="/ui8-solo-saas.herokuapp.com/js/lib/owl.carousel.min.js"></script>
+    <script src="/ui8-solo-saas.herokuapp.com/js/lib/jquery.magnific-popup.min.js"></script>
+    <script src="/ui8-solo-saas.herokuapp.com/js/lib/aos.js"></script>
+    <script src="/ui8-solo-saas.herokuapp.com/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

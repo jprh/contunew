@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      },
+      {
+        "type": "text"
+      },
+      {
+        "type": "text"
+      },
+      {
+        "type": "text"
+      },
+      {
+        "type": "text"
+      }
+    ],
+    "$_SERVER": [
+      {
+        "type": "text",
+        "name": "URL"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "urlsplit",
+        "module": "core",
+        "action": "setvalue",
+        "options": {
+          "value": "{{$_SERVER.URL.split('/')}}"
+        },
+        "meta": [],
+        "outputType": "text",
+        "output": true
+      },
+      {
+        "name": "query",
+        "module": "dbconnector",
+        "action": "select",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "SELECT",
+            "columns": [
+              {
+                "table": "seo",
+                "column": "*"
+              }
+            ],
+            "params": [],
+            "table": {
+              "name": "meta_tags",
+              "alias": "seo"
+            },
+            "primary": "id",
+            "joins": [],
+            "query": "SELECT *\nFROM meta_tags AS seo"
+          }
+        },
+        "output": true,
+        "meta": [
+          {
+            "type": "number",
+            "name": "id"
+          },
+          {
+            "type": "text",
+            "name": "title"
+          },
+          {
+            "type": "text",
+            "name": "url"
+          },
+          {
+            "type": "text",
+            "name": "description"
+          },
+          {
+            "type": "text",
+            "name": "keywords"
+          },
+          {
+            "type": "text",
+            "name": "image"
+          },
+          {
+            "type": "text",
+            "name": "icon"
+          },
+          {
+            "type": "text",
+            "name": "twitter_card"
+          }
+        ],
+        "outputType": "array"
+      }
+    ]
+  }
+}

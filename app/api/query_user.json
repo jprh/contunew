@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "",
+        "module": "auth",
+        "action": "restrict",
+        "options": {
+          "provider": "security",
+          "loginUrl": "/"
+        },
+        "disabled": true
+      },
+      {
+        "name": "query",
+        "module": "dbconnector",
+        "action": "select",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "SELECT",
+            "columns": [
+              {
+                "table": "users",
+                "column": "*"
+              },
+              {
+                "table": "companies",
+                "column": "name",
+                "alias": "company_name"
+              },
+              {
+                "table": "companies",
+                "column": "website",
+                "alias": "company_website"
+              }
+            ],
+            "params": [],
+            "table": {
+              "name": "users"
+            },
+            "primary": "id",
+            "joins": [
+              {
+                "table": "companies",
+                "column": "*",
+                "type": "INNER",
+                "clauses": {
+                  "condition": "AND",
+                  "rules": [
+                    {
+                      "table": "companies",
+                      "column": "id",
+                      "operator": "equal",
+                      "value": {
+                        "table": "users",
+                        "column": "company_id",
+                        "type": "number"
+                      },
+                      "operation": "="
+                    }
+                  ]
+                },
+                "primary": "id"
+              }
+            ],
+            "query": "SELECT users.*, companies.name AS company_name, companies.website AS company_website\nFROM users\nINNER JOIN companies ON (companies.id = users.company_id)"
+          }
+        },
+        "output": true,
+        "meta": [
+          {
+            "type": "number",
+            "name": "id"
+          },
+          {
+            "type": "text",
+            "name": "first_name"
+          },
+          {
+            "type": "text",
+            "name": "last_name"
+          },
+          {
+            "type": "text",
+            "name": "gender"
+          },
+          {
+            "type": "text",
+            "name": "email"
+          },
+          {
+            "type": "number",
+            "name": "company_id"
+          },
+          {
+            "type": "text",
+            "name": "avatar"
+          },
+          {
+            "type": "text",
+            "name": "country"
+          },
+          {
+            "type": "text",
+            "name": "phone"
+          },
+          {
+            "type": "text",
+            "name": "company_name"
+          },
+          {
+            "type": "text",
+            "name": "company_website"
+          }
+        ],
+        "outputType": "array"
+      }
+    ]
+  }
+}

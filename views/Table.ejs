@@ -1,0 +1,630 @@
+<!-- Wappler include head-page="layouts/main-contucarga" fontawesome_4="cdn" is="dmx-app" id="Table" appConnect="local" jquery_slim_35="cdn" bootstrap5="cdn" components="{dmxBootstrap5TableGenerator:{},dmxAutocomplete:{},dmxDatePicker:{},dmxGooglePlaces:{},dmxFormatter:{},dmxBootstrap5Modal:{},dmxMediumEditor:{},dmxSummernote:{},dmxMoment:{},dmxStateManagement:{},dmxSockets:{},dmxBootbox:{},dmxBootbox5:{},dmxBootstrap4Toasts:{},dmxDataTraversal:{},dmxBootstrap5Collapse:{}}" moment_2="cdn" -->
+<dmx-data-detail id="data_detail1"></dmx-data-detail>
+
+<dmx-serverconnect id="serverconnect2" url="api/apis/apis_translate_copy"></dmx-serverconnect>
+<dmx-api-action id="api2" url="https://api-free.deepl.com/v2/translate" method="post" dmx-header:authorization="'DeepL-Auth-Key 580eafe7-c85e-5fe3-a30e-7f88d0e35177:fx'" dmx-param:text="'Hello World'" dmx-param:target_lang="'ES'"></dmx-api-action>
+<dmx-json-datasource id="jsonDS1" is="dmx-serverconnect" url="/aranceles-2022-11-07%20%281%29.json"></dmx-json-datasource>
+<dmx-data-view id="data_view1" dmx-bind:data="jsonDS1.data" sortDir="desc" sortOn="tabla.cdigo"></dmx-data-view>
+
+<dmx-serverconnect id="serverconnectHts" url="api/api_test_hts" sockets="true" noload></dmx-serverconnect>
+<dmx-api-datasource id="api1" is="dmx-fetch" url="https://hts.usitc.gov/api/search" dmx-param:query="'shoes'" dmx-header:access-control-allow-origin="'*'"></dmx-api-datasource>
+<dmx-value id="varforarray" dmx-bind:value="serverconnect2.data.myarraydesp_copy.codigo"></dmx-value>
+<dmx-array id="arr1" dmx-bind:items="serverconnect2.data.repeat_traduccion"></dmx-array>
+<dmx-moment id="moment1"></dmx-moment>
+
+<div class="modal" id="blog" is="dmx-bs4-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Regístrese</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+
+                    <form id="signup1" method="post" is="dmx-serverconnect-form" action="/api/login" dmx-on:success="browser1.alert('Se ha registrado exitosamente')" dmx-on:unauthorized="browser1.alert('&quot;Datos de ingreso equivocado&quot;')">
+                        <div class="row">
+                            <div class="col-12 col-md-12 col-xl-12 text-left col-lg-12">
+
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="text-h3">Enter your details below.</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mt-4 col">
+                                        <input type="text" id="username" name="username" class="form-control" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="row mt-4 row-cols-12">
+                                    <div class="col">
+                                        <input type="password" id="inp_password" name="password" class="form-control" placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" value="1" id="remember" name="remember">
+                                                <label class="custom-control-label" for="remember">Mantenme Conectado</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col">
+                                        <button id="signup1_submit" class="btn btn-primary" type="button" dmx-on:click="signup1.submit();signup.hide();signup1.reset()">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modalposts" is="dmx-bs4-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button class="btn-close" data-bs-dismiss="modal" aria-label="Close" dmx-on:click="modalposts.hide()"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form2">
+
+
+                    <div class="form-group mb-3">
+                        <label for="input4" class="form-label">Some text</label>
+                        <input type="text" class="form-control" id="input4" name="input4" aria-describedby="input4_help" placeholder="Enter some text">
+                        <small id="input4_help" class="form-text text-muted">Your input is very valuable.</small>
+                    </div>
+                    <div class="form-group mb-3 row">
+                        <label for="input2" class="col-sm-2 col-form-label">Some text</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input2" name="input2" aria-describedby="input2_help" placeholder="Enter some text">
+                            <small id="input2_help" class="form-text text-muted">Your input is very valuable.</small>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3 row">
+                        <label for="input3" class="col-sm-2 col-form-label">Some text</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input3" name="input3" aria-describedby="input2_help" placeholder="Enter some text">
+                            <small id="input2_help1" class="form-text text-muted">Your input is very valuable.</small>
+                        </div>
+                    </div>
+                </form>
+                <textarea id="editor1" name="editor1" is="dmx-summernote" dmx-bind:toolbar="[['style',['style']],['font',['bold','underline','clear']],['fontname',['fontname']],['color',['color']],['para',['ul','ol','paragraph']],['table',['table']],['insert',['link','picture','video']],['view',['fullscreen','codeview','help']]]"></textarea>
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<meta name="ac:route" content="/table">
+<dmx-serverconnect id="serverconnect1" url="/api/blog-posts"></dmx-serverconnect>
+
+<section class="pt-7 pt-lg-8 pb-4 pb-lg-4">
+
+    <div class="col d-flex flex-row align-items-center">
+
+
+        <h1 contenteditable="false">Fancy display heading</h1>
+        <button id="btn6" class="btn rounded btn-warning h-25 ms-0" is="dmx-button" value="" type="button" style="margin-left: 4rem;" dmx-on:click="run({repeat:{repeat:`content.serverconnect2.data.repeat_traduccion`,outputFields:[],exec:{steps:{run:{action:`arr1.add(content.serverconnect2.data.repeat_traduccion.text)`}}},name:'repeat',output:true}})">Button</button>
+    </div>
+    <div class="col d-flex flex-column justify-content-start align-items-start" is="dmx-repeat" id="repeat2" dmx-bind:repeat="serverconnect2.data.myarraydesp_copy.description">
+
+
+        <h5 contenteditable="false" dmx-html="$value">Fancy display heading {{arr1.count}}</h5>
+    </div>
+
+    <div class="col">
+
+        <form id="formArancel" is="dmx-serverconnect-form" action="api/api_test_hts" method="post">
+            <button id="btn5" class="btn btn-primary" dmx-on:click="" dmx-bind:title="">Button</button>
+            <div class="form-group md-3"><label for="inputAracelDescripcion" class="form-label">Arancel - -&nbsp; 13&nbsp; -</label>
+
+                <input type="text" class="form-control" id="inputAracelDescripcion" name="htsCode1" aria-describedby="input5_help" placeholder="Enter some text" is="dmx-input" value="CABALLOS">
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Cdigo</th>
+                                <th>Descripcin de las mercancas</th>
+                                <th>Tarifa ad valoren aec</th>
+                                <th>Tarifa ad valoren exaec</th>
+                                <th>Rgimen legal importacin</th>
+                                <th>Rgimen legal exportacin</th>
+                                <th>Unidad fsica</th>
+                            </tr>
+                        </thead>
+                        <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="data_view1.data.tabla" id="tableRepeat3">
+                            <tr>
+                                <td dmx-text="$index"></td>
+                                <td dmx-text="descripcin_de_las_mercancas"></td>
+                                <td dmx-text="tarifa_ad_valoren_aec"></td>
+                                <td dmx-text="tarifa_ad_valoren_exaec"></td>
+                                <td dmx-text="rgimen_legal_importacin"></td>
+                                <td dmx-text="rgimen_legal_exportacin"></td>
+                                <td dmx-text="unidad_fsica"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row" is="dmx-repeat" id="repeatDvArancel" dmx-bind:repeat="data_view1.data">
+                <div class="col-3 d-flex flex-column" id="repTable" dmx-repeat:reptablearancel="tabla">
+
+                    <h1 dmx-html="cdigo">01.01</h1>
+                    <p dmx-html="descripcin_de_las_mercancas" class="style16 text-truncate" style="overflow: hidden;">
+                        A nice paragraph</p>
+                    <div class="d-flex flex-column">
+                        <p dmx-html="'Ad-valorem: '+tarifa_ad_valoren_aec" class="text-secondary ">
+                            A nice paragraph</p>
+                        <p dmx-html="'Ad-valorem-ex:'+tarifa_ad_valoren_exaec" class="text-secondary">
+                            A nice paragraph</p>
+                    </div>
+
+                </div>
+            </div><button id="btn4" class="btn btn-success" is="dmx-button" value="" type="submit">Button</button>
+        </form>
+        <form dmx-on:success="run([{'toast.show':{message:`formHts.data.parametro+\' . \'+formHts.data.parametro_get+\' . \'+formHts.data.api.data.results[0].score`}},{'toast.show':{message:'sucess',disabled:true}}])" id="formHts" is="dmx-serverconnect-form" action="api/api_test_hts" method="post">
+            <div class="form-group md-3"><label for="inputHtsCode" class="form-label">HTS Code - - </label>
+
+                <input type="text" class="form-control" id="inputHtsCode" name="htsCode" aria-describedby="input5_help" placeholder="Enter some text" is="dmx-input" value="books"><label for="inputHtsCode" class="form-label">parametro Post: . GET </label>
+            </div><button id="btn3" class="btn btn-info" is="dmx-button" value="" type="submit">Button</button>
+        </form>
+
+        <p>Codes {{api1.data.results[0].htsno}}</p>
+
+    </div>
+    <div class="row" is="dmx-repeat" id="repeat1" dmx-bind:repeat="formHts.data.api.data.results">
+        <div class="col-4">
+            <div class="card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title" dmx-html="'Scrore: '+score"></h4>
+                        <h4 class="card-title" dmx-html="'Htsno: '+htsno"></h4>
+                        <p class="card-text" dmx-html="description" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;"></p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+                <script>
+                    hbspt.forms.create({
+                                                region: "na1",
+                                                portalId: "20041373",
+                                                formId: "3ab627d5-fedc-446a-896c-f7e51a793839"
+                                              });
+                </script>
+            </div>
+
+            <div class="col"></div>
+        </div>
+    </div>
+    <div class="container">
+        <form id="form1" method="post">
+            <div class="form-group mb-3 row"><label for="inputtestrepeat" class="col-sm-3 col-form-label col" wappler-command="editContent">Filter Autocomplete&nbsp;</label>
+                <!-- <div class="col-sm-9" dmx-repeat:inputrepeat="arr1.items">
+                    <input type="text" class="form-control" id="inputtestrepeat" dmx-bind:name="inputtestrepeatname{{$index}}" aria-describedby="input1_help" placeholder="Enter some text" is="dmx-autocomplete" dmx-bind:data="serverconnect1.data.query" optiontext="title" optionvalue="id">
+                </div> -->
+            </div>
+        </form><button id="btn1" class="btn mb-4 btn-primary" data-bs-target="#blog" zdmx-on:click="modalposts.show()">Crear un nuevo artículo</button>
+        <button id="btn2" class="btn" dmx-on:click="arr1.add(1)">Button</button>
+
+    </div>
+    <div class="container">
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Img</th>
+                        <th>Title</th>
+                        <th>Path</th>
+                        <th>Meta</th>
+                        <th style="/* width: 200px !important */">Body</th>
+                        <th>Author</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="serverconnect1.data.query" id="tableRepeat1">
+                    <tr>
+                        <td dmx-text="id"></td>
+                        <td dmx-text="img"></td>
+                        <td dmx-text="title"></td>
+                        <td dmx-text="path"></td>
+                        <td dmx-text="meta.stripTags().trunc(200, 'true', '...')" style="width: 800px;"></td>
+                        <td dmx-text="body.stripTags().trunc(200, 'true', '...')" style="width: 400px !important;"></td>
+                        <td dmx-text="author"></td>
+                        <td dmx-text="date"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Jquery Steps Wizard</h4>
+                    <p class="text-muted mb-0">A powerful jQuery wizard plugin that
+                        supports accessibility and HTML5</p>
+                </div>
+                <!--end card-header-->
+                <div class="card-body">
+                    <form id="form-horizontal" class="form-horizontal form-wizard-wrapper">
+                        <h3>Seller Details</h3>
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label for="txtFirstNameBilling" class="col-lg-3 col-form-label">Contact Person</label>
+                                        <div class="col-lg-9">
+                                            <button id="btn1" class="btn btn-primary btn-sm" dmx-on:click="'\'var1.setValue(value);bs5formgrouprow.setValue(value)'" value="JP">Button</button>
+                                            <p>{{{{btn1.value}} . {{var1.value}}</p>
+                                                            <div class="form-group mb-3 row" is="dmx-radio-group">
+                                                                <legend class="col-sm-2 col-form-label">&nbsp;{{var1.value}} -Radio&nbsp; {{value}} - {{value[0].$value}} - {{input2.value+'.'+input1.value}}</legend>
+                                                                <div class="col-sm-10 align-self-center d-flex">
+                                                                    <div class="form-check" style="background-color: pink; padding: 8px 12px; /* vertical-align: middle */ display: flex; align-items: center; margin-right: 1rem; border-radius: 5px; /* width: 100% */ /* display: flex */ /* flex-shrink: initial */">
+                                                                        <input class="form-check-input style196" type="radio" value="juan" id="input2" name="name" style="margin-left: 0rem; margin-right: .5rem; background-color: pink; border-color: pink; width: 1.5rem; height: 1.5rem;" dmx-on:click="bs5formgrouprow.setValue(value)">
+                                                                        <label class="form-check-label" for="input2" style="margin-bottom: 0px; /* margin-top: auto */ /* margin-bottom: auto */">One radio</label>
+                                                                    </div>
+                                                                    <div class="form-check" style="background-color: pink; padding: 8px 12px; /* vertical-align: middle */ display: flex; align-items: center; margin-right: 1rem; border-radius: 5px; /* width: 100% */ /* display: flex */ /* flex-shrink: initial */" dmx-on:click="bs5formgrouprow.setValue(input1.value);var1.setValue(input1.value)">
+                                                                        <input class="form-check-input style196" type="radio" value="pablo" id="input1" name="name" style="margin-left: 0rem; margin-right: .5rem; background-color: pink; border-color: pink; width: 1.5rem; height: 1.5rem;" dmx-on:click="bs5formgrouprow.setValue(value)">
+                                                                        <label class="form-check-label" for="input1" style="margin-bottom: 0px; /* margin-top: auto */ /* margin-bottom: auto */">Two radio</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group mb-3 row" is="dmx-checkbox-group" id="group1">
+                                                                <legend class="col-sm-4 col-form-label">Value {{value[0].$value}} {{value.$value}} {{value}} {{txtFirstNameBilling.value}}</legend>
+                                                                <div class="col-sm-8 align-self-center d-flex">
+                                                                    <div class="form-check " style="background-color: pink; padding: 8px 12px; /* vertical-align: middle */ display: flex; align-items: center; margin-right: 1rem; border-radius: 5px; /* width: 100% */ /* display: flex */ /* flex-shrink: initial */"><input class="form-check-input style196" type="checkbox" id="inputname" name="nombre" style="margin-left: 0rem; margin-right: .5rem; background-color: pink; border-color: pink; width: 1.5rem; height: 1.5rem;" value="Juan ">
+                                                                        <label class="form-check-label align-middle" for="inputname" style="margin-bottom: 0px; /* margin-top: auto */ /* margin-bottom: auto */">First&nbsp;</label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline" style="background-color: pink; padding: 8px 12px; /* vertical-align: middle */ display: flex; align-items: center; margin-right: 1rem; border-radius: 5px; /* width: 100% */ /* display: flex */ /* flex-shrink: initial */">
+                                                                        <input class="form-check-input style196" type="checkbox" id="inputapellido" name="nombre" style="margin-left: 0rem; margin-right: .5rem; background-color: pink; border-color: pink; width: 1.5rem; height: 1.5rem;" value="Pablo">
+                                                                        <label class="form-check-label" for="inputapellido" style="margin-bottom: 0px; /* margin-top: auto */ /* margin-bottom: auto */margin-bottom: 0px; /* margin-top: auto */ /* margin-bottom: auto */">Second</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <input id="txtFirstNameBilling" name="txtFirstNameBilling" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtLastNameBilling" class="col-lg-3 col-form-label">Mobile No.</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="txtLastNameBilling" name="txtLastNameBilling" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                    <div class="form-group col-12 pl-0" id="input4_group_detalle_servicio" is="dmx-radio-group">
+            
+                                                        <label class="col-12 mt-0 mb-3 pl-0">Modalidad de Transporte {{value}}</label>
+            
+                                                        <div class="row">
+                                                            <div class="col d-flex flex-column flex-md-row pl-4">
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" value="terrestre" id="input4_3_terrestre" name="modalidad_de_transporte">
+                                                                    <label class="form-check-label" for="input4_3_terrestre">Terrestre</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" value="aereo" id="input4_2_aereo" name="modalidad_de_transporte">
+                                                                    <label class="form-check-label" for="input4_2_aereo">Aereo</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" value="maritimo" id="input4_1_maritimo" name="modalidad_de_transporte">
+                                                                    <label class="form-check-label" for="input4_1_maritimo">Marítimo</label>
+            
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" value="maritimo" id="input4_1_maritimo1" name="modalidad_de_transporte1">
+                                                                    <label class="form-check-label" for="input4_1_maritimo1">Currier</label>
+            
+                                                                </div>
+                                                            </div>
+                                                        </div>
+            
+            
+                                                    </div>
+            
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end row-->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtCompanyBilling" class="col-lg-3 col-form-label">Landline No.</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="txtCompanyBilling" name="txtCompanyBilling" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtEmailAddressBilling" class="col-lg-3 col-form-label">Email Address</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="txtEmailAddressBilling" name="txtEmailAddressBilling" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end row-->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtAddress1Billing" class="col-lg-3 col-form-label">Address 1</label>
+                                                        <div class="col-lg-9">
+                                                            <textarea id="txtAddress1Billing" name="txtAddress1Billing" rows="4" class="form-control"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtAddress2Billing" class="col-lg-3 col-form-label">Warehouse Address</label>
+                                                        <div class="col-lg-9">
+                                                            <textarea id="txtAddress2Billing" name="txtAddress2Billing" rows="4" class="form-control"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end row-->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtCityBilling" class="col-lg-3 col-form-label">Company Type</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="txtCityBilling" name="txtCityBilling" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtStateProvinceBilling" class="col-lg-3 col-form-label">Live Market A/C</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="txtStateProvinceBilling" name="txtStateProvinceBilling" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end row-->
+            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtTelephoneBilling" class="col-lg-3 col-form-label">Product Category</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="txtTelephoneBilling" name="txtTelephoneBilling" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtFaxBilling" class="col-lg-3 col-form-label">Product Sub Category</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="txtFaxBilling" name="txtFaxBilling" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end row-->
+                                        </fieldset>
+                                        <!--end fieldset-->
+            
+                                        <h3>Company Document</h3>
+                                        <fieldset>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtFirstNameShipping" class="col-lg-3 col-form-label">PAN Card</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="txtFirstNameShipping" name="txtFirstNameShipping" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtLastNameShipping" class="col-lg-3 col-form-label">VAT/TIN No.</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="txtLastNameShipping" name="txtLastNameShipping" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end row-->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtCompanyShipping" class="col-lg-3 col-form-label">CST No.</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="txtCompanyShipping" name="txtCompanyShipping" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtEmailAddressShipping" class="col-lg-3 col-form-label">Service Tax No.</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="txtEmailAddressShipping" name="txtEmailAddressShipping" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end row-->
+            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtCityShipping" class="col-lg-3 col-form-label">Company UIN</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="txtCityShipping" name="txtCityShipping" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtStateProvinceShipping" class="col-lg-3 col-form-label">Declaration</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="txtStateProvinceShipping" name="txtStateProvinceShipping" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end row-->
+                                        </fieldset>
+                                        <!--end fieldset-->
+            
+                                        <h3>Bank Details</h3>
+                                        <fieldset>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtNameCard" class="col-lg-3 col-form-label">Name on Card</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="txtNameCard" name="txtNameCard" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="ddlCreditCardType" class="col-lg-3 col-form-label">Credit Card Type</label>
+                                                        <div class="col-lg-9">
+                                                            <select id="ddlCreditCardType" name="ddlCreditCardType" class="form-control">
+                                                                <option value="">--Please Select--</option>
+                                                                <option value="AE">American Express</option>
+                                                                <option value="VI">Visa</option>
+                                                                <option value="MC">MasterCard</option>
+                                                                <option value="DI">Discover</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end row-->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtCreditCardNumber" class="col-lg-3 col-form-label">Credit Card Number</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="txtCreditCardNumber" name="txtCreditCardNumber" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtCardVerificationNumber" class="col-lg-3 col-form-label">Card Verification Number</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="txtCardVerificationNumber" name="txtCardVerificationNumber" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end row-->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="txtExpirationDate" class="col-lg-3 col-form-label">Expiration Date</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="txtExpirationDate" name="txtExpirationDate" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end row-->
+                                        </fieldset>
+                                        <!--end fieldset-->
+            
+                                        <h3>Confirm Detail</h3>
+                                        <fieldset>
+                                            <div class="p-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        I agree with the Terms and Conditions.
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <!--end fieldset-->
+                                        <h3>Confirm Detail</h3>
+                                        <fieldset>
+                                            <div class="p-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        I agree with the Terms and Conditions.
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <!--end fieldset-->
+                                    </form>
+                                    <!--end form-->
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+</section>
+<script>
+    $.support.cors = true;
+</script>

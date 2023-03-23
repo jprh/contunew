@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "options": {
+      "linkedFile": "/views/app-documentos.ejs",
+      "linkedForm": "formRegistroMercantil"
+    },
+    "$_POST": [
+      {
+        "type": "file",
+        "fieldName": "fileRegistroMercantil",
+        "name": "fileRegistroMercantil",
+        "sub": [
+          {
+            "type": "text",
+            "name": "name"
+          },
+          {
+            "type": "text",
+            "name": "type"
+          },
+          {
+            "type": "number",
+            "name": "size"
+          },
+          {
+            "type": "text",
+            "name": "error"
+          }
+        ],
+        "outputType": "file"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "upload",
+        "module": "upload",
+        "action": "upload",
+        "options": {
+          "path": "/public/assets/documents",
+          "fields": "{{$_POST.fileRegistroMercantil}}",
+          "template": "{name}{ext}"
+        },
+        "meta": [
+          {
+            "name": "name",
+            "type": "text"
+          },
+          {
+            "name": "path",
+            "type": "text"
+          },
+          {
+            "name": "url",
+            "type": "text"
+          },
+          {
+            "name": "type",
+            "type": "text"
+          },
+          {
+            "name": "size",
+            "type": "text"
+          },
+          {
+            "name": "error",
+            "type": "number"
+          }
+        ],
+        "outputType": "file"
+      },
+      {
+        "name": "insert",
+        "module": "dbupdater",
+        "action": "insert",
+        "options": {
+          "connection": "db",
+          "sql": {
+            "type": "insert",
+            "values": [
+              {
+                "table": "documents",
+                "column": "url",
+                "type": "text",
+                "value": "{{upload.url}}"
+              },
+              {
+                "table": "documents",
+                "column": "name",
+                "type": "text",
+                "value": "{{upload.name}}"
+              },
+              {
+                "table": "documents",
+                "column": "created",
+                "type": "text",
+                "value": "{{NOW}}"
+              }
+            ],
+            "table": "documents",
+            "returning": "id",
+            "query": "INSERT INTO documents\n(url, name, created) VALUES (:P1 /* {{upload.url}} */, :P2 /* {{upload.name}} */, :P3 /* {{NOW}} */)",
+            "params": [
+              {
+                "name": ":P1",
+                "type": "expression",
+                "value": "{{upload.url}}",
+                "test": ""
+              },
+              {
+                "name": ":P2",
+                "type": "expression",
+                "value": "{{upload.name}}",
+                "test": ""
+              },
+              {
+                "name": ":P3",
+                "type": "expression",
+                "value": "{{NOW}}",
+                "test": ""
+              }
+            ]
+          }
+        },
+        "meta": [
+          {
+            "name": "identity",
+            "type": "text"
+          },
+          {
+            "name": "affected",
+            "type": "number"
+          }
+        ]
+      },
+      {
+        "name": "refresh",
+        "module": "sockets",
+        "action": "refresh",
+        "options": {
+          "action": "files_folder/query-documents"
+        }
+      }
+    ]
+  }
+}
